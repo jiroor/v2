@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Home.module.css'
 
 function Home() {
@@ -9,19 +10,49 @@ function Home() {
       </p>
 
       <div className={styles.toolGrid}>
+        <Link to="/timer/countdown" className={styles.toolCard}>
+          <h3>カウントダウンタイマー</h3>
+          <p>指定時間からカウントダウン</p>
+        </Link>
+
         <div className={styles.toolCard}>
-          <h3>タイマー</h3>
-          <p>カウントダウン、ストップウォッチ、ポモドーロ</p>
+          <h3>ストップウォッチ</h3>
+          <p>時間計測とラップタイム（準備中）</p>
         </div>
 
         <div className={styles.toolCard}>
-          <h3>テキストツール</h3>
-          <p>文字数カウンター、差分表示、ランダム生成</p>
+          <h3>ポモドーロタイマー</h3>
+          <p>25分作業 + 5分休憩サイクル（準備中）</p>
         </div>
 
         <div className={styles.toolCard}>
-          <h3>その他</h3>
-          <p>QRコード、パスワード生成、カラーピッカー</p>
+          <h3>文字数カウンター</h3>
+          <p>文字数、単語数、行数カウント（準備中）</p>
+        </div>
+
+        <div className={styles.toolCard}>
+          <h3>テキスト差分</h3>
+          <p>2つのテキストの差分表示（準備中）</p>
+        </div>
+
+        <div className={styles.toolCard}>
+          <h3>ランダム文字列</h3>
+          <p>パスワード等の生成（準備中）</p>
+        </div>
+
+        <div className={styles.toolCard}>
+          <h3>QRコード生成</h3>
+          <p>URL等をQRコードに変換（準備中）</p>
+        </div>
+
+        <div className={styles.toolCard}>
+          <h3>パスワード生成</h3>
+          <p>セキュアなパスワード生成（準備中）</p>
+        </div>
+
+        <div className={styles.toolCard}>
+          <h3>カラーピッカー</h3>
+          <p>HEX/RGB/HSL変換（準備中）</p>
         </div>
       </div>
     </div>
