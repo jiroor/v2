@@ -25,10 +25,10 @@ function Home() {
           <p>25分作業 + 5分休憩サイクル（準備中）</p>
         </div>
 
-        <div className={styles.toolCard}>
+        <Link to="/text/counter" className={styles.toolCard}>
           <h3>文字数カウンター</h3>
-          <p>文字数、単語数、行数カウント（準備中）</p>
-        </div>
+          <p>文字数、単語数、行数カウント</p>
+        </Link>
 
         <div className={styles.toolCard}>
           <h3>テキスト差分</h3>
