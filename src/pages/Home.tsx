@@ -40,10 +40,10 @@ function Home() {
           <p>パスワード等の生成</p>
         </Link>
 
-        <div className={styles.toolCard}>
+        <Link to="/other/qrcode" className={styles.toolCard}>
           <h3>QRコード生成</h3>
-          <p>URL等をQRコードに変換（準備中）</p>
-        </div>
+          <p>URL等をQRコードに変換</p>
+        </Link>
 
         <div className={styles.toolCard}>
           <h3>パスワード生成</h3>

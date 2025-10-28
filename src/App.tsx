@@ -7,6 +7,7 @@ import PomodoroTimer from './pages/Timer/PomodoroTimer'
 import CharCounter from './pages/TextTools/CharCounter'
 import TextDiff from './pages/TextTools/TextDiff'
 import RandomString from './pages/TextTools/RandomString'
+import QRCodeGenerator from './pages/OtherTools/QRCodeGenerator'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/text/counter" element={<CharCounter />} />
             <Route path="/text/diff" element={<TextDiff />} />
             <Route path="/text/random" element={<RandomString />} />
+            <Route path="/other/qrcode" element={<QRCodeGenerator />} />
           </Routes>
         </main>
       </div>
