@@ -20,10 +20,10 @@ function Home() {
           <p>時間計測とラップタイム</p>
         </Link>
 
-        <div className={styles.toolCard}>
+        <Link to="/timer/pomodoro" className={styles.toolCard}>
           <h3>ポモドーロタイマー</h3>
-          <p>25分作業 + 5分休憩サイクル（準備中）</p>
-        </div>
+          <p>25分作業 + 5分休憩サイクル</p>
+        </Link>
 
         <Link to="/text/counter" className={styles.toolCard}>
           <h3>文字数カウンター</h3>

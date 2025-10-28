@@ -3,6 +3,7 @@ import Header from './components/Layout/Header'
 import Home from './pages/Home'
 import CountdownTimer from './pages/Timer/CountdownTimer'
 import Stopwatch from './pages/Timer/Stopwatch'
+import PomodoroTimer from './pages/Timer/PomodoroTimer'
 import CharCounter from './pages/TextTools/CharCounter'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/timer/countdown" element={<CountdownTimer />} />
             <Route path="/timer/stopwatch" element={<Stopwatch />} />
+            <Route path="/timer/pomodoro" element={<PomodoroTimer />} />
             <Route path="/text/counter" element={<CharCounter />} />
           </Routes>
         </main>
