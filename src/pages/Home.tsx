@@ -30,10 +30,10 @@ function Home() {
           <p>文字数、単語数、行数カウント</p>
         </Link>
 
-        <div className={styles.toolCard}>
+        <Link to="/text/diff" className={styles.toolCard}>
           <h3>テキスト差分</h3>
-          <p>2つのテキストの差分表示（準備中）</p>
-        </div>
+          <p>2つのテキストの差分表示</p>
+        </Link>
 
         <div className={styles.toolCard}>
           <h3>ランダム文字列</h3>

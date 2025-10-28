@@ -5,6 +5,7 @@ import CountdownTimer from './pages/Timer/CountdownTimer'
 import Stopwatch from './pages/Timer/Stopwatch'
 import PomodoroTimer from './pages/Timer/PomodoroTimer'
 import CharCounter from './pages/TextTools/CharCounter'
+import TextDiff from './pages/TextTools/TextDiff'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/timer/stopwatch" element={<Stopwatch />} />
             <Route path="/timer/pomodoro" element={<PomodoroTimer />} />
             <Route path="/text/counter" element={<CharCounter />} />
+            <Route path="/text/diff" element={<TextDiff />} />
           </Routes>
         </main>
       </div>
