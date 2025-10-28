@@ -1,0 +1,51 @@
+.home {
+  padding: var(--spacing-8) 0;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-2);
+}
+
+.description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-8);
+}
+
+.toolGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.toolCard {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+}
+
+.toolCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.toolCard h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+}
+
+.toolCard p {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .toolGrid {
+    grid-template-columns: 1fr;
+  }
+}
