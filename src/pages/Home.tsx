@@ -35,10 +35,10 @@ function Home() {
           <p>2つのテキストの差分表示</p>
         </Link>
 
-        <div className={styles.toolCard}>
+        <Link to="/text/random" className={styles.toolCard}>
           <h3>ランダム文字列</h3>
-          <p>パスワード等の生成（準備中）</p>
-        </div>
+          <p>パスワード等の生成</p>
+        </Link>
 
         <div className={styles.toolCard}>
           <h3>QRコード生成</h3>

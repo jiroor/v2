@@ -6,6 +6,7 @@ import Stopwatch from './pages/Timer/Stopwatch'
 import PomodoroTimer from './pages/Timer/PomodoroTimer'
 import CharCounter from './pages/TextTools/CharCounter'
 import TextDiff from './pages/TextTools/TextDiff'
+import RandomString from './pages/TextTools/RandomString'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/timer/pomodoro" element={<PomodoroTimer />} />
             <Route path="/text/counter" element={<CharCounter />} />
             <Route path="/text/diff" element={<TextDiff />} />
+            <Route path="/text/random" element={<RandomString />} />
           </Routes>
         </main>
       </div>
