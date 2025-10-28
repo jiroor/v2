@@ -15,10 +15,10 @@ function Home() {
           <p>指定時間からカウントダウン</p>
         </Link>
 
-        <div className={styles.toolCard}>
+        <Link to="/timer/stopwatch" className={styles.toolCard}>
           <h3>ストップウォッチ</h3>
-          <p>時間計測とラップタイム（準備中）</p>
-        </div>
+          <p>時間計測とラップタイム</p>
+        </Link>
 
         <div className={styles.toolCard}>
           <h3>ポモドーロタイマー</h3>

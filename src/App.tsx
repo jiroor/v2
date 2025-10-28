@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Home from './pages/Home'
 import CountdownTimer from './pages/Timer/CountdownTimer'
+import Stopwatch from './pages/Timer/Stopwatch'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/timer/countdown" element={<CountdownTimer />} />
+            <Route path="/timer/stopwatch" element={<Stopwatch />} />
           </Routes>
         </main>
       </div>
