@@ -42,7 +42,7 @@
 }
 
 .colorInput:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-text-primary);
 }
 
 .colorPreview {
@@ -95,7 +95,7 @@
 
 .formatInput:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-text-primary);
 }
 
 .infoSection {

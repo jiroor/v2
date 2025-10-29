@@ -54,7 +54,7 @@
 
 .sessionsCount {
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-text-primary);
   font-size: 20px;
 }
 

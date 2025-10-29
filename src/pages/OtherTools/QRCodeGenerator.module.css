@@ -37,7 +37,7 @@
 
 .textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-text-primary);
 }
 
 .textarea::placeholder {
@@ -73,7 +73,7 @@
 .sizeButton.active {
   background: var(--color-accent);
   color: white;
-  border-color: var(--color-accent);
+  border-color: var(--color-text-primary);
 }
 
 .sizeButton:focus-visible {
