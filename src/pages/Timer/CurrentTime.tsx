@@ -116,22 +116,10 @@ export default function CurrentTime() {
       >
         {/* 日付表示 */}
         <div className={styles.date}>
-          {settings.layout === 'horizontal' ? (
-            <span>
-              {formattedDate.year}年{formattedDate.month}月{formattedDate.day}日
-              （{formattedDate.weekday}）
-            </span>
-          ) : (
-            <>
-              <span>{formattedDate.year}</span>
-              <span>/</span>
-              <span>{formattedDate.month}</span>
-              <span>/</span>
-              <span>{formattedDate.day}</span>
-              <span>/</span>
-              <span>({formattedDate.weekday})</span>
-            </>
-          )}
+          <span>
+            {formattedDate.year}/{formattedDate.month}/{formattedDate.day}
+            （{formattedDate.weekday}）
+          </span>
         </div>
 
         {/* 時刻表示 */}

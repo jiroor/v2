@@ -97,27 +97,19 @@
 }
 
 .horizontal {
-  flex-direction: column;
-  gap: var(--spacing-6);
+  flex-direction: row;
+  gap: var(--spacing-8);
 }
 
 .vertical {
   flex-direction: column;
-  gap: var(--spacing-4);
+  gap: var(--spacing-6);
 }
 
 .date {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
-  display: flex;
-  gap: var(--spacing-2);
-}
-
-.vertical .date {
-  flex-direction: column;
-  align-items: center;
-  font-size: var(--font-size-lg);
 }
 
 .time {
@@ -128,30 +120,22 @@
   color: var(--color-accent);
 }
 
-.vertical .time {
-  writing-mode: vertical-rl;
-  font-size: 72px;
-}
-
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .container {
     padding: var(--spacing-4);
   }
 
+  .horizontal {
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
   .time {
     font-size: 48px;
   }
 
-  .vertical .time {
-    font-size: 56px;
-  }
-
   .date {
     font-size: var(--font-size-lg);
-  }
-
-  .vertical .date {
-    font-size: var(--font-size-base);
   }
 }
