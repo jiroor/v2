@@ -3,6 +3,7 @@ import {
   CountdownIcon,
   StopwatchIcon,
   PomodoroIcon,
+  CurrentTimeIcon,
   CharCounterIcon,
   TextDiffIcon,
   RandomStringIcon,
@@ -37,6 +38,12 @@ function Home() {
           <PomodoroIcon className={styles.icon} />
           <h3>ポモドーロタイマー</h3>
           <p>25分作業 + 5分休憩サイクル</p>
+        </Link>
+
+        <Link to="/timer/current" className={styles.toolCard}>
+          <CurrentTimeIcon className={styles.icon} />
+          <h3>現在日時</h3>
+          <p>タイムゾーン選択可能な世界時計</p>
         </Link>
 
         <Link to="/text/counter" className={styles.toolCard}>

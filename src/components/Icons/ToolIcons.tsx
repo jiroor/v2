@@ -2,6 +2,7 @@ import {
   Timer,
   Clock,
   Coffee,
+  Globe,
   FileText,
   Columns2,
   Shuffle,
@@ -27,6 +28,11 @@ export function StopwatchIcon({ className }: IconProps) {
 // ポモドーロタイマー
 export function PomodoroIcon({ className }: IconProps) {
   return <Coffee className={className} />
+}
+
+// 現在日時表示
+export function CurrentTimeIcon({ className }: IconProps) {
+  return <Globe className={className} />
 }
 
 // 文字数カウンター

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import CountdownTimer from './pages/Timer/CountdownTimer'
 import Stopwatch from './pages/Timer/Stopwatch'
 import PomodoroTimer from './pages/Timer/PomodoroTimer'
+import CurrentTime from './pages/Timer/CurrentTime'
 import CharCounter from './pages/TextTools/CharCounter'
 import TextDiff from './pages/TextTools/TextDiff'
 import RandomString from './pages/TextTools/RandomString'
@@ -22,6 +23,7 @@ function App() {
             <Route path="/timer/countdown" element={<CountdownTimer />} />
             <Route path="/timer/stopwatch" element={<Stopwatch />} />
             <Route path="/timer/pomodoro" element={<PomodoroTimer />} />
+            <Route path="/timer/current" element={<CurrentTime />} />
             <Route path="/text/counter" element={<CharCounter />} />
             <Route path="/text/diff" element={<TextDiff />} />
             <Route path="/text/random" element={<RandomString />} />

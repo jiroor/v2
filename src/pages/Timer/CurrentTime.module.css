@@ -1,0 +1,157 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-6);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+}
+
+/* 設定エリア */
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-md);
+}
+
+.settingItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.select {
+  padding: var(--spacing-3);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-background);
+  cursor: pointer;
+  transition: border-color var(--transition-normal);
+}
+
+.select:hover {
+  border-color: var(--color-accent);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-background);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.toggleButton:hover {
+  border-color: var(--color-accent);
+  background: var(--color-background-secondary);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* メイン表示エリア */
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-lg);
+  min-height: 300px;
+}
+
+.horizontal {
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.vertical {
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.date {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.vertical .date {
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--font-size-lg);
+}
+
+.time {
+  font-size: 64px;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.vertical .time {
+  writing-mode: vertical-rl;
+  font-size: 72px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .time {
+    font-size: 48px;
+  }
+
+  .vertical .time {
+    font-size: 56px;
+  }
+
+  .date {
+    font-size: var(--font-size-lg);
+  }
+
+  .vertical .date {
+    font-size: var(--font-size-base);
+  }
+}
