@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --spacing: 0.25rem;
+
   --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* Light mode colors */
@@ -27,11 +29,17 @@
   --radius: 0.5rem;
 }
 
-* {
-  border-color: var(--color-border);
-}
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  button {
+    padding: revert-layer;
+  }
 }
