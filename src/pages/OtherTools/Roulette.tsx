@@ -47,6 +47,12 @@ function Roulette() {
     setItems(items.filter((item) => item.id !== id))
   }
 
+  const handleUpdateItem = (id: string, field: 'label' | 'color', value: string) => {
+    setItems(items.map((item) =>
+      item.id === id ? { ...item, [field]: value } : item
+    ))
+  }
+
   const handleSpin = () => {
     if (spinning) return
     if (items.length < 2) {
@@ -172,15 +178,62 @@ function Roulette() {
       <div className={styles.itemsSection}>
         <h3 className={styles.sectionTitle}>項目設定</h3>
 
+        {/* 追加フォーム */}
+        <div className={styles.addForm}>
+          <div className={styles.formGroup}>
+            <Label htmlFor="color">色</Label>
+            <Input
+              id="color"
+              type="color"
+              value={newColor}
+              onChange={(e) => setNewColor(e.target.value)}
+              className={styles.colorInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <Label htmlFor="label">ラベル</Label>
+            <Input
+              id="label"
+              type="text"
+              value={newLabel}
+              onChange={(e) => setNewLabel(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
+              placeholder="項目名を入力"
+              maxLength={20}
+              className={styles.labelInput}
+            />
+          </div>
+          <Button
+            onClick={handleAddItem}
+            disabled={!newLabel.trim() || items.length >= 20}
+            className={styles.addButton}
+          >
+            追加
+          </Button>
+        </div>
+        {items.length >= 20 && (
+          <p className={styles.warning}>項目は最大20個までです</p>
+        )}
+
         {/* 項目リスト */}
         <div className={styles.itemsList}>
           {items.map((item) => (
             <div key={item.id} className={styles.itemRow}>
-              <div
-                className={styles.itemColor}
-                style={{ backgroundColor: item.color }}
+              <Input
+                type="color"
+                value={item.color}
+                onChange={(e) => handleUpdateItem(item.id, 'color', e.target.value)}
+                className={styles.itemColorInput}
+                aria-label={`${item.label}の色`}
               />
-              <span className={styles.itemLabel}>{item.label}</span>
+              <Input
+                type="text"
+                value={item.label}
+                onChange={(e) => handleUpdateItem(item.id, 'label', e.target.value)}
+                className={styles.itemLabelInput}
+                maxLength={20}
+                aria-label="項目ラベル"
+              />
               <button
                 onClick={() => handleDeleteItem(item.id)}
                 className={styles.deleteButton}
@@ -192,38 +245,6 @@ function Roulette() {
             </div>
           ))}
         </div>
-
-        {/* 追加フォーム */}
-        <div className={styles.addForm}>
-          <div className={styles.formGroup}>
-            <Label htmlFor="label">ラベル</Label>
-            <Input
-              id="label"
-              type="text"
-              value={newLabel}
-              onChange={(e) => setNewLabel(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
-              placeholder="項目名を入力"
-              maxLength={20}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <Label htmlFor="color">色</Label>
-            <Input
-              id="color"
-              type="color"
-              value={newColor}
-              onChange={(e) => setNewColor(e.target.value)}
-              className={styles.colorInput}
-            />
-          </div>
-          <Button onClick={handleAddItem} disabled={!newLabel.trim() || items.length >= 20}>
-            追加
-          </Button>
-        </div>
-        {items.length >= 20 && (
-          <p className={styles.warning}>項目は最大20個までです</p>
-        )}
       </div>
     </div>
   )

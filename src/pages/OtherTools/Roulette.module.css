@@ -104,12 +104,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
-  margin-bottom: var(--spacing-4);
-  max-height: 300px;
-  overflow-y: auto;
-  padding: var(--spacing-2);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
 }
 
 .itemRow {
@@ -121,17 +115,22 @@
   border-radius: var(--border-radius);
 }
 
-.itemColor {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  border: 1px solid var(--color-border);
+.itemColorInput {
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
   flex-shrink: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
 }
 
-.itemLabel {
+.itemLabelInput {
   flex: 1;
-  font-size: 14px;
+  min-width: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px;
 }
 
 .deleteButton {
@@ -139,17 +138,19 @@
   border: none;
   cursor: pointer;
   color: var(--color-text-secondary);
-  padding: var(--spacing-1);
+  padding: var(--spacing-2);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius);
+  border-radius: 50%;
   transition: all 0.2s;
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .deleteButton:hover:not(:disabled) {
-  color: var(--color-text);
-  background-color: var(--color-border);
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
 }
 
 .deleteButton:disabled {
@@ -162,6 +163,7 @@
   display: flex;
   gap: var(--spacing-3);
   align-items: flex-end;
+  margin-bottom: var(--spacing-4);
 }
 
 .formGroup {
@@ -170,14 +172,30 @@
   gap: var(--spacing-1);
 }
 
-.formGroup:first-child {
+.formGroup:nth-child(2) {
   flex: 1;
 }
 
-.colorInput {
-  width: 80px;
+input.colorInput[type="color"] {
+  width: 60px;
   height: 40px;
+  min-height: 40px;
   cursor: pointer;
+  flex-shrink: 0;
+}
+
+input.labelInput[type="text"] {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  min-height: 40px;
+}
+
+button.addButton {
+  height: 40px;
+  min-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* 警告メッセージ */

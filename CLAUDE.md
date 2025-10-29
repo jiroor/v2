@@ -93,6 +93,7 @@
 - **コンポーネント**: 関数コンポーネント + Hooks
 - **型定義**: すべての props, state に型を定義
 - **CSS**: CSS Modules を使用し、グローバルスタイルを最小限に
+  - **!important 禁止**: CSSで `!important` は絶対に使用しない。適切な詳細度やインラインスタイルで対応すること
 - **命名規則**:
   - コンポーネント: PascalCase
   - 関数/変数: camelCase
