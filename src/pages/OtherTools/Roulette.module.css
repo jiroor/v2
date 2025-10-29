@@ -161,9 +161,19 @@
 /* 追加フォーム */
 .addForm {
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  padding: var(--spacing-2);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+}
+
+.inputGroup {
+  display: flex;
   gap: var(--spacing-3);
   align-items: flex-end;
-  margin-bottom: var(--spacing-4);
+  width: 100%;
 }
 
 .formGroup {
@@ -172,8 +182,12 @@
   gap: var(--spacing-1);
 }
 
-.formGroup:nth-child(2) {
+.inputGroup .formGroup:nth-child(2) {
   flex: 1;
+}
+
+.addForm > button {
+  align-self: center;
 }
 
 /* 警告メッセージ */

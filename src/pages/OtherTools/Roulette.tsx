@@ -180,33 +180,35 @@ function Roulette() {
 
         {/* 追加フォーム */}
         <div className={styles.addForm}>
-          <div className={styles.formGroup}>
-            <Label htmlFor="color">色</Label>
-            <Input
-              id="color"
-              type="color"
-              value={newColor}
-              onChange={(e) => setNewColor(e.target.value)}
-              className="w-[60px] h-10 cursor-pointer flex-shrink-0"
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <Label htmlFor="label">ラベル</Label>
-            <Input
-              id="label"
-              type="text"
-              value={newLabel}
-              onChange={(e) => setNewLabel(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
-              placeholder="項目名を入力"
-              maxLength={20}
-              className="flex-1 min-w-0 h-10 min-h-10"
-            />
+          <div className={styles.inputGroup}>
+            <div className={styles.formGroup}>
+              <Label htmlFor="color">色</Label>
+              <Input
+                id="color"
+                type="color"
+                value={newColor}
+                onChange={(e) => setNewColor(e.target.value)}
+                className="w-[60px] h-10 cursor-pointer flex-shrink-0 rounded-r-none border-r-0"
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <Label htmlFor="label">ラベル</Label>
+              <Input
+                id="label"
+                type="text"
+                value={newLabel}
+                onChange={(e) => setNewLabel(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
+                placeholder="項目名を入力"
+                maxLength={20}
+                className="flex-1 min-w-0 h-10 min-h-10 rounded-l-none -ml-px"
+              />
+            </div>
           </div>
           <Button
             onClick={handleAddItem}
             disabled={!newLabel.trim() || items.length >= 20}
-            className="h-10"
+            size="sm"
           >
             追加
           </Button>
