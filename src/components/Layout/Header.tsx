@@ -6,7 +6,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          <h1>Utility Tools</h1>
+          <h1>Rakit</h1>
         </Link>
       </div>
     </header>
