@@ -16,6 +16,8 @@ interface ClockSettings {
   layout: 'horizontal' | 'vertical'
   showSeconds: boolean
   dateFormat: DateFormat
+  showYear: boolean
+  showWeekday: boolean
 }
 
 export default function CurrentTime() {
@@ -25,6 +27,8 @@ export default function CurrentTime() {
     layout: 'horizontal',
     showSeconds: true,
     dateFormat: 'kanji',
+    showYear: true,
+    showWeekday: true,
   })
 
   // フォーマットされた時刻
@@ -128,6 +132,36 @@ export default function CurrentTime() {
             秒数を表示
           </label>
         </div>
+
+        {/* 年表示切り替え */}
+        <div className={styles.settingItem}>
+          <label className={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={settings.showYear}
+              onChange={(e) =>
+                setSettings({ ...settings, showYear: e.target.checked })
+              }
+              className={styles.checkbox}
+            />
+            年を表示
+          </label>
+        </div>
+
+        {/* 曜日表示切り替え */}
+        <div className={styles.settingItem}>
+          <label className={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={settings.showWeekday}
+              onChange={(e) =>
+                setSettings({ ...settings, showWeekday: e.target.checked })
+              }
+              className={styles.checkbox}
+            />
+            曜日を表示
+          </label>
+        </div>
       </div>
 
       {/* メイン表示エリア */}
@@ -139,10 +173,24 @@ export default function CurrentTime() {
         {/* 日付表示 */}
         <div className={styles.date}>
           <span>
-            {settings.dateFormat === 'slash'
-              ? `${formattedDate.year}/${formattedDate.month}/${formattedDate.day}`
-              : `${formattedDate.year}年${formattedDate.month}月${formattedDate.day}日`}
-            （{formattedDate.weekday}）
+            {(() => {
+              const parts: string[] = []
+
+              if (settings.dateFormat === 'slash') {
+                // スラッシュ区切り
+                if (settings.showYear) parts.push(formattedDate.year)
+                parts.push(formattedDate.month)
+                parts.push(formattedDate.day)
+                return parts.join('/')
+              } else {
+                // 漢字表記
+                if (settings.showYear) parts.push(`${formattedDate.year}年`)
+                parts.push(`${formattedDate.month}月`)
+                parts.push(`${formattedDate.day}日`)
+                return parts.join('')
+              }
+            })()}
+            {settings.showWeekday && `（${formattedDate.weekday}）`}
           </span>
         </div>
 
