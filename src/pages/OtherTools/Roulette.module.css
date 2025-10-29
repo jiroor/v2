@@ -176,28 +176,6 @@
   flex: 1;
 }
 
-input.colorInput[type="color"] {
-  width: 60px;
-  height: 40px;
-  min-height: 40px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-input.labelInput[type="text"] {
-  flex: 1;
-  min-width: 0;
-  height: 40px;
-  min-height: 40px;
-}
-
-button.addButton {
-  height: 40px;
-  min-height: 40px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 /* 警告メッセージ */
 .warning {
   margin-top: var(--spacing-2);

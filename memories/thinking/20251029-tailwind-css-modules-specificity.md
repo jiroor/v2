@@ -40,23 +40,35 @@
 **デメリット**:
 - セレクターが長くなる
 
-## 決定
-**選択肢3: CSS Modulesの詳細度を上げる**
+## 決定（修正版）
+**選択肢4: Tailwindクラスを直接className propに追加（shadcn/ui公式推奨）**
 
-具体的な実装方法：
-```css
-/* 従来（詳細度: 0,0,1,0） */
-.colorInput {
-  width: 60px;
-}
+### 調査結果
+shadcn/uiの公式ドキュメントとVercel Academyの推奨方法を調査した結果、以下が判明：
 
-/* 改善後（詳細度: 0,0,2,1） */
+1. **cn()関数とtailwind-merge**: shadcn/uiは内部で`cn()`関数を使用し、Tailwindクラスの競合を自動解決
+2. **クラスの優先順位**: 後から渡されたクラスが優先される（tailwind-mergeの仕組み）
+3. **公式の推奨レベル**: Level 1カスタマイズ = classNameにTailwindクラスを追加
+
+### 実装方法
+```tsx
+// ❌ 当初の方法（CSS Modulesで詳細度を上げる）
+<Input className={styles.colorInput} />
+/* CSS */
 input.colorInput[type="color"] {
   width: 60px;
+  height: 40px;
 }
+
+// ✅ 正しい方法（Tailwindクラスを直接追加）
+<Input className="w-[60px] h-10 cursor-pointer flex-shrink-0" />
 ```
 
-**要素セレクター（input, button） + クラスセレクター + 属性セレクター** を組み合わせることで、Tailwindのクラスよりも高い詳細度を実現。
+**利点**:
+- shadcn/uiの設計思想に沿っている
+- tailwind-mergeが自動的にクラス競合を解決
+- CSSファイルが不要でコンポーネントが自己完結
+- 詳細度の問題が発生しない
 
 ## 理由
 1. **CSS設計の原則を守る**: `!important` やインラインスタイルは避けるべき

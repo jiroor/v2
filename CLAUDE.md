@@ -95,18 +95,17 @@
 - **CSS**: CSS Modules を使用し、グローバルスタイルを最小限に
   - **!important 禁止**: CSSで `!important` は絶対に使用しない
   - **インラインスタイル禁止**: JSXの `style` 属性は使用しない
-  - **Tailwind併用時の詳細度制御**: shadcn/uiのスタイルを上書きする場合、要素セレクター + クラス + 属性セレクターで詳細度を上げる
-    ```css
-    /* 良い例 */
-    input.colorInput[type="color"] {
-      width: 60px;
-    }
+  - **shadcn/uiのカスタマイズ**: Tailwindクラスを`className` propに直接追加する（公式推奨）
+    ```tsx
+    // ✅ 良い例：Tailwindクラスを直接追加
+    <Input className="w-[60px] h-10" />
+    <Button className="h-10">ボタン</Button>
 
-    /* 悪い例 */
-    .colorInput {
-      width: 60px !important;
-    }
+    // ❌ 悪い例：CSS Modulesで詳細度を上げる
+    <Input className={styles.input} />
+    /* CSS: input.input[type="text"] { height: 40px; } */
     ```
+  - **理由**: shadcn/uiは`cn()`関数とtailwind-mergeでクラス競合を自動解決するため、詳細度の問題が発生しない
 - **命名規則**:
   - コンポーネント: PascalCase
   - 関数/変数: camelCase

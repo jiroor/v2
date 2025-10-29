@@ -187,7 +187,7 @@ function Roulette() {
               type="color"
               value={newColor}
               onChange={(e) => setNewColor(e.target.value)}
-              className={styles.colorInput}
+              className="w-[60px] h-10 cursor-pointer flex-shrink-0"
             />
           </div>
           <div className={styles.formGroup}>
@@ -200,13 +200,13 @@ function Roulette() {
               onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
               placeholder="項目名を入力"
               maxLength={20}
-              className={styles.labelInput}
+              className="flex-1 min-w-0 h-10"
             />
           </div>
           <Button
             onClick={handleAddItem}
             disabled={!newLabel.trim() || items.length >= 20}
-            className={styles.addButton}
+            className="h-10"
           >
             追加
           </Button>
