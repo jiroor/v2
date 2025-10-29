@@ -84,6 +84,11 @@
   background: var(--color-bg-hover);
 }
 
+.buttonSecondary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 @media (max-width: 768px) {
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
