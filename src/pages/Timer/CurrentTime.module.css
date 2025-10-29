@@ -80,9 +80,12 @@
 }
 
 .checkbox {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  /* タッチ領域を44pxに拡大（視覚的には24px） */
+  padding: 10px;
+  margin: -10px;
 }
 
 .checkbox:focus-visible {

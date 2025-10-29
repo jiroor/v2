@@ -28,8 +28,9 @@
    - CurrentTime.module.css
    - RandomString.module.css
    - PasswordGenerator.module.css
-   - サイズが18×18pxで推奨24×24pxに満たない
+   - サイズが18×18pxで、最小24×24px、推奨44×44pxに満たない
    - `:focus-visible` 状態が未実装
+   - 修正: 44×44px（推奨サイズ）を採用
 
 ### 優先度: 中
 
