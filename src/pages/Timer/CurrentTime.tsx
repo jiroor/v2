@@ -7,6 +7,15 @@ import {
   formatDate,
 } from '../../utils/timezoneUtils'
 import { AlignCenterHorizontal, AlignCenterVertical } from 'lucide-react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Label } from '@/components/ui/label'
 import styles from './CurrentTime.module.css'
 
 type DateFormat = 'kanji' | 'slash'
@@ -50,27 +59,64 @@ export default function CurrentTime() {
     <div className={styles.container}>
       <h1 className={styles.title}>現在日時</h1>
 
+      {/* メイン表示エリア */}
+      <div
+        className={`${styles.display} ${
+          settings.layout === 'vertical' ? styles.vertical : styles.horizontal
+        }`}
+      >
+        {/* 日付表示 */}
+        <div className={styles.date}>
+          <span>
+            {(() => {
+              const parts: string[] = []
+
+              if (settings.dateFormat === 'slash') {
+                // スラッシュ区切り
+                if (settings.showYear) parts.push(formattedDate.year)
+                parts.push(formattedDate.month)
+                parts.push(formattedDate.day)
+                return parts.join('/')
+              } else {
+                // 漢字表記
+                if (settings.showYear) parts.push(`${formattedDate.year}年`)
+                parts.push(`${formattedDate.month}月`)
+                parts.push(`${formattedDate.day}日`)
+                return parts.join('')
+              }
+            })()}
+            {settings.showWeekday && `（${formattedDate.weekday}）`}
+          </span>
+        </div>
+
+        {/* 時刻表示 */}
+        <div className={styles.time}>{formattedTime}</div>
+      </div>
+
       {/* 設定エリア */}
       <div className={styles.settings}>
         {/* タイムゾーン選択 */}
         <div className={styles.settingItem}>
-          <label htmlFor="timezone" className={styles.label}>
+          <Label htmlFor="timezone" className={styles.label}>
             タイムゾーン
-          </label>
-          <select
-            id="timezone"
+          </Label>
+          <Select
             value={settings.timezone}
-            onChange={(e) =>
-              setSettings({ ...settings, timezone: e.target.value })
+            onValueChange={(value) =>
+              setSettings({ ...settings, timezone: value })
             }
-            className={styles.select}
           >
-            {MAJOR_TIMEZONES.map((tz) => (
-              <option key={tz.value} value={tz.value}>
-                {tz.label} ({tz.offset})
-              </option>
-            ))}
-          </select>
+            <SelectTrigger id="timezone" className={styles.select}>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {MAJOR_TIMEZONES.map((tz) => (
+                <SelectItem key={tz.value} value={tz.value}>
+                  {tz.label} ({tz.offset})
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         {/* レイアウト切り替え */}
@@ -123,36 +169,33 @@ export default function CurrentTime() {
 
         {/* 表示項目 */}
         <div className={styles.settingItem}>
-          <label className={styles.label}>表示項目</label>
+          <Label className={styles.label}>表示項目</Label>
           <div className={styles.checkboxGroup}>
             <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+              <Checkbox
                 checked={settings.showYear}
-                onChange={(e) =>
-                  setSettings({ ...settings, showYear: e.target.checked })
+                onCheckedChange={(checked) =>
+                  setSettings({ ...settings, showYear: checked === true })
                 }
                 className={styles.checkbox}
               />
               年
             </label>
             <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+              <Checkbox
                 checked={settings.showWeekday}
-                onChange={(e) =>
-                  setSettings({ ...settings, showWeekday: e.target.checked })
+                onCheckedChange={(checked) =>
+                  setSettings({ ...settings, showWeekday: checked === true })
                 }
                 className={styles.checkbox}
               />
               曜日
             </label>
             <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+              <Checkbox
                 checked={settings.showSeconds}
-                onChange={(e) =>
-                  setSettings({ ...settings, showSeconds: e.target.checked })
+                onCheckedChange={(checked) =>
+                  setSettings({ ...settings, showSeconds: checked === true })
                 }
                 className={styles.checkbox}
               />
@@ -160,40 +203,6 @@ export default function CurrentTime() {
             </label>
           </div>
         </div>
-      </div>
-
-      {/* メイン表示エリア */}
-      <div
-        className={`${styles.display} ${
-          settings.layout === 'vertical' ? styles.vertical : styles.horizontal
-        }`}
-      >
-        {/* 日付表示 */}
-        <div className={styles.date}>
-          <span>
-            {(() => {
-              const parts: string[] = []
-
-              if (settings.dateFormat === 'slash') {
-                // スラッシュ区切り
-                if (settings.showYear) parts.push(formattedDate.year)
-                parts.push(formattedDate.month)
-                parts.push(formattedDate.day)
-                return parts.join('/')
-              } else {
-                // 漢字表記
-                if (settings.showYear) parts.push(`${formattedDate.year}年`)
-                parts.push(`${formattedDate.month}月`)
-                parts.push(`${formattedDate.day}日`)
-                return parts.join('')
-              }
-            })()}
-            {settings.showWeekday && `（${formattedDate.weekday}）`}
-          </span>
-        </div>
-
-        {/* 時刻表示 */}
-        <div className={styles.time}>{formattedTime}</div>
       </div>
     </div>
   )
