@@ -90,8 +90,10 @@ export const calculateWinnerRotation = (
   // 現在の回転角度を0-360度の範囲に正規化
   const normalizedCurrentRotation = ((currentRotation % 360) + 360) % 360
 
-  // 当選項目の中央の角度（0度基準）
-  const targetAngle = winnerIndex * anglePerItem + anglePerItem / 2
+  // 当選項目内のランダムな位置（項目の範囲内で1度単位のランダム）
+  // 項目の開始角度 + ランダムなオフセット（0度から anglePerItem 度まで）
+  const randomOffset = Math.random() * anglePerItem
+  const targetAngle = winnerIndex * anglePerItem + randomOffset
 
   // 現在の正規化された角度から、目標角度まで回転する必要がある角度を計算
   // 針は上部（0度）にあるので、targetAngleの位置を0度に持ってくる
