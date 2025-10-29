@@ -1,6 +1,8 @@
 import { useMemo } from 'react'
 import { usePomodoro } from '../../hooks/usePomodoro'
 import { Button } from '@/components/ui/button'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './PomodoroTimer.module.css'
 
 function PomodoroTimer() {
@@ -20,6 +22,22 @@ function PomodoroTimer() {
       start()
     }
   }
+
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: ' ',
+      description: isRunning ? '一時停止' : '開始',
+      action: handleStartPause,
+    },
+    {
+      key: 'r',
+      description: 'リセット',
+      action: reset,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
 
   return (
     <div className={styles.container}>
@@ -54,6 +72,9 @@ function PomodoroTimer() {
         <br />
         タイマーが終了すると自動的に次のモードに切り替わります。
       </p>
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }

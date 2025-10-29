@@ -3,6 +3,8 @@ import { useTimer } from '../../hooks/useTimer'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './CountdownTimer.module.css'
 
 function CountdownTimer() {
@@ -56,6 +58,48 @@ function CountdownTimer() {
     if (type === 'minutes') setMinutes(Math.max(0, Math.min(59, num)))
     if (type === 'seconds') setSeconds(Math.max(0, Math.min(59, num)))
   }
+
+  const setQuickTime = (mins: number) => {
+    setHours(0)
+    setMinutes(mins)
+    setSeconds(0)
+    setIsConfigured(false)
+  }
+
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: ' ',
+      description: isRunning ? '一時停止' : 'スタート',
+      action: isRunning ? stop : handleStart,
+      disabled: !isRunning && initialTime === 0,
+    },
+    {
+      key: 'r',
+      description: 'リセット',
+      action: handleReset,
+    },
+    {
+      key: '1',
+      description: '1分に設定',
+      action: () => setQuickTime(1),
+      disabled: isRunning || isConfigured,
+    },
+    {
+      key: '3',
+      description: '3分に設定',
+      action: () => setQuickTime(3),
+      disabled: isRunning || isConfigured,
+    },
+    {
+      key: '5',
+      description: '5分に設定',
+      action: () => setQuickTime(5),
+      disabled: isRunning || isConfigured,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
 
   return (
     <div className={styles.container}>
@@ -124,6 +168,9 @@ function CountdownTimer() {
           リセット
         </Button>
       </div>
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }

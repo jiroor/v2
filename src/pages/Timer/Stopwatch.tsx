@@ -1,10 +1,34 @@
 import { useMemo } from 'react'
 import { useStopwatch } from '../../hooks/useStopwatch'
 import { Button } from '@/components/ui/button'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './Stopwatch.module.css'
 
 function Stopwatch() {
   const { time, isRunning, laps, start, stop, reset, addLap } = useStopwatch()
+
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: ' ',
+      description: isRunning ? '一時停止' : 'スタート',
+      action: isRunning ? stop : start,
+    },
+    {
+      key: 'l',
+      description: 'ラップ',
+      action: addLap,
+      disabled: !isRunning,
+    },
+    {
+      key: 'r',
+      description: 'リセット',
+      action: reset,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
 
   const displayTime = useMemo(() => {
     const totalSeconds = Math.floor(time / 1000)
@@ -73,6 +97,9 @@ function Stopwatch() {
           </div>
         </div>
       )}
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }
