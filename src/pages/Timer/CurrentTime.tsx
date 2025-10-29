@@ -127,7 +127,7 @@ export default function CurrentTime() {
             <Button
               onClick={() => setSettings({ ...settings, layout: 'horizontal' })}
               variant={settings.layout === 'horizontal' ? 'default' : 'outline'}
-              className={styles.buttonGroupButton}
+              className="flex-1 gap-2"
             >
               <AlignCenterHorizontal size={20} />
               <span>横組み</span>
@@ -135,7 +135,7 @@ export default function CurrentTime() {
             <Button
               onClick={() => setSettings({ ...settings, layout: 'vertical' })}
               variant={settings.layout === 'vertical' ? 'default' : 'outline'}
-              className={styles.buttonGroupButton}
+              className="flex-1 gap-2"
             >
               <AlignCenterVertical size={20} />
               <span>縦組み</span>
@@ -150,14 +150,14 @@ export default function CurrentTime() {
             <Button
               onClick={() => setSettings({ ...settings, dateFormat: 'kanji' })}
               variant={settings.dateFormat === 'kanji' ? 'default' : 'outline'}
-              className={styles.buttonGroupButton}
+              className="flex-1"
             >
               <span>年月日</span>
             </Button>
             <Button
               onClick={() => setSettings({ ...settings, dateFormat: 'slash' })}
               variant={settings.dateFormat === 'slash' ? 'default' : 'outline'}
-              className={styles.buttonGroupButton}
+              className="flex-1"
             >
               <span>/</span>
             </Button>

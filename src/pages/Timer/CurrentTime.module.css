@@ -99,15 +99,6 @@
   gap: var(--spacing-2);
 }
 
-.buttonGroupButton {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  min-height: 44px;  /* 最小高さを44pxに設定 */
-}
-
 /* チェックボックスグループ */
 .checkboxGroup {
   display: flex;
