@@ -107,7 +107,7 @@ export default function CurrentTime() {
               setSettings({ ...settings, timezone: value })
             }
           >
-            <SelectTrigger id="timezone" className={styles.select}>
+            <SelectTrigger id="timezone">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
