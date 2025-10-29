@@ -22,12 +22,12 @@
 }
 
 .modeWork {
-  background: var(--color-accent);
+  background: var(--color-accent-primary);
   color: white;
 }
 
 .modeBreak {
-  background: var(--color-success);
+  background: var(--color-accent-hover);
   color: white;
 }
 
@@ -45,6 +45,7 @@
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
   margin-bottom: var(--spacing-4);
+  color: var(--color-accent-primary);
 }
 
 .sessions {
@@ -54,7 +55,7 @@
 
 .sessionsCount {
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: var(--color-accent-primary);
   font-size: 20px;
 }
 

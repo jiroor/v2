@@ -69,7 +69,7 @@
   font-weight: 300;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
-  color: var(--color-text-primary);
+  color: var(--color-accent-primary);
 }
 
 .controls {

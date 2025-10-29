@@ -1,13 +1,15 @@
 /* CSS Variables - Design System */
 :root {
-  /* Colors */
+  /* Colors - 落ち着いたオレンジを基調とした配色 */
   --color-bg-primary: #ffffff;
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #6b7280;
+  --color-accent-primary: #d97706;  /* 落ち着いたオレンジ（amber-600相当） */
+  --color-accent-hover: #b45309;    /* より濃いオレンジ（amber-700相当） */
   --color-border-light: #e5e7eb;
   --color-border: #d1d5db;
   --color-bg-secondary: #f9fafb;
-  --color-bg-hover: #f3f4f6;
+  --color-bg-hover: #fef3c7;  /* 薄いオレンジ（amber-100相当）でhover時に温かみ */
 
   /* Typography */
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;

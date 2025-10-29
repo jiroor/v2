@@ -36,10 +36,11 @@
 .toolCard:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: var(--color-bg-hover);
 }
 
 .toolCard:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-primary);
   outline-offset: 2px;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -50,11 +51,12 @@
   height: 48px;
   margin-bottom: var(--spacing-4);
   color: var(--color-text-primary);
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal), color var(--transition-normal);
 }
 
 .toolCard:hover .icon {
   transform: scale(1.1);
+  color: var(--color-accent-primary);
 }
 
 .toolCard h3 {
