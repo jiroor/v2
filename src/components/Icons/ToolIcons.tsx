@@ -2,13 +2,18 @@ interface IconProps {
   className?: string
 }
 
-// カウントダウンタイマー
+// カウントダウンタイマー（デジタル庁: history）
 export function CountdownIcon({ className }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="12" cy="13" r="9" />
-      <polyline points="12 8 12 13 15 15" />
-      <path d="M8 4 L16 4" />
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_320_58)">
+        <path fillRule="evenodd" clipRule="evenodd" d="M7.2 5.20031C10.9 1.90031 16.6 2.30031 19.9 6.00031C23.2 9.80031 22.8 15.5003 19.2 18.7003C17.4 20.3003 15.3 21.0003 13.2 21.0003C10.7 21.0003 8.2 20.0003 6.4 18.0003L7.5 17.0003C10.3 20.1003 15 20.4003 18.1 17.6003C21.2 14.8003 21.5 10.1003 18.8 7.00031C16 3.90031 11.3 3.60031 8.2 6.40031C6.6 7.80031 5.7 9.90031 5.7 12.0003L7.8 9.80031L8.9 10.9003L4.9 14.9003L1 10.9003L2 9.90031L4.2 11.9003C4.2 9.40031 5.3 6.90031 7.2 5.20031ZM12 12.7V7.5H13.5V12.1L16.7 15.3L15.7 16.4L12 12.7Z" fill="currentColor"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_320_58">
+          <rect width="24" height="24" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   )
 }
@@ -36,14 +41,18 @@ export function PomodoroIcon({ className }: IconProps) {
   )
 }
 
-// 文字数カウンター
+// 文字数カウンター（デジタル庁: documents）
 export function CharCounterIcon({ className }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M4 7 L4 19 L20 19 L20 7" />
-      <rect x="4" y="5" width="16" height="2" />
-      <path d="M8 11 L16 11" />
-      <path d="M8 15 L13 15" />
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_320_642)">
+        <path fillRule="evenodd" clipRule="evenodd" d="M6 4V20H18V4H6ZM4.5 2.5H19.5V21.5H4.5V2.5ZM7.5 7H16.5V8.5H7.5V7ZM7.5 11H16.5V12.5H7.5V11ZM16.5 15H7.5V16.5H16.5V15Z" fill="currentColor"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_320_642">
+          <rect width="24" height="24" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   )
 }
@@ -77,34 +86,34 @@ export function RandomStringIcon({ className }: IconProps) {
   )
 }
 
-// QRコード
+// QRコード（デジタル庁: code_reader）
 export function QRCodeIcon({ className }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="3" y="3" width="8" height="8" />
-      <rect x="5" y="5" width="4" height="4" fill="currentColor" />
-      <rect x="13" y="3" width="8" height="8" />
-      <rect x="15" y="5" width="4" height="4" fill="currentColor" />
-      <rect x="3" y="13" width="8" height="8" />
-      <rect x="5" y="15" width="4" height="4" fill="currentColor" />
-      <rect x="13" y="13" width="2" height="2" fill="currentColor" />
-      <rect x="16" y="13" width="2" height="2" fill="currentColor" />
-      <rect x="19" y="13" width="2" height="2" fill="currentColor" />
-      <rect x="13" y="16" width="2" height="2" fill="currentColor" />
-      <rect x="16" y="19" width="2" height="2" fill="currentColor" />
-      <rect x="19" y="16" width="2" height="2" fill="currentColor" />
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_320_618)">
+        <path fillRule="evenodd" clipRule="evenodd" d="M2.5 7.5H4V4H7.5V2.5H2.5V7.5ZM2.5 21.5H7.5V20H4V16.5H2.5V21.5ZM21.5 21.5H16.5V20H20V16.5H21.5V21.5ZM20 7.5H21.5V2.5H16.5V4H20V7.5ZM9.5 7.5V9.5H7.5V7.5H9.5ZM11 6H6V11H11V6ZM16.5 9.5V7.5H14.5V9.5H16.5ZM13 6H18V11H13V6ZM9.5 14.5V16.5H7.5V14.5H9.5ZM11 13H6V18H11V13ZM13 13H18V18H13V13Z" fill="currentColor"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_320_618">
+          <rect width="24" height="24" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   )
 }
 
-// パスワード生成
+// パスワード生成（デジタル庁: password）
 export function PasswordIcon({ className }: IconProps) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="3" y="11" width="18" height="10" rx="2" />
-      <path d="M7 11 L7 7 C7 4.8, 8.8 3, 11 3 L13 3 C15.2 3, 17 4.8, 17 7 L17 11" />
-      <circle cx="12" cy="16" r="1" fill="currentColor" />
-      <path d="M12 17 L12 18" strokeWidth="1.5" />
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_320_686)">
+        <path fillRule="evenodd" clipRule="evenodd" d="M16 8H18.5V17H5.5V8H14.5V6C14.5 4.6 13.4 3.5 12 3.5C10.6 3.5 9.5 4.6 9.5 6V6.5H8V6C8 3.8 9.8 2 12 2C14.2 2 16 3.8 16 6V8ZM7 9.5V15.5H17V9.5H7ZM7.5 20.5C7.5 21.3284 6.82843 22 6 22C5.17157 22 4.5 21.3284 4.5 20.5C4.5 19.6716 5.17157 19 6 19C6.82843 19 7.5 19.6716 7.5 20.5ZM10.5 20.5C10.5 19.7 11.2 19 12 19C12.8 19 13.5 19.7 13.5 20.5C13.5 21.3 12.8 22 12 22C11.2 22 10.5 21.3 10.5 20.5ZM18 22C18.8284 22 19.5 21.3284 19.5 20.5C19.5 19.6716 18.8284 19 18 19C17.1716 19 16.5 19.6716 16.5 20.5C16.5 21.3284 17.1716 22 18 22Z" fill="currentColor"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_320_686">
+          <rect width="24" height="24" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   )
 }
