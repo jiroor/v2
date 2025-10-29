@@ -4,11 +4,42 @@
   margin: 0 auto;
 }
 
+.titleWrapper {
+  position: relative;
+  margin-bottom: var(--spacing-6);
+}
+
 .title {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: var(--spacing-6);
   text-align: center;
+}
+
+.resultOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  text-align: center;
+  min-width: 200px;
+}
+
+.resultLabel {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: var(--spacing-1);
+  color: var(--color-text-secondary);
+}
+
+.resultWinner {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* ルーレット表示エリア */
@@ -45,41 +76,12 @@
   display: block;
 }
 
-/* 結果表示 */
-.result {
-  text-align: center;
-  margin-bottom: var(--spacing-6);
-  padding: var(--spacing-6);
-  background-color: var(--color-background);
-  border: 2px solid var(--color-border);
-  border-radius: var(--border-radius);
-  height: 135px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.resultLabel {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: var(--spacing-2);
-  color: var(--color-text-secondary);
-}
-
-.resultWinner {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.resultPlaceholder {
-  min-height: 1px;
-}
 
 /* コントロール */
 .controls {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-3);
+  gap: var(--spacing-4);
   margin-bottom: var(--spacing-8);
 }
 

@@ -96,7 +96,24 @@ function Roulette() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>ルーレット</h2>
+      <div className={styles.titleWrapper}>
+        <h2 className={styles.title}>ルーレット</h2>
+        {winner && (
+          <div className={styles.resultOverlay}>
+            <div className={styles.resultLabel}>当選</div>
+            <div
+              className={styles.resultWinner}
+              style={{
+                color: winner.color,
+                WebkitTextStroke: '2px #000',
+                paintOrder: 'stroke fill',
+              }}
+            >
+              {winner.label}
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* ルーレット表示エリア */}
       <div className={styles.rouletteWrapper}>
@@ -158,27 +175,13 @@ function Roulette() {
         </svg>
       </div>
 
-      {/* 結果表示 */}
-      <div className={styles.result} role="alert" aria-live="polite">
-        {winner ? (
-          <>
-            <div className={styles.resultLabel}>当選</div>
-            <div className={styles.resultWinner} style={{ color: winner.color }}>
-              {winner.label}
-            </div>
-          </>
-        ) : (
-          <div className={styles.resultPlaceholder}>&nbsp;</div>
-        )}
-      </div>
-
       {/* コントロール */}
       <div className={styles.controls}>
-        <Button onClick={handleSpin} disabled={spinning || items.length < 2} size="lg">
+        <Button onClick={handleSpin} disabled={spinning || items.length < 2} size="lg" className="min-w-[120px]">
           {spinning ? '回転中...' : '開始'}
         </Button>
         {winner && (
-          <Button onClick={handleReset} variant="secondary">
+          <Button onClick={handleReset} variant="secondary" size="lg" className="min-w-[120px]">
             もう一度
           </Button>
         )}
