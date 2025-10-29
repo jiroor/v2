@@ -13,6 +13,8 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './ColorPicker.module.css'
 
 function ColorPicker() {
@@ -95,6 +97,34 @@ function ColorPicker() {
       alert('コピーに失敗しました')
     }
   }
+
+  // HEXコードをコピー
+  const handleCopyHex = () => {
+    handleCopy(colorFormats.hex, 'hex')
+  }
+
+  // ランダムな色を生成
+  const handleRandomColor = () => {
+    const randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')
+    updateAllInputs(randomHex)
+  }
+
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: 'd',
+      description: 'HEXコードをコピー',
+      action: handleCopyHex,
+      meta: true,
+    },
+    {
+      key: 'r',
+      description: 'ランダムな色を生成',
+      action: handleRandomColor,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
 
   return (
     <div className={styles.container}>
@@ -184,6 +214,9 @@ function ColorPicker() {
           各形式の入力フィールドから直接入力することもできます。
         </p>
       </div>
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }

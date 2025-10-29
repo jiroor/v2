@@ -2,6 +2,8 @@ import { useState, useMemo } from 'react'
 import { countText } from '../../utils/textUtils'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './CharCounter.module.css'
 
 function CharCounter() {
@@ -12,6 +14,19 @@ function CharCounter() {
   const handleClear = () => {
     setText('')
   }
+
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: 'k',
+      description: 'クリア',
+      action: handleClear,
+      meta: true,
+      disabled: text.length === 0,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
 
   return (
     <div className={styles.container}>
@@ -48,6 +63,9 @@ function CharCounter() {
           クリア
         </Button>
       </div>
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }

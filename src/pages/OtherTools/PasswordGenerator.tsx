@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './PasswordGenerator.module.css'
 
 type PasswordStrength = 'weak' | 'medium' | 'strong'
@@ -104,6 +106,24 @@ function PasswordGenerator() {
     }
   }
 
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: ' ',
+      description: '生成',
+      action: handleGenerate,
+    },
+    {
+      key: 'd',
+      description: 'コピー',
+      action: handleCopy,
+      meta: true,
+      disabled: !generatedPassword,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>パスワード生成</h2>
@@ -196,6 +216,9 @@ function PasswordGenerator() {
           {copySuccess ? 'コピーしました！' : 'コピー'}
         </Button>
       </div>
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }
