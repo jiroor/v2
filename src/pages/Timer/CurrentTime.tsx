@@ -9,10 +9,13 @@ import {
 import { AlignCenterHorizontal, AlignCenterVertical } from 'lucide-react'
 import styles from './CurrentTime.module.css'
 
+type DateFormat = 'kanji' | 'slash'
+
 interface ClockSettings {
   timezone: string
   layout: 'horizontal' | 'vertical'
   showSeconds: boolean
+  dateFormat: DateFormat
 }
 
 export default function CurrentTime() {
@@ -21,6 +24,7 @@ export default function CurrentTime() {
     timezone: detectTimezone(),
     layout: 'horizontal',
     showSeconds: true,
+    dateFormat: 'kanji',
   })
 
   // フォーマットされた時刻
@@ -92,6 +96,24 @@ export default function CurrentTime() {
           </button>
         </div>
 
+        {/* 日付形式切り替え */}
+        <div className={styles.settingItem}>
+          <label htmlFor="dateFormat" className={styles.label}>
+            日付の表示方法
+          </label>
+          <select
+            id="dateFormat"
+            value={settings.dateFormat}
+            onChange={(e) =>
+              setSettings({ ...settings, dateFormat: e.target.value as DateFormat })
+            }
+            className={styles.select}
+          >
+            <option value="kanji">漢字表記（年月日）</option>
+            <option value="slash">スラッシュ区切り（/）</option>
+          </select>
+        </div>
+
         {/* 秒数表示切り替え */}
         <div className={styles.settingItem}>
           <label className={styles.checkboxLabel}>
@@ -117,7 +139,9 @@ export default function CurrentTime() {
         {/* 日付表示 */}
         <div className={styles.date}>
           <span>
-            {formattedDate.year}/{formattedDate.month}/{formattedDate.day}
+            {settings.dateFormat === 'slash'
+              ? `${formattedDate.year}/${formattedDate.month}/${formattedDate.day}`
+              : `${formattedDate.year}年${formattedDate.month}月${formattedDate.day}日`}
             （{formattedDate.weekday}）
           </span>
         </div>

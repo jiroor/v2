@@ -124,21 +124,23 @@ export function formatDate(
 ): { year: string; month: string; day: string; weekday: string } {
   const { locale = 'ja-JP' } = options
 
-  const year = new Intl.DateTimeFormat(locale, {
+  // 数値のみを取得するために en-US を使用
+  const year = new Intl.DateTimeFormat('en-US', {
     timeZone: timezone,
     year: 'numeric',
   }).format(date)
 
-  const month = new Intl.DateTimeFormat(locale, {
+  const month = new Intl.DateTimeFormat('en-US', {
     timeZone: timezone,
     month: '2-digit',
   }).format(date)
 
-  const day = new Intl.DateTimeFormat(locale, {
+  const day = new Intl.DateTimeFormat('en-US', {
     timeZone: timezone,
     day: '2-digit',
   }).format(date)
 
+  // 曜日は日本語で取得
   const weekday = new Intl.DateTimeFormat(locale, {
     timeZone: timezone,
     weekday: 'short',

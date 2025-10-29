@@ -30,7 +30,19 @@
   - チェックボックス
   - ラベル: 「秒数を表示」
 
+- **日付形式切り替え**
+  - ドロップダウン
+  - ラベル: 「日付の表示方法」
+  - オプション:
+    - `漢字表記（年月日）`: `2025年10月29日（水）`
+    - `スラッシュ区切り（/）`: `2025/10/29（水）`
+
 ## データ構造
+
+### 日付形式型
+```typescript
+type DateFormat = 'kanji' | 'slash'
+```
 
 ### State型
 ```typescript
@@ -38,6 +50,7 @@ interface ClockSettings {
   timezone: string              // 例: "Asia/Tokyo"
   layout: 'horizontal' | 'vertical'
   showSeconds: boolean
+  dateFormat: DateFormat        // 日付表示形式
 }
 ```
 
