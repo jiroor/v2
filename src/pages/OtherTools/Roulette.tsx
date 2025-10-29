@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -12,6 +12,8 @@ import {
   calculateWinnerRotation,
   getContrastTextColor,
 } from '../../utils/rouletteUtils'
+import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
+import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import styles from './Roulette.module.css'
 
 function Roulette() {
@@ -22,6 +24,7 @@ function Roulette() {
   const [rotation, setRotation] = useState(0)
   const [winner, setWinner] = useState<RouletteItem | null>(null)
   const [spinDuration, setSpinDuration] = useState(4000)
+  const labelInputRef = useRef<HTMLInputElement>(null)
 
   const handleAddItem = () => {
     if (!newLabel.trim()) return
@@ -87,6 +90,33 @@ function Roulette() {
     setWinner(null)
     setSpinning(false)
   }
+
+  const handleFocusInput = () => {
+    labelInputRef.current?.focus()
+  }
+
+  // キーボードショートカットの設定
+  const shortcuts = [
+    {
+      key: ' ',
+      description: '回転開始',
+      action: handleSpin,
+      disabled: spinning || items.length < 2,
+    },
+    {
+      key: 'r',
+      description: 'もう一度',
+      action: handleReset,
+      disabled: !winner,
+    },
+    {
+      key: 'a',
+      description: '項目追加（入力欄にフォーカス）',
+      action: handleFocusInput,
+    },
+  ]
+
+  useKeyboardShortcut(shortcuts)
 
   // ルーレット描画の設定
   const centerX = 200
@@ -207,6 +237,7 @@ function Roulette() {
             <div className={styles.formGroup}>
               <Label htmlFor="label">ラベル</Label>
               <Input
+                ref={labelInputRef}
                 id="label"
                 type="text"
                 value={newLabel}
@@ -265,6 +296,9 @@ function Roulette() {
           ))}
         </div>
       </div>
+
+      {/* ショートカットキー一覧 */}
+      <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
     </div>
   )
 }
