@@ -207,7 +207,11 @@ function Roulette() {
                 type="text"
                 value={newLabel}
                 onChange={(e) => setNewLabel(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
+                    handleAddItem()
+                  }
+                }}
                 placeholder="項目名を入力"
                 maxLength={20}
                 className="flex-1 min-w-0 h-10 min-h-10 rounded-l-none -ml-px"
