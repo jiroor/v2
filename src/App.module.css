@@ -30,11 +30,7 @@
 }
 
 /* Reset & Base Styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Note: box-sizing, margin, padding のリセットは Tailwind CSS v4 の Preflight が提供 */
 
 body {
   font-family: var(--font-family-base);

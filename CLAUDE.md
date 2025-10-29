@@ -382,6 +382,20 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - `Add stopwatch component`
 - `Update design system colors`
 
+## Tailwind CSS v4 使用時の重要ルール
+
+**絶対に守ること**：
+- **CSS Modulesや他のCSSファイルで`* { padding: 0; }`や`* { margin: 0; }`などのグローバルリセットを記述しない**
+- Tailwind CSS v4のPreflightが既に`@layer base`内でリセットを提供している
+- グローバルリセットを`@layer`の外に記述すると、CSS cascade layersの仕組みにより、Tailwind utilityクラスより優先度が高くなり、padding/marginが効かなくなる
+- `!important`を使うのは一時的な回避策であり、根本的な解決ではない
+- 問題が発生した場合は、まず`@layer`の外にあるグローバルスタイル（特に`* { }`セレクタ）を疑うこと
+
+**技術的背景**：
+- Tailwind CSS v4はCSS cascade layersを使用
+- レイヤーの優先順位: unlayered（最高） > `@layer utilities` > `@layer components` > `@layer base`
+- `@layer`の外にあるスタイルは"unlayered"として扱われ、すべてのlayered stylesより優先される
+
 ## 注意事項
 
 - 計算機系ツールは本プロジェクトのスコープ外
