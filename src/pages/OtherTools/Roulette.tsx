@@ -200,7 +200,7 @@ function Roulette() {
               onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
               placeholder="項目名を入力"
               maxLength={20}
-              className="flex-1 min-w-0 h-10"
+              className="flex-1 min-w-0 h-10 min-h-10"
             />
           </div>
           <Button
