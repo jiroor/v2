@@ -17,8 +17,8 @@
   transition: color var(--transition-normal);
 }
 
-.logo:hover {
-  color: var(--color-accent-primary);
+.logo:hover h1 {
+  transform: scale(1.05);
 }
 
 .logo:focus-visible {
@@ -28,8 +28,14 @@
 }
 
 .logo h1 {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform var(--transition-normal);
 }
 
 @media (max-width: 768px) {
@@ -38,6 +44,6 @@
   }
 
   .logo h1 {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
