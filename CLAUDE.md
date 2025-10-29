@@ -93,7 +93,20 @@
 - **コンポーネント**: 関数コンポーネント + Hooks
 - **型定義**: すべての props, state に型を定義
 - **CSS**: CSS Modules を使用し、グローバルスタイルを最小限に
-  - **!important 禁止**: CSSで `!important` は絶対に使用しない。適切な詳細度やインラインスタイルで対応すること
+  - **!important 禁止**: CSSで `!important` は絶対に使用しない
+  - **インラインスタイル禁止**: JSXの `style` 属性は使用しない
+  - **Tailwind併用時の詳細度制御**: shadcn/uiのスタイルを上書きする場合、要素セレクター + クラス + 属性セレクターで詳細度を上げる
+    ```css
+    /* 良い例 */
+    input.colorInput[type="color"] {
+      width: 60px;
+    }
+
+    /* 悪い例 */
+    .colorInput {
+      width: 60px !important;
+    }
+    ```
 - **命名規則**:
   - コンポーネント: PascalCase
   - 関数/変数: camelCase
