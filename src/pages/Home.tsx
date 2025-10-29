@@ -50,10 +50,10 @@ function Home() {
           <p>セキュアなパスワード生成</p>
         </Link>
 
-        <div className={styles.toolCard}>
+        <Link to="/other/colorpicker" className={styles.toolCard}>
           <h3>カラーピッカー</h3>
-          <p>HEX/RGB/HSL変換（準備中）</p>
-        </div>
+          <p>HEX/RGB/HSL変換</p>
+        </Link>
       </div>
     </div>
   )

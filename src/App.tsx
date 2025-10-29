@@ -9,6 +9,7 @@ import TextDiff from './pages/TextTools/TextDiff'
 import RandomString from './pages/TextTools/RandomString'
 import QRCodeGenerator from './pages/OtherTools/QRCodeGenerator'
 import PasswordGenerator from './pages/OtherTools/PasswordGenerator'
+import ColorPicker from './pages/OtherTools/ColorPicker'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/text/random" element={<RandomString />} />
             <Route path="/other/qrcode" element={<QRCodeGenerator />} />
             <Route path="/other/password" element={<PasswordGenerator />} />
+            <Route path="/other/colorpicker" element={<ColorPicker />} />
           </Routes>
         </main>
       </div>
