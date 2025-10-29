@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { generateRandomString } from '../../utils/randomStringUtils'
 import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Label } from '@/components/ui/label'
+import { Slider } from '@/components/ui/slider'
 import styles from './RandomString.module.css'
 
 function RandomString() {
@@ -46,14 +49,13 @@ function RandomString() {
 
       <div className={styles.optionsSection}>
         <div className={styles.optionGroup}>
-          <label className={styles.optionLabel}>文字列の長さ</label>
+          <Label className={styles.optionLabel}>文字列の長さ</Label>
           <div className={styles.lengthControl}>
-            <input
-              type="range"
-              min="4"
-              max="64"
-              value={length}
-              onChange={(e) => setLength(Number(e.target.value))}
+            <Slider
+              min={4}
+              max={64}
+              value={[length]}
+              onValueChange={(value) => setLength(value[0])}
               className={styles.slider}
             />
             <span className={styles.lengthValue}>{length}文字</span>
@@ -61,44 +63,40 @@ function RandomString() {
         </div>
 
         <div className={styles.optionGroup}>
-          <label className={styles.optionLabel}>文字種</label>
+          <Label className={styles.optionLabel}>文字種</Label>
           <div className={styles.checkboxGroup}>
-            <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+            <Label className={styles.checkboxLabel}>
+              <Checkbox
                 checked={includeUppercase}
-                onChange={(e) => setIncludeUppercase(e.target.checked)}
+                onCheckedChange={(checked) => setIncludeUppercase(checked === true)}
                 className={styles.checkbox}
               />
               大文字 (A-Z)
-            </label>
-            <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+            </Label>
+            <Label className={styles.checkboxLabel}>
+              <Checkbox
                 checked={includeLowercase}
-                onChange={(e) => setIncludeLowercase(e.target.checked)}
+                onCheckedChange={(checked) => setIncludeLowercase(checked === true)}
                 className={styles.checkbox}
               />
               小文字 (a-z)
-            </label>
-            <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+            </Label>
+            <Label className={styles.checkboxLabel}>
+              <Checkbox
                 checked={includeNumbers}
-                onChange={(e) => setIncludeNumbers(e.target.checked)}
+                onCheckedChange={(checked) => setIncludeNumbers(checked === true)}
                 className={styles.checkbox}
               />
               数字 (0-9)
-            </label>
-            <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
+            </Label>
+            <Label className={styles.checkboxLabel}>
+              <Checkbox
                 checked={includeSymbols}
-                onChange={(e) => setIncludeSymbols(e.target.checked)}
+                onCheckedChange={(checked) => setIncludeSymbols(checked === true)}
                 className={styles.checkbox}
               />
               記号 (!@#$...)
-            </label>
+            </Label>
           </div>
         </div>
       </div>

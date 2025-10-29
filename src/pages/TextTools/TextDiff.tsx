@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { calculateDiff } from '../../utils/textDiffUtils'
 import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
 import styles from './TextDiff.module.css'
 
 function TextDiff() {
@@ -25,8 +27,8 @@ function TextDiff() {
 
       <div className={styles.inputSection}>
         <div className={styles.inputGroup}>
-          <label className={styles.label}>オリジナルテキスト</label>
-          <textarea
+          <Label className={styles.label}>オリジナルテキスト</Label>
+          <Textarea
             value={originalText}
             onChange={(e) => setOriginalText(e.target.value)}
             placeholder="元のテキストを入力..."
@@ -35,8 +37,8 @@ function TextDiff() {
         </div>
 
         <div className={styles.inputGroup}>
-          <label className={styles.label}>比較テキスト</label>
-          <textarea
+          <Label className={styles.label}>比較テキスト</Label>
+          <Textarea
             value={modifiedText}
             onChange={(e) => setModifiedText(e.target.value)}
             placeholder="比較するテキストを入力..."

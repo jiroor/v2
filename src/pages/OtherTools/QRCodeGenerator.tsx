@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import QRCode from 'qrcode'
 import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
 import styles from './QRCodeGenerator.module.css'
 
 type QRSize = 128 | 256 | 512
@@ -62,8 +64,8 @@ function QRCodeGenerator() {
       <h2 className={styles.title}>QRコード生成</h2>
 
       <div className={styles.inputSection}>
-        <label className={styles.label}>テキスト / URL</label>
-        <textarea
+        <Label className={styles.label}>テキスト / URL</Label>
+        <Textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="URL、テキスト、電話番号などを入力..."

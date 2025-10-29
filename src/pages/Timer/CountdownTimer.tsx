@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { useTimer } from '../../hooks/useTimer'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import styles from './CountdownTimer.module.css'
 
 function CountdownTimer() {
@@ -63,7 +65,7 @@ function CountdownTimer() {
         <div className={styles.configSection}>
           <div className={styles.inputGroup}>
             <div className={styles.inputWrapper}>
-              <input
+              <Input
                 type="number"
                 min="0"
                 max="23"
@@ -71,11 +73,10 @@ function CountdownTimer() {
                 onChange={(e) => handleInputChange('hours', e.target.value)}
                 className={styles.input}
               />
-              <label className={styles.label}>時</label>
+              <Label className={styles.label}>時</Label>
             </div>
-            <span className={styles.separator}>:</span>
             <div className={styles.inputWrapper}>
-              <input
+              <Input
                 type="number"
                 min="0"
                 max="59"
@@ -83,11 +84,10 @@ function CountdownTimer() {
                 onChange={(e) => handleInputChange('minutes', e.target.value)}
                 className={styles.input}
               />
-              <label className={styles.label}>分</label>
+              <Label className={styles.label}>分</Label>
             </div>
-            <span className={styles.separator}>:</span>
             <div className={styles.inputWrapper}>
-              <input
+              <Input
                 type="number"
                 min="0"
                 max="59"
@@ -95,7 +95,7 @@ function CountdownTimer() {
                 onChange={(e) => handleInputChange('seconds', e.target.value)}
                 className={styles.input}
               />
-              <label className={styles.label}>秒</label>
+              <Label className={styles.label}>秒</Label>
             </div>
           </div>
         </div>

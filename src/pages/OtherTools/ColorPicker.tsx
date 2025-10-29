@@ -11,6 +11,8 @@ import {
   normalizeHex,
 } from '../../utils/colorUtils'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import styles from './ColorPicker.module.css'
 
 function ColorPicker() {
@@ -99,9 +101,9 @@ function ColorPicker() {
       <h2 className={styles.title}>カラーピッカー</h2>
 
       <div className={styles.pickerSection}>
-        <label className={styles.pickerLabel}>色を選択</label>
+        <Label className={styles.pickerLabel}>色を選択</Label>
         <div className={styles.pickerWrapper}>
-          <input
+          <Input
             type="color"
             value={selectedColor}
             onChange={handleColorChange}
@@ -113,9 +115,9 @@ function ColorPicker() {
 
       <div className={styles.formatsSection}>
         <div className={styles.formatGroup}>
-          <label className={styles.formatLabel}>HEX</label>
+          <Label className={styles.formatLabel}>HEX</Label>
           <div className={styles.formatInputWrapper}>
-            <input
+            <Input
               type="text"
               value={hexInput}
               onChange={handleHexInputChange}
@@ -131,9 +133,9 @@ function ColorPicker() {
         </div>
 
         <div className={styles.formatGroup}>
-          <label className={styles.formatLabel}>RGB</label>
+          <Label className={styles.formatLabel}>RGB</Label>
           <div className={styles.formatInputWrapper}>
-            <input
+            <Input
               type="text"
               value={rgbInput}
               onChange={handleRgbInputChange}
@@ -154,9 +156,9 @@ function ColorPicker() {
         </div>
 
         <div className={styles.formatGroup}>
-          <label className={styles.formatLabel}>HSL</label>
+          <Label className={styles.formatLabel}>HSL</Label>
           <div className={styles.formatInputWrapper}>
-            <input
+            <Input
               type="text"
               value={hslInput}
               onChange={handleHslInputChange}

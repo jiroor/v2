@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { countText } from '../../utils/textUtils'
 import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
 import styles from './CharCounter.module.css'
 
 function CharCounter() {
@@ -35,7 +36,7 @@ function CharCounter() {
         </div>
       </div>
 
-      <textarea
+      <Textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="ここにテキストを入力してください..."
