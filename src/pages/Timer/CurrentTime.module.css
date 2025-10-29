@@ -85,6 +85,45 @@
   cursor: pointer;
 }
 
+/* ボタングループ */
+.buttonGroup {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.buttonGroupButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-background);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.buttonGroupButton:hover {
+  border-color: var(--color-accent);
+  background: var(--color-background-secondary);
+}
+
+.buttonGroupButton.active {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+}
+
+/* チェックボックスグループ */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
 /* メイン表示エリア */
 .display {
   display: flex;

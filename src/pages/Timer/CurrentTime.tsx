@@ -76,91 +76,89 @@ export default function CurrentTime() {
         {/* レイアウト切り替え */}
         <div className={styles.settingItem}>
           <label className={styles.label}>レイアウト</label>
-          <button
-            onClick={() =>
-              setSettings({
-                ...settings,
-                layout: settings.layout === 'horizontal' ? 'vertical' : 'horizontal',
-              })
-            }
-            className={styles.toggleButton}
-            aria-label="レイアウト切り替え"
-          >
-            {settings.layout === 'horizontal' ? (
-              <>
-                <AlignCenterHorizontal size={20} />
-                <span>横組み</span>
-              </>
-            ) : (
-              <>
-                <AlignCenterVertical size={20} />
-                <span>縦組み</span>
-              </>
-            )}
-          </button>
+          <div className={styles.buttonGroup}>
+            <button
+              onClick={() => setSettings({ ...settings, layout: 'horizontal' })}
+              className={`${styles.buttonGroupButton} ${
+                settings.layout === 'horizontal' ? styles.active : ''
+              }`}
+            >
+              <AlignCenterHorizontal size={20} />
+              <span>横組み</span>
+            </button>
+            <button
+              onClick={() => setSettings({ ...settings, layout: 'vertical' })}
+              className={`${styles.buttonGroupButton} ${
+                settings.layout === 'vertical' ? styles.active : ''
+              }`}
+            >
+              <AlignCenterVertical size={20} />
+              <span>縦組み</span>
+            </button>
+          </div>
         </div>
 
         {/* 日付形式切り替え */}
         <div className={styles.settingItem}>
-          <label htmlFor="dateFormat" className={styles.label}>
-            日付の表示方法
-          </label>
-          <select
-            id="dateFormat"
-            value={settings.dateFormat}
-            onChange={(e) =>
-              setSettings({ ...settings, dateFormat: e.target.value as DateFormat })
-            }
-            className={styles.select}
-          >
-            <option value="kanji">漢字表記（年月日）</option>
-            <option value="slash">スラッシュ区切り（/）</option>
-          </select>
+          <label className={styles.label}>日付の表示方法</label>
+          <div className={styles.buttonGroup}>
+            <button
+              onClick={() => setSettings({ ...settings, dateFormat: 'kanji' })}
+              className={`${styles.buttonGroupButton} ${
+                settings.dateFormat === 'kanji' ? styles.active : ''
+              }`}
+            >
+              <span>年月日</span>
+            </button>
+            <button
+              onClick={() => setSettings({ ...settings, dateFormat: 'slash' })}
+              className={`${styles.buttonGroupButton} ${
+                settings.dateFormat === 'slash' ? styles.active : ''
+              }`}
+            >
+              <span>/</span>
+            </button>
+          </div>
         </div>
 
-        {/* 秒数表示切り替え */}
+        {/* 表示項目 */}
         <div className={styles.settingItem}>
-          <label className={styles.checkboxLabel}>
-            <input
-              type="checkbox"
-              checked={settings.showSeconds}
-              onChange={(e) =>
-                setSettings({ ...settings, showSeconds: e.target.checked })
-              }
-              className={styles.checkbox}
-            />
-            秒数を表示
-          </label>
-        </div>
-
-        {/* 年表示切り替え */}
-        <div className={styles.settingItem}>
-          <label className={styles.checkboxLabel}>
-            <input
-              type="checkbox"
-              checked={settings.showYear}
-              onChange={(e) =>
-                setSettings({ ...settings, showYear: e.target.checked })
-              }
-              className={styles.checkbox}
-            />
-            年を表示
-          </label>
-        </div>
-
-        {/* 曜日表示切り替え */}
-        <div className={styles.settingItem}>
-          <label className={styles.checkboxLabel}>
-            <input
-              type="checkbox"
-              checked={settings.showWeekday}
-              onChange={(e) =>
-                setSettings({ ...settings, showWeekday: e.target.checked })
-              }
-              className={styles.checkbox}
-            />
-            曜日を表示
-          </label>
+          <label className={styles.label}>表示項目</label>
+          <div className={styles.checkboxGroup}>
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={settings.showYear}
+                onChange={(e) =>
+                  setSettings({ ...settings, showYear: e.target.checked })
+                }
+                className={styles.checkbox}
+              />
+              年
+            </label>
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={settings.showWeekday}
+                onChange={(e) =>
+                  setSettings({ ...settings, showWeekday: e.target.checked })
+                }
+                className={styles.checkbox}
+              />
+              曜日
+            </label>
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={settings.showSeconds}
+                onChange={(e) =>
+                  setSettings({ ...settings, showSeconds: e.target.checked })
+                }
+                className={styles.checkbox}
+              />
+              秒
+            </label>
+          </div>
         </div>
       </div>
 
