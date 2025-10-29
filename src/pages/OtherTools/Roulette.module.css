@@ -65,6 +65,10 @@
   background-color: var(--color-background);
   border: 2px solid var(--color-border);
   border-radius: var(--border-radius);
+  height: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .resultLabel {
@@ -77,6 +81,10 @@
 .resultWinner {
   font-size: 32px;
   font-weight: bold;
+}
+
+.resultPlaceholder {
+  min-height: 1px;
 }
 
 /* コントロール */

@@ -158,14 +158,18 @@ function Roulette() {
       </div>
 
       {/* 結果表示 */}
-      {winner && (
-        <div className={styles.result} role="alert" aria-live="polite">
-          <div className={styles.resultLabel}>当選</div>
-          <div className={styles.resultWinner} style={{ color: winner.color }}>
-            {winner.label}
-          </div>
-        </div>
-      )}
+      <div className={styles.result} role="alert" aria-live="polite">
+        {winner ? (
+          <>
+            <div className={styles.resultLabel}>当選</div>
+            <div className={styles.resultWinner} style={{ color: winner.color }}>
+              {winner.label}
+            </div>
+          </>
+        ) : (
+          <div className={styles.resultPlaceholder}>&nbsp;</div>
+        )}
+      </div>
 
       {/* コントロール */}
       <div className={styles.controls}>
