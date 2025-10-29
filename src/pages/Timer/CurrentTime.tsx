@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/select'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
 import styles from './CurrentTime.module.css'
 
 type DateFormat = 'kanji' | 'slash'
@@ -121,49 +122,45 @@ export default function CurrentTime() {
 
         {/* レイアウト切り替え */}
         <div className={styles.settingItem}>
-          <label className={styles.label}>レイアウト</label>
+          <Label className={styles.label}>レイアウト</Label>
           <div className={styles.buttonGroup}>
-            <button
+            <Button
               onClick={() => setSettings({ ...settings, layout: 'horizontal' })}
-              className={`${styles.buttonGroupButton} ${
-                settings.layout === 'horizontal' ? styles.active : ''
-              }`}
+              variant={settings.layout === 'horizontal' ? 'default' : 'outline'}
+              className={styles.buttonGroupButton}
             >
               <AlignCenterHorizontal size={20} />
               <span>横組み</span>
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setSettings({ ...settings, layout: 'vertical' })}
-              className={`${styles.buttonGroupButton} ${
-                settings.layout === 'vertical' ? styles.active : ''
-              }`}
+              variant={settings.layout === 'vertical' ? 'default' : 'outline'}
+              className={styles.buttonGroupButton}
             >
               <AlignCenterVertical size={20} />
               <span>縦組み</span>
-            </button>
+            </Button>
           </div>
         </div>
 
         {/* 日付形式切り替え */}
         <div className={styles.settingItem}>
-          <label className={styles.label}>日付の表示方法</label>
+          <Label className={styles.label}>日付の表示方法</Label>
           <div className={styles.buttonGroup}>
-            <button
+            <Button
               onClick={() => setSettings({ ...settings, dateFormat: 'kanji' })}
-              className={`${styles.buttonGroupButton} ${
-                settings.dateFormat === 'kanji' ? styles.active : ''
-              }`}
+              variant={settings.dateFormat === 'kanji' ? 'default' : 'outline'}
+              className={styles.buttonGroupButton}
             >
               <span>年月日</span>
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setSettings({ ...settings, dateFormat: 'slash' })}
-              className={`${styles.buttonGroupButton} ${
-                settings.dateFormat === 'slash' ? styles.active : ''
-              }`}
+              variant={settings.dateFormat === 'slash' ? 'default' : 'outline'}
+              className={styles.buttonGroupButton}
             >
               <span>/</span>
-            </button>
+            </Button>
           </div>
         </div>
 

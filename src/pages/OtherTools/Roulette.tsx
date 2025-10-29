@@ -284,14 +284,16 @@ function Roulette() {
                 maxLength={20}
                 aria-label="項目ラベル"
               />
-              <button
+              <Button
                 onClick={() => handleDeleteItem(item.id)}
+                variant="ghost"
+                size="icon"
                 className={styles.deleteButton}
                 aria-label={`${item.label}を削除`}
                 disabled={items.length <= 2}
               >
                 <Trash2 size={18} />
-              </button>
+              </Button>
             </div>
           ))}
         </div>
