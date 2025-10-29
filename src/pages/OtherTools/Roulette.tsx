@@ -10,6 +10,7 @@ import {
   createArcPath,
   calculateTextPosition,
   calculateWinnerRotation,
+  getContrastTextColor,
 } from '../../utils/rouletteUtils'
 import styles from './Roulette.module.css'
 
@@ -138,7 +139,7 @@ function Roulette() {
                   y={textPos.y}
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  fill="#fff"
+                  fill={getContrastTextColor(item.color)}
                   fontSize={items.length > 8 ? '12' : '14'}
                   fontWeight="bold"
                   style={{

@@ -145,3 +145,21 @@ export const generateRandomColor = (): string => {
   ]
   return colors[Math.floor(Math.random() * colors.length)]
 }
+
+/**
+ * 背景色の明度に基づいて、適切なテキスト色（白または黒）を返す
+ * WCAG基準に基づく相対輝度計算を使用
+ */
+export const getContrastTextColor = (backgroundColor: string): string => {
+  // HEX色をRGBに変換
+  const hex = backgroundColor.replace('#', '')
+  const r = parseInt(hex.substring(0, 2), 16)
+  const g = parseInt(hex.substring(2, 4), 16)
+  const b = parseInt(hex.substring(4, 6), 16)
+
+  // 相対輝度を計算（WCAG基準）
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+
+  // 輝度が0.5以上なら暗い色（黒）、未満なら明るい色（白）
+  return luminance > 0.5 ? '#000' : '#fff'
+}
