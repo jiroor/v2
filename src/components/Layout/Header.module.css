@@ -13,6 +13,18 @@
 .logo {
   text-decoration: none;
   color: var(--color-text-primary);
+  cursor: pointer;
+  transition: color var(--transition-normal);
+}
+
+.logo:hover {
+  color: var(--color-accent);
+}
+
+.logo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .logo h1 {
