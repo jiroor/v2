@@ -20,9 +20,9 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-11 px-4 py-2", // 44px (WCAG推奨サイズ)
-        sm: "h-10 rounded-md px-3", // 40px
-        lg: "h-12 rounded-md px-8", // 48px
+        default: "h-11 px-6 py-2", // 44px (WCAG推奨サイズ), 左右24px余白
+        sm: "h-10 rounded-md px-4", // 40px, 左右16px余白
+        lg: "h-12 rounded-md px-8", // 48px, 左右32px余白
         icon: "h-11 w-11", // 44px (WCAG推奨サイズ)
       },
     },
