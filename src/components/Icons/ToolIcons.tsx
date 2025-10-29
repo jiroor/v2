@@ -9,6 +9,7 @@ import {
   QrCode,
   Lock,
   Palette,
+  CircleDot,
 } from 'lucide-react'
 
 interface IconProps {
@@ -63,4 +64,9 @@ export function PasswordIcon({ className }: IconProps) {
 // カラーピッカー
 export function ColorPickerIcon({ className }: IconProps) {
   return <Palette className={className} />
+}
+
+// ルーレット
+export function RouletteIcon({ className }: IconProps) {
+  return <CircleDot className={className} />
 }

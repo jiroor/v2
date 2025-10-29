@@ -11,6 +11,7 @@ import RandomString from './pages/TextTools/RandomString'
 import QRCodeGenerator from './pages/OtherTools/QRCodeGenerator'
 import PasswordGenerator from './pages/OtherTools/PasswordGenerator'
 import ColorPicker from './pages/OtherTools/ColorPicker'
+import Roulette from './pages/OtherTools/Roulette'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/other/qrcode" element={<QRCodeGenerator />} />
             <Route path="/other/password" element={<PasswordGenerator />} />
             <Route path="/other/colorpicker" element={<ColorPicker />} />
+            <Route path="/other/roulette" element={<Roulette />} />
           </Routes>
         </main>
       </div>

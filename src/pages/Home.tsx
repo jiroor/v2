@@ -10,6 +10,7 @@ import {
   QRCodeIcon,
   PasswordIcon,
   ColorPickerIcon,
+  RouletteIcon,
 } from '../components/Icons/ToolIcons'
 import styles from './Home.module.css'
 
@@ -80,6 +81,12 @@ function Home() {
           <ColorPickerIcon className={styles.icon} />
           <h3>カラーピッカー</h3>
           <p>HEX/RGB/HSL変換</p>
+        </Link>
+
+        <Link to="/other/roulette" className={styles.toolCard}>
+          <RouletteIcon className={styles.icon} />
+          <h3>ルーレット</h3>
+          <p>ランダム抽選ツール</p>
         </Link>
       </div>
     </div>
