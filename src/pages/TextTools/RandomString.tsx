@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { generateRandomString } from '../../utils/randomStringUtils'
+import { Button } from '@/components/ui/button'
 import styles from './RandomString.module.css'
 
 function RandomString() {
@@ -103,9 +104,9 @@ function RandomString() {
       </div>
 
       <div className={styles.controls}>
-        <button onClick={handleGenerate} className={styles.button}>
+        <Button onClick={handleGenerate}>
           生成
-        </button>
+        </Button>
       </div>
 
       <div className={styles.resultSection}>
@@ -115,13 +116,12 @@ function RandomString() {
             <span className={styles.emptyState}>生成ボタンをクリックしてください</span>
           )}
         </div>
-        <button
+        <Button
           onClick={handleCopy}
           disabled={!generatedString}
-          className={styles.copyButton}
         >
           {copySuccess ? 'コピーしました！' : 'コピー'}
-        </button>
+        </Button>
       </div>
     </div>
   )

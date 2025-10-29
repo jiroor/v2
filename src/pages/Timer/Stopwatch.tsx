@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { useStopwatch } from '../../hooks/useStopwatch'
+import { Button } from '@/components/ui/button'
 import styles from './Stopwatch.module.css'
 
 function Stopwatch() {
@@ -38,24 +39,24 @@ function Stopwatch() {
 
       <div className={styles.controls}>
         {!isRunning ? (
-          <button onClick={start} className={styles.buttonPrimary}>
+          <Button onClick={start}>
             スタート
-          </button>
+          </Button>
         ) : (
-          <button onClick={stop} className={styles.buttonSecondary}>
+          <Button onClick={stop} variant="secondary">
             ストップ
-          </button>
+          </Button>
         )}
-        <button
+        <Button
           onClick={addLap}
-          className={styles.buttonSecondary}
+          variant="secondary"
           disabled={!isRunning}
         >
           ラップ
-        </button>
-        <button onClick={reset} className={styles.buttonSecondary}>
+        </Button>
+        <Button onClick={reset} variant="secondary">
           リセット
-        </button>
+        </Button>
       </div>
 
       {laps.length > 0 && (

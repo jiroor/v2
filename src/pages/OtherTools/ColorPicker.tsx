@@ -10,6 +10,7 @@ import {
   isValidHex,
   normalizeHex,
 } from '../../utils/colorUtils'
+import { Button } from '@/components/ui/button'
 import styles from './ColorPicker.module.css'
 
 function ColorPicker() {
@@ -121,12 +122,11 @@ function ColorPicker() {
               className={styles.formatInput}
               placeholder="#3B82F6"
             />
-            <button
+            <Button
               onClick={() => handleCopy(colorFormats.hex, 'hex')}
-              className={styles.copyButton}
             >
               {copySuccess === 'hex' ? 'コピー済み' : 'コピー'}
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -140,17 +140,16 @@ function ColorPicker() {
               className={styles.formatInput}
               placeholder="rgb(59, 130, 246)"
             />
-            <button
+            <Button
               onClick={() =>
                 handleCopy(
                   formatRgb(colorFormats.rgb.r, colorFormats.rgb.g, colorFormats.rgb.b),
                   'rgb'
                 )
               }
-              className={styles.copyButton}
             >
               {copySuccess === 'rgb' ? 'コピー済み' : 'コピー'}
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -164,17 +163,16 @@ function ColorPicker() {
               className={styles.formatInput}
               placeholder="hsl(217, 91%, 60%)"
             />
-            <button
+            <Button
               onClick={() =>
                 handleCopy(
                   formatHsl(colorFormats.hsl.h, colorFormats.hsl.s, colorFormats.hsl.l),
                   'hsl'
                 )
               }
-              className={styles.copyButton}
             >
               {copySuccess === 'hsl' ? 'コピー済み' : 'コピー'}
-            </button>
+            </Button>
           </div>
         </div>
       </div>

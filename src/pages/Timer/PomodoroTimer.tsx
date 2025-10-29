@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { usePomodoro } from '../../hooks/usePomodoro'
+import { Button } from '@/components/ui/button'
 import styles from './PomodoroTimer.module.css'
 
 function PomodoroTimer() {
@@ -40,12 +41,12 @@ function PomodoroTimer() {
       </div>
 
       <div className={styles.controls}>
-        <button onClick={handleStartPause} className={styles.button}>
+        <Button onClick={handleStartPause}>
           {isRunning ? '一時停止' : '開始'}
-        </button>
-        <button onClick={reset} className={`${styles.button} ${styles.buttonSecondary}`}>
+        </Button>
+        <Button onClick={reset} variant="secondary">
           リセット
-        </button>
+        </Button>
       </div>
 
       <p className={styles.description}>

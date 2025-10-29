@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { generateRandomString } from '../../utils/randomStringUtils'
+import { Button } from '@/components/ui/button'
 import styles from './PasswordGenerator.module.css'
 
 type PasswordStrength = 'weak' | 'medium' | 'strong'
@@ -164,9 +165,9 @@ function PasswordGenerator() {
       </div>
 
       <div className={styles.controls}>
-        <button onClick={handleGenerate} className={styles.button}>
+        <Button onClick={handleGenerate}>
           生成
-        </button>
+        </Button>
       </div>
 
       <div className={styles.resultSection}>
@@ -190,13 +191,12 @@ function PasswordGenerator() {
             <span className={styles.emptyState}>生成ボタンをクリックしてください</span>
           )}
         </div>
-        <button
+        <Button
           onClick={handleCopy}
           disabled={!generatedPassword}
-          className={styles.copyButton}
         >
           {copySuccess ? 'コピーしました！' : 'コピー'}
-        </button>
+        </Button>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { countText } from '../../utils/textUtils'
+import { Button } from '@/components/ui/button'
 import styles from './CharCounter.module.css'
 
 function CharCounter() {
@@ -42,9 +43,9 @@ function CharCounter() {
       />
 
       <div className={styles.controls}>
-        <button onClick={handleClear} className={styles.buttonSecondary}>
+        <Button onClick={handleClear} variant="secondary">
           クリア
-        </button>
+        </Button>
       </div>
     </div>
   )

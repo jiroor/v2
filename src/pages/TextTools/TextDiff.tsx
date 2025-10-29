@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { calculateDiff } from '../../utils/textDiffUtils'
+import { Button } from '@/components/ui/button'
 import styles from './TextDiff.module.css'
 
 function TextDiff() {
@@ -45,9 +46,9 @@ function TextDiff() {
       </div>
 
       <div className={styles.controls}>
-        <button onClick={handleClear} className={styles.buttonSecondary}>
+        <Button onClick={handleClear} variant="secondary">
           クリア
-        </button>
+        </Button>
       </div>
 
       <div className={styles.resultSection}>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import QRCode from 'qrcode'
+import { Button } from '@/components/ui/button'
 import styles from './QRCodeGenerator.module.css'
 
 type QRSize = 128 | 256 | 512
@@ -73,24 +74,24 @@ function QRCodeGenerator() {
       <div className={styles.sizeSection}>
         <label className={styles.label}>サイズ</label>
         <div className={styles.sizeButtons}>
-          <button
+          <Button
             onClick={() => setSize(128)}
-            className={`${styles.sizeButton} ${size === 128 ? styles.active : ''}`}
+            variant={size === 128 ? 'default' : 'secondary'}
           >
             小 (128px)
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => setSize(256)}
-            className={`${styles.sizeButton} ${size === 256 ? styles.active : ''}`}
+            variant={size === 256 ? 'default' : 'secondary'}
           >
             中 (256px)
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => setSize(512)}
-            className={`${styles.sizeButton} ${size === 512 ? styles.active : ''}`}
+            variant={size === 512 ? 'default' : 'secondary'}
           >
             大 (512px)
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -105,19 +106,18 @@ function QRCodeGenerator() {
       </div>
 
       <div className={styles.controls}>
-        <button
+        <Button
           onClick={handleDownload}
           disabled={!text}
-          className={styles.button}
         >
           ダウンロード
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleClear}
-          className={`${styles.button} ${styles.buttonSecondary}`}
+          variant="secondary"
         >
           クリア
-        </button>
+        </Button>
       </div>
     </div>
   )

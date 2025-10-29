@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useTimer } from '../../hooks/useTimer'
+import { Button } from '@/components/ui/button'
 import styles from './CountdownTimer.module.css'
 
 function CountdownTimer() {
@@ -108,21 +109,20 @@ function CountdownTimer() {
 
       <div className={styles.controls}>
         {!isRunning ? (
-          <button
+          <Button
             onClick={handleStart}
-            className={styles.buttonPrimary}
             disabled={initialTime === 0}
           >
             スタート
-          </button>
+          </Button>
         ) : (
-          <button onClick={stop} className={styles.buttonSecondary}>
+          <Button onClick={stop} variant="secondary">
             ストップ
-          </button>
+          </Button>
         )}
-        <button onClick={handleReset} className={styles.buttonSecondary}>
+        <Button onClick={handleReset} variant="secondary">
           リセット
-        </button>
+        </Button>
       </div>
     </div>
   )
