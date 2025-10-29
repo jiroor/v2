@@ -20,6 +20,7 @@ function Roulette() {
   const [spinning, setSpinning] = useState(false)
   const [rotation, setRotation] = useState(0)
   const [winner, setWinner] = useState<RouletteItem | null>(null)
+  const [spinDuration, setSpinDuration] = useState(4000)
 
   const handleAddItem = () => {
     if (!newLabel.trim()) return
@@ -63,6 +64,10 @@ function Roulette() {
     setSpinning(true)
     setWinner(null)
 
+    // 回転時間を3.5秒〜5.5秒でランダムに変動
+    const randomDuration = 3500 + Math.random() * 2000
+    setSpinDuration(randomDuration)
+
     const { winnerIndex, finalRotation } = calculateWinnerRotation(
       items.length,
       rotation
@@ -74,7 +79,7 @@ function Roulette() {
     setTimeout(() => {
       setWinner(items[winnerIndex])
       setSpinning(false)
-    }, 4000)
+    }, randomDuration)
   }
 
   const handleReset = () => {
@@ -102,7 +107,7 @@ function Roulette() {
           viewBox="0 0 400 400"
           style={{
             transform: `rotate(${rotation}deg)`,
-            transition: spinning ? 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)' : 'none',
+            transition: spinning ? `transform ${spinDuration}ms cubic-bezier(0.17, 0.67, 0.12, 0.99)` : 'none',
           }}
         >
           {items.map((item, index) => {
