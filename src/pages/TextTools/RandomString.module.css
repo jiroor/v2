@@ -113,8 +113,7 @@
   cursor: pointer;
   /* タッチ領域を44pxに拡大（視覚的には24px） */
   padding: 10px;
-  margin: -10px -10px -10px -10px;
-  margin-right: 0;  /* 右側のマージンを打ち消してラベルとの間隔を確保 */
+  margin: -10px 0;  /* 上下のみ負のマージン、左右は0 */
 }
 
 .checkbox:focus-visible {
