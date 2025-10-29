@@ -27,7 +27,8 @@
 
 .milliseconds {
   font-size: 48px;
-  color: var(--color-text-secondary);
+  color: var(--color-accent-primary);
+  opacity: 0.8;
 }
 
 .controls {
