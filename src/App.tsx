@@ -8,6 +8,7 @@ import CharCounter from './pages/TextTools/CharCounter'
 import TextDiff from './pages/TextTools/TextDiff'
 import RandomString from './pages/TextTools/RandomString'
 import QRCodeGenerator from './pages/OtherTools/QRCodeGenerator'
+import PasswordGenerator from './pages/OtherTools/PasswordGenerator'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/text/diff" element={<TextDiff />} />
             <Route path="/text/random" element={<RandomString />} />
             <Route path="/other/qrcode" element={<QRCodeGenerator />} />
+            <Route path="/other/password" element={<PasswordGenerator />} />
           </Routes>
         </main>
       </div>
