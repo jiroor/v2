@@ -16,9 +16,9 @@ import Roulette from './pages/OtherTools/Roulette'
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="main-content">
+        <main className="flex-1 px-6 py-6 md:px-4 md:py-4 max-w-screen-xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/timer/countdown" element={<CountdownTimer />} />

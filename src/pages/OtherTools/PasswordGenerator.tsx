@@ -6,7 +6,6 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
-import styles from './PasswordGenerator.module.css'
 
 type PasswordStrength = 'weak' | 'medium' | 'strong'
 
@@ -87,11 +86,11 @@ function PasswordGenerator() {
   const getStrengthClass = () => {
     switch (passwordStrength.strength) {
       case 'weak':
-        return styles.strengthWeak
+        return 'bg-[#ef4444]'
       case 'medium':
-        return styles.strengthMedium
+        return 'bg-[#f59e0b]'
       case 'strong':
-        return styles.strengthStrong
+        return 'bg-[#10b981]'
     }
   }
 
@@ -125,56 +124,56 @@ function PasswordGenerator() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>パスワード生成</h2>
+    <div className="max-w-[800px] mx-auto py-8 px-4">
+      <h2 className="text-2xl font-semibold mb-8 text-center">パスワード生成</h2>
 
-      <div className={styles.optionsSection}>
-        <div className={styles.optionGroup}>
-          <Label className={styles.optionLabel}>パスワードの長さ</Label>
-          <div className={styles.lengthControl}>
+      <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-6">
+        <div className="mb-6">
+          <Label className="text-base mb-3">パスワードの長さ</Label>
+          <div className="flex items-center gap-4">
             <Slider
               min={8}
               max={64}
               value={[length]}
               onValueChange={(value) => setLength(value[0])}
-              className={styles.slider}
+              className="flex-1"
             />
-            <span className={styles.lengthValue}>{length}文字</span>
+            <span className="text-lg font-semibold text-[#d97706] min-w-[70px] text-right">{length}文字</span>
           </div>
         </div>
 
-        <div className={styles.optionGroup}>
-          <Label className={styles.optionLabel}>文字種</Label>
-          <div className={styles.checkboxGroup}>
-            <label className={styles.checkboxLabel}>
+        <div>
+          <Label className="text-base mb-3">文字種</Label>
+          <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+            <label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors duration-200 hover:bg-gray-100">
               <Checkbox
                 checked={includeUppercase}
                 onCheckedChange={(checked) => setIncludeUppercase(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5 focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2"
               />
               大文字 (A-Z)
             </label>
-            <label className={styles.checkboxLabel}>
+            <label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors duration-200 hover:bg-gray-100">
               <Checkbox
                 checked={includeLowercase}
                 onCheckedChange={(checked) => setIncludeLowercase(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5 focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2"
               />
               小文字 (a-z)
             </label>
-            <label className={styles.checkboxLabel}>
+            <label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors duration-200 hover:bg-gray-100">
               <Checkbox
                 checked={includeNumbers}
                 onCheckedChange={(checked) => setIncludeNumbers(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5 focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2"
               />
               数字 (0-9)
             </label>
-            <label className={styles.checkboxLabel}>
+            <label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors duration-200 hover:bg-gray-100">
               <Checkbox
                 checked={includeSymbols}
                 onCheckedChange={(checked) => setIncludeSymbols(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5 focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2"
               />
               記号 (!@#$...)
             </label>
@@ -182,31 +181,31 @@ function PasswordGenerator() {
         </div>
       </div>
 
-      <div className={styles.controls}>
+      <div className="flex gap-4 mb-6 max-md:flex-col">
         <Button onClick={handleGenerate}>
           生成
         </Button>
       </div>
 
-      <div className={styles.resultSection}>
+      <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-4">
         {generatedPassword && (
-          <div className={styles.strengthIndicator}>
-            <span className={styles.strengthLabel}>強度:</span>
-            <div className={styles.strengthBar}>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-sm font-medium text-gray-600">強度:</span>
+            <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
               <div
-                className={`${styles.strengthFill} ${getStrengthClass()}`}
+                className={`h-full transition-[width,background] duration-200 rounded-full ${getStrengthClass()}`}
                 style={{ width: `${passwordStrength.score}%` }}
               />
             </div>
-            <span className={`${styles.strengthText} ${getStrengthClass()}`}>
+            <span className={`text-sm font-semibold min-w-[50px] ${getStrengthClass()}`}>
               {getStrengthText()}
             </span>
           </div>
         )}
 
-        <div className={styles.resultDisplay}>
+        <div className="bg-white border border-gray-200 rounded-md p-4 mb-4 font-mono text-lg break-all min-h-[60px] flex items-center justify-center text-gray-900 max-md:text-base">
           {generatedPassword || (
-            <span className={styles.emptyState}>生成ボタンをクリックしてください</span>
+            <span className="text-gray-600 italic">生成ボタンをクリックしてください</span>
           )}
         </div>
         <Button

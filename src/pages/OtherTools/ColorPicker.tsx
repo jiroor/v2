@@ -15,7 +15,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
-import styles from './ColorPicker.module.css'
 
 function ColorPicker() {
   const [selectedColor, setSelectedColor] = useState('#3B82F6')
@@ -127,31 +126,34 @@ function ColorPicker() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>カラーピッカー</h2>
+    <div className="max-w-[600px] mx-auto py-8 px-4">
+      <h2 className="text-2xl font-semibold mb-8 text-center">カラーピッカー</h2>
 
-      <div className={styles.pickerSection}>
-        <Label className={styles.pickerLabel}>色を選択</Label>
-        <div className={styles.pickerWrapper}>
+      <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-6">
+        <Label className="text-base mb-4">色を選択</Label>
+        <div className="flex gap-4 items-center">
           <Input
             type="color"
             value={selectedColor}
             onChange={handleColorChange}
-            className={styles.colorInput}
+            className="w-20 h-20 border-2 border-gray-300 rounded-md cursor-pointer transition-colors hover:border-gray-900"
           />
-          <div className={styles.colorPreview} style={{ backgroundColor: selectedColor }} />
+          <div
+            className="flex-1 h-[120px] border-2 border-gray-200 rounded-md transition-all"
+            style={{ backgroundColor: selectedColor }}
+          />
         </div>
       </div>
 
-      <div className={styles.formatsSection}>
-        <div className={styles.formatGroup}>
-          <Label className={styles.formatLabel}>HEX</Label>
-          <div className={styles.formatInputWrapper}>
+      <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-4">
+        <div className="mb-4">
+          <Label>HEX</Label>
+          <div className="flex gap-3">
             <Input
               type="text"
               value={hexInput}
               onChange={handleHexInputChange}
-              className={styles.formatInput}
+              className="flex-1 p-3 text-[15px] font-mono bg-white border border-gray-300 rounded-md transition-colors focus:border-gray-900"
               placeholder="#3B82F6"
             />
             <Button
@@ -162,14 +164,14 @@ function ColorPicker() {
           </div>
         </div>
 
-        <div className={styles.formatGroup}>
-          <Label className={styles.formatLabel}>RGB</Label>
-          <div className={styles.formatInputWrapper}>
+        <div className="mb-4">
+          <Label>RGB</Label>
+          <div className="flex gap-3">
             <Input
               type="text"
               value={rgbInput}
               onChange={handleRgbInputChange}
-              className={styles.formatInput}
+              className="flex-1 p-3 text-[15px] font-mono bg-white border border-gray-300 rounded-md transition-colors focus:border-gray-900"
               placeholder="rgb(59, 130, 246)"
             />
             <Button
@@ -185,14 +187,14 @@ function ColorPicker() {
           </div>
         </div>
 
-        <div className={styles.formatGroup}>
-          <Label className={styles.formatLabel}>HSL</Label>
-          <div className={styles.formatInputWrapper}>
+        <div>
+          <Label>HSL</Label>
+          <div className="flex gap-3">
             <Input
               type="text"
               value={hslInput}
               onChange={handleHslInputChange}
-              className={styles.formatInput}
+              className="flex-1 p-3 text-[15px] font-mono bg-white border border-gray-300 rounded-md transition-colors focus:border-gray-900"
               placeholder="hsl(217, 91%, 60%)"
             />
             <Button
@@ -209,8 +211,8 @@ function ColorPicker() {
         </div>
       </div>
 
-      <div className={styles.infoSection}>
-        <p className={styles.infoText}>
+      <div className="text-center p-4">
+        <p className="text-sm text-gray-600 m-0">
           各形式の入力フィールドから直接入力することもできます。
         </p>
       </div>

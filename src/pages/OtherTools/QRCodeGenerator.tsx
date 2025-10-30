@@ -3,7 +3,6 @@ import QRCode from 'qrcode'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import styles from './QRCodeGenerator.module.css'
 
 type QRSize = 128 | 256 | 512
 
@@ -60,22 +59,22 @@ function QRCodeGenerator() {
   }
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>QRコード生成</h2>
+    <div className="max-w-[600px] mx-auto px-4 py-8">
+      <h2 className="text-2xl font-semibold mb-8 text-center">QRコード生成</h2>
 
-      <div className={styles.inputSection}>
-        <Label className={styles.label}>テキスト / URL</Label>
+      <div className="mb-6">
+        <Label className="text-base mb-3">テキスト / URL</Label>
         <Textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="URL、テキスト、電話番号などを入力..."
-          className={styles.textarea}
+          className="w-full min-h-[100px]"
         />
       </div>
 
-      <div className={styles.sizeSection}>
-        <label className={styles.label}>サイズ</label>
-        <div className={styles.sizeButtons}>
+      <div className="mb-6">
+        <Label className="text-base mb-3">サイズ</Label>
+        <div className="flex gap-3">
           <Button
             onClick={() => setSize(128)}
             variant={size === 128 ? 'default' : 'secondary'}
@@ -97,17 +96,17 @@ function QRCodeGenerator() {
         </div>
       </div>
 
-      <div className={styles.qrcodeSection}>
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6 text-center">
         {text ? (
-          <canvas ref={canvasRef} className={styles.qrcodeCanvas} />
+          <canvas ref={canvasRef} className="max-w-full h-auto rounded-lg shadow-sm" />
         ) : (
-          <div className={styles.emptyState}>
+          <div className="py-8 text-gray-600 italic">
             テキストを入力するとQRコードが生成されます
           </div>
         )}
       </div>
 
-      <div className={styles.controls}>
+      <div className="flex gap-4 md:flex-row flex-col">
         <Button
           onClick={handleDownload}
           disabled={!text}

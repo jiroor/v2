@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
-import styles from './CountdownTimer.module.css'
 
 function CountdownTimer() {
   const [hours, setHours] = useState(0)
@@ -102,56 +101,56 @@ function CountdownTimer() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>カウントダウンタイマー</h2>
+    <div className="max-w-[600px] mx-auto py-8 px-4">
+      <h2 className="text-2xl font-semibold mb-8 text-center">カウントダウンタイマー</h2>
 
       {!isConfigured ? (
-        <div className={styles.configSection}>
-          <div className={styles.inputGroup}>
-            <div className={styles.inputWrapper}>
+        <div className="mb-8">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="flex flex-row items-center gap-2">
               <Input
                 type="number"
                 min="0"
                 max="23"
                 value={hours}
                 onChange={(e) => handleInputChange('hours', e.target.value)}
-                className={styles.input}
+                className="w-20 md:w-20 sm:w-[60px] p-3 sm:p-2 text-2xl md:text-2xl sm:text-xl text-center border border-gray-200 rounded-md transition-colors focus:outline-none focus:border-gray-900"
               />
-              <Label className={styles.label}>時</Label>
+              <Label className="mb-0">時</Label>
             </div>
-            <div className={styles.inputWrapper}>
+            <div className="flex flex-row items-center gap-2">
               <Input
                 type="number"
                 min="0"
                 max="59"
                 value={minutes}
                 onChange={(e) => handleInputChange('minutes', e.target.value)}
-                className={styles.input}
+                className="w-20 md:w-20 sm:w-[60px] p-3 sm:p-2 text-2xl md:text-2xl sm:text-xl text-center border border-gray-200 rounded-md transition-colors focus:outline-none focus:border-gray-900"
               />
-              <Label className={styles.label}>分</Label>
+              <Label className="mb-0">分</Label>
             </div>
-            <div className={styles.inputWrapper}>
+            <div className="flex flex-row items-center gap-2">
               <Input
                 type="number"
                 min="0"
                 max="59"
                 value={seconds}
                 onChange={(e) => handleInputChange('seconds', e.target.value)}
-                className={styles.input}
+                className="w-20 md:w-20 sm:w-[60px] p-3 sm:p-2 text-2xl md:text-2xl sm:text-xl text-center border border-gray-200 rounded-md transition-colors focus:outline-none focus:border-gray-900"
               />
-              <Label className={styles.label}>秒</Label>
+              <Label className="mb-0">秒</Label>
             </div>
           </div>
         </div>
       ) : (
-        <div className={styles.timerDisplay}>
-          <div className={styles.time}>
+        <div className="flex justify-center mb-8">
+          <div className="text-7xl md:text-7xl sm:text-[56px] font-light tabular-nums tracking-wider text-[#d97706]">
             {displayTime.hours}:{displayTime.minutes}:{displayTime.seconds}
           </div>
         </div>
       )}
 
-      <div className={styles.controls}>
+      <div className="flex md:flex-row sm:flex-col gap-4 justify-center">
         {!isRunning ? (
           <Button
             onClick={handleStart}

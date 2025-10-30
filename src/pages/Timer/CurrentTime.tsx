@@ -17,7 +17,6 @@ import {
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import styles from './CurrentTime.module.css'
 
 type DateFormat = 'kanji' | 'slash'
 
@@ -57,17 +56,19 @@ export default function CurrentTime() {
   )
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>現在日時</h1>
+    <div className="max-w-[800px] mx-auto py-6 px-6 md:px-4">
+      <h1 className="text-2xl font-bold mb-8 text-center">現在日時</h1>
 
       {/* メイン表示エリア */}
       <div
-        className={`${styles.display} ${
-          settings.layout === 'vertical' ? styles.vertical : styles.horizontal
+        className={`flex items-center justify-center p-8 bg-gray-50 rounded-lg min-h-[300px] ${
+          settings.layout === 'vertical'
+            ? 'flex-col gap-6'
+            : 'flex-row gap-8 max-md:flex-col max-md:gap-4'
         }`}
       >
         {/* 日付表示 */}
-        <div className={styles.date}>
+        <div className="text-xl font-medium text-gray-600 max-md:text-lg">
           <span>
             {(() => {
               const parts: string[] = []
@@ -91,16 +92,16 @@ export default function CurrentTime() {
         </div>
 
         {/* 時刻表示 */}
-        <div className={styles.time}>{formattedTime}</div>
+        <div className="text-[64px] font-bold tabular-nums tracking-[0.05em] text-[#d97706] max-md:text-5xl">
+          {formattedTime}
+        </div>
       </div>
 
       {/* 設定エリア */}
-      <div className={styles.settings}>
+      <div className="flex flex-col gap-4 mb-8 p-6 bg-gray-50 rounded-md">
         {/* タイムゾーン選択 */}
-        <div className={styles.settingItem}>
-          <Label htmlFor="timezone" className={styles.label}>
-            タイムゾーン
-          </Label>
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="timezone">タイムゾーン</Label>
           <Select
             value={settings.timezone}
             onValueChange={(value) =>
@@ -121,9 +122,9 @@ export default function CurrentTime() {
         </div>
 
         {/* レイアウト切り替え */}
-        <div className={styles.settingItem}>
-          <Label className={styles.label}>レイアウト</Label>
-          <div className={styles.buttonGroup}>
+        <div className="flex flex-col gap-2">
+          <Label>レイアウト</Label>
+          <div className="flex gap-2">
             <Button
               onClick={() => setSettings({ ...settings, layout: 'horizontal' })}
               variant={settings.layout === 'horizontal' ? 'default' : 'outline'}
@@ -144,9 +145,9 @@ export default function CurrentTime() {
         </div>
 
         {/* 日付形式切り替え */}
-        <div className={styles.settingItem}>
-          <Label className={styles.label}>日付の表示方法</Label>
-          <div className={styles.buttonGroup}>
+        <div className="flex flex-col gap-2">
+          <Label>日付の表示方法</Label>
+          <div className="flex gap-2">
             <Button
               onClick={() => setSettings({ ...settings, dateFormat: 'kanji' })}
               variant={settings.dateFormat === 'kanji' ? 'default' : 'outline'}
@@ -165,36 +166,36 @@ export default function CurrentTime() {
         </div>
 
         {/* 表示項目 */}
-        <div className={styles.settingItem}>
-          <Label className={styles.label}>表示項目</Label>
-          <div className={styles.checkboxGroup}>
-            <label className={styles.checkboxLabel}>
+        <div className="flex flex-col gap-2">
+          <Label>表示項目</Label>
+          <div className="flex flex-col gap-2">
+            <label className="flex items-center gap-2 text-base cursor-pointer">
               <Checkbox
                 checked={settings.showYear}
                 onCheckedChange={(checked) =>
                   setSettings({ ...settings, showYear: checked === true })
                 }
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               年
             </label>
-            <label className={styles.checkboxLabel}>
+            <label className="flex items-center gap-2 text-base cursor-pointer">
               <Checkbox
                 checked={settings.showWeekday}
                 onCheckedChange={(checked) =>
                   setSettings({ ...settings, showWeekday: checked === true })
                 }
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               曜日
             </label>
-            <label className={styles.checkboxLabel}>
+            <label className="flex items-center gap-2 text-base cursor-pointer">
               <Checkbox
                 checked={settings.showSeconds}
                 onCheckedChange={(checked) =>
                   setSettings({ ...settings, showSeconds: checked === true })
                 }
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               秒
             </label>

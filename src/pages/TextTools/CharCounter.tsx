@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
-import styles from './CharCounter.module.css'
 
 function CharCounter() {
   const [text, setText] = useState('')
@@ -29,25 +28,25 @@ function CharCounter() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>文字数カウンター</h2>
+    <div className="max-w-[800px] mx-auto py-8 px-4">
+      <h2 className="text-2xl font-semibold mb-8 text-center">文字数カウンター</h2>
 
-      <div className={styles.statsGrid}>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>{stats.chars.toLocaleString()}</div>
-          <div className={styles.statLabel}>文字数</div>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4 mb-6 md:grid-cols-2">
+        <div className="bg-gray-50 border border-gray-200 rounded-md p-4 text-center">
+          <div className="text-[32px] font-semibold text-[#d97706] mb-2 tabular-nums md:text-2xl">{stats.chars.toLocaleString()}</div>
+          <div className="text-sm text-gray-600">文字数</div>
         </div>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>{stats.charsNoSpaces.toLocaleString()}</div>
-          <div className={styles.statLabel}>文字数（スペース除く）</div>
+        <div className="bg-gray-50 border border-gray-200 rounded-md p-4 text-center">
+          <div className="text-[32px] font-semibold text-[#d97706] mb-2 tabular-nums md:text-2xl">{stats.charsNoSpaces.toLocaleString()}</div>
+          <div className="text-sm text-gray-600">文字数（スペース除く）</div>
         </div>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>{stats.words.toLocaleString()}</div>
-          <div className={styles.statLabel}>単語数</div>
+        <div className="bg-gray-50 border border-gray-200 rounded-md p-4 text-center">
+          <div className="text-[32px] font-semibold text-[#d97706] mb-2 tabular-nums md:text-2xl">{stats.words.toLocaleString()}</div>
+          <div className="text-sm text-gray-600">単語数</div>
         </div>
-        <div className={styles.statCard}>
-          <div className={styles.statValue}>{stats.lines.toLocaleString()}</div>
-          <div className={styles.statLabel}>行数</div>
+        <div className="bg-gray-50 border border-gray-200 rounded-md p-4 text-center">
+          <div className="text-[32px] font-semibold text-[#d97706] mb-2 tabular-nums md:text-2xl">{stats.lines.toLocaleString()}</div>
+          <div className="text-sm text-gray-600">行数</div>
         </div>
       </div>
 
@@ -55,10 +54,10 @@ function CharCounter() {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="ここにテキストを入力してください..."
-        className={styles.textarea}
+        className="w-full min-h-[300px] md:min-h-[200px]"
       />
 
-      <div className={styles.controls}>
+      <div className="flex justify-end mt-4">
         <Button onClick={handleClear} variant="secondary">
           クリア
         </Button>

@@ -14,7 +14,6 @@ import {
 } from '../../utils/rouletteUtils'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
-import styles from './Roulette.module.css'
 
 function Roulette() {
   const [items, setItems] = useState<RouletteItem[]>(getDefaultItems())
@@ -125,14 +124,14 @@ function Roulette() {
   const anglePerItem = 360 / items.length
 
   return (
-    <div className={styles.container}>
-      <div className={styles.titleWrapper}>
-        <h2 className={styles.title}>ルーレット</h2>
+    <div className="p-6 max-w-[800px] mx-auto md:p-4">
+      <div className="relative mb-6">
+        <h2 className="text-[28px] font-bold text-center">ルーレット</h2>
         {winner && (
-          <div className={styles.resultOverlay}>
-            <div className={styles.resultLabel}>当選</div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-6 py-4 rounded-[var(--border-radius)] border-2 border-[var(--color-border)] shadow-[0_4px_12px_rgba(0,0,0,0.15)] z-10 text-center min-w-[200px]">
+            <div className="text-sm font-bold mb-1 text-[var(--color-text-secondary)]">当選</div>
             <div
-              className={styles.resultWinner}
+              className="text-2xl font-bold"
               style={{
                 color: winner.color,
                 WebkitTextStroke: '2px #000',
@@ -146,12 +145,12 @@ function Roulette() {
       </div>
 
       {/* ルーレット表示エリア */}
-      <div className={styles.rouletteWrapper}>
-        <div className={styles.markerWrapper}>
-          <div className={styles.marker} />
+      <div className="relative w-full max-w-[400px] mx-auto mb-6 md:max-w-[300px]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
+          <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[32px] border-t-[#e74c3c] [filter:drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" />
         </div>
         <svg
-          className={styles.roulette}
+          className="w-full h-auto block"
           viewBox="0 0 400 400"
           style={{
             transform: `rotate(${rotation}deg)`,
@@ -206,7 +205,7 @@ function Roulette() {
       </div>
 
       {/* コントロール */}
-      <div className={styles.controls}>
+      <div className="flex justify-center gap-4 mb-8">
         <Button onClick={handleSpin} disabled={spinning || items.length < 2} size="lg" className="min-w-[120px]">
           {spinning ? '回転中...' : '開始'}
         </Button>
@@ -218,13 +217,13 @@ function Roulette() {
       </div>
 
       {/* 項目管理 */}
-      <div className={styles.itemsSection}>
-        <h3 className={styles.sectionTitle}>項目設定</h3>
+      <div className="border-t border-[var(--color-border)] pt-6">
+        <h3 className="text-xl font-bold mb-4">項目設定</h3>
 
         {/* 追加フォーム */}
-        <div className={styles.addForm}>
-          <div className={styles.inputGroup}>
-            <div className={styles.formGroup}>
+        <div className="flex flex-col gap-2 mb-4 p-2 bg-[var(--color-background)] rounded-[var(--border-radius)]">
+          <div className="flex gap-3 items-end w-full">
+            <div className="flex flex-col gap-1">
               <Label htmlFor="color">色</Label>
               <Input
                 id="color"
@@ -234,7 +233,7 @@ function Roulette() {
                 className="w-[60px] h-10 cursor-pointer flex-shrink-0 rounded-r-none border-r-0"
               />
             </div>
-            <div className={styles.formGroup}>
+            <div className="flex flex-col gap-1 flex-1">
               <Label htmlFor="label">ラベル</Label>
               <Input
                 ref={labelInputRef}
@@ -257,30 +256,31 @@ function Roulette() {
             onClick={handleAddItem}
             disabled={!newLabel.trim() || items.length >= 20}
             size="sm"
+            className="self-center"
           >
             追加
           </Button>
         </div>
         {items.length >= 20 && (
-          <p className={styles.warning}>項目は最大20個までです</p>
+          <p className="mt-2 text-sm text-[#e74c3c] text-center">項目は最大20個までです</p>
         )}
 
         {/* 項目リスト */}
-        <div className={styles.itemsList}>
+        <div className="flex flex-col gap-2">
           {items.map((item) => (
-            <div key={item.id} className={styles.itemRow}>
+            <div key={item.id} className="flex items-center gap-3 p-2 bg-[var(--color-background)] rounded-[var(--border-radius)]">
               <Input
                 type="color"
                 value={item.color}
                 onChange={(e) => handleUpdateItem(item.id, 'color', e.target.value)}
-                className={styles.itemColorInput}
+                className="w-[60px] h-10 cursor-pointer flex-shrink-0 rounded-tr-none rounded-br-none border-r-0"
                 aria-label={`${item.label}の色`}
               />
               <Input
                 type="text"
                 value={item.label}
                 onChange={(e) => handleUpdateItem(item.id, 'label', e.target.value)}
-                className={styles.itemLabelInput}
+                className="flex-1 min-w-0 rounded-tl-none rounded-bl-none -ml-px"
                 maxLength={20}
                 aria-label="項目ラベル"
               />
@@ -288,7 +288,7 @@ function Roulette() {
                 onClick={() => handleDeleteItem(item.id)}
                 variant="ghost"
                 size="icon"
-                className={styles.deleteButton}
+                className="bg-transparent border-0 cursor-pointer text-[var(--color-text-secondary)] p-2 flex items-center justify-center rounded-full transition-all min-w-[40px] min-h-[40px] hover:text-[#e74c3c] hover:bg-[rgba(231,76,60,0.1)] disabled:opacity-30 disabled:cursor-not-allowed"
                 aria-label={`${item.label}を削除`}
                 disabled={items.length <= 2}
               >

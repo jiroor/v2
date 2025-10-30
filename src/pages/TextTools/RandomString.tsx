@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
-import styles from './RandomString.module.css'
 
 function RandomString() {
   const [length, setLength] = useState(16)
@@ -44,56 +43,56 @@ function RandomString() {
   }
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>ランダム文字列生成</h2>
+    <div className="max-w-[800px] mx-auto py-8 px-4">
+      <h2 className="text-2xl font-semibold mb-8 text-center">ランダム文字列生成</h2>
 
-      <div className={styles.optionsSection}>
-        <div className={styles.optionGroup}>
-          <Label className={styles.optionLabel}>文字列の長さ</Label>
-          <div className={styles.lengthControl}>
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+        <div className="mb-6 last:mb-0">
+          <Label className="text-base mb-3">文字列の長さ</Label>
+          <div className="flex items-center gap-4">
             <Slider
               min={4}
               max={64}
               value={[length]}
               onValueChange={(value) => setLength(value[0])}
-              className={styles.slider}
+              className="flex-1"
             />
-            <span className={styles.lengthValue}>{length}文字</span>
+            <span className="text-lg font-semibold min-w-[60px] text-right">{length}文字</span>
           </div>
         </div>
 
-        <div className={styles.optionGroup}>
-          <Label className={styles.optionLabel}>文字種</Label>
-          <div className={styles.checkboxGroup}>
-            <Label className={styles.checkboxLabel}>
+        <div className="mb-6 last:mb-0">
+          <Label className="text-base mb-3">文字種</Label>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-2">
+            <Label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors hover:bg-gray-100 mb-0">
               <Checkbox
                 checked={includeUppercase}
                 onCheckedChange={(checked) => setIncludeUppercase(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               大文字 (A-Z)
             </Label>
-            <Label className={styles.checkboxLabel}>
+            <Label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors hover:bg-gray-100 mb-0">
               <Checkbox
                 checked={includeLowercase}
                 onCheckedChange={(checked) => setIncludeLowercase(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               小文字 (a-z)
             </Label>
-            <Label className={styles.checkboxLabel}>
+            <Label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors hover:bg-gray-100 mb-0">
               <Checkbox
                 checked={includeNumbers}
                 onCheckedChange={(checked) => setIncludeNumbers(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               数字 (0-9)
             </Label>
-            <Label className={styles.checkboxLabel}>
+            <Label className="flex items-center gap-2 text-[15px] cursor-pointer p-2 rounded transition-colors hover:bg-gray-100 mb-0">
               <Checkbox
                 checked={includeSymbols}
                 onCheckedChange={(checked) => setIncludeSymbols(checked === true)}
-                className={styles.checkbox}
+                className="w-6 h-6 cursor-pointer p-2.5 -my-2.5"
               />
               記号 (!@#$...)
             </Label>
@@ -101,17 +100,17 @@ function RandomString() {
         </div>
       </div>
 
-      <div className={styles.controls}>
+      <div className="flex gap-4 mb-6">
         <Button onClick={handleGenerate}>
           生成
         </Button>
       </div>
 
-      <div className={styles.resultSection}>
-        <div className={styles.resultLabel}>生成された文字列</div>
-        <div className={styles.resultDisplay}>
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+        <Label>生成された文字列</Label>
+        <div className="bg-white border border-gray-200 rounded-lg p-4 mb-4 font-mono text-lg break-all min-h-[60px] flex items-center justify-center">
           {generatedString || (
-            <span className={styles.emptyState}>生成ボタンをクリックしてください</span>
+            <span className="text-gray-500 italic">生成ボタンをクリックしてください</span>
           )}
         </div>
         <Button
