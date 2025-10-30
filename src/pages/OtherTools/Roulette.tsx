@@ -128,8 +128,8 @@ function Roulette() {
       <div className="relative mb-6">
         <h2 className="text-[28px] font-bold text-center">ルーレット</h2>
         {winner && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-6 py-4 rounded-[var(--border-radius)] border-2 border-[var(--color-border)] shadow-[0_4px_12px_rgba(0,0,0,0.15)] z-10 text-center min-w-[200px]">
-            <div className="text-sm font-bold mb-1 text-[var(--color-text-secondary)]">当選</div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-6 py-4 rounded-md border-2 border-gray-200 shadow-[0_4px_12px_rgba(0,0,0,0.15)] z-10 text-center min-w-[200px]">
+            <div className="text-sm font-bold mb-1 text-gray-600">当選</div>
             <div
               className="text-2xl font-bold"
               style={{
@@ -217,11 +217,11 @@ function Roulette() {
       </div>
 
       {/* 項目管理 */}
-      <div className="border-t border-[var(--color-border)] pt-6">
+      <div className="border-t border-gray-200 pt-6">
         <h3 className="text-xl font-bold mb-4">項目設定</h3>
 
         {/* 追加フォーム */}
-        <div className="flex flex-col gap-2 mb-4 p-2 bg-[var(--color-background)] rounded-[var(--border-radius)]">
+        <div className="flex flex-col gap-2 mb-4 p-2 bg-gray-50 rounded-md">
           <div className="flex gap-3 items-end w-full">
             <div className="flex flex-col gap-1">
               <Label htmlFor="color">色</Label>
@@ -268,7 +268,7 @@ function Roulette() {
         {/* 項目リスト */}
         <div className="flex flex-col gap-2">
           {items.map((item) => (
-            <div key={item.id} className="flex items-center gap-3 p-2 bg-[var(--color-background)] rounded-[var(--border-radius)]">
+            <div key={item.id} className="flex items-center gap-3 p-2 bg-gray-50 rounded-md">
               <Input
                 type="color"
                 value={item.color}
@@ -288,7 +288,7 @@ function Roulette() {
                 onClick={() => handleDeleteItem(item.id)}
                 variant="ghost"
                 size="icon"
-                className="bg-transparent border-0 cursor-pointer text-[var(--color-text-secondary)] p-2 flex items-center justify-center rounded-full transition-all min-w-[40px] min-h-[40px] hover:text-[#e74c3c] hover:bg-[rgba(231,76,60,0.1)] disabled:opacity-30 disabled:cursor-not-allowed"
+                className="bg-transparent border-0 cursor-pointer text-gray-600 p-2 flex items-center justify-center rounded-full transition-all min-w-[40px] min-h-[40px] hover:text-[#e74c3c] hover:bg-[rgba(231,76,60,0.1)] disabled:opacity-30 disabled:cursor-not-allowed"
                 aria-label={`${item.label}を削除`}
                 disabled={items.length <= 2}
               >
