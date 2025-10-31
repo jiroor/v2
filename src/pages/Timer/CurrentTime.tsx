@@ -17,6 +17,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 type DateFormat = 'kanji' | 'slash'
 
@@ -30,6 +31,7 @@ interface ClockSettings {
 }
 
 export default function CurrentTime() {
+  useToolUsageTracking('/timer/current-time', '現在日時')
   const currentTime = useCurrentTime()
   const [settings, setSettings] = useState<ClockSettings>({
     timezone: detectTimezone(),

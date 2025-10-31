@@ -4,8 +4,10 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function CharCounter() {
+  useToolUsageTracking('/text/char-counter', '文字数カウンター')
   const [text, setText] = useState('')
 
   const stats = useMemo(() => countText(text), [text])

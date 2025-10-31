@@ -14,8 +14,10 @@ import {
 } from '../../utils/rouletteUtils'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function Roulette() {
+  useToolUsageTracking('/other/roulette', 'ルーレット')
   const [items, setItems] = useState<RouletteItem[]>(getDefaultItems())
   const [newLabel, setNewLabel] = useState('')
   const [newColor, setNewColor] = useState(generateRandomColor())

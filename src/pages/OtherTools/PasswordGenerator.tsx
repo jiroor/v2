@@ -6,10 +6,12 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 type PasswordStrength = 'weak' | 'medium' | 'strong'
 
 function PasswordGenerator() {
+  useToolUsageTracking('/other/password', 'パスワード生成')
   const [length, setLength] = useState(16)
   const [includeUppercase, setIncludeUppercase] = useState(true)
   const [includeLowercase, setIncludeLowercase] = useState(true)

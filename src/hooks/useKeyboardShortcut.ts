@@ -48,8 +48,6 @@ export const useKeyboardShortcut = (
                         (shortcut.key === ' ' && event.code === 'Space')
 
         // 修飾キーのチェック
-        const ctrlMatch = shortcut.ctrl ? event.ctrlKey : !event.ctrlKey
-        const metaMatch = shortcut.meta ? event.metaKey : !event.metaKey
         const shiftMatch = shortcut.shift ? event.shiftKey : !event.shiftKey
         const altMatch = shortcut.alt ? event.altKey : !event.altKey
 

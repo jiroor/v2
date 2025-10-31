@@ -3,8 +3,10 @@ import { useStopwatch } from '../../hooks/useStopwatch'
 import { Button } from '@/components/ui/button'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function Stopwatch() {
+  useToolUsageTracking('/timer/stopwatch', 'ストップウォッチ')
   const { time, isRunning, laps, start, stop, reset, addLap } = useStopwatch()
 
   // キーボードショートカットの設定

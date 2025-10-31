@@ -3,8 +3,10 @@ import { usePomodoro } from '../../hooks/usePomodoro'
 import { Button } from '@/components/ui/button'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function PomodoroTimer() {
+  useToolUsageTracking('/timer/pomodoro', 'ポモドーロタイマー')
   const { time, isRunning, mode, sessions, start, pause, reset } = usePomodoro()
 
   const formattedTime = useMemo(() => {

@@ -5,8 +5,10 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function CountdownTimer() {
+  useToolUsageTracking('/timer/countdown', 'カウントダウンタイマー')
   const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(5)
   const [seconds, setSeconds] = useState(0)

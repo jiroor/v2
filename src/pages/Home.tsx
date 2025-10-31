@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import {
   CountdownIcon,
   StopwatchIcon,
@@ -12,10 +13,66 @@ import {
   ColorPickerIcon,
   RouletteIcon,
 } from '../components/Icons/ToolIcons'
+import { getTopUsedTools } from '../utils/analyticsUtils'
+import type { ToolUsageSummary } from '../types/analytics'
+
+// ツールパスとアイコンのマッピング
+const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  '/timer/countdown': CountdownIcon,
+  '/timer/stopwatch': StopwatchIcon,
+  '/timer/pomodoro': PomodoroIcon,
+  '/timer/current-time': CurrentTimeIcon,
+  '/text/char-counter': CharCounterIcon,
+  '/text/diff': TextDiffIcon,
+  '/text/random-string': RandomStringIcon,
+  '/other/qrcode': QRCodeIcon,
+  '/other/password': PasswordIcon,
+  '/other/color-picker': ColorPickerIcon,
+  '/other/roulette': RouletteIcon,
+}
 
 function Home() {
+  const [topTools, setTopTools] = useState<ToolUsageSummary[]>([])
+
+  useEffect(() => {
+    // よく使うツールを取得（上位3件）
+    const tools = getTopUsedTools(3)
+    setTopTools(tools)
+  }, [])
+
   return (
     <div className="py-8 px-6 max-w-[1400px] mx-auto">
+      {/* よく使うツールセクション */}
+      {topTools.length > 0 && (
+        <div className="mb-12">
+          <h2 className="text-[26px] font-bold mb-2">よく使うツール</h2>
+          <p className="text-gray-600 mb-6">
+            あなたがよく使うツールへのクイックアクセス
+          </p>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1">
+            {topTools.map((tool) => {
+              const Icon = toolIcons[tool.toolPath]
+              if (!Icon) return null
+
+              return (
+                <Link
+                  key={tool.toolPath}
+                  to={tool.toolPath}
+                  className="flex flex-col items-center bg-white border-2 border-[#d97706] rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(217,119,6,0.2)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(217,119,6,0.2)] group relative"
+                >
+                  <div className="absolute top-2 right-2 bg-[#d97706] text-white text-xs px-2 py-1 rounded-full">
+                    {tool.count}回
+                  </div>
+                  <Icon className="w-12 h-12 mb-4 text-[#d97706] transition-all duration-200 group-hover:scale-110" />
+                  <h3 className="text-xl font-semibold mb-2 text-center">{tool.toolName}</h3>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* 全ツール一覧 */}
       <h2 className="text-[30px] font-bold mb-2">ツール一覧</h2>
       <p className="text-gray-600 mb-8">
         軽量でミニマルなユーティリティツール集

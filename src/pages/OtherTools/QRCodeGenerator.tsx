@@ -3,10 +3,12 @@ import QRCode from 'qrcode'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 type QRSize = 128 | 256 | 512
 
 function QRCodeGenerator() {
+  useToolUsageTracking('/other/qrcode', 'QRコード生成')
   const [text, setText] = useState('')
   const [size, setSize] = useState<QRSize>(256)
   const canvasRef = useRef<HTMLCanvasElement>(null)

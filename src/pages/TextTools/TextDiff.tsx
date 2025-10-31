@@ -3,8 +3,10 @@ import { calculateDiff } from '../../utils/textDiffUtils'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function TextDiff() {
+  useToolUsageTracking('/text/diff', 'テキスト差分表示')
   const [originalText, setOriginalText] = useState('')
   const [modifiedText, setModifiedText] = useState('')
 
