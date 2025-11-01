@@ -67,6 +67,7 @@ function CameraMode() {
 
       // ストリームがある場合のみ応答
       if (stream) {
+        console.log('[DEBUG] ストリームあり - answer()を呼び出します')
         // イベントリスナーをanswer()の前に登録
         // 接続が閉じられた時の処理
         call.on('close', () => {
