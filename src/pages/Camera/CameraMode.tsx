@@ -67,12 +67,7 @@ function CameraMode() {
 
       // ストリームがある場合のみ応答
       if (stream) {
-        call.answer(stream)
-
-        // 接続を追加
-        connectionsRef.current.add(call)
-        setViewerCount(connectionsRef.current.size)
-
+        // イベントリスナーをanswer()の前に登録
         // 接続が閉じられた時の処理
         call.on('close', () => {
           console.log('ビューワーが切断:', call.peer)
@@ -86,6 +81,13 @@ function CameraMode() {
           connectionsRef.current.delete(call)
           setViewerCount(connectionsRef.current.size)
         })
+
+        // ストリームで応答
+        call.answer(stream)
+
+        // 接続を追加
+        connectionsRef.current.add(call)
+        setViewerCount(connectionsRef.current.size)
       } else {
         // ストリームがない場合は待機キューに追加
         console.log('ストリーム待機中のため接続を保留:', call.peer)
