@@ -7,7 +7,7 @@ import { Slider } from '@/components/ui/slider'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function RandomString() {
-  useToolUsageTracking('/text/random-string', 'ランダム文字列生成')
+  useToolUsageTracking('/text/random', 'ランダム文字列生成')
   const [length, setLength] = useState(16)
   const [includeUppercase, setIncludeUppercase] = useState(true)
   const [includeLowercase, setIncludeLowercase] = useState(true)

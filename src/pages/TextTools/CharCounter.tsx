@@ -7,7 +7,7 @@ import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortc
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function CharCounter() {
-  useToolUsageTracking('/text/char-counter', '文字数カウンター')
+  useToolUsageTracking('/text/counter', '文字数カウンター')
   const [text, setText] = useState('')
 
   const stats = useMemo(() => countText(text), [text])

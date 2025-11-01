@@ -31,7 +31,7 @@ interface ClockSettings {
 }
 
 export default function CurrentTime() {
-  useToolUsageTracking('/timer/current-time', '現在日時')
+  useToolUsageTracking('/timer/current', '現在日時')
   const currentTime = useCurrentTime()
   const [settings, setSettings] = useState<ClockSettings>({
     timezone: detectTimezone(),

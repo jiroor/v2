@@ -18,7 +18,7 @@ import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortc
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 
 function ColorPicker() {
-  useToolUsageTracking('/other/color-picker', 'カラーピッカー')
+  useToolUsageTracking('/other/colorpicker', 'カラーピッカー')
   const [selectedColor, setSelectedColor] = useState('#3B82F6')
   const [hexInput, setHexInput] = useState('#3B82F6')
   const [rgbInput, setRgbInput] = useState('rgb(59, 130, 246)')

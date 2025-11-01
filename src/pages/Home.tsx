@@ -21,13 +21,13 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/timer/countdown': CountdownIcon,
   '/timer/stopwatch': StopwatchIcon,
   '/timer/pomodoro': PomodoroIcon,
-  '/timer/current-time': CurrentTimeIcon,
-  '/text/char-counter': CharCounterIcon,
+  '/timer/current': CurrentTimeIcon,
+  '/text/counter': CharCounterIcon,
   '/text/diff': TextDiffIcon,
-  '/text/random-string': RandomStringIcon,
+  '/text/random': RandomStringIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
-  '/other/color-picker': ColorPickerIcon,
+  '/other/colorpicker': ColorPickerIcon,
   '/other/roulette': RouletteIcon,
 }
 
