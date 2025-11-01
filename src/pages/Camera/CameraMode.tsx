@@ -68,6 +68,14 @@ function CameraMode() {
       // ストリームがある場合のみ応答
       if (stream) {
         console.log('[DEBUG] ストリームあり - answer()を呼び出します')
+        console.log('[DEBUG] ストリーム情報:', {
+          id: stream.id,
+          active: stream.active,
+          videoTracks: stream.getVideoTracks().length,
+          audioTracks: stream.getAudioTracks().length,
+          videoTrackEnabled: stream.getVideoTracks()[0]?.enabled,
+          videoTrackReadyState: stream.getVideoTracks()[0]?.readyState,
+        })
         // イベントリスナーをanswer()の前に登録
         // 接続が閉じられた時の処理
         call.on('close', () => {
@@ -85,6 +93,7 @@ function CameraMode() {
 
         // ストリームで応答
         call.answer(stream)
+        console.log('[DEBUG] answer()完了')
 
         // 接続を追加
         connectionsRef.current.add(call)
@@ -112,6 +121,14 @@ function CameraMode() {
     // 待機中のすべての接続に応答
     pendingCallsRef.current.forEach((call) => {
       console.log('待機中の接続に応答:', call.peer)
+      console.log('[DEBUG] ストリーム情報:', {
+        id: stream.id,
+        active: stream.active,
+        videoTracks: stream.getVideoTracks().length,
+        audioTracks: stream.getAudioTracks().length,
+        videoTrackEnabled: stream.getVideoTracks()[0]?.enabled,
+        videoTrackReadyState: stream.getVideoTracks()[0]?.readyState,
+      })
 
       // イベントリスナーをanswer()の前に登録
       call.on('close', () => {
@@ -128,6 +145,7 @@ function CameraMode() {
 
       // ストリームで応答
       call.answer(stream)
+      console.log('[DEBUG] answer()完了')
 
       // 接続を追加
       connectionsRef.current.add(call)

@@ -101,9 +101,20 @@ function ViewerMode() {
         throw new Error('接続の確立に失敗しました')
       }
 
+      console.log('[DEBUG] peer.call()完了:', {
+        callPeer: call.peer,
+        callOpen: call.open,
+      })
+
       // ストリーム受信
       call.on('stream', (remoteStream) => {
         console.log('ストリーム受信:', normalizedRoomId)
+        console.log('[DEBUG] 受信ストリーム情報:', {
+          id: remoteStream.id,
+          active: remoteStream.active,
+          videoTracks: remoteStream.getVideoTracks().length,
+          audioTracks: remoteStream.getAudioTracks().length,
+        })
 
         setCameras((prev) =>
           prev.map((cam) =>
