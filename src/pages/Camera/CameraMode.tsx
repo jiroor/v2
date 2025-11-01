@@ -21,6 +21,7 @@ function CameraMode() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const connectionsRef = useRef<Set<MediaConnection>>(new Set())
+  const pendingCallsRef = useRef<MediaConnection[]>([])
 
   const { peer, isReady, error: peerError } = usePeer(roomId)
   const { stream, isStreaming, error: cameraError, startCamera, stopCamera } = useCamera()
@@ -86,7 +87,9 @@ function CameraMode() {
           setViewerCount(connectionsRef.current.size)
         })
       } else {
-        console.warn('ストリームがないため接続を拒否しました')
+        // ストリームがない場合は待機キューに追加
+        console.log('ストリーム待機中のため接続を保留:', call.peer)
+        pendingCallsRef.current.push(call)
       }
     }
 
@@ -96,6 +99,41 @@ function CameraMode() {
       peer.off('call', handleCall)
     }
   }, [peer, isReady, stream])
+
+  // ストリーム開始時に待機中の接続に応答
+  useEffect(() => {
+    if (!stream || pendingCallsRef.current.length === 0) return
+
+    console.log('待機中の接続に応答:', pendingCallsRef.current.length)
+
+    // 待機中のすべての接続に応答
+    pendingCallsRef.current.forEach((call) => {
+      console.log('待機中の接続に応答:', call.peer)
+      call.answer(stream)
+
+      // 接続を追加
+      connectionsRef.current.add(call)
+
+      // 接続が閉じられた時の処理
+      call.on('close', () => {
+        console.log('ビューワーが切断:', call.peer)
+        connectionsRef.current.delete(call)
+        setViewerCount(connectionsRef.current.size)
+      })
+
+      // エラーハンドリング
+      call.on('error', (err) => {
+        console.error('接続エラー:', err)
+        connectionsRef.current.delete(call)
+        setViewerCount(connectionsRef.current.size)
+      })
+    })
+
+    setViewerCount(connectionsRef.current.size)
+
+    // 待機キューをクリア
+    pendingCallsRef.current = []
+  }, [stream])
 
   // 配信開始
   const handleStartBroadcasting = async () => {
