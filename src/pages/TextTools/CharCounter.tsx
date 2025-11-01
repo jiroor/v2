@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function CharCounter() {
   useToolUsageTracking('/text/counter', '文字数カウンター')
@@ -30,7 +31,9 @@ function CharCounter() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className="max-w-[800px] mx-auto py-8 px-4">
+    <>
+      <SEO path="/text/counter" />
+      <div className="max-w-[800px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">文字数カウンター</h2>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4 mb-6 md:grid-cols-2">
@@ -67,7 +70,8 @@ function CharCounter() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-    </div>
+      </div>
+    </>
   )
 }
 

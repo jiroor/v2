@@ -15,6 +15,7 @@ import {
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
+import { SEO } from '@/components/SEO/SEO'
 
 // ツールパスとアイコンのマッピング
 const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -41,7 +42,9 @@ function Home() {
   }, [])
 
   return (
-    <div className="py-8 px-6 max-w-[1400px] mx-auto">
+    <>
+      <SEO path="/" includeJsonLd />
+      <div className="py-8 px-6 max-w-[1400px] mx-auto">
       {/* よく使うツールセクション */}
       {topTools.length > 0 && (
         <div className="mb-12">
@@ -178,7 +181,8 @@ function Home() {
           <p className="text-gray-600 text-sm text-center">ランダム抽選ツール</p>
         </Link>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

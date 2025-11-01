@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 type QRSize = 128 | 256 | 512
 
@@ -61,7 +62,9 @@ function QRCodeGenerator() {
   }
 
   return (
-    <div className="max-w-[600px] mx-auto px-4 py-8">
+    <>
+      <SEO path="/other/qrcode" />
+      <div className="max-w-[600px] mx-auto px-4 py-8">
       <h2 className="text-2xl font-semibold mb-8 text-center">QRコード生成</h2>
 
       <div className="mb-6">
@@ -122,7 +125,8 @@ function QRCodeGenerator() {
           クリア
         </Button>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

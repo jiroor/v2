@@ -16,6 +16,7 @@ import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function ColorPicker() {
   useToolUsageTracking('/other/colorpicker', 'カラーピッカー')
@@ -128,7 +129,9 @@ function ColorPicker() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className="max-w-[600px] mx-auto py-8 px-4">
+    <>
+      <SEO path="/other/colorpicker" />
+      <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">カラーピッカー</h2>
 
       <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-6">
@@ -221,7 +224,8 @@ function ColorPicker() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-    </div>
+      </div>
+    </>
   )
 }
 

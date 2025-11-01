@@ -5,6 +5,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function RandomString() {
   useToolUsageTracking('/text/random', 'ランダム文字列生成')
@@ -45,7 +46,9 @@ function RandomString() {
   }
 
   return (
-    <div className="max-w-[800px] mx-auto py-8 px-4">
+    <>
+      <SEO path="/text/random" />
+      <div className="max-w-[800px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">ランダム文字列生成</h2>
 
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
@@ -122,7 +125,8 @@ function RandomString() {
           {copySuccess ? 'コピーしました！' : 'コピー'}
         </Button>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

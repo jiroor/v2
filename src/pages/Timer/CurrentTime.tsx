@@ -18,6 +18,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 type DateFormat = 'kanji' | 'slash'
 
@@ -58,7 +59,9 @@ export default function CurrentTime() {
   )
 
   return (
-    <div className="max-w-[800px] mx-auto py-6 px-6 md:px-4">
+    <>
+      <SEO path="/timer/current" />
+      <div className="max-w-[800px] mx-auto py-6 px-6 md:px-4">
       <h1 className="text-2xl font-bold mb-8 text-center">現在日時</h1>
 
       {/* メイン表示エリア */}
@@ -204,6 +207,7 @@ export default function CurrentTime() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

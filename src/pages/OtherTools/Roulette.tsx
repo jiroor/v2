@@ -15,6 +15,7 @@ import {
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function Roulette() {
   useToolUsageTracking('/other/roulette', 'ルーレット')
@@ -126,7 +127,9 @@ function Roulette() {
   const anglePerItem = 360 / items.length
 
   return (
-    <div className="p-6 max-w-[800px] mx-auto md:p-4">
+    <>
+      <SEO path="/other/roulette" />
+      <div className="p-6 max-w-[800px] mx-auto md:p-4">
       <div className="relative mb-6">
         <h2 className="text-[28px] font-bold text-center">ルーレット</h2>
         {winner && (
@@ -303,7 +306,8 @@ function Roulette() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-    </div>
+      </div>
+    </>
   )
 }
 

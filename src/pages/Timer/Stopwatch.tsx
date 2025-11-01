@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function Stopwatch() {
   useToolUsageTracking('/timer/stopwatch', 'ストップウォッチ')
@@ -52,7 +53,9 @@ function Stopwatch() {
   }
 
   return (
-    <div className="max-w-[600px] mx-auto py-8 px-4">
+    <>
+      <SEO path="/timer/stopwatch" />
+      <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">ストップウォッチ</h2>
 
       <div className="flex justify-center mb-8">
@@ -101,7 +104,8 @@ function Stopwatch() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-    </div>
+      </div>
+    </>
   )
 }
 

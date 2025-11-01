@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function PomodoroTimer() {
   useToolUsageTracking('/timer/pomodoro', 'ポモドーロタイマー')
@@ -41,7 +42,9 @@ function PomodoroTimer() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className="max-w-[600px] mx-auto py-8 px-4 text-center">
+    <>
+      <SEO path="/timer/pomodoro" />
+      <div className="max-w-[600px] mx-auto py-8 px-4 text-center">
       <h2 className="text-2xl font-semibold mb-8">ポモドーロタイマー</h2>
 
       <div
@@ -78,7 +81,8 @@ function PomodoroTimer() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-    </div>
+      </div>
+    </>
   )
 }
 

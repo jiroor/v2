@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function TextDiff() {
   useToolUsageTracking('/text/diff', 'テキスト差分表示')
@@ -23,7 +24,9 @@ function TextDiff() {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto py-8 px-4">
+    <>
+      <SEO path="/text/diff" />
+      <div className="max-w-[1200px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">テキスト差分表示</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -82,7 +85,8 @@ function TextDiff() {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

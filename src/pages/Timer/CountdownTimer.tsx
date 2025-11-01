@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label'
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { SEO } from '@/components/SEO/SEO'
 
 function CountdownTimer() {
   useToolUsageTracking('/timer/countdown', 'カウントダウンタイマー')
@@ -103,7 +104,9 @@ function CountdownTimer() {
   useKeyboardShortcut(shortcuts)
 
   return (
-    <div className="max-w-[600px] mx-auto py-8 px-4">
+    <>
+      <SEO path="/timer/countdown" />
+      <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">カウントダウンタイマー</h2>
 
       {!isConfigured ? (
@@ -172,7 +175,8 @@ function CountdownTimer() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-    </div>
+      </div>
+    </>
   )
 }
 

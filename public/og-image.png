@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- オレンジのアクセント -->
+  <rect x="0" y="0" width="1200" height="20" fill="#d97706"/>
+  <rect x="0" y="610" width="1200" height="20" fill="#d97706"/>
+
+  <!-- メインタイトル -->
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#1f2937" text-anchor="middle">Rakit</text>
+
+  <!-- サブタイトル -->
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="40" fill="#6b7280" text-anchor="middle">楽に使えるツール集</text>
+
+  <!-- 説明文 -->
+  <text x="600" y="440" font-family="Arial, sans-serif" font-size="32" fill="#9ca3af" text-anchor="middle">タイマー、文字数カウント、QRコード生成など</text>
+  <text x="600" y="490" font-family="Arial, sans-serif" font-size="32" fill="#9ca3af" text-anchor="middle">軽量でミニマルなユーティリティツール</text>
+</svg>
