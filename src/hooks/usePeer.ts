@@ -87,6 +87,11 @@ export function usePeer(roomId?: string) {
    * Peer初期化とクリーンアップ
    */
   useEffect(() => {
+    // roomIdが空の場合は初期化しない
+    if (roomId !== undefined && roomId === '') {
+      return
+    }
+
     initializePeer()
 
     // クリーンアップ処理
@@ -99,7 +104,7 @@ export function usePeer(roomId?: string) {
         setIsReady(false)
       }
     }
-  }, []) // initializePeerは依存配列に含めない（無限ループ防止）
+  }, [roomId]) // roomIdが変更されたら再初期化
 
   /**
    * Peerを再初期化

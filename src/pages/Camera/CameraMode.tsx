@@ -12,7 +12,8 @@ import type { MediaConnection } from 'peerjs'
 function CameraMode() {
   useToolUsageTracking('/camera/mode', 'カメラモード')
 
-  const [roomId, setRoomId] = useState<string>('')
+  // ルームIDを最初から生成
+  const [roomId] = useState<string>(() => generateRoomId())
   const [isBroadcasting, setIsBroadcasting] = useState(false)
   const [viewerCount, setViewerCount] = useState(0)
   const [copiedRoomId, setCopiedRoomId] = useState(false)
@@ -23,12 +24,6 @@ function CameraMode() {
 
   const { peer, isReady, error: peerError } = usePeer(roomId)
   const { stream, isStreaming, error: cameraError, startCamera, stopCamera } = useCamera()
-
-  // ルームID生成
-  useEffect(() => {
-    const newRoomId = generateRoomId()
-    setRoomId(newRoomId)
-  }, [])
 
   // QRコード生成
   useEffect(() => {
