@@ -60,20 +60,20 @@ function ViewerMode() {
     setConnectionError(null)
 
     try {
-      // ダミーのMediaStreamを作成（音声のみ、実際には使わない）
-      const dummyStream = await navigator.mediaDevices.getUserMedia({
-        audio: true,
-        video: false,
-      }).catch(() => {
-        // 音声が取得できない場合は、完全にダミーのストリームを作成
-        const canvas = document.createElement('canvas')
-        canvas.width = 1
-        canvas.height = 1
-        const ctx = canvas.getContext('2d')
-        if (ctx) {
-          ctx.fillRect(0, 0, 1, 1)
-        }
-        return canvas.captureStream(1) as MediaStream
+      // 無音の音声トラックを持つダミーストリームを作成
+      const audioContext = new AudioContext()
+      const oscillator = audioContext.createOscillator()
+      const gainNode = audioContext.createGain()
+      gainNode.gain.value = 0 // 無音
+      oscillator.connect(gainNode)
+      const destination = audioContext.createMediaStreamDestination()
+      gainNode.connect(destination)
+      oscillator.start()
+
+      const dummyStream = destination.stream
+      console.log('[DEBUG] ダミーストリームを作成しました（無音の音声トラック）:', {
+        audioTracks: dummyStream.getAudioTracks().length,
+        videoTracks: dummyStream.getVideoTracks().length,
       })
 
       // 新しいカメラストリームを追加
@@ -94,7 +94,8 @@ function ViewerMode() {
         return [...filtered, newCamera]
       })
 
-      // カメラに接続
+      // カメラに接続（ダミーストリームを渡す）
+      console.log('[DEBUG] peer.call()を呼び出します（ダミーストリーム）')
       const call = peer.call(normalizedRoomId, dummyStream)
 
       if (!call) {
@@ -135,14 +136,11 @@ function ViewerMode() {
           name: newCamera.name,
           lastConnected: new Date().toISOString(),
         })
-
-        // ダミーストリームを停止
-        dummyStream.getTracks().forEach((track) => track.stop())
       })
 
       // 接続エラー
       call.on('error', (err) => {
-        console.error('接続エラー:', err)
+        console.error('[DEBUG] ビューワー側でerrorイベント:', err)
         setCameras((prev) =>
           prev.map((cam) =>
             cam.id === normalizedRoomId
@@ -155,7 +153,7 @@ function ViewerMode() {
 
       // 接続終了
       call.on('close', () => {
-        console.log('接続が閉じられました:', normalizedRoomId)
+        console.log('[DEBUG] ビューワー側でcloseイベント:', normalizedRoomId)
         setCameras((prev) =>
           prev.map((cam) =>
             cam.id === normalizedRoomId
