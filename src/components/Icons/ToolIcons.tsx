@@ -10,6 +10,7 @@ import {
   Lock,
   Palette,
   CircleDot,
+  Video,
 } from 'lucide-react'
 
 interface IconProps {
@@ -69,4 +70,9 @@ export function ColorPickerIcon({ className }: IconProps) {
 // ルーレット
 export function RouletteIcon({ className }: IconProps) {
   return <CircleDot className={className} />
+}
+
+// カメラ映像共有
+export function CameraSharingIcon({ className }: IconProps) {
+  return <Video className={className} />
 }

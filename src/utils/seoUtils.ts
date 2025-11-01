@@ -105,6 +105,25 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ルーレット,抽選,ランダム,くじ引き',
     path: '/other/roulette',
   },
+  '/camera': {
+    title: 'カメラ映像共有 | Rakit',
+    description:
+      'ローカルネットワーク内で複数のiPhone間でカメラ映像をリアルタイム共有。監視カメラ・見守りに最適。',
+    keywords: 'カメラ,映像共有,監視カメラ,見守り,WebRTC,リアルタイム',
+    path: '/camera',
+  },
+  '/camera/mode': {
+    title: 'カメラモード | Rakit',
+    description: 'カメラとして映像を配信。QRコードで簡単に接続できます。',
+    keywords: 'カメラ配信,ストリーミング,QRコード,監視カメラ',
+    path: '/camera/mode',
+  },
+  '/camera/viewer': {
+    title: 'ビューワーモード | Rakit',
+    description: 'カメラ映像をリアルタイムで視聴。複数カメラの同時接続が可能。',
+    keywords: 'カメラ視聴,映像視聴,監視,見守り',
+    path: '/camera/viewer',
+  },
 }
 
 /**

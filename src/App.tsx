@@ -12,6 +12,9 @@ import QRCodeGenerator from './pages/OtherTools/QRCodeGenerator'
 import PasswordGenerator from './pages/OtherTools/PasswordGenerator'
 import ColorPicker from './pages/OtherTools/ColorPicker'
 import Roulette from './pages/OtherTools/Roulette'
+import CameraSharing from './pages/Camera/CameraSharing'
+import CameraMode from './pages/Camera/CameraMode'
+import ViewerMode from './pages/Camera/ViewerMode'
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
             <Route path="/other/password" element={<PasswordGenerator />} />
             <Route path="/other/colorpicker" element={<ColorPicker />} />
             <Route path="/other/roulette" element={<Roulette />} />
+            <Route path="/camera" element={<CameraSharing />} />
+            <Route path="/camera/mode" element={<CameraMode />} />
+            <Route path="/camera/viewer" element={<ViewerMode />} />
           </Routes>
         </main>
       </div>
