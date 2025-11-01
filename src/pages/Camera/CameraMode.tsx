@@ -109,24 +109,25 @@ function CameraMode() {
     // 待機中のすべての接続に応答
     pendingCallsRef.current.forEach((call) => {
       console.log('待機中の接続に応答:', call.peer)
-      call.answer(stream)
 
-      // 接続を追加
-      connectionsRef.current.add(call)
-
-      // 接続が閉じられた時の処理
+      // イベントリスナーをanswer()の前に登録
       call.on('close', () => {
         console.log('ビューワーが切断:', call.peer)
         connectionsRef.current.delete(call)
         setViewerCount(connectionsRef.current.size)
       })
 
-      // エラーハンドリング
       call.on('error', (err) => {
         console.error('接続エラー:', err)
         connectionsRef.current.delete(call)
         setViewerCount(connectionsRef.current.size)
       })
+
+      // ストリームで応答
+      call.answer(stream)
+
+      // 接続を追加
+      connectionsRef.current.add(call)
     })
 
     setViewerCount(connectionsRef.current.size)
