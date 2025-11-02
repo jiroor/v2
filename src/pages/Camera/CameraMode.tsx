@@ -20,6 +20,7 @@ function CameraMode() {
   const [copiedRoomId, setCopiedRoomId] = useState(false)
 
   const [selectedCameraId, setSelectedCameraId] = useState<string>('')
+  const [facingMode, setFacingMode] = useState<'user' | 'environment'>('user')
 
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -242,6 +243,7 @@ function CameraMode() {
           id: roomId,
           name: 'カメラ',
           ...DEFAULT_CAMERA_CONFIG,
+          facingMode,
         },
         selectedCameraId || undefined
       )
@@ -348,23 +350,50 @@ function CameraMode() {
           </div>
         </div>
 
-        {/* カメラ選択 */}
-        {!isBroadcasting && availableCameras.length > 0 && (
+        {/* カメラ設定 */}
+        {!isBroadcasting && (
           <div className="mb-6">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-              <h3 className="font-semibold mb-3">カメラ選択</h3>
-              <select
-                value={selectedCameraId}
-                onChange={(e) => setSelectedCameraId(e.target.value)}
-                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent"
-              >
-                <option value="">デフォルトのカメラ</option>
-                {availableCameras.map((camera) => (
-                  <option key={camera.deviceId} value={camera.deviceId}>
-                    {camera.label || `カメラ ${camera.deviceId.substring(0, 8)}`}
-                  </option>
-                ))}
-              </select>
+              <h3 className="font-semibold mb-3">カメラ設定</h3>
+
+              {/* カメラの向き選択 */}
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  カメラの向き
+                </label>
+                <select
+                  value={facingMode}
+                  onChange={(e) => setFacingMode(e.target.value as 'user' | 'environment')}
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent"
+                >
+                  <option value="user">フロントカメラ（インカメラ）</option>
+                  <option value="environment">バックカメラ（アウトカメラ）</option>
+                </select>
+              </div>
+
+              {/* カメラデバイス選択（利用可能な場合のみ） */}
+              {availableCameras.length > 0 && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    カメラデバイス（詳細設定）
+                  </label>
+                  <select
+                    value={selectedCameraId}
+                    onChange={(e) => setSelectedCameraId(e.target.value)}
+                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent"
+                  >
+                    <option value="">自動選択</option>
+                    {availableCameras.map((camera) => (
+                      <option key={camera.deviceId} value={camera.deviceId}>
+                        {camera.label || `カメラ ${camera.deviceId.substring(0, 8)}`}
+                      </option>
+                    ))}
+                  </select>
+                  <p className="mt-2 text-xs text-gray-500">
+                    ※ 特定のカメラを選択する場合は、「カメラの向き」設定より優先されます
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         )}
