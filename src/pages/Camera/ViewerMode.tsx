@@ -400,21 +400,46 @@ function ViewerMode() {
           {/* 映像エリア */}
           <div className="flex-1 flex items-center justify-center bg-black min-h-0 min-w-0">
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
-              <video
-                ref={(video) => {
-                  if (video && fullscreenCamera.stream) {
-                    video.srcObject = fullscreenCamera.stream
-                  }
-                }}
-                autoPlay
-                playsInline
-                className="w-full h-full object-contain"
+              <div
+                className="w-full h-full relative"
                 style={
                   brightnessFilter
-                    ? { filter: 'brightness(1.4) contrast(1.2)' }
+                    ? {
+                        background:
+                          'linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03))',
+                      }
                     : undefined
                 }
-              />
+              >
+                <video
+                  ref={(video) => {
+                    if (video && fullscreenCamera.stream) {
+                      video.srcObject = fullscreenCamera.stream
+                    }
+                  }}
+                  autoPlay
+                  playsInline
+                  className="w-full h-full object-contain"
+                  style={
+                    brightnessFilter
+                      ? {
+                          filter: 'brightness(1.6) contrast(1.3) saturate(1.15)',
+                          mixBlendMode: 'screen' as const,
+                        }
+                      : undefined
+                  }
+                />
+                {brightnessFilter && (
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background:
+                        'radial-gradient(ellipse at center, transparent 0%, rgba(255,255,255,0.08) 100%)',
+                      mixBlendMode: 'overlay',
+                    }}
+                  />
+                )}
+              </div>
             ) : (
               <div className="text-center text-gray-400">
                 <div className="mb-2">
