@@ -76,6 +76,24 @@ function CameraMode() {
           videoTrackEnabled: stream.getVideoTracks()[0]?.enabled,
           videoTrackReadyState: stream.getVideoTracks()[0]?.readyState,
         })
+
+        // WebRTC接続のライフサイクルをログ
+        call.peerConnection.addEventListener('iceconnectionstatechange', () => {
+          console.log('[DEBUG] カメラ側 ICE接続状態:', call.peerConnection.iceConnectionState)
+        })
+
+        call.peerConnection.addEventListener('icegatheringstatechange', () => {
+          console.log('[DEBUG] カメラ側 ICE収集状態:', call.peerConnection.iceGatheringState)
+        })
+
+        call.peerConnection.addEventListener('signalingstatechange', () => {
+          console.log('[DEBUG] カメラ側 シグナリング状態:', call.peerConnection.signalingState)
+        })
+
+        call.peerConnection.addEventListener('connectionstatechange', () => {
+          console.log('[DEBUG] カメラ側 接続状態:', call.peerConnection.connectionState)
+        })
+
         // イベントリスナーをanswer()の前に登録
         // 接続が閉じられた時の処理
         call.on('close', () => {
@@ -128,6 +146,23 @@ function CameraMode() {
         audioTracks: stream.getAudioTracks().length,
         videoTrackEnabled: stream.getVideoTracks()[0]?.enabled,
         videoTrackReadyState: stream.getVideoTracks()[0]?.readyState,
+      })
+
+      // WebRTC接続のライフサイクルをログ
+      call.peerConnection.addEventListener('iceconnectionstatechange', () => {
+        console.log('[DEBUG] カメラ側(待機) ICE接続状態:', call.peerConnection.iceConnectionState)
+      })
+
+      call.peerConnection.addEventListener('icegatheringstatechange', () => {
+        console.log('[DEBUG] カメラ側(待機) ICE収集状態:', call.peerConnection.iceGatheringState)
+      })
+
+      call.peerConnection.addEventListener('signalingstatechange', () => {
+        console.log('[DEBUG] カメラ側(待機) シグナリング状態:', call.peerConnection.signalingState)
+      })
+
+      call.peerConnection.addEventListener('connectionstatechange', () => {
+        console.log('[DEBUG] カメラ側(待機) 接続状態:', call.peerConnection.connectionState)
       })
 
       // イベントリスナーをanswer()の前に登録
