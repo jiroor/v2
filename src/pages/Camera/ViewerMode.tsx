@@ -336,7 +336,7 @@ function ViewerMode() {
           </div>
 
           {/* 映像エリア */}
-          <div className="flex-1 flex items-center justify-center bg-black min-h-0">
+          <div className="flex-1 flex items-center justify-center bg-black min-h-0 min-w-0">
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
               <video
                 ref={(video) => {
@@ -346,7 +346,7 @@ function ViewerMode() {
                 }}
                 autoPlay
                 playsInline
-                className="max-w-full max-h-full"
+                className="w-full h-full object-contain"
               />
             ) : (
               <div className="text-center text-gray-400">

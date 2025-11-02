@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全画面表示テスト</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="fixed inset-0 z-50 bg-black flex flex-col">
+    <!-- ヘッダー -->
+    <div class="bg-gray-900/90 text-white px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <h3 class="font-semibold">テストカメラ</h3>
+        <span class="text-sm text-gray-400 font-mono">TEST-ROOM-ID</span>
+        <span class="text-sm text-green-400">遅延: ~0ms</span>
+      </div>
+      <button class="px-4 py-2 bg-gray-700 rounded">閉じる (Esc)</button>
+    </div>
+
+    <!-- 映像エリア - 修正版 -->
+    <div class="flex-1 flex items-center justify-center bg-black min-h-0 min-w-0">
+      <video
+        id="testVideo"
+        autoplay
+        muted
+        loop
+        class="w-full h-full object-contain"
+        style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);"
+      >
+      </video>
+    </div>
+  </div>
+
+  <script>
+    // ダミー映像を生成（854x480px）
+    const canvas = document.createElement('canvas');
+    canvas.width = 854;
+    canvas.height = 480;
+    const ctx = canvas.getContext('2d');
+
+    function draw() {
+      // グラデーション背景
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, '#667eea');
+      gradient.addColorStop(1, '#764ba2');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // テキスト表示
+      ctx.fillStyle = 'white';
+      ctx.font = 'bold 48px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('テスト映像', canvas.width / 2, canvas.height / 2 - 30);
+
+      ctx.font = '24px sans-serif';
+      ctx.fillText('854 x 480 px', canvas.width / 2, canvas.height / 2 + 20);
+
+      // 時刻表示
+      ctx.font = '20px monospace';
+      const now = new Date();
+      ctx.fillText(now.toLocaleTimeString(), canvas.width / 2, canvas.height / 2 + 60);
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Canvasからストリームを取得
+    const stream = canvas.captureStream(30);
+    const video = document.getElementById('testVideo');
+    video.srcObject = stream;
+
+    // デバッグ情報をコンソールに出力
+    function logInfo() {
+      const container = video.parentElement;
+      console.log('=== デバッグ情報 ===');
+      console.log('Viewport:', {
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+      console.log('Container:', {
+        width: container.clientWidth,
+        height: container.clientHeight
+      });
+      console.log('Video:', {
+        clientWidth: video.clientWidth,
+        clientHeight: video.clientHeight,
+        videoWidth: video.videoWidth,
+        videoHeight: video.videoHeight
+      });
+    }
+
+    // 2秒後に情報を出力
+    setTimeout(logInfo, 2000);
+
+    // ウィンドウリサイズ時にも出力
+    window.addEventListener('resize', () => {
+      setTimeout(logInfo, 100);
+    });
+  </script>
+</body>
+</html>
