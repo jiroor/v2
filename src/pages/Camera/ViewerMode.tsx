@@ -38,28 +38,12 @@ function ViewerMode() {
     setCameras(cameraStreams)
   }, [getSavedCameras])
 
-  // カメラに接続
-  const handleConnect = async () => {
+  // カメラに接続する内部関数（再接続にも使用）
+  const connectToCamera = async (normalizedRoomId: string, cameraName: string) => {
     if (!peer || !isReady) {
-      setConnectionError('Peer接続の準備ができていません')
+      console.log('[再接続] Peer接続の準備ができていません')
       return
     }
-
-    const normalizedRoomId = normalizeRoomId(roomIdInput)
-
-    if (!isValidRoomId(normalizedRoomId)) {
-      setConnectionError('ルームIDの形式が正しくありません（例: ABC-DEF-GHI-JKL）')
-      return
-    }
-
-    // 既に接続済みかチェック
-    const existingCamera = cameras.find((cam) => cam.id === normalizedRoomId)
-    if (existingCamera && existingCamera.status === 'connected') {
-      setConnectionError('このカメラは既に接続されています')
-      return
-    }
-
-    setConnectionError(null)
 
     try {
       // ダミーのvideoトラックを作成（真っ黒な1x1ピクセルのcanvas）
@@ -75,23 +59,14 @@ function ViewerMode() {
         videoTracks: dummyStream.getVideoTracks().length,
       })
 
-      // 新しいカメラストリームを追加
-      const newCamera: CameraStream = {
-        id: normalizedRoomId,
-        name: `カメラ ${normalizedRoomId.substring(0, 7)}`,
-        peerId: normalizedRoomId,
-        connection: null,
-        stream: null,
-        status: 'connecting',
-        latency: 0,
-        createdAt: new Date(),
-      }
-
-      setCameras((prev) => {
-        // 既存のカメラがあれば更新、なければ追加
-        const filtered = prev.filter((cam) => cam.id !== normalizedRoomId)
-        return [...filtered, newCamera]
-      })
+      // カメラを接続中状態に更新
+      setCameras((prev) =>
+        prev.map((cam) =>
+          cam.id === normalizedRoomId
+            ? { ...cam, status: 'connecting', stream: null, connection: null }
+            : cam
+        )
+      )
 
       // カメラに接続（ダミーストリームを渡す）
       console.log('[DEBUG] peer.call()を呼び出します（ダミーストリーム）')
@@ -176,7 +151,7 @@ function ViewerMode() {
             // LocalStorageに保存
             saveCamera({
               id: normalizedRoomId,
-              name: newCamera.name,
+              name: cameraName,
               lastConnected: new Date().toISOString(),
             })
           }
@@ -209,7 +184,7 @@ function ViewerMode() {
         // LocalStorageに保存
         saveCamera({
           id: normalizedRoomId,
-          name: newCamera.name,
+          name: cameraName,
           lastConnected: new Date().toISOString(),
         })
       })
@@ -237,19 +212,79 @@ function ViewerMode() {
               : cam
           )
         )
+
+        // 3秒後に再接続を試みる
+        console.log('[再接続] 3秒後に再接続を試みます:', normalizedRoomId)
+        setTimeout(() => {
+          console.log('[再接続] 再接続を開始:', normalizedRoomId)
+          connectToCamera(normalizedRoomId, cameraName)
+        }, 3000)
       })
 
-      // 入力をクリア
-      setRoomIdInput('')
+      // LocalStorageに保存
+      saveCamera({
+        id: normalizedRoomId,
+        name: cameraName,
+        lastConnected: new Date().toISOString(),
+      })
     } catch (err) {
       console.error('接続処理エラー:', err)
-      setConnectionError(
-        err instanceof Error ? err.message : 'カメラへの接続に失敗しました'
-      )
       setCameras((prev) =>
-        prev.filter((cam) => cam.id !== normalizedRoomId)
+        prev.map((cam) =>
+          cam.id === normalizedRoomId
+            ? { ...cam, status: 'error' }
+            : cam
+        )
       )
     }
+  }
+
+  // カメラに接続（UI経由）
+  const handleConnect = async () => {
+    if (!peer || !isReady) {
+      setConnectionError('Peer接続の準備ができていません')
+      return
+    }
+
+    const normalizedRoomId = normalizeRoomId(roomIdInput)
+
+    if (!isValidRoomId(normalizedRoomId)) {
+      setConnectionError('ルームIDの形式が正しくありません（例: ABC-DEF-GHI-JKL）')
+      return
+    }
+
+    // 既に接続済みかチェック
+    const existingCamera = cameras.find((cam) => cam.id === normalizedRoomId)
+    if (existingCamera && existingCamera.status === 'connected') {
+      setConnectionError('このカメラは既に接続されています')
+      return
+    }
+
+    setConnectionError(null)
+
+    // 新しいカメラを追加
+    const newCamera: CameraStream = {
+      id: normalizedRoomId,
+      name: `カメラ ${normalizedRoomId.substring(0, 7)}`,
+      peerId: normalizedRoomId,
+      connection: null,
+      stream: null,
+      status: 'connecting',
+      latency: 0,
+      createdAt: new Date(),
+    }
+
+    setCameras((prev) => {
+      // 既存のカメラがあれば更新、なければ追加
+      const filtered = prev.filter((cam) => cam.id !== normalizedRoomId)
+      return [...filtered, newCamera]
+    })
+
+    // 接続開始
+    await connectToCamera(normalizedRoomId, newCamera.name)
+
+    // 入力をクリア
+    setRoomIdInput('')
   }
 
   // カメラ削除
