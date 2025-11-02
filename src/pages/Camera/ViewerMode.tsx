@@ -60,18 +60,9 @@ function ViewerMode() {
     setConnectionError(null)
 
     try {
-      // 無音の音声トラックを持つダミーストリームを作成
-      const audioContext = new AudioContext()
-      const oscillator = audioContext.createOscillator()
-      const gainNode = audioContext.createGain()
-      gainNode.gain.value = 0 // 無音
-      oscillator.connect(gainNode)
-      const destination = audioContext.createMediaStreamDestination()
-      gainNode.connect(destination)
-      oscillator.start()
-
-      const dummyStream = destination.stream
-      console.log('[DEBUG] ダミーストリームを作成しました（無音の音声トラック）:', {
+      // 完全に空のMediaStreamを作成（トラックなし）
+      const dummyStream = new MediaStream()
+      console.log('[DEBUG] 空のダミーストリームを作成しました:', {
         audioTracks: dummyStream.getAudioTracks().length,
         videoTracks: dummyStream.getVideoTracks().length,
       })
