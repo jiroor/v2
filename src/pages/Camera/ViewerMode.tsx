@@ -109,6 +109,8 @@ function ViewerMode() {
 
       // WebRTC接続のライフサイクルをログ（call後にpeerConnectionが利用可能）
       if (call.peerConnection) {
+        const receivedTracks: MediaStreamTrack[] = []
+
         call.peerConnection.addEventListener('iceconnectionstatechange', () => {
           console.log('[DEBUG] ICE接続状態変更:', call.peerConnection.iceConnectionState)
         })
@@ -129,7 +131,44 @@ function ViewerMode() {
           console.log('[DEBUG] トラック受信:', {
             kind: event.track.kind,
             streams: event.streams.length,
+            streamId: event.streams[0]?.id,
           })
+
+          // トラックを収集
+          receivedTracks.push(event.track)
+
+          // PeerJSのstreamイベントが発火しない場合のフォールバック
+          // trackイベントでストリームを手動で構築
+          if (event.streams && event.streams.length > 0) {
+            const remoteStream = event.streams[0]
+            console.log('[DEBUG] trackイベントからストリームを取得')
+            console.log('[DEBUG] 受信ストリーム情報:', {
+              id: remoteStream.id,
+              active: remoteStream.active,
+              videoTracks: remoteStream.getVideoTracks().length,
+              audioTracks: remoteStream.getAudioTracks().length,
+            })
+
+            setCameras((prev) =>
+              prev.map((cam) =>
+                cam.id === normalizedRoomId
+                  ? {
+                      ...cam,
+                      connection: call,
+                      stream: remoteStream,
+                      status: 'connected',
+                    }
+                  : cam
+              )
+            )
+
+            // LocalStorageに保存
+            saveCamera({
+              id: normalizedRoomId,
+              name: newCamera.name,
+              lastConnected: new Date().toISOString(),
+            })
+          }
         })
       }
 
