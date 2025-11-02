@@ -107,29 +107,31 @@ function ViewerMode() {
         callOpen: call.open,
       })
 
-      // WebRTC接続のライフサイクルをログ
-      call.peerConnection.addEventListener('iceconnectionstatechange', () => {
-        console.log('[DEBUG] ICE接続状態変更:', call.peerConnection.iceConnectionState)
-      })
-
-      call.peerConnection.addEventListener('icegatheringstatechange', () => {
-        console.log('[DEBUG] ICE収集状態変更:', call.peerConnection.iceGatheringState)
-      })
-
-      call.peerConnection.addEventListener('signalingstatechange', () => {
-        console.log('[DEBUG] シグナリング状態変更:', call.peerConnection.signalingState)
-      })
-
-      call.peerConnection.addEventListener('connectionstatechange', () => {
-        console.log('[DEBUG] 接続状態変更:', call.peerConnection.connectionState)
-      })
-
-      call.peerConnection.addEventListener('track', (event) => {
-        console.log('[DEBUG] トラック受信:', {
-          kind: event.track.kind,
-          streams: event.streams.length,
+      // WebRTC接続のライフサイクルをログ（call後にpeerConnectionが利用可能）
+      if (call.peerConnection) {
+        call.peerConnection.addEventListener('iceconnectionstatechange', () => {
+          console.log('[DEBUG] ICE接続状態変更:', call.peerConnection.iceConnectionState)
         })
-      })
+
+        call.peerConnection.addEventListener('icegatheringstatechange', () => {
+          console.log('[DEBUG] ICE収集状態変更:', call.peerConnection.iceGatheringState)
+        })
+
+        call.peerConnection.addEventListener('signalingstatechange', () => {
+          console.log('[DEBUG] シグナリング状態変更:', call.peerConnection.signalingState)
+        })
+
+        call.peerConnection.addEventListener('connectionstatechange', () => {
+          console.log('[DEBUG] 接続状態変更:', call.peerConnection.connectionState)
+        })
+
+        call.peerConnection.addEventListener('track', (event) => {
+          console.log('[DEBUG] トラック受信:', {
+            kind: event.track.kind,
+            streams: event.streams.length,
+          })
+        })
+      }
 
       // ストリーム受信
       call.on('stream', (remoteStream) => {

@@ -77,24 +77,7 @@ function CameraMode() {
           videoTrackReadyState: stream.getVideoTracks()[0]?.readyState,
         })
 
-        // WebRTC接続のライフサイクルをログ
-        call.peerConnection.addEventListener('iceconnectionstatechange', () => {
-          console.log('[DEBUG] カメラ側 ICE接続状態:', call.peerConnection.iceConnectionState)
-        })
-
-        call.peerConnection.addEventListener('icegatheringstatechange', () => {
-          console.log('[DEBUG] カメラ側 ICE収集状態:', call.peerConnection.iceGatheringState)
-        })
-
-        call.peerConnection.addEventListener('signalingstatechange', () => {
-          console.log('[DEBUG] カメラ側 シグナリング状態:', call.peerConnection.signalingState)
-        })
-
-        call.peerConnection.addEventListener('connectionstatechange', () => {
-          console.log('[DEBUG] カメラ側 接続状態:', call.peerConnection.connectionState)
-        })
-
-        // イベントリスナーをanswer()の前に登録
+        // PeerJSイベントリスナーをanswer()の前に登録
         // 接続が閉じられた時の処理
         call.on('close', () => {
           console.log('ビューワーが切断:', call.peer)
@@ -112,6 +95,25 @@ function CameraMode() {
         // ストリームで応答
         call.answer(stream)
         console.log('[DEBUG] answer()完了')
+
+        // WebRTC接続のライフサイクルをログ（answer()後にpeerConnectionが利用可能）
+        if (call.peerConnection) {
+          call.peerConnection.addEventListener('iceconnectionstatechange', () => {
+            console.log('[DEBUG] カメラ側 ICE接続状態:', call.peerConnection.iceConnectionState)
+          })
+
+          call.peerConnection.addEventListener('icegatheringstatechange', () => {
+            console.log('[DEBUG] カメラ側 ICE収集状態:', call.peerConnection.iceGatheringState)
+          })
+
+          call.peerConnection.addEventListener('signalingstatechange', () => {
+            console.log('[DEBUG] カメラ側 シグナリング状態:', call.peerConnection.signalingState)
+          })
+
+          call.peerConnection.addEventListener('connectionstatechange', () => {
+            console.log('[DEBUG] カメラ側 接続状態:', call.peerConnection.connectionState)
+          })
+        }
 
         // 接続を追加
         connectionsRef.current.add(call)
@@ -148,24 +150,7 @@ function CameraMode() {
         videoTrackReadyState: stream.getVideoTracks()[0]?.readyState,
       })
 
-      // WebRTC接続のライフサイクルをログ
-      call.peerConnection.addEventListener('iceconnectionstatechange', () => {
-        console.log('[DEBUG] カメラ側(待機) ICE接続状態:', call.peerConnection.iceConnectionState)
-      })
-
-      call.peerConnection.addEventListener('icegatheringstatechange', () => {
-        console.log('[DEBUG] カメラ側(待機) ICE収集状態:', call.peerConnection.iceGatheringState)
-      })
-
-      call.peerConnection.addEventListener('signalingstatechange', () => {
-        console.log('[DEBUG] カメラ側(待機) シグナリング状態:', call.peerConnection.signalingState)
-      })
-
-      call.peerConnection.addEventListener('connectionstatechange', () => {
-        console.log('[DEBUG] カメラ側(待機) 接続状態:', call.peerConnection.connectionState)
-      })
-
-      // イベントリスナーをanswer()の前に登録
+      // PeerJSイベントリスナーをanswer()の前に登録
       call.on('close', () => {
         console.log('ビューワーが切断:', call.peer)
         connectionsRef.current.delete(call)
@@ -181,6 +166,25 @@ function CameraMode() {
       // ストリームで応答
       call.answer(stream)
       console.log('[DEBUG] answer()完了')
+
+      // WebRTC接続のライフサイクルをログ（answer()後にpeerConnectionが利用可能）
+      if (call.peerConnection) {
+        call.peerConnection.addEventListener('iceconnectionstatechange', () => {
+          console.log('[DEBUG] カメラ側(待機) ICE接続状態:', call.peerConnection.iceConnectionState)
+        })
+
+        call.peerConnection.addEventListener('icegatheringstatechange', () => {
+          console.log('[DEBUG] カメラ側(待機) ICE収集状態:', call.peerConnection.iceGatheringState)
+        })
+
+        call.peerConnection.addEventListener('signalingstatechange', () => {
+          console.log('[DEBUG] カメラ側(待機) シグナリング状態:', call.peerConnection.signalingState)
+        })
+
+        call.peerConnection.addEventListener('connectionstatechange', () => {
+          console.log('[DEBUG] カメラ側(待機) 接続状態:', call.peerConnection.connectionState)
+        })
+      }
 
       // 接続を追加
       connectionsRef.current.add(call)
