@@ -8,7 +8,7 @@ import { usePeer } from '@/hooks/usePeer'
 import { useCameraStorage } from '@/hooks/useCameraStorage'
 import { normalizeRoomId, isValidRoomId } from '@/utils/roomIdUtils'
 import type { CameraStream } from '@/types/camera'
-import { VideoOff, Loader2, Maximize2, AlertTriangle } from 'lucide-react'
+import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun } from 'lucide-react'
 
 function ViewerMode() {
   useToolUsageTracking('/camera/viewer', 'ビューワーモード')
@@ -17,6 +17,7 @@ function ViewerMode() {
   const [cameras, setCameras] = useState<CameraStream[]>([])
   const [connectionError, setConnectionError] = useState<string | null>(null)
   const [fullscreenCameraId, setFullscreenCameraId] = useState<string | null>(null)
+  const [brightnessFilter, setBrightnessFilter] = useState(false)
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
@@ -331,6 +332,7 @@ function ViewerMode() {
   const toggleFullscreen = (cameraId: string) => {
     if (fullscreenCameraId === cameraId) {
       setFullscreenCameraId(null)
+      setBrightnessFilter(false) // 全画面終了時にフィルタをリセット
     } else {
       setFullscreenCameraId(cameraId)
     }
@@ -341,6 +343,7 @@ function ViewerMode() {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && fullscreenCameraId) {
         setFullscreenCameraId(null)
+        setBrightnessFilter(false) // フィルタもリセット
       }
     }
     window.addEventListener('keydown', handleEscape)
@@ -374,13 +377,24 @@ function ViewerMode() {
                 </span>
               )}
             </div>
-            <Button
-              onClick={() => setFullscreenCameraId(null)}
-              variant="secondary"
-              size="sm"
-            >
-              閉じる (Esc)
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                onClick={() => setBrightnessFilter(!brightnessFilter)}
+                variant={brightnessFilter ? 'default' : 'secondary'}
+                size="sm"
+                className="flex items-center gap-2"
+              >
+                <Sun className="w-4 h-4" />
+                {brightnessFilter ? '明るさ調整: ON' : '明るさ調整: OFF'}
+              </Button>
+              <Button
+                onClick={() => setFullscreenCameraId(null)}
+                variant="secondary"
+                size="sm"
+              >
+                閉じる (Esc)
+              </Button>
+            </div>
           </div>
 
           {/* 映像エリア */}
@@ -395,6 +409,11 @@ function ViewerMode() {
                 autoPlay
                 playsInline
                 className="w-full h-full object-contain"
+                style={
+                  brightnessFilter
+                    ? { filter: 'brightness(1.4) contrast(1.2)' }
+                    : undefined
+                }
               />
             ) : (
               <div className="text-center text-gray-400">
