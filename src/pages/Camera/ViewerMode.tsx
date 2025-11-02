@@ -385,7 +385,7 @@ function ViewerMode() {
                 className="flex items-center gap-2"
               >
                 <Sun className="w-4 h-4" />
-                {brightnessFilter ? '明るさ調整: ON' : '明るさ調整: OFF'}
+                {brightnessFilter ? '暗視モード: ON' : '暗視モード: OFF'}
               </Button>
               <Button
                 onClick={() => setFullscreenCameraId(null)}
@@ -398,19 +398,16 @@ function ViewerMode() {
           </div>
 
           {/* 映像エリア */}
-          <div className="flex-1 flex items-center justify-center bg-black min-h-0 min-w-0">
+          <div
+            className="flex-1 flex items-center justify-center min-h-0 min-w-0"
+            style={
+              brightnessFilter
+                ? { backgroundColor: '#001a00' }
+                : { backgroundColor: '#000000' }
+            }
+          >
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
-              <div
-                className="w-full h-full relative"
-                style={
-                  brightnessFilter
-                    ? {
-                        background:
-                          'linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03))',
-                      }
-                    : undefined
-                }
-              >
+              <div className="w-full h-full relative">
                 <video
                   ref={(video) => {
                     if (video && fullscreenCamera.stream) {
@@ -423,21 +420,31 @@ function ViewerMode() {
                   style={
                     brightnessFilter
                       ? {
-                          filter: 'brightness(1.6) contrast(1.3) saturate(1.15)',
-                          mixBlendMode: 'screen' as const,
+                          filter:
+                            'grayscale(100%) brightness(2.5) contrast(1.8) invert(100%) hue-rotate(60deg) saturate(2)',
                         }
                       : undefined
                   }
                 />
                 {brightnessFilter && (
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background:
-                        'radial-gradient(ellipse at center, transparent 0%, rgba(255,255,255,0.08) 100%)',
-                      mixBlendMode: 'overlay',
-                    }}
-                  />
+                  <>
+                    {/* 暗視スコープのビネット効果 */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background:
+                          'radial-gradient(ellipse at center, transparent 30%, rgba(0,20,0,0.4) 70%, rgba(0,10,0,0.8) 100%)',
+                      }}
+                    />
+                    {/* グリーンオーバーレイ */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        backgroundColor: 'rgba(0, 255, 0, 0.05)',
+                        mixBlendMode: 'screen',
+                      }}
+                    />
+                  </>
                 )}
               </div>
             ) : (
