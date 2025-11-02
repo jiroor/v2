@@ -346,7 +346,7 @@ function ViewerMode() {
                 }}
                 autoPlay
                 playsInline
-                className="max-w-full max-h-full object-contain"
+                className="w-auto h-auto max-w-full max-h-full object-contain"
               />
             ) : (
               <div className="text-center text-gray-400">
