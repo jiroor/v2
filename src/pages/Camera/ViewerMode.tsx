@@ -15,6 +15,7 @@ function ViewerMode() {
   const [roomIdInput, setRoomIdInput] = useState('')
   const [cameras, setCameras] = useState<CameraStream[]>([])
   const [connectionError, setConnectionError] = useState<string | null>(null)
+  const [fullscreenCameraId, setFullscreenCameraId] = useState<string | null>(null)
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
@@ -278,11 +279,93 @@ function ViewerMode() {
     return '~100ms'
   }
 
+  // 全画面表示を切り替え
+  const toggleFullscreen = (cameraId: string) => {
+    if (fullscreenCameraId === cameraId) {
+      setFullscreenCameraId(null)
+    } else {
+      setFullscreenCameraId(cameraId)
+    }
+  }
+
+  // Escキーで全画面を解除
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && fullscreenCameraId) {
+        setFullscreenCameraId(null)
+      }
+    }
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [fullscreenCameraId])
+
   const displayError = peerError || connectionError
+
+  // 全画面表示のカメラを取得
+  const fullscreenCamera = fullscreenCameraId
+    ? cameras.find((cam) => cam.id === fullscreenCameraId)
+    : null
 
   return (
     <>
       <SEO path="/camera/viewer" />
+
+      {/* 全画面表示モード */}
+      {fullscreenCamera && (
+        <div className="fixed inset-0 z-50 bg-black flex flex-col">
+          {/* ヘッダー */}
+          <div className="bg-gray-900/90 text-white px-4 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <h3 className="font-semibold">{fullscreenCamera.name}</h3>
+              <span className="text-sm text-gray-400 font-mono">
+                {fullscreenCamera.id}
+              </span>
+              {fullscreenCamera.status === 'connected' && (
+                <span className="text-sm text-green-400">
+                  遅延: {calculateLatency(fullscreenCamera)}
+                </span>
+              )}
+            </div>
+            <Button
+              onClick={() => setFullscreenCameraId(null)}
+              variant="secondary"
+              size="sm"
+            >
+              閉じる (Esc)
+            </Button>
+          </div>
+
+          {/* 映像エリア */}
+          <div className="flex-1 flex items-center justify-center bg-black">
+            {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
+              <video
+                ref={(video) => {
+                  if (video && fullscreenCamera.stream) {
+                    video.srcObject = fullscreenCamera.stream
+                  }
+                }}
+                autoPlay
+                playsInline
+                className="max-w-full max-h-full object-contain"
+              />
+            ) : (
+              <div className="text-center text-gray-400">
+                <div className="text-4xl mb-2">
+                  {fullscreenCamera.status === 'connecting' && '⏳'}
+                  {fullscreenCamera.status === 'disconnected' && '📵'}
+                  {fullscreenCamera.status === 'error' && '⚠️'}
+                </div>
+                <p className="text-sm">
+                  {fullscreenCamera.status === 'connecting' && '接続中...'}
+                  {fullscreenCamera.status === 'disconnected' && '未接続'}
+                  {fullscreenCamera.status === 'error' && '接続エラー'}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="max-w-[1200px] mx-auto py-8 px-4">
         <h2 className="text-2xl font-semibold mb-8 text-center">ビューワーモード</h2>
 
@@ -345,18 +428,28 @@ function ViewerMode() {
                   className="bg-white border border-gray-200 rounded-lg overflow-hidden"
                 >
                   {/* カメラ映像 */}
-                  <div className="bg-gray-900 aspect-video relative">
+                  <div className="bg-gray-900 aspect-video relative group">
                     {camera.stream && camera.status === 'connected' ? (
-                      <video
-                        ref={(video) => {
-                          if (video && camera.stream) {
-                            video.srcObject = camera.stream
-                          }
-                        }}
-                        autoPlay
-                        playsInline
-                        className="w-full h-full object-cover"
-                      />
+                      <>
+                        <video
+                          ref={(video) => {
+                            if (video && camera.stream) {
+                              video.srcObject = camera.stream
+                            }
+                          }}
+                          autoPlay
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                        {/* 全画面表示ボタン（ホバー時に表示） */}
+                        <button
+                          onClick={() => toggleFullscreen(camera.id)}
+                          className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-4xl"
+                          title="全画面表示"
+                        >
+                          ⛶
+                        </button>
+                      </>
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                         <div className="text-center">
