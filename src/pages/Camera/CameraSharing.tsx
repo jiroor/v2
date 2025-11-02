@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SEO } from '@/components/SEO/SEO'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
+import { Video, Eye } from 'lucide-react'
 
 function CameraSharing() {
   useToolUsageTracking('/camera', 'カメラ映像共有')
@@ -19,8 +20,8 @@ function CameraSharing() {
             to="/camera/mode"
             className="flex flex-col items-center bg-white border-2 border-[#d97706] rounded-lg p-8 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(217,119,6,0.2)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(217,119,6,0.2)] group"
           >
-            <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-[#d97706] text-white text-3xl transition-all duration-200 group-hover:scale-110">
-              📹
+            <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-[#d97706] text-white transition-all duration-200 group-hover:scale-110">
+              <Video className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-center">カメラになる</h3>
             <p className="text-gray-600 text-sm text-center">
@@ -32,8 +33,8 @@ function CameraSharing() {
             to="/camera/viewer"
             className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-8 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
           >
-            <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-gray-900 text-white text-3xl transition-all duration-200 group-hover:scale-110 group-hover:bg-[#d97706]">
-              👁️
+            <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-gray-900 text-white transition-all duration-200 group-hover:scale-110 group-hover:bg-[#d97706]">
+              <Eye className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-center">映像を見る</h3>
             <p className="text-gray-600 text-sm text-center">

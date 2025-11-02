@@ -8,6 +8,7 @@ import { useCamera } from '@/hooks/useCamera'
 import { generateRoomId, generateQRCodeData } from '@/utils/roomIdUtils'
 import { DEFAULT_CAMERA_CONFIG } from '@/constants/camera'
 import type { MediaConnection } from 'peerjs'
+import { Video } from 'lucide-react'
 
 function CameraMode() {
   useToolUsageTracking('/camera/mode', 'カメラモード')
@@ -284,7 +285,7 @@ function CameraMode() {
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-gray-400">
               <div className="text-center">
-                <div className="text-5xl mb-2">📹</div>
+                <Video className="w-20 h-20 mx-auto mb-2" />
                 <p>カメラはオフです</p>
               </div>
             </div>

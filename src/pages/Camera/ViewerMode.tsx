@@ -8,6 +8,7 @@ import { usePeer } from '@/hooks/usePeer'
 import { useCameraStorage } from '@/hooks/useCameraStorage'
 import { normalizeRoomId, isValidRoomId } from '@/utils/roomIdUtils'
 import type { CameraStream } from '@/types/camera'
+import { VideoOff, Loader2, Maximize2, AlertTriangle } from 'lucide-react'
 
 function ViewerMode() {
   useToolUsageTracking('/camera/viewer', 'ビューワーモード')
@@ -350,10 +351,10 @@ function ViewerMode() {
               />
             ) : (
               <div className="text-center text-gray-400">
-                <div className="text-4xl mb-2">
-                  {fullscreenCamera.status === 'connecting' && '⏳'}
-                  {fullscreenCamera.status === 'disconnected' && '📵'}
-                  {fullscreenCamera.status === 'error' && '⚠️'}
+                <div className="mb-2">
+                  {fullscreenCamera.status === 'connecting' && <Loader2 className="w-16 h-16 mx-auto animate-spin" />}
+                  {fullscreenCamera.status === 'disconnected' && <VideoOff className="w-16 h-16 mx-auto" />}
+                  {fullscreenCamera.status === 'error' && <AlertTriangle className="w-16 h-16 mx-auto" />}
                 </div>
                 <p className="text-sm">
                   {fullscreenCamera.status === 'connecting' && '接続中...'}
@@ -444,19 +445,19 @@ function ViewerMode() {
                         {/* 全画面表示ボタン（ホバー時に表示） */}
                         <button
                           onClick={() => toggleFullscreen(camera.id)}
-                          className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-4xl"
+                          className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"
                           title="全画面表示"
                         >
-                          ⛶
+                          <Maximize2 className="w-16 h-16" />
                         </button>
                       </>
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                         <div className="text-center">
-                          <div className="text-4xl mb-2">
-                            {camera.status === 'connecting' && '⏳'}
-                            {camera.status === 'disconnected' && '📵'}
-                            {camera.status === 'error' && '⚠️'}
+                          <div className="mb-2">
+                            {camera.status === 'connecting' && <Loader2 className="w-12 h-12 mx-auto animate-spin" />}
+                            {camera.status === 'disconnected' && <VideoOff className="w-12 h-12 mx-auto" />}
+                            {camera.status === 'error' && <AlertTriangle className="w-12 h-12 mx-auto" />}
                           </div>
                           <p className="text-sm">
                             {camera.status === 'connecting' && '接続中...'}
