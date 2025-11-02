@@ -21,6 +21,18 @@ function ViewerMode() {
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
 
+  // URLパラメータからルームIDを読み取り
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const roomParam = params.get('room')
+    if (roomParam) {
+      const normalized = normalizeRoomId(roomParam)
+      if (isValidRoomId(normalized)) {
+        setRoomIdInput(normalized)
+      }
+    }
+  }, [])
+
   // 保存されたカメラを読み込み
   useEffect(() => {
     const savedCameras = getSavedCameras()
