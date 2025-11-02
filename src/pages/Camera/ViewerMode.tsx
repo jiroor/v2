@@ -60,9 +60,15 @@ function ViewerMode() {
     setConnectionError(null)
 
     try {
-      // 完全に空のMediaStreamを作成（トラックなし）
-      const dummyStream = new MediaStream()
-      console.log('[DEBUG] 空のダミーストリームを作成しました:', {
+      // ダミーのvideoトラックを作成（真っ黒な1x1ピクセルのcanvas）
+      const canvas = document.createElement('canvas')
+      canvas.width = 1
+      canvas.height = 1
+      const canvasStream = canvas.captureStream()
+      const videoTrack = canvasStream.getVideoTracks()[0]
+
+      const dummyStream = new MediaStream([videoTrack])
+      console.log('[DEBUG] ダミーvideoトラック付きストリームを作成しました:', {
         audioTracks: dummyStream.getAudioTracks().length,
         videoTracks: dummyStream.getVideoTracks().length,
       })
