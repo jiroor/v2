@@ -111,6 +111,18 @@ function ViewerMode() {
       if (call.peerConnection) {
         const receivedTracks: MediaStreamTrack[] = []
 
+        // Receiversを確認
+        const receivers = call.peerConnection.getReceivers()
+        console.log('[DEBUG] ビューワー側 Receivers数:', receivers.length)
+        receivers.forEach((receiver, index) => {
+          console.log(`[DEBUG] Receiver ${index}:`, {
+            track: receiver.track?.kind,
+            trackId: receiver.track?.id,
+            trackEnabled: receiver.track?.enabled,
+            trackReadyState: receiver.track?.readyState,
+          })
+        })
+
         call.peerConnection.addEventListener('iceconnectionstatechange', () => {
           console.log('[DEBUG] ICE接続状態変更:', call.peerConnection.iceConnectionState)
         })

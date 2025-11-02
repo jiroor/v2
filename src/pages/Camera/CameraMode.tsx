@@ -98,6 +98,17 @@ function CameraMode() {
 
         // WebRTC接続のライフサイクルをログ（answer()後にpeerConnectionが利用可能）
         if (call.peerConnection) {
+          // Sendersを確認
+          const senders = call.peerConnection.getSenders()
+          console.log('[DEBUG] カメラ側 Senders数:', senders.length)
+          senders.forEach((sender, index) => {
+            console.log(`[DEBUG] Sender ${index}:`, {
+              track: sender.track?.kind,
+              trackId: sender.track?.id,
+              trackEnabled: sender.track?.enabled,
+              trackReadyState: sender.track?.readyState,
+            })
+          })
           call.peerConnection.addEventListener('iceconnectionstatechange', () => {
             console.log('[DEBUG] カメラ側 ICE接続状態:', call.peerConnection.iceConnectionState)
           })
@@ -169,6 +180,17 @@ function CameraMode() {
 
       // WebRTC接続のライフサイクルをログ（answer()後にpeerConnectionが利用可能）
       if (call.peerConnection) {
+        // Sendersを確認
+        const senders = call.peerConnection.getSenders()
+        console.log('[DEBUG] カメラ側(待機) Senders数:', senders.length)
+        senders.forEach((sender, index) => {
+          console.log(`[DEBUG] Sender ${index}:`, {
+            track: sender.track?.kind,
+            trackId: sender.track?.id,
+            trackEnabled: sender.track?.enabled,
+            trackReadyState: sender.track?.readyState,
+          })
+        })
         call.peerConnection.addEventListener('iceconnectionstatechange', () => {
           console.log('[DEBUG] カメラ側(待機) ICE接続状態:', call.peerConnection.iceConnectionState)
         })
