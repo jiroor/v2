@@ -4,7 +4,7 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import type { CameraConfig } from '@/types/camera'
-import { getCameraStream, stopCameraStream } from '@/utils/cameraUtils'
+import { getCameraStream, stopCameraStream, getAvailableCameras } from '@/utils/cameraUtils'
 
 /**
  * カメラストリームを管理するカスタムフック
@@ -14,15 +14,29 @@ export function useCamera() {
   const [stream, setStream] = useState<MediaStream | null>(null)
   const [isStreaming, setIsStreaming] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [availableCameras, setAvailableCameras] = useState<MediaDeviceInfo[]>([])
 
   // クリーンアップ用のストリーム参照
   const streamRef = useRef<MediaStream | null>(null)
 
   /**
+   * 利用可能なカメラデバイスを取得
+   */
+  const loadAvailableCameras = useCallback(async () => {
+    try {
+      const cameras = await getAvailableCameras()
+      setAvailableCameras(cameras)
+    } catch (err) {
+      console.error('カメラデバイスの取得に失敗:', err)
+    }
+  }, [])
+
+  /**
    * カメラを起動
    * @param config - カメラ設定
+   * @param deviceId - 使用するカメラのデバイスID（オプション）
    */
-  const startCamera = useCallback(async (config: CameraConfig) => {
+  const startCamera = useCallback(async (config: CameraConfig, deviceId?: string) => {
     try {
       setError(null)
       setIsStreaming(true)
@@ -34,7 +48,7 @@ export function useCamera() {
       }
 
       // 新しいストリームを取得
-      const newStream = await getCameraStream(config)
+      const newStream = await getCameraStream(config, deviceId)
 
       // ストリームの各トラックが終了したときのハンドラー
       newStream.getTracks().forEach((track) => {
@@ -98,7 +112,9 @@ export function useCamera() {
     stream,
     isStreaming,
     error,
+    availableCameras,
     startCamera,
     stopCamera,
+    loadAvailableCameras,
   }
 }

@@ -19,13 +19,28 @@ function CameraMode() {
   const [viewerCount, setViewerCount] = useState(0)
   const [copiedRoomId, setCopiedRoomId] = useState(false)
 
+  const [selectedCameraId, setSelectedCameraId] = useState<string>('')
+
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const connectionsRef = useRef<Set<MediaConnection>>(new Set())
   const pendingCallsRef = useRef<MediaConnection[]>([])
 
   const { peer, isReady, error: peerError } = usePeer(roomId)
-  const { stream, isStreaming, error: cameraError, startCamera, stopCamera } = useCamera()
+  const {
+    stream,
+    isStreaming,
+    error: cameraError,
+    availableCameras,
+    startCamera,
+    stopCamera,
+    loadAvailableCameras,
+  } = useCamera()
+
+  // 利用可能なカメラを読み込む
+  useEffect(() => {
+    loadAvailableCameras()
+  }, [loadAvailableCameras])
 
   // QRコード生成
   useEffect(() => {
@@ -222,11 +237,14 @@ function CameraMode() {
   // 配信開始
   const handleStartBroadcasting = async () => {
     try {
-      await startCamera({
-        id: roomId,
-        name: 'カメラ',
-        ...DEFAULT_CAMERA_CONFIG,
-      })
+      await startCamera(
+        {
+          id: roomId,
+          name: 'カメラ',
+          ...DEFAULT_CAMERA_CONFIG,
+        },
+        selectedCameraId || undefined
+      )
       setIsBroadcasting(true)
     } catch (err) {
       console.error('カメラ起動エラー:', err)
@@ -329,6 +347,27 @@ function CameraMode() {
             </div>
           </div>
         </div>
+
+        {/* カメラ選択 */}
+        {!isBroadcasting && availableCameras.length > 1 && (
+          <div className="mb-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <h3 className="font-semibold mb-3">カメラ選択</h3>
+              <select
+                value={selectedCameraId}
+                onChange={(e) => setSelectedCameraId(e.target.value)}
+                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent"
+              >
+                <option value="">デフォルトのカメラ</option>
+                {availableCameras.map((camera) => (
+                  <option key={camera.deviceId} value={camera.deviceId}>
+                    {camera.label || `カメラ ${camera.deviceId.substring(0, 8)}`}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        )}
 
         {/* 配信コントロール */}
         <div className="flex gap-4 md:flex-row flex-col">

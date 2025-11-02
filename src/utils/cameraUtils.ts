@@ -8,17 +8,27 @@ import { RESOLUTION_CONSTRAINTS } from '@/constants/camera'
 /**
  * MediaStreamの制約を生成
  * @param config - カメラ設定
+ * @param deviceId - 使用するカメラのデバイスID（オプション）
  * @returns MediaStreamの制約オブジェクト
  */
-export function getMediaConstraints(config: CameraConfig): MediaStreamConstraints {
+export function getMediaConstraints(
+  config: CameraConfig,
+  deviceId?: string
+): MediaStreamConstraints {
   const resolution = RESOLUTION_CONSTRAINTS[config.resolution]
 
   return {
-    video: {
-      width: { ideal: resolution.width },
-      height: { ideal: resolution.height },
-      facingMode: config.facingMode,
-    },
+    video: deviceId
+      ? {
+          deviceId: { exact: deviceId },
+          width: { ideal: resolution.width },
+          height: { ideal: resolution.height },
+        }
+      : {
+          width: { ideal: resolution.width },
+          height: { ideal: resolution.height },
+          facingMode: config.facingMode,
+        },
     audio: config.audioEnabled,
   }
 }
@@ -26,12 +36,16 @@ export function getMediaConstraints(config: CameraConfig): MediaStreamConstraint
 /**
  * カメラストリームを取得
  * @param config - カメラ設定
+ * @param deviceId - 使用するカメラのデバイスID（オプション）
  * @returns MediaStreamのPromise
  * @throws カメラアクセスに失敗した場合にエラーをスロー
  */
-export async function getCameraStream(config: CameraConfig): Promise<MediaStream> {
+export async function getCameraStream(
+  config: CameraConfig,
+  deviceId?: string
+): Promise<MediaStream> {
   try {
-    const constraints = getMediaConstraints(config)
+    const constraints = getMediaConstraints(config, deviceId)
     const stream = await navigator.mediaDevices.getUserMedia(constraints)
     return stream
   } catch (error) {
