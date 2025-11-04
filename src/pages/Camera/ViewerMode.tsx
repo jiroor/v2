@@ -416,10 +416,10 @@ function ViewerMode() {
         // 範囲を0-255にクリップ
         enhanced = Math.max(0, Math.min(255, enhanced))
 
-        // 緑色の暗視効果を適用
-        data[i] = enhanced * 0.2      // R: 緑色なので少し
-        data[i + 1] = enhanced          // G: メインの緑
-        data[i + 2] = enhanced * 0.2    // B: 緑色なので少し
+        // グレースケールのまま適用
+        data[i] = enhanced      // R
+        data[i + 1] = enhanced  // G
+        data[i + 2] = enhanced  // B
         // data[i + 3] (alpha) はそのまま
       }
 
@@ -477,7 +477,7 @@ function ViewerMode() {
                 className="flex items-center gap-2"
               >
                 <Sun className="w-4 h-4" />
-                {brightnessFilter ? '暗視モード: ON' : '暗視モード: OFF'}
+                {brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
               </Button>
               <Button
                 onClick={() => setFullscreenCameraId(null)}
@@ -492,11 +492,7 @@ function ViewerMode() {
           {/* 映像エリア */}
           <div
             className="flex-1 flex items-center justify-center min-h-0 min-w-0"
-            style={
-              brightnessFilter
-                ? { backgroundColor: '#001a00' }
-                : { backgroundColor: '#000000' }
-            }
+            style={{ backgroundColor: '#000000' }}
           >
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
               <div className="w-full h-full relative">
@@ -532,22 +528,12 @@ function ViewerMode() {
                   style={{ display: 'none' }}
                 />
 
-                {/* 暗視モード用のCanvas（暗視モードONの時のみ表示） */}
+                {/* コントラスト拡張モード用のCanvas（ONの時のみ表示） */}
                 {brightnessFilter && (
-                  <>
-                    <canvas
-                      ref={canvasRef}
-                      className="w-full h-full object-contain"
-                    />
-                    {/* 暗視スコープのビネット効果 */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background:
-                          'radial-gradient(ellipse at center, transparent 30%, rgba(0,20,0,0.4) 70%, rgba(0,10,0,0.8) 100%)',
-                      }}
-                    />
-                  </>
+                  <canvas
+                    ref={canvasRef}
+                    className="w-full h-full object-contain"
+                  />
                 )}
               </div>
             ) : (
