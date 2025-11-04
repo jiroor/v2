@@ -30,6 +30,12 @@ function ViewerMode() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationFrameRef = useRef<number | null>(null)
 
+  // 通常表示用のvideo参照
+  const displayVideoRef = useRef<HTMLVideoElement>(null)
+
+  // ステータスメッセージのタイマー管理用
+  const statusMessageTimerRef = useRef<NodeJS.Timeout | null>(null)
+
   // URLパラメータからルームIDを読み取り
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -338,8 +344,18 @@ function ViewerMode() {
 
   // 状態メッセージを表示
   const showStatusMessage = (message: string) => {
+    // 既存のタイマーがあればクリア
+    if (statusMessageTimerRef.current) {
+      clearTimeout(statusMessageTimerRef.current)
+    }
+
     setStatusMessage(message)
-    setTimeout(() => setStatusMessage(null), 2000)
+
+    // 新しいタイマーを設定（最後の操作から2秒後に消える）
+    statusMessageTimerRef.current = setTimeout(() => {
+      setStatusMessage(null)
+      statusMessageTimerRef.current = null
+    }, 2000)
   }
 
   // 全画面表示を切り替え
@@ -369,6 +385,42 @@ function ViewerMode() {
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
   }, [fullscreenCameraId])
+
+  // 通常表示用のvideo要素の管理（ストリームとミュート状態）
+  useEffect(() => {
+    const fullscreenCamera = cameras.find((c) => c.id === fullscreenCameraId)
+
+    if (!displayVideoRef.current || !fullscreenCamera?.stream) {
+      return
+    }
+
+    const video = displayVideoRef.current
+
+    // ストリームを設定
+    if (video.srcObject !== fullscreenCamera.stream) {
+      video.srcObject = fullscreenCamera.stream
+    }
+
+    // ミュート状態を反映
+    video.muted = isMuted
+    video.volume = isMuted ? 0 : 1.0
+  }, [cameras, fullscreenCameraId, isMuted])
+
+  // 暗視モード用のvideo要素の管理（ストリームのみ）
+  useEffect(() => {
+    const fullscreenCamera = cameras.find((c) => c.id === fullscreenCameraId)
+
+    if (!videoRef.current || !fullscreenCamera?.stream) {
+      return
+    }
+
+    const video = videoRef.current
+
+    // ストリームを設定
+    if (video.srcObject !== fullscreenCamera.stream) {
+      video.srcObject = fullscreenCamera.stream
+    }
+  }, [cameras, fullscreenCameraId])
 
   // 暗視モードの画像処理
   useEffect(() => {
@@ -480,35 +532,19 @@ function ViewerMode() {
                 {/* 通常表示用のビデオ（暗視モードOFFの時のみ表示） */}
                 {!brightnessFilter && (
                   <video
-                    ref={(video) => {
-                      if (video && fullscreenCamera.stream) {
-                        video.srcObject = fullscreenCamera.stream
-                        // ミュート状態を反映
-                        video.muted = isMuted
-                        video.volume = isMuted ? 0 : 1.0
-                      }
-                    }}
+                    ref={displayVideoRef}
                     autoPlay
                     playsInline
-                    muted={isMuted}
                     className="w-full h-full object-contain"
                   />
                 )}
 
                 {/* 暗視モード用（常に存在するが、非表示の場合もある） */}
                 <video
-                  ref={(video) => {
-                    if (video && fullscreenCamera.stream) {
-                      video.srcObject = fullscreenCamera.stream
-                    }
-                    // @ts-ignore - refの更新は必要
-                    if (videoRef && typeof videoRef === 'object') {
-                      // @ts-ignore
-                      videoRef.current = video
-                    }
-                  }}
+                  ref={videoRef}
                   autoPlay
                   playsInline
+                  muted
                   className="hidden"
                   style={{ display: 'none' }}
                 />
