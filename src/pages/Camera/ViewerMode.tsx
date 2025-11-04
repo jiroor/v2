@@ -632,17 +632,35 @@ function ViewerMode() {
                 )}
               </div>
             ) : (
-              <div className="text-center text-gray-400">
-                <div className="mb-2">
-                  {fullscreenCamera.status === 'connecting' && <Loader2 className="w-16 h-16 mx-auto animate-spin" />}
-                  {fullscreenCamera.status === 'disconnected' && <VideoOff className="w-16 h-16 mx-auto" />}
-                  {fullscreenCamera.status === 'error' && <AlertTriangle className="w-16 h-16 mx-auto" />}
+              <div className="w-full h-full relative">
+                {/* エラーメッセージ */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <div className="mb-2">
+                      {fullscreenCamera.status === 'connecting' && <Loader2 className="w-16 h-16 mx-auto animate-spin" />}
+                      {fullscreenCamera.status === 'disconnected' && <VideoOff className="w-16 h-16 mx-auto" />}
+                      {fullscreenCamera.status === 'error' && <AlertTriangle className="w-16 h-16 mx-auto" />}
+                    </div>
+                    <p className="text-sm">
+                      {fullscreenCamera.status === 'connecting' && '接続中...'}
+                      {fullscreenCamera.status === 'disconnected' && '未接続'}
+                      {fullscreenCamera.status === 'error' && '接続エラー'}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm">
-                  {fullscreenCamera.status === 'connecting' && '接続中...'}
-                  {fullscreenCamera.status === 'disconnected' && '未接続'}
-                  {fullscreenCamera.status === 'error' && '接続エラー'}
-                </p>
+
+                {/* 閉じるボタン（常に表示） */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                  <Button
+                    onClick={() => setFullscreenCameraId(null)}
+                    variant="secondary"
+                    size="sm"
+                    className="w-14 h-14 p-0 rounded-full flex items-center justify-center bg-gray-900/80 backdrop-blur-sm"
+                    title="閉じる"
+                  >
+                    <X className="w-7 h-7" />
+                  </Button>
+                </div>
               </div>
             )}
           </div>
