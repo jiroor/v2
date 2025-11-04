@@ -386,6 +386,22 @@ function ViewerMode() {
     return () => window.removeEventListener('keydown', handleEscape)
   }, [fullscreenCameraId])
 
+  // 全画面モード時に背景のスクロールを無効化
+  useEffect(() => {
+    if (fullscreenCameraId) {
+      // スクロールを無効化
+      document.body.style.overflow = 'hidden'
+    } else {
+      // スクロールを復元
+      document.body.style.overflow = ''
+    }
+
+    // クリーンアップ
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [fullscreenCameraId])
+
   // 通常表示用のvideo要素の管理（ストリームとミュート状態）
   useEffect(() => {
     const fullscreenCamera = cameras.find((c) => c.id === fullscreenCameraId)
@@ -594,7 +610,7 @@ function ViewerMode() {
                           setIsMuted(newMuted)
                           showStatusMessage(newMuted ? 'ミュート中' : '音声ON')
                         }}
-                        variant={isMuted ? 'default' : 'secondary'}
+                        variant={isMuted ? 'secondary' : 'default'}
                         size="sm"
                         className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
                         title={isMuted ? 'ミュート中' : '音声ON'}
