@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -21,6 +21,11 @@ function ViewerMode() {
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
+
+  // 暗視モード用のcanvas参照
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const animationFrameRef = useRef<number | null>(null)
 
   // URLパラメータからルームIDを読み取り
   useEffect(() => {
@@ -350,6 +355,93 @@ function ViewerMode() {
     return () => window.removeEventListener('keydown', handleEscape)
   }, [fullscreenCameraId])
 
+  // 暗視モードの画像処理
+  useEffect(() => {
+    if (!brightnessFilter || !videoRef.current || !canvasRef.current) {
+      // 暗視モードOFF時はアニメーションフレームをキャンセル
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+        animationFrameRef.current = null
+      }
+      return
+    }
+
+    const video = videoRef.current
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d', { willReadFrequently: true })
+
+    if (!ctx) return
+
+    const processFrame = () => {
+      if (!video.videoWidth || !video.videoHeight) {
+        animationFrameRef.current = requestAnimationFrame(processFrame)
+        return
+      }
+
+      // Canvasのサイズをビデオに合わせる
+      if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+        canvas.width = video.videoWidth
+        canvas.height = video.videoHeight
+      }
+
+      // ビデオフレームをCanvasに描画
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+
+      // ピクセルデータを取得
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const data = imageData.data
+
+      // グレースケール化して、暗い部分（0-10）を0-255に拡張
+      const minThreshold = 0
+      const maxThreshold = 10
+      const range = maxThreshold - minThreshold
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i]
+        const g = data[i + 1]
+        const b = data[i + 2]
+
+        // グレースケール化（輝度計算）
+        const gray = 0.299 * r + 0.587 * g + 0.114 * b
+
+        // 0-10の範囲を0-255に拡張
+        let enhanced: number
+        if (gray <= maxThreshold) {
+          enhanced = (gray - minThreshold) / range * 255
+        } else {
+          // 10を超える明るさは255に固定
+          enhanced = 255
+        }
+
+        // 範囲を0-255にクリップ
+        enhanced = Math.max(0, Math.min(255, enhanced))
+
+        // 緑色の暗視効果を適用
+        data[i] = enhanced * 0.2      // R: 緑色なので少し
+        data[i + 1] = enhanced          // G: メインの緑
+        data[i + 2] = enhanced * 0.2    // B: 緑色なので少し
+        // data[i + 3] (alpha) はそのまま
+      }
+
+      // 処理済み画像をCanvasに描画
+      ctx.putImageData(imageData, 0, 0)
+
+      // 次のフレームを処理
+      animationFrameRef.current = requestAnimationFrame(processFrame)
+    }
+
+    // 処理開始
+    animationFrameRef.current = requestAnimationFrame(processFrame)
+
+    // クリーンアップ
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+        animationFrameRef.current = null
+      }
+    }
+  }, [brightnessFilter, fullscreenCameraId])
+
   const displayError = peerError || connectionError
 
   // 全画面表示のカメラを取得
@@ -408,40 +500,51 @@ function ViewerMode() {
           >
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
               <div className="w-full h-full relative">
+                {/* 通常表示用のビデオ（暗視モードOFFの時のみ表示） */}
+                {!brightnessFilter && (
+                  <video
+                    ref={(video) => {
+                      if (video && fullscreenCamera.stream) {
+                        video.srcObject = fullscreenCamera.stream
+                      }
+                    }}
+                    autoPlay
+                    playsInline
+                    className="w-full h-full object-contain"
+                  />
+                )}
+
+                {/* 暗視モード用（常に存在するが、非表示の場合もある） */}
                 <video
                   ref={(video) => {
                     if (video && fullscreenCamera.stream) {
                       video.srcObject = fullscreenCamera.stream
                     }
+                    // @ts-ignore - refの更新は必要
+                    if (videoRef && typeof videoRef === 'object') {
+                      // @ts-ignore
+                      videoRef.current = video
+                    }
                   }}
                   autoPlay
                   playsInline
-                  className="w-full h-full object-contain"
-                  style={
-                    brightnessFilter
-                      ? {
-                          filter:
-                            'grayscale(100%) brightness(2.5) contrast(1.8) invert(100%) hue-rotate(60deg) saturate(2)',
-                        }
-                      : undefined
-                  }
+                  className="hidden"
+                  style={{ display: 'none' }}
                 />
+
+                {/* 暗視モード用のCanvas（暗視モードONの時のみ表示） */}
                 {brightnessFilter && (
                   <>
+                    <canvas
+                      ref={canvasRef}
+                      className="w-full h-full object-contain"
+                    />
                     {/* 暗視スコープのビネット効果 */}
                     <div
                       className="absolute inset-0 pointer-events-none"
                       style={{
                         background:
                           'radial-gradient(ellipse at center, transparent 30%, rgba(0,20,0,0.4) 70%, rgba(0,10,0,0.8) 100%)',
-                      }}
-                    />
-                    {/* グリーンオーバーレイ */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        backgroundColor: 'rgba(0, 255, 0, 0.05)',
-                        mixBlendMode: 'screen',
                       }}
                     />
                   </>
