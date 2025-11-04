@@ -20,6 +20,7 @@ function ViewerMode() {
   const [brightnessFilter, setBrightnessFilter] = useState(false)
   const [showControls, setShowControls] = useState(true)
   const [isMuted, setIsMuted] = useState(false)
+  const [statusMessage, setStatusMessage] = useState<string | null>(null)
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
@@ -335,6 +336,12 @@ function ViewerMode() {
     return '~100ms'
   }
 
+  // 状態メッセージを表示
+  const showStatusMessage = (message: string) => {
+    setStatusMessage(message)
+    setTimeout(() => setStatusMessage(null), 2000)
+  }
+
   // 全画面表示を切り替え
   const toggleFullscreen = (cameraId: string) => {
     if (fullscreenCameraId === cameraId) {
@@ -531,42 +538,60 @@ function ViewerMode() {
 
                 {/* 映像上のコントローラー（タップで表示/非表示） */}
                 {showControls && (
-                  <div
-                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm px-4 py-3 rounded-full"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {/* ミュートボタン */}
-                    <Button
-                      onClick={() => setIsMuted(!isMuted)}
-                      variant={isMuted ? 'default' : 'secondary'}
-                      size="sm"
-                      className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
-                      title={isMuted ? 'ミュート中' : '音声ON'}
-                    >
-                      {isMuted ? <VolumeX className="w-7 h-7" /> : <Volume2 className="w-7 h-7" />}
-                    </Button>
+                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3">
+                    {/* 状態メッセージ */}
+                    {statusMessage && (
+                      <div className="bg-gray-900/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">
+                        {statusMessage}
+                      </div>
+                    )}
 
-                    {/* コントラスト拡張ボタン */}
-                    <Button
-                      onClick={() => setBrightnessFilter(!brightnessFilter)}
-                      variant={brightnessFilter ? 'default' : 'secondary'}
-                      size="sm"
-                      className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
-                      title={brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
+                    {/* コントロールボタン */}
+                    <div
+                      className="flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm px-4 py-3 rounded-full"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <Sun className="w-7 h-7" />
-                    </Button>
+                      {/* ミュートボタン */}
+                      <Button
+                        onClick={() => {
+                          const newMuted = !isMuted
+                          setIsMuted(newMuted)
+                          showStatusMessage(newMuted ? 'ミュート中' : '音声ON')
+                        }}
+                        variant={isMuted ? 'default' : 'secondary'}
+                        size="sm"
+                        className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
+                        title={isMuted ? 'ミュート中' : '音声ON'}
+                      >
+                        {isMuted ? <VolumeX className="w-7 h-7" /> : <Volume2 className="w-7 h-7" />}
+                      </Button>
 
-                    {/* 閉じるボタン */}
-                    <Button
-                      onClick={() => setFullscreenCameraId(null)}
-                      variant="secondary"
-                      size="sm"
-                      className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
-                      title="閉じる"
-                    >
-                      <X className="w-7 h-7" />
-                    </Button>
+                      {/* コントラスト拡張ボタン */}
+                      <Button
+                        onClick={() => {
+                          const newFilter = !brightnessFilter
+                          setBrightnessFilter(newFilter)
+                          showStatusMessage(newFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF')
+                        }}
+                        variant={brightnessFilter ? 'default' : 'secondary'}
+                        size="sm"
+                        className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
+                        title={brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
+                      >
+                        <Sun className="w-7 h-7" />
+                      </Button>
+
+                      {/* 閉じるボタン */}
+                      <Button
+                        onClick={() => setFullscreenCameraId(null)}
+                        variant="secondary"
+                        size="sm"
+                        className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
+                        title="閉じる"
+                      >
+                        <X className="w-7 h-7" />
+                      </Button>
+                    </div>
                   </div>
                 )}
               </div>
