@@ -655,7 +655,7 @@ function ViewerMode() {
                     onClick={() => setFullscreenCameraId(null)}
                     variant="secondary"
                     size="sm"
-                    className="w-14 h-14 p-0 rounded-full flex items-center justify-center bg-gray-900/80 backdrop-blur-sm"
+                    className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
                     title="閉じる"
                   >
                     <X className="w-7 h-7" />
