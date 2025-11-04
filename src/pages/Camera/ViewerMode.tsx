@@ -368,7 +368,7 @@ function ViewerMode() {
     } else {
       setFullscreenCameraId(cameraId)
       setShowControls(true) // 全画面開始時はコントローラーを表示
-      setIsMuted(false) // 全画面開始時はミュート解除
+      setIsMuted(true) // 全画面開始時はミュート
     }
   }
 
