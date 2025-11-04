@@ -18,6 +18,7 @@ function ViewerMode() {
   const [connectionError, setConnectionError] = useState<string | null>(null)
   const [fullscreenCameraId, setFullscreenCameraId] = useState<string | null>(null)
   const [brightnessFilter, setBrightnessFilter] = useState(false)
+  const [showControls, setShowControls] = useState(true)
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
@@ -338,8 +339,10 @@ function ViewerMode() {
     if (fullscreenCameraId === cameraId) {
       setFullscreenCameraId(null)
       setBrightnessFilter(false) // 全画面終了時にフィルタをリセット
+      setShowControls(true) // コントローラー表示状態をリセット
     } else {
       setFullscreenCameraId(cameraId)
+      setShowControls(true) // 全画面開始時はコントローラーを表示
     }
   }
 
@@ -349,6 +352,7 @@ function ViewerMode() {
       if (e.key === 'Escape' && fullscreenCameraId) {
         setFullscreenCameraId(null)
         setBrightnessFilter(false) // フィルタもリセット
+        setShowControls(true) // コントローラー表示状態をリセット
       }
     }
     window.addEventListener('keydown', handleEscape)
@@ -454,43 +458,11 @@ function ViewerMode() {
       {/* 全画面表示モード */}
       {fullscreenCamera && (
         <div className="fixed inset-0 z-50 bg-black flex flex-col">
-          {/* ヘッダー */}
-          <div className="bg-gray-900/90 text-white px-4 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <h3 className="font-semibold">{fullscreenCamera.name}</h3>
-              <span className="text-sm text-gray-400 font-mono">
-                {fullscreenCamera.id}
-              </span>
-              {fullscreenCamera.status === 'connected' && (
-                <span className="text-sm text-green-400">
-                  遅延: {calculateLatency(fullscreenCamera)}
-                </span>
-              )}
-            </div>
-            <div className="flex items-center gap-2">
-              <Button
-                onClick={() => setBrightnessFilter(!brightnessFilter)}
-                variant={brightnessFilter ? 'default' : 'secondary'}
-                size="sm"
-                className="flex items-center gap-2"
-              >
-                <Sun className="w-4 h-4" />
-                {brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
-              </Button>
-              <Button
-                onClick={() => setFullscreenCameraId(null)}
-                variant="secondary"
-                size="sm"
-              >
-                閉じる (Esc)
-              </Button>
-            </div>
-          </div>
-
           {/* 映像エリア */}
           <div
-            className="flex-1 flex items-center justify-center min-h-0 min-w-0"
+            className="flex-1 flex items-center justify-center min-h-0 min-w-0 relative"
             style={{ backgroundColor: '#000000' }}
+            onClick={() => setShowControls(!showControls)}
           >
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
               <div className="w-full h-full relative">
@@ -532,6 +504,39 @@ function ViewerMode() {
                     ref={canvasRef}
                     className="w-full h-full object-contain"
                   />
+                )}
+
+                {/* 映像上のコントローラー（タップで表示/非表示） */}
+                {showControls && (
+                  <div
+                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm px-4 py-3 rounded-full"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {/* コントラスト拡張ボタン */}
+                    <Button
+                      onClick={() => setBrightnessFilter(!brightnessFilter)}
+                      variant={brightnessFilter ? 'default' : 'secondary'}
+                      size="sm"
+                      className="flex items-center gap-2"
+                    >
+                      <Sun className="w-4 h-4" />
+                      <span className="hidden sm:inline">
+                        {brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
+                      </span>
+                      <span className="sm:hidden">
+                        {brightnessFilter ? 'ON' : 'OFF'}
+                      </span>
+                    </Button>
+
+                    {/* 閉じるボタン */}
+                    <Button
+                      onClick={() => setFullscreenCameraId(null)}
+                      variant="secondary"
+                      size="sm"
+                    >
+                      閉じる
+                    </Button>
+                  </div>
                 )}
               </div>
             ) : (
