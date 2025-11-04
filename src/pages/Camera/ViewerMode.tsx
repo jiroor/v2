@@ -8,7 +8,7 @@ import { usePeer } from '@/hooks/usePeer'
 import { useCameraStorage } from '@/hooks/useCameraStorage'
 import { normalizeRoomId, isValidRoomId } from '@/utils/roomIdUtils'
 import type { CameraStream } from '@/types/camera'
-import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun } from 'lucide-react'
+import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun, X } from 'lucide-react'
 
 function ViewerMode() {
   useToolUsageTracking('/camera/viewer', 'ビューワーモード')
@@ -509,7 +509,7 @@ function ViewerMode() {
                 {/* 映像上のコントローラー（タップで表示/非表示） */}
                 {showControls && (
                   <div
-                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm px-4 py-3 rounded-full"
+                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-gray-900/80 backdrop-blur-sm px-3 py-2 rounded-full"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {/* コントラスト拡張ボタン */}
@@ -517,15 +517,10 @@ function ViewerMode() {
                       onClick={() => setBrightnessFilter(!brightnessFilter)}
                       variant={brightnessFilter ? 'default' : 'secondary'}
                       size="sm"
-                      className="flex items-center gap-2"
+                      className="w-10 h-10 p-0 rounded-full flex items-center justify-center"
+                      title={brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
                     >
-                      <Sun className="w-4 h-4" />
-                      <span className="hidden sm:inline">
-                        {brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
-                      </span>
-                      <span className="sm:hidden">
-                        {brightnessFilter ? 'ON' : 'OFF'}
-                      </span>
+                      <Sun className="w-5 h-5" />
                     </Button>
 
                     {/* 閉じるボタン */}
@@ -533,8 +528,10 @@ function ViewerMode() {
                       onClick={() => setFullscreenCameraId(null)}
                       variant="secondary"
                       size="sm"
+                      className="w-10 h-10 p-0 rounded-full flex items-center justify-center"
+                      title="閉じる"
                     >
-                      閉じる
+                      <X className="w-5 h-5" />
                     </Button>
                   </div>
                 )}
