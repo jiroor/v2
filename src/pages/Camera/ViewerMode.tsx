@@ -535,7 +535,7 @@ function ViewerMode() {
                       className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
                       title={brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
                     >
-                      <Sun className="w-6 h-6" />
+                      <Sun className="w-7 h-7" />
                     </Button>
 
                     {/* 閉じるボタン */}
@@ -546,7 +546,7 @@ function ViewerMode() {
                       className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
                       title="閉じる"
                     >
-                      <X className="w-6 h-6" />
+                      <X className="w-7 h-7" />
                     </Button>
                   </div>
                 )}
