@@ -391,11 +391,7 @@ function ViewerMode() {
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
       const data = imageData.data
 
-      // グレースケール化して、暗い部分（0-10）を0-255に拡張
-      const minThreshold = 0
-      const maxThreshold = 10
-      const range = maxThreshold - minThreshold
-
+      // 適応的ガンマ補正を適用
       for (let i = 0; i < data.length; i += 4) {
         const r = data[i]
         const g = data[i + 1]
@@ -404,22 +400,24 @@ function ViewerMode() {
         // グレースケール化（輝度計算）
         const gray = 0.299 * r + 0.587 * g + 0.114 * b
 
-        // 0-10の範囲を0-255に拡張
-        let enhanced: number
-        if (gray <= maxThreshold) {
-          enhanced = (gray - minThreshold) / range * 255
-        } else {
-          // 10を超える明るさは255に固定
-          enhanced = 255
-        }
+        // 輝度を0-1に正規化
+        const l_norm = gray / 255
+
+        // 適応的ガンマ値の計算（学術的根拠あり）
+        // 暗い部分でより強い補正（γ=2.6）、明るい部分で弱い補正（γ=0.4）
+        const gamma = 0.4 + 2.2 * Math.pow(1 - l_norm, 1.5)
+
+        // ガンマ補正の適用
+        // I_out = I_in^(1/γ)
+        const enhanced = Math.pow(l_norm, 1 / gamma) * 255
 
         // 範囲を0-255にクリップ
-        enhanced = Math.max(0, Math.min(255, enhanced))
+        const clipped = Math.max(0, Math.min(255, enhanced))
 
         // グレースケールのまま適用
-        data[i] = enhanced      // R
-        data[i + 1] = enhanced  // G
-        data[i + 2] = enhanced  // B
+        data[i] = clipped      // R
+        data[i + 1] = clipped  // G
+        data[i + 2] = clipped  // B
         // data[i + 3] (alpha) はそのまま
       }
 
