@@ -39,7 +39,7 @@ export const RESOLUTION_CONSTRAINTS: Record<CameraResolution, ResolutionConstrai
 export const DEFAULT_CAMERA_CONFIG = {
   resolution: '480p' as CameraResolution,
   facingMode: 'user' as const,
-  audioEnabled: false,
+  audioEnabled: true,
 }
 
 /**

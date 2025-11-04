@@ -8,7 +8,7 @@ import { usePeer } from '@/hooks/usePeer'
 import { useCameraStorage } from '@/hooks/useCameraStorage'
 import { normalizeRoomId, isValidRoomId } from '@/utils/roomIdUtils'
 import type { CameraStream } from '@/types/camera'
-import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun, X } from 'lucide-react'
+import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun, X, Volume2, VolumeX } from 'lucide-react'
 
 function ViewerMode() {
   useToolUsageTracking('/camera/viewer', 'ビューワーモード')
@@ -19,6 +19,7 @@ function ViewerMode() {
   const [fullscreenCameraId, setFullscreenCameraId] = useState<string | null>(null)
   const [brightnessFilter, setBrightnessFilter] = useState(false)
   const [showControls, setShowControls] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
@@ -340,9 +341,11 @@ function ViewerMode() {
       setFullscreenCameraId(null)
       setBrightnessFilter(false) // 全画面終了時にフィルタをリセット
       setShowControls(true) // コントローラー表示状態をリセット
+      setIsMuted(false) // ミュート状態をリセット
     } else {
       setFullscreenCameraId(cameraId)
       setShowControls(true) // 全画面開始時はコントローラーを表示
+      setIsMuted(false) // 全画面開始時はミュート解除
     }
   }
 
@@ -353,6 +356,7 @@ function ViewerMode() {
         setFullscreenCameraId(null)
         setBrightnessFilter(false) // フィルタもリセット
         setShowControls(true) // コントローラー表示状態をリセット
+        setIsMuted(false) // ミュート状態をリセット
       }
     }
     window.addEventListener('keydown', handleEscape)
@@ -472,10 +476,14 @@ function ViewerMode() {
                     ref={(video) => {
                       if (video && fullscreenCamera.stream) {
                         video.srcObject = fullscreenCamera.stream
+                        // ミュート状態を反映
+                        video.muted = isMuted
+                        video.volume = isMuted ? 0 : 1.0
                       }
                     }}
                     autoPlay
                     playsInline
+                    muted={isMuted}
                     className="w-full h-full object-contain"
                   />
                 )}
@@ -527,6 +535,17 @@ function ViewerMode() {
                     className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm px-4 py-3 rounded-full"
                     onClick={(e) => e.stopPropagation()}
                   >
+                    {/* ミュートボタン */}
+                    <Button
+                      onClick={() => setIsMuted(!isMuted)}
+                      variant={isMuted ? 'default' : 'secondary'}
+                      size="sm"
+                      className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
+                      title={isMuted ? 'ミュート中' : '音声ON'}
+                    >
+                      {isMuted ? <VolumeX className="w-7 h-7" /> : <Volume2 className="w-7 h-7" />}
+                    </Button>
+
                     {/* コントラスト拡張ボタン */}
                     <Button
                       onClick={() => setBrightnessFilter(!brightnessFilter)}
@@ -638,10 +657,13 @@ function ViewerMode() {
                           ref={(video) => {
                             if (video && camera.stream) {
                               video.srcObject = camera.stream
+                              // カメラリストではミュート
+                              video.muted = true
                             }
                           }}
                           autoPlay
                           playsInline
+                          muted
                           className="w-full h-full object-cover"
                         />
                         {/* 全画面表示ボタン（ホバー時に表示） */}
