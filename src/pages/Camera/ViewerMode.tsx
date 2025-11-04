@@ -506,10 +506,25 @@ function ViewerMode() {
                   />
                 )}
 
+                {/* カメラ情報（左上、タップで表示/非表示） */}
+                {showControls && (
+                  <div
+                    className="absolute top-4 left-4 bg-gray-900/80 backdrop-blur-sm px-4 py-2 rounded-lg"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <h3 className="font-semibold text-white text-sm">{fullscreenCamera.name}</h3>
+                    {fullscreenCamera.status === 'connected' && (
+                      <span className="text-xs text-green-400">
+                        遅延: {calculateLatency(fullscreenCamera)}
+                      </span>
+                    )}
+                  </div>
+                )}
+
                 {/* 映像上のコントローラー（タップで表示/非表示） */}
                 {showControls && (
                   <div
-                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-gray-900/80 backdrop-blur-sm px-3 py-2 rounded-full"
+                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-gray-900/80 backdrop-blur-sm px-4 py-3 rounded-full"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {/* コントラスト拡張ボタン */}
@@ -517,10 +532,10 @@ function ViewerMode() {
                       onClick={() => setBrightnessFilter(!brightnessFilter)}
                       variant={brightnessFilter ? 'default' : 'secondary'}
                       size="sm"
-                      className="w-10 h-10 p-0 rounded-full flex items-center justify-center"
+                      className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
                       title={brightnessFilter ? 'コントラスト拡張: ON' : 'コントラスト拡張: OFF'}
                     >
-                      <Sun className="w-5 h-5" />
+                      <Sun className="w-6 h-6" />
                     </Button>
 
                     {/* 閉じるボタン */}
@@ -528,10 +543,10 @@ function ViewerMode() {
                       onClick={() => setFullscreenCameraId(null)}
                       variant="secondary"
                       size="sm"
-                      className="w-10 h-10 p-0 rounded-full flex items-center justify-center"
+                      className="w-14 h-14 p-0 rounded-full flex items-center justify-center"
                       title="閉じる"
                     >
-                      <X className="w-5 h-5" />
+                      <X className="w-6 h-6" />
                     </Button>
                   </div>
                 )}
