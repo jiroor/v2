@@ -1,0 +1,19 @@
+{
+  "name": "Rakit - 楽に使えるツール集",
+  "short_name": "Rakit",
+  "description": "楽に使える、軽量でミニマルなユーティリティツール集",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

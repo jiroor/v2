@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
+import { UpdatePrompt } from './components/UpdatePrompt'
 import Home from './pages/Home'
 import CountdownTimer from './pages/Timer/CountdownTimer'
 import Stopwatch from './pages/Timer/Stopwatch'
@@ -40,6 +41,7 @@ function App() {
             <Route path="/camera/viewer" element={<ViewerMode />} />
           </Routes>
         </main>
+        <UpdatePrompt />
       </div>
     </Router>
   )
