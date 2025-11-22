@@ -18,6 +18,7 @@
     "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "html5-qrcode": "^2.3.8",
     "lucide-react": "^0.548.0",
     "peerjs": "^1.5.5",
     "qrcode": "^1.5.4",

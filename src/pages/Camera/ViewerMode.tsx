@@ -6,9 +6,10 @@ import { SEO } from '@/components/SEO/SEO'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { usePeer } from '@/hooks/usePeer'
 import { useCameraStorage } from '@/hooks/useCameraStorage'
+import { QRScanner } from '@/components/Camera/QRScanner'
 import { normalizeRoomId, isValidRoomId } from '@/utils/roomIdUtils'
 import type { CameraStream } from '@/types/camera'
-import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun, X, Volume2, VolumeX } from 'lucide-react'
+import { VideoOff, Loader2, Maximize2, AlertTriangle, Sun, X, Volume2, VolumeX, QrCode } from 'lucide-react'
 
 function ViewerMode() {
   useToolUsageTracking('/camera/viewer', 'ビューワーモード')
@@ -21,6 +22,7 @@ function ViewerMode() {
   const [showControls, setShowControls] = useState(true)
   const [isMuted, setIsMuted] = useState(false)
   const [statusMessage, setStatusMessage] = useState<string | null>(null)
+  const [showQRScanner, setShowQRScanner] = useState(false)
 
   const { peer, isReady, error: peerError } = usePeer()
   const { getSavedCameras, saveCamera, removeCamera } = useCameraStorage()
@@ -266,14 +268,24 @@ function ViewerMode() {
     }
   }
 
-  // カメラに接続（UI経由）
-  const handleConnect = async () => {
+  // QRスキャン成功時のハンドラー
+  const handleQRScan = (roomId: string) => {
+    setShowQRScanner(false)
+    setRoomIdInput(roomId)
+    // 自動的に接続処理を開始
+    setTimeout(() => {
+      handleConnectWithRoomId(roomId)
+    }, 100)
+  }
+
+  // ルームIDを指定して接続
+  const handleConnectWithRoomId = async (targetRoomId: string) => {
     if (!peer || !isReady) {
       setConnectionError('Peer接続の準備ができていません')
       return
     }
 
-    const normalizedRoomId = normalizeRoomId(roomIdInput)
+    const normalizedRoomId = normalizeRoomId(targetRoomId)
 
     if (!isValidRoomId(normalizedRoomId)) {
       setConnectionError('ルームIDの形式が正しくありません（例: ABC-DEF-GHI-JKL）')
@@ -312,6 +324,11 @@ function ViewerMode() {
 
     // 入力をクリア
     setRoomIdInput('')
+  }
+
+  // カメラに接続（UI経由）
+  const handleConnect = async () => {
+    await handleConnectWithRoomId(roomIdInput)
   }
 
   // カメラ削除
@@ -534,6 +551,14 @@ function ViewerMode() {
     <>
       <SEO path="/camera/viewer" />
 
+      {/* QRスキャナーモーダル */}
+      {showQRScanner && (
+        <QRScanner
+          onScan={handleQRScan}
+          onClose={() => setShowQRScanner(false)}
+        />
+      )}
+
       {/* 全画面表示モード */}
       {fullscreenCamera && (
         <div className="fixed inset-0 z-50 bg-black flex flex-col">
@@ -715,7 +740,17 @@ function ViewerMode() {
                 className="font-mono"
               />
             </div>
-            <div className="flex items-end">
+            <div className="flex items-end gap-2">
+              <Button
+                onClick={() => setShowQRScanner(true)}
+                variant="outline"
+                disabled={!isReady}
+                className="md:w-auto"
+                title="QRコードで接続"
+              >
+                <QrCode className="w-4 h-4 md:mr-2" />
+                <span className="hidden md:inline">QRコード</span>
+              </Button>
               <Button
                 onClick={handleConnect}
                 disabled={!isReady || !roomIdInput.trim()}
