@@ -7,6 +7,7 @@ import { usePeer } from '@/hooks/usePeer'
 import { useCamera } from '@/hooks/useCamera'
 import { generateRoomId, generateQRCodeData } from '@/utils/roomIdUtils'
 import { DEFAULT_CAMERA_CONFIG } from '@/constants/camera'
+import { ShareButton } from '@/components/Camera/ShareButton'
 import type { MediaConnection } from 'peerjs'
 import { Video } from 'lucide-react'
 
@@ -346,6 +347,11 @@ function CameraMode() {
                 ref={canvasRef}
                 className="max-w-full h-auto mx-auto rounded-lg shadow-sm"
               />
+
+              {/* 共有ボタン */}
+              <div className="mt-4">
+                <ShareButton roomId={roomId} className="w-full" />
+              </div>
             </div>
           </div>
         </div>
