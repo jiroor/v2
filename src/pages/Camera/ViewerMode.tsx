@@ -580,14 +580,14 @@ function ViewerMode() {
                   />
                 )}
 
-                {/* 暗視モード用（常に存在するが、非表示の場合もある） */}
+                {/* 暗視モード用（常に存在するが、視覚的に非表示） */}
+                {/* display:noneだとMac Chromeでビデオデコードが停止するため、opacity:0で非表示にする */}
                 <video
                   ref={videoRef}
                   autoPlay
                   playsInline
                   muted
-                  className="hidden"
-                  style={{ display: 'none' }}
+                  className="absolute w-px h-px opacity-0 pointer-events-none"
                 />
 
                 {/* コントラスト拡張モード用のCanvas（ONの時のみ表示） */}
