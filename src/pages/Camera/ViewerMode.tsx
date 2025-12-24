@@ -468,7 +468,12 @@ function ViewerMode() {
 
     const video = videoRef.current
     const canvas = canvasRef.current
-    const ctx = canvas.getContext('2d', { willReadFrequently: true })
+    // colorSpaceを'srgb'に明示指定し、全環境で同じ結果を得る
+    // MacのChromeはデフォルトでP3を使用するため、指定しないと結果が異なる
+    const ctx = canvas.getContext('2d', {
+      willReadFrequently: true,
+      colorSpace: 'srgb',
+    })
 
     if (!ctx) return
 
