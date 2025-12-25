@@ -586,15 +586,17 @@ function ViewerMode() {
           >
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
               <div className="w-full h-full relative">
-                {/* 通常表示用のビデオ（暗視モードOFFの時のみ表示） */}
-                {!brightnessFilter && (
-                  <video
-                    ref={displayVideoRef}
-                    autoPlay
-                    playsInline
-                    className="w-full h-full object-contain"
-                  />
-                )}
+                {/* 通常表示用のビデオ（音声出力も担当するため常にDOMに存在） */}
+                {/* コントラスト拡張ONの時は視覚的に非表示だが、音声は出力し続ける */}
+                <video
+                  ref={displayVideoRef}
+                  autoPlay
+                  playsInline
+                  className={brightnessFilter
+                    ? "absolute w-px h-px opacity-0 pointer-events-none"
+                    : "w-full h-full object-contain"
+                  }
+                />
 
                 {/* 暗視モード用（常に存在するが、視覚的に非表示） */}
                 {/* display:noneだとMac Chromeでビデオデコードが停止するため、opacity:0で非表示にする */}
