@@ -12,7 +12,7 @@ export type CameraStatus = 'connecting' | 'connected' | 'disconnected' | 'error'
 /**
  * カメラの解像度設定
  */
-export type CameraResolution = '360p' | '480p' | '720p'
+export type CameraResolution = '360p' | '480p' | '720p' | '1080p' | '4K'
 
 /**
  * カメラの向き（フロント/バック）

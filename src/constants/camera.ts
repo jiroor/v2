@@ -29,7 +29,17 @@ export const RESOLUTION_CONSTRAINTS: Record<CameraResolution, ResolutionConstrai
   '720p': {
     width: 1280,
     height: 720,
-    label: '720p (高画質)',
+    label: '720p (HD)',
+  },
+  '1080p': {
+    width: 1920,
+    height: 1080,
+    label: '1080p (フルHD)',
+  },
+  '4K': {
+    width: 3840,
+    height: 2160,
+    label: '4K (超高画質)',
   },
 }
 
@@ -37,7 +47,7 @@ export const RESOLUTION_CONSTRAINTS: Record<CameraResolution, ResolutionConstrai
  * デフォルトのカメラ設定
  */
 export const DEFAULT_CAMERA_CONFIG = {
-  resolution: '480p' as CameraResolution,
+  resolution: '1080p' as CameraResolution,
   facingMode: 'user' as const,
   audioEnabled: true,
 }

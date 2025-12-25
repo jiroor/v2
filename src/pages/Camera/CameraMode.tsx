@@ -6,8 +6,9 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { usePeer } from '@/hooks/usePeer'
 import { useCamera } from '@/hooks/useCamera'
 import { generateRoomId, generateQRCodeData } from '@/utils/roomIdUtils'
-import { DEFAULT_CAMERA_CONFIG } from '@/constants/camera'
+import { DEFAULT_CAMERA_CONFIG, RESOLUTION_CONSTRAINTS } from '@/constants/camera'
 import { ShareButton } from '@/components/Camera/ShareButton'
+import type { CameraResolution } from '@/types/camera'
 import type { MediaConnection } from 'peerjs'
 import { Video } from 'lucide-react'
 
@@ -22,6 +23,7 @@ function CameraMode() {
 
   const [selectedCameraId, setSelectedCameraId] = useState<string>('')
   const [facingMode, setFacingMode] = useState<'user' | 'environment'>('user')
+  const [resolution, setResolution] = useState<CameraResolution>(DEFAULT_CAMERA_CONFIG.resolution)
 
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -245,6 +247,7 @@ function CameraMode() {
           name: 'カメラ',
           ...DEFAULT_CAMERA_CONFIG,
           facingMode,
+          resolution,
         },
         selectedCameraId || undefined
       )
@@ -361,6 +364,27 @@ function CameraMode() {
           <div className="mb-6">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold mb-3">カメラ設定</h3>
+
+              {/* 解像度選択 */}
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  解像度
+                </label>
+                <select
+                  value={resolution}
+                  onChange={(e) => setResolution(e.target.value as CameraResolution)}
+                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] focus:border-transparent"
+                >
+                  {Object.entries(RESOLUTION_CONSTRAINTS).map(([key, value]) => (
+                    <option key={key} value={key}>
+                      {value.label}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-xs text-gray-500">
+                  ※ 高解像度は高画質ですが、通信量が増えます
+                </p>
+              </div>
 
               {/* カメラの向き選択 */}
               <div className="mb-4">
