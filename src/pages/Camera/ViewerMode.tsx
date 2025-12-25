@@ -82,8 +82,19 @@ function ViewerMode() {
       const canvasStream = canvas.captureStream()
       const videoTrack = canvasStream.getVideoTracks()[0]
 
-      const dummyStream = new MediaStream([videoTrack])
-      console.log('[DEBUG] ダミーvideoトラック付きストリームを作成しました:', {
+      // ダミーのaudioトラックを作成（無音）
+      // WebRTCのSDP交渉でオーディオラインを含めるために必要
+      const audioContext = new AudioContext()
+      const oscillator = audioContext.createOscillator()
+      const destination = audioContext.createMediaStreamDestination()
+      oscillator.connect(destination)
+      oscillator.start()
+      const audioTrack = destination.stream.getAudioTracks()[0]
+      // 無音にするためにトラックを無効化
+      audioTrack.enabled = false
+
+      const dummyStream = new MediaStream([videoTrack, audioTrack])
+      console.log('[DEBUG] ダミーストリームを作成しました:', {
         audioTracks: dummyStream.getAudioTracks().length,
         videoTracks: dummyStream.getVideoTracks().length,
       })
