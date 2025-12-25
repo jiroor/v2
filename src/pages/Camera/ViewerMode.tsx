@@ -385,7 +385,7 @@ function ViewerMode() {
     } else {
       setFullscreenCameraId(cameraId)
       setShowControls(true) // 全画面開始時はコントローラーを表示
-      setIsMuted(true) // 全画面開始時はミュート
+      // ミュート状態は維持（変更しない）
     }
   }
 
@@ -437,6 +437,14 @@ function ViewerMode() {
     // ミュート状態を反映
     video.muted = isMuted
     video.volume = isMuted ? 0 : 1.0
+
+    // ミュート解除時にplay()を呼び出す（Autoplay Policy対策）
+    // ユーザー操作によるミュート解除時に音声付き再生を有効化
+    if (!isMuted) {
+      video.play().catch((err) => {
+        console.warn('音声付き再生に失敗:', err)
+      })
+    }
   }, [cameras, fullscreenCameraId, isMuted])
 
   // 暗視モード用のvideo要素の管理（ストリームのみ）
@@ -575,15 +583,16 @@ function ViewerMode() {
           >
             {fullscreenCamera.stream && fullscreenCamera.status === 'connected' ? (
               <div className="w-full h-full relative">
-                {/* 通常表示用のビデオ（暗視モードOFFの時のみ表示） */}
-                {!brightnessFilter && (
-                  <video
-                    ref={displayVideoRef}
-                    autoPlay
-                    playsInline
-                    className="w-full h-full object-contain"
-                  />
-                )}
+                {/* 音声再生用のビデオ（常に存在、暗視モード時は非表示） */}
+                <video
+                  ref={displayVideoRef}
+                  autoPlay
+                  playsInline
+                  className={brightnessFilter
+                    ? "absolute w-px h-px opacity-0 pointer-events-none"
+                    : "w-full h-full object-contain"
+                  }
+                />
 
                 {/* 暗視モード用（常に存在するが、視覚的に非表示） */}
                 {/* display:noneだとMac Chromeでビデオデコードが停止するため、opacity:0で非表示にする */}
