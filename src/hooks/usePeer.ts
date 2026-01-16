@@ -18,15 +18,15 @@ export function usePeer(roomId?: string) {
   const [error, setError] = useState<string | null>(null)
 
   /**
-   * Peerを初期化
+   * Peerを初期化（非同期）
    */
-  const initializePeer = useCallback(() => {
+  const initializePeer = useCallback(async () => {
     try {
       setError(null)
       setIsReady(false)
 
-      // Peerインスタンスを作成
-      const newPeer = createPeer(roomId)
+      // Peerインスタンスを作成（非同期）
+      const newPeer = await createPeer(roomId)
 
       // open イベント: Peer接続が確立された
       newPeer.on('open', (id: string) => {
@@ -107,13 +107,13 @@ export function usePeer(roomId?: string) {
   }, [roomId]) // roomIdが変更されたら再初期化
 
   /**
-   * Peerを再初期化
+   * Peerを再初期化（非同期）
    */
-  const reconnect = useCallback(() => {
+  const reconnect = useCallback(async () => {
     if (peer) {
       destroyPeer(peer)
     }
-    initializePeer()
+    await initializePeer()
   }, [peer, initializePeer])
 
   return {

@@ -2,35 +2,44 @@
  * PeerJS関連のユーティリティ関数
  */
 
-import Peer, { DataConnection, MediaConnection } from 'peerjs'
+import type Peer from 'peerjs'
+import type { DataConnection, MediaConnection } from 'peerjs'
 import { PEER_CONFIG } from '@/constants/camera'
 
 /**
- * PeerJSインスタンスを作成
+ * PeerJSインスタンスを作成（遅延ローディング）
  * @param roomId - ルームID（オプション。指定した場合はそのIDでPeerを作成）
- * @returns PeerJSインスタンス
+ * @returns PeerJSインスタンスのPromise
  */
-export function createPeer(roomId?: string): Peer {
-  const config = {
-    debug: PEER_CONFIG.debug,
-    config: {
-      iceServers: [
-        // Google STUNサーバー
-        { urls: 'stun:stun.l.google.com:19302' },
-        { urls: 'stun:stun1.l.google.com:19302' },
-        { urls: 'stun:stun2.l.google.com:19302' },
-        { urls: 'stun:stun3.l.google.com:19302' },
-        { urls: 'stun:stun4.l.google.com:19302' },
-      ],
-    },
-  }
+export async function createPeer(roomId?: string): Promise<Peer> {
+  try {
+    // PeerJSを動的にインポート
+    const { default: PeerJS } = await import('peerjs')
 
-  // roomIdが指定されている場合はそのIDでPeerを作成
-  // 指定されていない場合はPeerJSが自動でIDを生成
-  if (roomId) {
-    return new Peer(roomId, config)
-  } else {
-    return new Peer(config)
+    const config = {
+      debug: PEER_CONFIG.debug,
+      config: {
+        iceServers: [
+          // Google STUNサーバー
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' },
+          { urls: 'stun:stun2.l.google.com:19302' },
+          { urls: 'stun:stun3.l.google.com:19302' },
+          { urls: 'stun:stun4.l.google.com:19302' },
+        ],
+      },
+    }
+
+    // roomIdが指定されている場合はそのIDでPeerを作成
+    // 指定されていない場合はPeerJSが自動でIDを生成
+    if (roomId) {
+      return new PeerJS(roomId, config)
+    } else {
+      return new PeerJS(config)
+    }
+  } catch (error) {
+    console.error('PeerJS の読み込みに失敗しました:', error)
+    throw new Error('PeerJS の読み込みに失敗しました')
   }
 }
 
