@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import QRCode from 'qrcode'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO/SEO'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
@@ -50,25 +49,25 @@ function CameraMode() {
   useEffect(() => {
     if (!roomId || !canvasRef.current) return
 
-    const qrData = generateQRCodeData(roomId)
+    const generateQR = async () => {
+      try {
+        const QRCode = (await import('qrcode')).default
+        const qrData = generateQRCodeData(roomId)
 
-    QRCode.toCanvas(
-      canvasRef.current,
-      qrData,
-      {
-        width: 256,
-        margin: 2,
-        color: {
-          dark: '#000000',
-          light: '#FFFFFF',
-        },
-      },
-      (error) => {
-        if (error) {
-          console.error('QRコード生成エラー:', error)
-        }
+        await QRCode.toCanvas(canvasRef.current!, qrData, {
+          width: 256,
+          margin: 2,
+          color: {
+            dark: '#000000',
+            light: '#FFFFFF',
+          },
+        })
+      } catch (error) {
+        console.error('QRコード生成エラー:', error)
       }
-    )
+    }
+
+    generateQR()
   }, [roomId])
 
   // ビデオ要素にストリームを設定
