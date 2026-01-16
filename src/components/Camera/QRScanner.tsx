@@ -3,10 +3,12 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { Html5Qrcode } from 'html5-qrcode'
 import { Button } from '@/components/ui/button'
 import { X, Camera } from 'lucide-react'
 import { extractRoomIdFromQRCode } from '@/utils/roomIdUtils'
+
+// Type definition for Html5Qrcode
+type Html5Qrcode = any
 
 interface QRScannerProps {
   onScan: (roomId: string) => void
@@ -26,12 +28,16 @@ export function QRScanner({ onScan, onClose }: QRScannerProps) {
 
   // スキャナーを開始
   useEffect(() => {
-    const scanner = new Html5Qrcode(elementId)
-    scannerRef.current = scanner
+    let scanner: Html5Qrcode | null = null
 
-    const startScanning = async () => {
+    const initScanner = async () => {
       try {
         setError(null)
+
+        // html5-qrcode を動的にインポート
+        const { Html5Qrcode } = await import('html5-qrcode')
+        scanner = new Html5Qrcode(elementId)
+        scannerRef.current = scanner
 
         await scanner.start(
           { facingMode: 'environment' }, // バックカメラを優先
@@ -39,7 +45,7 @@ export function QRScanner({ onScan, onClose }: QRScannerProps) {
             fps: 10, // フレームレート
             qrbox: { width: 250, height: 250 }, // スキャンエリア
           },
-          (decodedText) => {
+          (decodedText: string) => {
             // QRコードを検出
             console.log('QRコード検出:', decodedText)
 
@@ -60,21 +66,21 @@ export function QRScanner({ onScan, onClose }: QRScannerProps) {
         )
       } catch (err) {
         console.error('QRスキャナー起動エラー:', err)
-        setError('カメラの起動に失敗しました。カメラの権限を確認してください。')
+        setError('QRスキャナーの読み込みまたはカメラの起動に失敗しました。')
       }
     }
 
-    startScanning()
+    initScanner()
 
     // クリーンアップ
     return () => {
-      if (scanner.isScanning) {
+      if (scanner && scanner.isScanning) {
         scanner
           .stop()
           .then(() => {
             console.log('QRスキャナーを停止しました')
           })
-          .catch((err) => {
+          .catch((err: Error) => {
             console.error('QRスキャナー停止エラー:', err)
           })
       }
