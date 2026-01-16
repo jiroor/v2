@@ -10,6 +10,17 @@
 
 ---
 
+## 📱 別プロジェクト
+
+### iOS移植プロジェクト
+- **目的**: Web版カメラ共有機能をiOSネイティブアプリとして移植
+- **主な機能**: ローカルデバイス検索（Bonjour）、完全ローカル通信（WebRTC）
+- **計画ファイル**: [Plans-iOS.md](./Plans-iOS.md)
+- **機能記録**: [memories/features/20250116-ios-camera-sharing-migration.md](./memories/features/20250116-ios-camera-sharing-migration.md)
+- **状態**: 計画策定完了 → 実装準備中
+
+---
+
 ## 📋 バックログ
 
 ### パフォーマンス最適化
