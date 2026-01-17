@@ -29,16 +29,16 @@
 
 ## 🔴 Phase 1: プロジェクト初期化 & 基本機能 `cc:TODO`
 
-### 1.1 プロジェクト初期化
+### 1.1 プロジェクト初期化 ✅
 
-- [ ] Xcodeプロジェクト作成（SwiftUI App）
-  - Bundle Identifier: com.rakit.camerasharing
+- [x] XcodeGenでプロジェクト作成（SwiftUI App）
+  - Bundle Identifier: com.rakit.CameraSharing
   - Deployment Target: iOS 15.0
-  - Git初期化
-- [ ] 依存関係セットアップ
-  - Swift Package Manager で GoogleWebRTC を追加
-  - Info.plist にカメラ・マイク権限説明を追加
-- [ ] プロジェクト構造定義
+  - project.yml で構成管理
+- [x] 基本構造セットアップ
+  - Info.plist にカメラ・マイク・ローカルネットワーク権限説明を追加
+  - Bonjour サービス名（_rakit-camera._tcp）を設定
+- [x] プロジェクト構造定義
   ```
   CameraSharing/
   ├── Models/          # データモデル
@@ -47,8 +47,14 @@
   ├── Utilities/       # ヘルパー関数
   └── Resources/       # アセット
   ```
-- [ ] 基本的なSwiftLint設定
-- [ ] 初回コミット
+- [x] 初期ファイル作成
+  - CameraSharingApp.swift: アプリエントリーポイント
+  - HomeView.swift: ホーム画面（カメラモード/ビューワーモード選択）
+  - CameraDevice.swift: データモデル
+- [x] .gitignore設定（Xcode一時ファイル）
+- [x] 初回コミット
+
+**次のタスク**: Phase 1.2 - 依存関係セットアップ（GoogleWebRTC）
 
 ### 1.2 カメラアクセス実装
 
