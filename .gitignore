@@ -23,3 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 .claude/state/
+
+# iOS / Xcode
+apps/ios/DerivedData/
+apps/ios/build/
+apps/ios/*.xcodeproj/xcuserdata/
+apps/ios/*.xcworkspace/xcuserdata/
+apps/ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+apps/ios/.swiftpm/
+apps/ios/Pods/
