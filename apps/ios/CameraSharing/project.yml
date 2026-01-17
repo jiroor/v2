@@ -1,0 +1,43 @@
+name: CameraSharing
+options:
+  bundleIdPrefix: com.rakit
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+
+targets:
+  CameraSharing:
+    type: application
+    platform: iOS
+    sources:
+      - CameraSharing
+    info:
+      path: CameraSharing/Info.plist
+      properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rakit.CameraSharing
+        DEVELOPMENT_TEAM: ""
+        INFOPLIST_FILE: CameraSharing/Info.plist
+        SWIFT_VERSION: "5.9"
+        IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_PREVIEWS: YES
+    dependencies: []
+      # Phase 1.3で GoogleWebRTC を追加予定
+
+# packages:
+#   Phase 1.3で GoogleWebRTC パッケージを追加予定
+
+schemes:
+  CameraSharing:
+    build:
+      targets:
+        CameraSharing: all
+    run:
+      config: Debug
+    archive:
+      config: Release
