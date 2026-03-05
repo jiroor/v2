@@ -95,6 +95,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'URLエンコード,URLデコード,パーセントエンコーディング,変換',
     path: '/text/url',
   },
+  '/text/json': {
+    title: 'JSON整形・フォーマット | Rakit',
+    description:
+      'JSONを自動で整形・フォーマット。インデント調整、圧縮（Minify）、構文チェック機能付き。',
+    keywords: 'JSON,整形,フォーマット,Minify,圧縮,バリデーション',
+    path: '/text/json',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

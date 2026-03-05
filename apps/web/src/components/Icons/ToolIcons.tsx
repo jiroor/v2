@@ -13,6 +13,7 @@ import {
   Video,
   Binary,
   Link2,
+  Braces,
 } from 'lucide-react'
 
 interface IconProps {
@@ -87,4 +88,9 @@ export function Base64Icon({ className }: IconProps) {
 // URLエンコード/デコード
 export function URLEncoderIcon({ className }: IconProps) {
   return <Link2 className={className} />
+}
+
+// JSON整形
+export function JSONFormatterIcon({ className }: IconProps) {
+  return <Braces className={className} />
 }
