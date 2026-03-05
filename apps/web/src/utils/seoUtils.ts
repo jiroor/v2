@@ -214,6 +214,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'Cron,スケジュール,定期実行,crontab',
     path: '/other/cron',
   },
+  '/other/unit': {
+    title: '単位変換 | Rakit',
+    description:
+      '長さ・重さ・温度・面積・体積を変換。メートル、キロ、ポンド、インチなどに対応。',
+    keywords: '単位変換,メートル,キログラム,インチ,ポンド',
+    path: '/other/unit',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

@@ -25,6 +25,7 @@ const NumberConverter = lazy(() => import('./pages/TextTools/NumberConverter'))
 const DuplicateRemover = lazy(() => import('./pages/TextTools/DuplicateRemover'))
 const TextSorter = lazy(() => import('./pages/TextTools/TextSorter'))
 const TextStatistics = lazy(() => import('./pages/TextTools/TextStatistics'))
+const UnitConverter = lazy(() => import("./pages/OtherTools/UnitConverter"))
 const CronGenerator = lazy(() => import("./pages/OtherTools/CronGenerator"))
 const TextSplitter = lazy(() => import("./pages/TextTools/TextSplitter"))
 const TextJoiner = lazy(() => import("./pages/TextTools/TextJoiner"))
@@ -77,6 +78,7 @@ function App() {
               <Route path="/text/duplicate" element={<DuplicateRemover />} />
               <Route path="/text/sort" element={<TextSorter />} />
               <Route path="/text/statistics" element={<TextStatistics />} />
+              <Route path="/other/unit" element={<UnitConverter />} />
               <Route path="/other/cron" element={<CronGenerator />} />
               <Route path="/text/split" element={<TextSplitter />} />
               <Route path="/text/join" element={<TextJoiner />} />

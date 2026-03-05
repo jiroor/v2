@@ -29,6 +29,7 @@ import {
   Space,
   Merge,
   Split,
+  Ruler,
 } from 'lucide-react'
 
 interface IconProps {
@@ -188,4 +189,9 @@ export function TextSplitterIcon({ className }: IconProps) {
 // Cron式生成
 export function CronGeneratorIcon({ className }: IconProps) {
   return <Clock className={className} />
+}
+
+// 単位変換
+export function UnitConverterIcon({ className }: IconProps) {
+  return <Ruler className={className} />
 }
