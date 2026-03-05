@@ -109,6 +109,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ハッシュ,MD5,SHA-256,SHA-512,暗号化,セキュリティ',
     path: '/text/hash',
   },
+  '/text/unix': {
+    title: 'Unix時間変換 | Rakit',
+    description:
+      'Unix時間（タイムスタンプ）と日時を相互変換。現在のUnix時間のリアルタイム表示付き。',
+    keywords: 'Unix時間,タイムスタンプ,変換,エポック,日時',
+    path: '/text/unix',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

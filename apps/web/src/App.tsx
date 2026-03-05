@@ -16,6 +16,7 @@ const Base64Encoder = lazy(() => import('./pages/TextTools/Base64Encoder'))
 const URLEncoder = lazy(() => import('./pages/TextTools/URLEncoder'))
 const JSONFormatter = lazy(() => import('./pages/TextTools/JSONFormatter'))
 const HashGenerator = lazy(() => import('./pages/TextTools/HashGenerator'))
+const UnixTimestamp = lazy(() => import('./pages/TextTools/UnixTimestamp'))
 const QRCodeGenerator = lazy(() => import('./pages/OtherTools/QRCodeGenerator'))
 const PasswordGenerator = lazy(() => import('./pages/OtherTools/PasswordGenerator'))
 const ColorPicker = lazy(() => import('./pages/OtherTools/ColorPicker'))
@@ -53,6 +54,7 @@ function App() {
               <Route path="/text/url" element={<URLEncoder />} />
               <Route path="/text/json" element={<JSONFormatter />} />
               <Route path="/text/hash" element={<HashGenerator />} />
+              <Route path="/text/unix" element={<UnixTimestamp />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />
               <Route path="/other/colorpicker" element={<ColorPicker />} />

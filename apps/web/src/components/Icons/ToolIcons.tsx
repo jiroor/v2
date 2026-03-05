@@ -15,6 +15,7 @@ import {
   Link2,
   Braces,
   Hash,
+  Calendar,
 } from 'lucide-react'
 
 interface IconProps {
@@ -99,4 +100,9 @@ export function JSONFormatterIcon({ className }: IconProps) {
 // ハッシュ生成
 export function HashGeneratorIcon({ className }: IconProps) {
   return <Hash className={className} />
+}
+
+// Unix時間変換
+export function UnixTimestampIcon({ className }: IconProps) {
+  return <Calendar className={className} />
 }
