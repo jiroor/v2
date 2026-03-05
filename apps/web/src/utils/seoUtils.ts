@@ -102,6 +102,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'JSON,整形,フォーマット,Minify,圧縮,バリデーション',
     path: '/text/json',
   },
+  '/text/hash': {
+    title: 'ハッシュ生成 | Rakit',
+    description:
+      'MD5, SHA-1, SHA-256, SHA-512のハッシュ値を生成。パスワードやデータのハッシュ化に便利。',
+    keywords: 'ハッシュ,MD5,SHA-256,SHA-512,暗号化,セキュリティ',
+    path: '/text/hash',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

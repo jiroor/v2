@@ -16,6 +16,7 @@ import {
   Base64Icon,
   URLEncoderIcon,
   JSONFormatterIcon,
+  HashGeneratorIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -33,6 +34,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/text/base64': Base64Icon,
   '/text/url': URLEncoderIcon,
   '/text/json': JSONFormatterIcon,
+  '/text/hash': HashGeneratorIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,
@@ -178,6 +180,15 @@ function Home() {
           <JSONFormatterIcon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
           <h3 className="text-xl font-semibold mb-2 text-center">JSON整形</h3>
           <p className="text-gray-600 text-sm text-center">JSONフォーマット・圧縮</p>
+        </Link>
+
+        <Link
+          to="/text/hash"
+          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
+        >
+          <HashGeneratorIcon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
+          <h3 className="text-xl font-semibold mb-2 text-center">ハッシュ生成</h3>
+          <p className="text-gray-600 text-sm text-center">MD5, SHA-256, SHA-512</p>
         </Link>
 
         <Link

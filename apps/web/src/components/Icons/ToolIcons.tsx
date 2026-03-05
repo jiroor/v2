@@ -14,6 +14,7 @@ import {
   Binary,
   Link2,
   Braces,
+  Hash,
 } from 'lucide-react'
 
 interface IconProps {
@@ -93,4 +94,9 @@ export function URLEncoderIcon({ className }: IconProps) {
 // JSON整形
 export function JSONFormatterIcon({ className }: IconProps) {
   return <Braces className={className} />
+}
+
+// ハッシュ生成
+export function HashGeneratorIcon({ className }: IconProps) {
+  return <Hash className={className} />
 }
