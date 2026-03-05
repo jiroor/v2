@@ -28,6 +28,7 @@ import {
   Image,
   Space,
   Merge,
+  Split,
 } from 'lucide-react'
 
 interface IconProps {
@@ -177,6 +178,11 @@ export function WhitespaceRemoverIcon({ className }: IconProps) {
 // テキスト結合
 export function TextJoinerIcon({ className }: IconProps) {
   return <Merge className={className} />
+}
+
+// テキスト分割
+export function TextSplitterIcon({ className }: IconProps) {
+  return <Split className={className} />
 }
 
 // Cron式生成

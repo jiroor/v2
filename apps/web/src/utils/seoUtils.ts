@@ -200,6 +200,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'テキスト結合,結合,CSV,区切り文字',
     path: '/text/join',
   },
+  '/text/split': {
+    title: 'テキスト分割 | Rakit',
+    description:
+      'テキストを指定した区切り文字で分割し、1行ずつ表示。CSVやデータの展開に便利。',
+    keywords: 'テキスト分割,分割,CSV,区切り文字',
+    path: '/text/split',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
