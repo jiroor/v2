@@ -19,6 +19,7 @@ import {
   Calendar,
   CalendarDays,
   Receipt,
+  Calculator,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -222,4 +223,9 @@ export function AgeCalculatorIcon({ className }: IconProps) {
 // 消費税計算
 export function TaxCalculatorIcon({ className }: IconProps) {
   return <Receipt className={className} />
+}
+
+// 計算機
+export function CalculatorIcon({ className }: IconProps) {
+  return <Calculator className={className} />
 }

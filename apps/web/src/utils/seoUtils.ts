@@ -256,6 +256,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '消費税,計算,税抜,税込,10%,8%',
     path: '/other/tax',
   },
+  '/other/calculator': {
+    title: '計算機 | Rakit',
+    description:
+      'シンプルな電卓。四則演算、パーセント計算に対応。基本的な計算に便利。',
+    keywords: '計算機,電卓,計算,四則演算',
+    path: '/other/calculator',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
