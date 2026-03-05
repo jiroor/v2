@@ -27,6 +27,7 @@ import {
   TextSorterIcon,
   TextStatisticsIcon,
   ImageToBase64Icon,
+  MarkdownPreviewIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -55,8 +56,10 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/text/sort': TextSorterIcon,
   TextStatisticsIcon,
   ImageToBase64Icon,
+  MarkdownPreviewIcon,
   '/text/statistics': TextStatisticsIcon,
   '/other/image-base64': ImageToBase64Icon,
+  '/text/markdown': MarkdownPreviewIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,
@@ -301,6 +304,15 @@ function Home() {
           <ImageToBase64Icon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
           <h3 className="text-xl font-semibold mb-2 text-center">画像Base64変換</h3>
           <p className="text-gray-600 text-sm text-center">画像をBase64に変換</p>
+        </Link>
+
+        <Link
+          to="/text/markdown"
+          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
+        >
+          <MarkdownPreviewIcon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
+          <h3 className="text-xl font-semibold mb-2 text-center">Markdownプレビュー</h3>
+          <p className="text-gray-600 text-sm text-center">リアルタイムプレビュー</p>
         </Link>
 
         <Link

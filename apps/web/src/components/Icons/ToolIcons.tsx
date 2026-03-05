@@ -4,6 +4,7 @@ import {
   Coffee,
   Globe,
   FileText,
+  FileCode,
   Columns2,
   Shuffle,
   QrCode,
@@ -159,4 +160,9 @@ export function TextStatisticsIcon({ className }: IconProps) {
 // 画像Base64変換
 export function ImageToBase64Icon({ className }: IconProps) {
   return <Image className={className} />
+}
+
+// Markdownプレビュー
+export function MarkdownPreviewIcon({ className }: IconProps) {
+  return <FileCode className={className} />
 }

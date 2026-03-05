@@ -179,6 +179,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '画像,Base64,変換,エンコード,Data URI',
     path: '/other/image-base64',
   },
+  '/text/markdown': {
+    title: 'Markdownプレビュー | Rakit',
+    description:
+      'Markdownをリアルタイムでプレビュー。HTMLへの変換も対応。ブログ記事やドキュメント作成に便利。',
+    keywords: 'Markdown,プレビュー,HTML,変換,ドキュメント',
+    path: '/text/markdown',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
