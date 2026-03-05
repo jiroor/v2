@@ -206,3 +206,8 @@ export function PercentageCalculatorIcon({ className }: IconProps) {
 export function TimezoneConverterIcon({ className }: IconProps) {
   return <Globe className={className} />
 }
+
+// 乱数生成
+export function RandomNumberGeneratorIcon({ className }: IconProps) {
+  return <Shuffle className={className} />
+}

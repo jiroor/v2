@@ -25,6 +25,7 @@ const NumberConverter = lazy(() => import('./pages/TextTools/NumberConverter'))
 const DuplicateRemover = lazy(() => import('./pages/TextTools/DuplicateRemover'))
 const TextSorter = lazy(() => import('./pages/TextTools/TextSorter'))
 const TextStatistics = lazy(() => import('./pages/TextTools/TextStatistics'))
+const RandomNumberGenerator = lazy(() => import("./pages/OtherTools/RandomNumberGenerator"))
 const TimezoneConverter = lazy(() => import("./pages/OtherTools/TimezoneConverter"))
 const PercentageCalculator = lazy(() => import("./pages/OtherTools/PercentageCalculator"))
 const UnitConverter = lazy(() => import("./pages/OtherTools/UnitConverter"))
@@ -80,6 +81,7 @@ function App() {
               <Route path="/text/duplicate" element={<DuplicateRemover />} />
               <Route path="/text/sort" element={<TextSorter />} />
               <Route path="/text/statistics" element={<TextStatistics />} />
+              <Route path="/other/random-num" element={<RandomNumberGenerator />} />
               <Route path="/other/timezone" element={<TimezoneConverter />} />
               <Route path="/other/percentage" element={<PercentageCalculator />} />
               <Route path="/other/unit" element={<UnitConverter />} />

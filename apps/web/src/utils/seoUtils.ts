@@ -235,6 +235,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '時差,タイムゾーン,時間変換,海外',
     path: '/other/timezone',
   },
+  '/other/random-num': {
+    title: '乱数生成 | Rakit',
+    description:
+      '指定した範囲で乱数を生成。複数個まとめて生成可能。くじ引きや抽選に便利。',
+    keywords: '乱数,ランダム,抽選,くじ引き',
+    path: '/other/random-num',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
