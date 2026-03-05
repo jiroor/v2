@@ -17,6 +17,7 @@ import {
   Hash,
   Calendar,
   RegexIcon as Regex,
+  Fingerprint,
 } from 'lucide-react'
 
 interface IconProps {
@@ -111,4 +112,9 @@ export function UnixTimestampIcon({ className }: IconProps) {
 // 正規表現テスト
 export function RegexTesterIcon({ className }: IconProps) {
   return <Regex className={className} />
+}
+
+// UUID生成
+export function UUIDGeneratorIcon({ className }: IconProps) {
+  return <Fingerprint className={className} />
 }

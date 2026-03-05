@@ -123,6 +123,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '正規表現,Regex,テスト,パターンマッチ,JavaScript',
     path: '/text/regex',
   },
+  '/text/uuid': {
+    title: 'UUID/GUID生成 | Rakit',
+    description:
+      'UUID v4、v1を生成。一度に複数生成可能。データベースの主キーやセッションIDなどに。',
+    keywords: 'UUID,GUID,生成,一意ID,セッションID',
+    path: '/text/uuid',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
