@@ -158,6 +158,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '重複削除,重複行削除,ユニーク,データクリーニング',
     path: '/text/duplicate',
   },
+  '/text/sort': {
+    title: 'テキストソート | Rakit',
+    description:
+      'テキスト行を昇順・降順・ランダムなど6種類の方法で並び替え。日本語対応。',
+    keywords: 'ソート,並び替え,昇順,降順,ランダム,テキスト処理',
+    path: '/text/sort',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

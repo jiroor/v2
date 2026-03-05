@@ -22,6 +22,7 @@ import {
   CaseSensitive,
   Hexagon,
   Layers,
+  ArrowUpDown,
 } from 'lucide-react'
 
 interface IconProps {
@@ -141,4 +142,9 @@ export function NumberConverterIcon({ className }: IconProps) {
 // 重複行削除
 export function DuplicateRemoverIcon({ className }: IconProps) {
   return <Layers className={className} />
+}
+
+// テキストソート
+export function TextSorterIcon({ className }: IconProps) {
+  return <ArrowUpDown className={className} />
 }
