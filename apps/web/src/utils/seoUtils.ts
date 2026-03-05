@@ -263,6 +263,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '計算機,電卓,計算,四則演算',
     path: '/other/calculator',
   },
+  '/other/progress': {
+    title: '進捗変換 | Rakit',
+    description:
+      '分数をパーセントに、パーセントを分数に変換。進捗管理や割合の確認に便利。',
+    keywords: '進捗,パーセント,分数,変換,割合',
+    path: '/other/progress',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

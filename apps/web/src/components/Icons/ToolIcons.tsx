@@ -20,6 +20,7 @@ import {
   CalendarDays,
   Receipt,
   Calculator,
+  TrendingUp,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -228,4 +229,9 @@ export function TaxCalculatorIcon({ className }: IconProps) {
 // 計算機
 export function CalculatorIcon({ className }: IconProps) {
   return <Calculator className={className} />
+}
+
+// 進捗変換
+export function ProgressConverterIcon({ className }: IconProps) {
+  return <TrendingUp className={className} />
 }
