@@ -21,6 +21,7 @@ import {
   Type,
   CaseSensitive,
   Hexagon,
+  Layers,
 } from 'lucide-react'
 
 interface IconProps {
@@ -135,4 +136,9 @@ export function CaseConverterIcon({ className }: IconProps) {
 // 数字変換
 export function NumberConverterIcon({ className }: IconProps) {
   return <Hexagon className={className} />
+}
+
+// 重複行削除
+export function DuplicateRemoverIcon({ className }: IconProps) {
+  return <Layers className={className} />
 }

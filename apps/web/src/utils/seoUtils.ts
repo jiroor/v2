@@ -151,6 +151,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '数字変換,基数変換,2進数,8進数,16進数,進数変換',
     path: '/text/number',
   },
+  '/text/duplicate': {
+    title: '重複削除 | Rakit',
+    description:
+      'テキストから重複する行・単語・文字を削除。データクリーニングやリスト整理に便利。',
+    keywords: '重複削除,重複行削除,ユニーク,データクリーニング',
+    path: '/text/duplicate',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
