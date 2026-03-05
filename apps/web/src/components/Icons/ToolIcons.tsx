@@ -19,6 +19,7 @@ import {
   RegexIcon as Regex,
   Fingerprint,
   Type,
+  CaseSensitive,
 } from 'lucide-react'
 
 interface IconProps {
@@ -123,4 +124,9 @@ export function UUIDGeneratorIcon({ className }: IconProps) {
 // Lorem Ipsum生成
 export function LoremIpsumIcon({ className }: IconProps) {
   return <Type className={className} />
+}
+
+// ケース変換
+export function CaseConverterIcon({ className }: IconProps) {
+  return <CaseSensitive className={className} />
 }

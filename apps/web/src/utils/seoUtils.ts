@@ -137,6 +137,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'Lorem Ipsum,ダミーテキスト,生成,デザイン,モックアップ',
     path: '/text/lorem',
   },
+  '/text/case': {
+    title: 'ケース変換 | Rakit',
+    description:
+      '大文字・小文字・キャメルケース・スネークケースなど9種類のケース形式に一括変換。',
+    keywords: 'ケース変換,大文字,小文字,キャメルケース,スネークケース,kebab-case',
+    path: '/text/case',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

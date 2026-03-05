@@ -20,6 +20,7 @@ const UnixTimestamp = lazy(() => import('./pages/TextTools/UnixTimestamp'))
 const RegexTester = lazy(() => import('./pages/TextTools/RegexTester'))
 const UUIDGenerator = lazy(() => import('./pages/TextTools/UUIDGenerator'))
 const LoremIpsumGenerator = lazy(() => import('./pages/TextTools/LoremIpsumGenerator'))
+const CaseConverter = lazy(() => import('./pages/TextTools/CaseConverter'))
 const QRCodeGenerator = lazy(() => import('./pages/OtherTools/QRCodeGenerator'))
 const PasswordGenerator = lazy(() => import('./pages/OtherTools/PasswordGenerator'))
 const ColorPicker = lazy(() => import('./pages/OtherTools/ColorPicker'))
@@ -60,6 +61,7 @@ function App() {
               <Route path="/text/unix" element={<UnixTimestamp />} />
               <Route path="/text/regex" element={<RegexTester />} />
               <Route path="/text/uuid" element={<UUIDGenerator />} />
+              <Route path="/text/case" element={<CaseConverter />} />
               <Route path="/text/lorem" element={<LoremIpsumGenerator />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />
