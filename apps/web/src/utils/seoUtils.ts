@@ -116,6 +116,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'Unix時間,タイムスタンプ,変換,エポック,日時',
     path: '/text/unix',
   },
+  '/text/regex': {
+    title: '正規表現テスト | Rakit',
+    description:
+      '正規表現パターンをリアルタイムでテスト。マッチ結果のハイライト表示、フラグ切替対応。',
+    keywords: '正規表現,Regex,テスト,パターンマッチ,JavaScript',
+    path: '/text/regex',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

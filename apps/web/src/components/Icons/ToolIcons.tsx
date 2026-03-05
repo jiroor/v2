@@ -16,6 +16,7 @@ import {
   Braces,
   Hash,
   Calendar,
+  RegexIcon as Regex,
 } from 'lucide-react'
 
 interface IconProps {
@@ -105,4 +106,9 @@ export function HashGeneratorIcon({ className }: IconProps) {
 // Unix時間変換
 export function UnixTimestampIcon({ className }: IconProps) {
   return <Calendar className={className} />
+}
+
+// 正規表現テスト
+export function RegexTesterIcon({ className }: IconProps) {
+  return <Regex className={className} />
 }
