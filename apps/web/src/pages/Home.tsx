@@ -20,6 +20,7 @@ import {
   UnixTimestampIcon,
   RegexTesterIcon,
   UUIDGeneratorIcon,
+  LoremIpsumIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -41,6 +42,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/text/unix': UnixTimestampIcon,
   '/text/regex': RegexTesterIcon,
   '/text/uuid': UUIDGeneratorIcon,
+  '/text/lorem': LoremIpsumIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,
@@ -222,6 +224,15 @@ function Home() {
           <UUIDGeneratorIcon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
           <h3 className="text-xl font-semibold mb-2 text-center">UUID生成</h3>
           <p className="text-gray-600 text-sm text-center">UUID/GUID生成</p>
+        </Link>
+
+        <Link
+          to="/text/lorem"
+          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
+        >
+          <LoremIpsumIcon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
+          <h3 className="text-xl font-semibold mb-2 text-center">Lorem Ipsum</h3>
+          <p className="text-gray-600 text-sm text-center">ダミーテキスト生成</p>
         </Link>
 
         <Link

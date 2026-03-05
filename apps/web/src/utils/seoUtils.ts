@@ -130,6 +130,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'UUID,GUID,生成,一意ID,セッションID',
     path: '/text/uuid',
   },
+  '/text/lorem': {
+    title: 'Lorem Ipsum生成 | Rakit',
+    description:
+      'Lorem Ipsumダミーテキストを生成。段落、文、単語単位で生成可能。デザインやモックアップに。',
+    keywords: 'Lorem Ipsum,ダミーテキスト,生成,デザイン,モックアップ',
+    path: '/text/lorem',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
