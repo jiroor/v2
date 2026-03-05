@@ -13,6 +13,7 @@ const CharCounter = lazy(() => import('./pages/TextTools/CharCounter'))
 const TextDiff = lazy(() => import('./pages/TextTools/TextDiff'))
 const RandomString = lazy(() => import('./pages/TextTools/RandomString'))
 const Base64Encoder = lazy(() => import('./pages/TextTools/Base64Encoder'))
+const URLEncoder = lazy(() => import('./pages/TextTools/URLEncoder'))
 const QRCodeGenerator = lazy(() => import('./pages/OtherTools/QRCodeGenerator'))
 const PasswordGenerator = lazy(() => import('./pages/OtherTools/PasswordGenerator'))
 const ColorPicker = lazy(() => import('./pages/OtherTools/ColorPicker'))
@@ -47,6 +48,7 @@ function App() {
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/text/random" element={<RandomString />} />
               <Route path="/text/base64" element={<Base64Encoder />} />
+              <Route path="/text/url" element={<URLEncoder />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />
               <Route path="/other/colorpicker" element={<ColorPicker />} />

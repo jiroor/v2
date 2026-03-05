@@ -88,6 +88,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'Base64,エンコード,デコード,変換,テキスト',
     path: '/text/base64',
   },
+  '/text/url': {
+    title: 'URLエンコード/デコード | Rakit',
+    description:
+      'テキストをURL安全な形式にエンコード/デコード。日本語や特殊文字をURLに含める際に便利。',
+    keywords: 'URLエンコード,URLデコード,パーセントエンコーディング,変換',
+    path: '/text/url',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

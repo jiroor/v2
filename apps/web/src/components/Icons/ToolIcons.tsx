@@ -12,6 +12,7 @@ import {
   CircleDot,
   Video,
   Binary,
+  Link2,
 } from 'lucide-react'
 
 interface IconProps {
@@ -81,4 +82,9 @@ export function CameraSharingIcon({ className }: IconProps) {
 // Base64エンコード/デコード
 export function Base64Icon({ className }: IconProps) {
   return <Binary className={className} />
+}
+
+// URLエンコード/デコード
+export function URLEncoderIcon({ className }: IconProps) {
+  return <Link2 className={className} />
 }
