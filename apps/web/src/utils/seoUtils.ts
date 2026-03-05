@@ -165,6 +165,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ソート,並び替え,昇順,降順,ランダム,テキスト処理',
     path: '/text/sort',
   },
+  '/text/statistics': {
+    title: 'テキスト統計 | Rakit',
+    description:
+      '文字数、単語数、行数、段落数、読書時間など9種類の統計をリアルタイム表示。',
+    keywords: '文字数,統計,読書時間,バイト数,文字カウント',
+    path: '/text/statistics',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

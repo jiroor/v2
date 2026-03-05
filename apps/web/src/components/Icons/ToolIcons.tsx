@@ -23,6 +23,7 @@ import {
   Hexagon,
   Layers,
   ArrowUpDown,
+  BarChart3,
 } from 'lucide-react'
 
 interface IconProps {
@@ -147,4 +148,9 @@ export function DuplicateRemoverIcon({ className }: IconProps) {
 // テキストソート
 export function TextSorterIcon({ className }: IconProps) {
   return <ArrowUpDown className={className} />
+}
+
+// テキスト統計
+export function TextStatisticsIcon({ className }: IconProps) {
+  return <BarChart3 className={className} />
 }
