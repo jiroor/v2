@@ -201,3 +201,8 @@ export function UnitConverterIcon({ className }: IconProps) {
 export function PercentageCalculatorIcon({ className }: IconProps) {
   return <Percent className={className} />
 }
+
+// 時差計算
+export function TimezoneConverterIcon({ className }: IconProps) {
+  return <Globe className={className} />
+}

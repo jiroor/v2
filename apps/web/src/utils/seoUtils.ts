@@ -228,6 +228,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'パーセント,計算,割合,増減,何パーセント',
     path: '/other/percentage',
   },
+  '/other/timezone': {
+    title: '時差計算 | Rakit',
+    description:
+      '世界の主要都市の時差を計算。東京、ニューヨーク、ロンドンなど10都市に対応。',
+    keywords: '時差,タイムゾーン,時間変換,海外',
+    path: '/other/timezone',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
