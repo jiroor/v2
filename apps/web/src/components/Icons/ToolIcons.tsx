@@ -18,6 +18,7 @@ import {
   Hash,
   Calendar,
   CalendarDays,
+  Receipt,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -216,4 +217,9 @@ export function RandomNumberGeneratorIcon({ className }: IconProps) {
 // 年齢計算
 export function AgeCalculatorIcon({ className }: IconProps) {
   return <CalendarDays className={className} />
+}
+
+// 消費税計算
+export function TaxCalculatorIcon({ className }: IconProps) {
+  return <Receipt className={className} />
 }

@@ -25,6 +25,7 @@ const NumberConverter = lazy(() => import('./pages/TextTools/NumberConverter'))
 const DuplicateRemover = lazy(() => import('./pages/TextTools/DuplicateRemover'))
 const TextSorter = lazy(() => import('./pages/TextTools/TextSorter'))
 const TextStatistics = lazy(() => import('./pages/TextTools/TextStatistics'))
+const TaxCalculator = lazy(() => import("./pages/OtherTools/TaxCalculator"))
 const AgeCalculator = lazy(() => import("./pages/OtherTools/AgeCalculator"))
 const RandomNumberGenerator = lazy(() => import("./pages/OtherTools/RandomNumberGenerator"))
 const TimezoneConverter = lazy(() => import("./pages/OtherTools/TimezoneConverter"))
@@ -82,6 +83,7 @@ function App() {
               <Route path="/text/duplicate" element={<DuplicateRemover />} />
               <Route path="/text/sort" element={<TextSorter />} />
               <Route path="/text/statistics" element={<TextStatistics />} />
+              <Route path="/other/tax" element={<TaxCalculator />} />
               <Route path="/other/age" element={<AgeCalculator />} />
               <Route path="/other/random-num" element={<RandomNumberGenerator />} />
               <Route path="/other/timezone" element={<TimezoneConverter />} />

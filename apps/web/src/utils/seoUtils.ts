@@ -249,6 +249,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '年齢計算,満年齢,生年月日,年数',
     path: '/other/age',
   },
+  '/other/tax': {
+    title: '消費税計算 | Rakit',
+    description:
+      '消費税を自動計算。税抜→税込、税込→税抜の両方に対応。10%・8%税率切り替え可。',
+    keywords: '消費税,計算,税抜,税込,10%,8%',
+    path: '/other/tax',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
