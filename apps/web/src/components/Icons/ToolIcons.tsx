@@ -11,6 +11,7 @@ import {
   Palette,
   CircleDot,
   Video,
+  Binary,
 } from 'lucide-react'
 
 interface IconProps {
@@ -75,4 +76,9 @@ export function RouletteIcon({ className }: IconProps) {
 // カメラ映像共有
 export function CameraSharingIcon({ className }: IconProps) {
   return <Video className={className} />
+}
+
+// Base64エンコード/デコード
+export function Base64Icon({ className }: IconProps) {
+  return <Binary className={className} />
 }

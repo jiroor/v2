@@ -81,6 +81,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ランダム文字列,文字列生成,パスワード',
     path: '/text/random',
   },
+  '/text/base64': {
+    title: 'Base64エンコード/デコード | Rakit',
+    description:
+      'テキストをBase64形式にエンコード/デコード。日本語対応、リアルタイム変換。',
+    keywords: 'Base64,エンコード,デコード,変換,テキスト',
+    path: '/text/base64',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

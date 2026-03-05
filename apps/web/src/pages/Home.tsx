@@ -13,6 +13,7 @@ import {
   ColorPickerIcon,
   RouletteIcon,
   CameraSharingIcon,
+  Base64Icon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -27,6 +28,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/text/counter': CharCounterIcon,
   '/text/diff': TextDiffIcon,
   '/text/random': RandomStringIcon,
+  '/text/base64': Base64Icon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,
@@ -145,6 +147,15 @@ function Home() {
           <RandomStringIcon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
           <h3 className="text-xl font-semibold mb-2 text-center">ランダム文字列</h3>
           <p className="text-gray-600 text-sm text-center">パスワード等の生成</p>
+        </Link>
+
+        <Link
+          to="/text/base64"
+          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
+        >
+          <Base64Icon className="w-12 h-12 mb-4 text-gray-900 transition-all duration-200 group-hover:scale-110 group-hover:text-[#d97706]" />
+          <h3 className="text-xl font-semibold mb-2 text-center">Base64変換</h3>
+          <p className="text-gray-600 text-sm text-center">Base64エンコード/デコード</p>
         </Link>
 
         <Link
