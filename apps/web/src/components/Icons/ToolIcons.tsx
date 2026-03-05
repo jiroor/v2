@@ -27,6 +27,7 @@ import {
   BarChart3,
   Image,
   Space,
+  Merge,
 } from 'lucide-react'
 
 interface IconProps {
@@ -171,4 +172,14 @@ export function MarkdownPreviewIcon({ className }: IconProps) {
 // 空白削除
 export function WhitespaceRemoverIcon({ className }: IconProps) {
   return <Space className={className} />
+}
+
+// テキスト結合
+export function TextJoinerIcon({ className }: IconProps) {
+  return <Merge className={className} />
+}
+
+// Cron式生成
+export function CronGeneratorIcon({ className }: IconProps) {
+  return <Clock className={className} />
 }

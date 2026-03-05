@@ -193,6 +193,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '空白削除,スペース,トリム,テキスト処理',
     path: '/text/whitespace',
   },
+  '/text/join': {
+    title: 'テキスト結合 | Rakit',
+    description:
+      '複数行のテキストを指定した区切り文字で結合。CSV作成、SQLのIN句作成などに便利。',
+    keywords: 'テキスト結合,結合,CSV,区切り文字',
+    path: '/text/join',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

@@ -25,6 +25,8 @@ const NumberConverter = lazy(() => import('./pages/TextTools/NumberConverter'))
 const DuplicateRemover = lazy(() => import('./pages/TextTools/DuplicateRemover'))
 const TextSorter = lazy(() => import('./pages/TextTools/TextSorter'))
 const TextStatistics = lazy(() => import('./pages/TextTools/TextStatistics'))
+const CronGenerator = lazy(() => import("./pages/OtherTools/CronGenerator"))
+const TextJoiner = lazy(() => import("./pages/TextTools/TextJoiner"))
 const WhitespaceRemover = lazy(() => import("./pages/TextTools/WhitespaceRemover"))
 const MarkdownPreview = lazy(() => import("./pages/TextTools/MarkdownPreview"))
 const ImageToBase64 = lazy(() => import('./pages/OtherTools/ImageToBase64'))
@@ -74,6 +76,8 @@ function App() {
               <Route path="/text/duplicate" element={<DuplicateRemover />} />
               <Route path="/text/sort" element={<TextSorter />} />
               <Route path="/text/statistics" element={<TextStatistics />} />
+              <Route path="/other/cron" element={<CronGenerator />} />
+              <Route path="/text/join" element={<TextJoiner />} />
               <Route path="/text/whitespace" element={<WhitespaceRemover />} />
               <Route path="/text/markdown" element={<MarkdownPreview />} />
               <Route path="/other/image-base64" element={<ImageToBase64 />} />
