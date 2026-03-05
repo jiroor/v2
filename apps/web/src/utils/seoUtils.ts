@@ -144,6 +144,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ケース変換,大文字,小文字,キャメルケース,スネークケース,kebab-case',
     path: '/text/case',
   },
+  '/text/number': {
+    title: '数字変換（基数変換） | Rakit',
+    description:
+      '2進数、8進数、10進数、16進数を相互変換。プログラミングや電子工作に便利。',
+    keywords: '数字変換,基数変換,2進数,8進数,16進数,進数変換',
+    path: '/text/number',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

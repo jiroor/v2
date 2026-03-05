@@ -20,6 +20,7 @@ import {
   Fingerprint,
   Type,
   CaseSensitive,
+  Hexagon,
 } from 'lucide-react'
 
 interface IconProps {
@@ -129,4 +130,9 @@ export function LoremIpsumIcon({ className }: IconProps) {
 // ケース変換
 export function CaseConverterIcon({ className }: IconProps) {
   return <CaseSensitive className={className} />
+}
+
+// 数字変換
+export function NumberConverterIcon({ className }: IconProps) {
+  return <Hexagon className={className} />
 }
