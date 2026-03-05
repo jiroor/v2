@@ -24,6 +24,7 @@ import {
   Layers,
   ArrowUpDown,
   BarChart3,
+  Image,
 } from 'lucide-react'
 
 interface IconProps {
@@ -153,4 +154,9 @@ export function TextSorterIcon({ className }: IconProps) {
 // テキスト統計
 export function TextStatisticsIcon({ className }: IconProps) {
   return <BarChart3 className={className} />
+}
+
+// 画像Base64変換
+export function ImageToBase64Icon({ className }: IconProps) {
+  return <Image className={className} />
 }

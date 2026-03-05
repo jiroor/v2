@@ -172,6 +172,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '文字数,統計,読書時間,バイト数,文字カウント',
     path: '/text/statistics',
   },
+  '/other/image-base64': {
+    title: '画像Base64変換 | Rakit',
+    description:
+      '画像をBase64形式に変換。ドラッグ＆ドロップ対応。HTML/CSSへの埋め込みに便利。',
+    keywords: '画像,Base64,変換,エンコード,Data URI',
+    path: '/other/image-base64',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

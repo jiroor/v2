@@ -25,6 +25,7 @@ const NumberConverter = lazy(() => import('./pages/TextTools/NumberConverter'))
 const DuplicateRemover = lazy(() => import('./pages/TextTools/DuplicateRemover'))
 const TextSorter = lazy(() => import('./pages/TextTools/TextSorter'))
 const TextStatistics = lazy(() => import('./pages/TextTools/TextStatistics'))
+const ImageToBase64 = lazy(() => import('./pages/OtherTools/ImageToBase64'))
 const QRCodeGenerator = lazy(() => import('./pages/OtherTools/QRCodeGenerator'))
 const PasswordGenerator = lazy(() => import('./pages/OtherTools/PasswordGenerator'))
 const ColorPicker = lazy(() => import('./pages/OtherTools/ColorPicker'))
@@ -71,6 +72,7 @@ function App() {
               <Route path="/text/duplicate" element={<DuplicateRemover />} />
               <Route path="/text/sort" element={<TextSorter />} />
               <Route path="/text/statistics" element={<TextStatistics />} />
+              <Route path="/other/image-base64" element={<ImageToBase64 />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />
               <Route path="/other/colorpicker" element={<ColorPicker />} />
