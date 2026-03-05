@@ -17,6 +17,7 @@ import {
   Braces,
   Hash,
   Calendar,
+  CalendarDays,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -210,4 +211,9 @@ export function TimezoneConverterIcon({ className }: IconProps) {
 // 乱数生成
 export function RandomNumberGeneratorIcon({ className }: IconProps) {
   return <Shuffle className={className} />
+}
+
+// 年齢計算
+export function AgeCalculatorIcon({ className }: IconProps) {
+  return <CalendarDays className={className} />
 }

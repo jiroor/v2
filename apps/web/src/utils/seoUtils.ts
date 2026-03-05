@@ -242,6 +242,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '乱数,ランダム,抽選,くじ引き',
     path: '/other/random-num',
   },
+  '/other/age': {
+    title: '年齢計算 | Rakit',
+    description:
+      '生年月日から満年齢を計算。生まれてからの日数や次の誕生日も表示。',
+    keywords: '年齢計算,満年齢,生年月日,年数',
+    path: '/other/age',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
