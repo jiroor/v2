@@ -270,6 +270,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '進捗,パーセント,分数,変換,割合',
     path: '/other/progress',
   },
+  '/other/bmi': {
+    title: 'BMI計算 | Rakit',
+    description:
+      '身長と体重からBMIを計算。肥満度判定も表示。健康管理に便利。',
+    keywords: 'BMI,計算,肥満度,健康,体重',
+    path: '/other/bmi',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

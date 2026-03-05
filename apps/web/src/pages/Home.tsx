@@ -40,6 +40,7 @@ import {
   TaxCalculatorIcon,
   CalculatorIcon,
   ProgressConverterIcon,
+  BMICalculatorIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -81,6 +82,8 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/tax': TaxCalculatorIcon,
   '/other/calculator': CalculatorIcon,
   '/other/progress': ProgressConverterIcon,
+  '/other/bmi': BMICalculatorIcon,
+  BMICalculatorIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

@@ -21,6 +21,7 @@ import {
   Receipt,
   Calculator,
   TrendingUp,
+  Activity,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -234,4 +235,9 @@ export function CalculatorIcon({ className }: IconProps) {
 // 進捗変換
 export function ProgressConverterIcon({ className }: IconProps) {
   return <TrendingUp className={className} />
+}
+
+// BMI計算
+export function BMICalculatorIcon({ className }: IconProps) {
+  return <Activity className={className} />
 }
