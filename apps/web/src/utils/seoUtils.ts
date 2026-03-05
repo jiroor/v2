@@ -221,6 +221,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '単位変換,メートル,キログラム,インチ,ポンド',
     path: '/other/unit',
   },
+  '/other/percentage': {
+    title: 'パーセント計算 | Rakit',
+    description:
+      'パーセント計算を簡単に。増減・割合・何%かなど5種類の計算モードに対応。',
+    keywords: 'パーセント,計算,割合,増減,何パーセント',
+    path: '/other/percentage',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

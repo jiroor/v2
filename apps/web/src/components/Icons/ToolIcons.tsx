@@ -30,6 +30,7 @@ import {
   Merge,
   Split,
   Ruler,
+  Percent,
 } from 'lucide-react'
 
 interface IconProps {
@@ -194,4 +195,9 @@ export function CronGeneratorIcon({ className }: IconProps) {
 // 単位変換
 export function UnitConverterIcon({ className }: IconProps) {
   return <Ruler className={className} />
+}
+
+// パーセント計算
+export function PercentageCalculatorIcon({ className }: IconProps) {
+  return <Percent className={className} />
 }
