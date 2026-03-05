@@ -207,6 +207,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'テキスト分割,分割,CSV,区切り文字',
     path: '/text/split',
   },
+  '/other/cron': {
+    title: 'Cron式生成 | Rakit',
+    description:
+      'Cron式を簡単に生成。プリセット付きで分・時・日・月・曜日を指定可能。',
+    keywords: 'Cron,スケジュール,定期実行,crontab',
+    path: '/other/cron',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
