@@ -186,6 +186,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'Markdown,プレビュー,HTML,変換,ドキュメント',
     path: '/text/markdown',
   },
+  '/text/whitespace': {
+    title: '空白削除 | Rakit',
+    description:
+      'テキストから空白を削除。先頭・末尾・連続空白・全空白など5種類の削除モード。',
+    keywords: '空白削除,スペース,トリム,テキスト処理',
+    path: '/text/whitespace',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

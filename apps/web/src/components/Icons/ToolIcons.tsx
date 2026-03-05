@@ -26,6 +26,7 @@ import {
   ArrowUpDown,
   BarChart3,
   Image,
+  Space,
 } from 'lucide-react'
 
 interface IconProps {
@@ -165,4 +166,9 @@ export function ImageToBase64Icon({ className }: IconProps) {
 // Markdownプレビュー
 export function MarkdownPreviewIcon({ className }: IconProps) {
   return <FileCode className={className} />
+}
+
+// 空白削除
+export function WhitespaceRemoverIcon({ className }: IconProps) {
+  return <Space className={className} />
 }
