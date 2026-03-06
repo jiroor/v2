@@ -100,6 +100,11 @@ export function CurrencyConverterIcon({ className }: IconProps) {
   return <Globe className={className} />
 }
 
+// カラーパレット生成
+export function ColorPaletteIcon({ className }: IconProps) {
+  return <Palette className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />

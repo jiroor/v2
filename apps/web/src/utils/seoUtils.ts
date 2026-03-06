@@ -361,6 +361,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '為替,計算,ドル円,ユーロ円,外貨両替',
     path: '/other/currency',
   },
+  '/other/color-palette': {
+    title: 'カラーパレット生成 | Rakit',
+    description:
+      'ランダムなカラーパレットを生成。色の固定、追加、削除が可能。Webデザイン、グラフィック制作に便利。',
+    keywords: 'カラーパレット,配色,色,デザイン,Webデザイン',
+    path: '/other/color-palette',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
