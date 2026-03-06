@@ -424,6 +424,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '年収,月収,時給,変換,給与',
     path: '/other/salary',
   },
+  '/text/html-to-markdown': {
+    title: 'HTML to Markdown | Rakit',
+    description:
+      'HTMLをMarkdownに変換。見出し、リンク、リスト、コードなど主要な要素に対応。コンテンツ制作に便利。',
+    keywords: 'HTML,Markdown,変換,コンテンツ,ブログ',
+    path: '/text/html-to-markdown',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

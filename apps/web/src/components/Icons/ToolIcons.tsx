@@ -146,6 +146,11 @@ export function SalaryConverterIcon({ className }: IconProps) {
   return <Receipt className={className} />
 }
 
+// HTML to Markdown
+export function HtmlToMarkdownIcon({ className }: IconProps) {
+  return <FileCode className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />
