@@ -63,6 +63,7 @@ import {
   PasswordStrengthCheckerIcon,
   SalaryConverterIcon,
   HtmlToMarkdownIcon,
+  ImageCropperIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -127,6 +128,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/password-check': PasswordStrengthCheckerIcon,
   '/other/salary': SalaryConverterIcon,
   '/text/html-to-markdown': HtmlToMarkdownIcon,
+  '/other/image-crop': ImageCropperIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

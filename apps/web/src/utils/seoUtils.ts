@@ -431,6 +431,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'HTML,Markdown,変換,コンテンツ,ブログ',
     path: '/text/html-to-markdown',
   },
+  '/other/image-crop': {
+    title: '画像トリミング | Rakit',
+    description:
+      '画像をトリミング・切り抜き。アスペクト比固定可能。SNS投稿、サムネイル作成に便利。',
+    keywords: '画像,トリミング,切り抜き,アスペクト比,クロップ',
+    path: '/other/image-crop',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

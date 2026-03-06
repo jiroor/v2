@@ -151,6 +151,11 @@ export function HtmlToMarkdownIcon({ className }: IconProps) {
   return <FileCode className={className} />
 }
 
+// 画像トリミング
+export function ImageCropperIcon({ className }: IconProps) {
+  return <Ruler className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />
