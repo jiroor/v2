@@ -126,6 +126,11 @@ export function RobotsTxtGeneratorIcon({ className }: IconProps) {
   return <FileText className={className} />
 }
 
+// JSON to CSV
+export function JsonToCsvIcon({ className }: IconProps) {
+  return <Braces className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />

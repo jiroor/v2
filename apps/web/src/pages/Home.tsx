@@ -58,6 +58,7 @@ import {
   MortgageCalculatorIcon,
   ImageConverterIcon,
   RobotsTxtGeneratorIcon,
+  JsonToCsvIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -117,6 +118,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/mortgage': MortgageCalculatorIcon,
   '/other/image-convert': ImageConverterIcon,
   '/other/robots-txt': RobotsTxtGeneratorIcon,
+  '/text/json-to-csv': JsonToCsvIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

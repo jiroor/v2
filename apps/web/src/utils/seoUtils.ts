@@ -396,6 +396,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'robots.txt,SEO,クローラー,検索エンジン,アクセス制御',
     path: '/other/robots-txt',
   },
+  '/text/json-to-csv': {
+    title: 'JSON to CSV変換 | Rakit',
+    description:
+      'JSON配列をCSVに変換。Excel/スプレッドシートで開ける形式でダウンロード。データ移行・加工に便利。',
+    keywords: 'JSON,CSV,変換,データ変換,Excel',
+    path: '/text/json-to-csv',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
