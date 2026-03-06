@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
+import Footer from './components/Footer'
 import { UpdatePrompt } from './components/UpdatePrompt'
 
 // Lazy load page components
@@ -166,6 +167,7 @@ function App() {
             </Routes>
           </Suspense>
         </main>
+        <Footer />
         <UpdatePrompt />
       </div>
     </Router>
