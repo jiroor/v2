@@ -1,90 +1,207 @@
 import { useState, useMemo } from 'react'
-import { calculateDiff } from '../../utils/textDiffUtils'
 import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 
 function TextDiff() {
-  useToolUsageTracking('/text/diff', 'テキスト差分表示')
-  const [originalText, setOriginalText] = useState('')
-  const [modifiedText, setModifiedText] = useState('')
+  useToolUsageTracking('/text/diff', 'テキスト比較')
+  const [text1, setText1] = useState('')
+  const [text2, setText2] = useState('')
 
-  const diffResult = useMemo(() => {
-    if (originalText === '' && modifiedText === '') {
-      return []
+  const diff = useMemo(() => {
+    if (!text1 && !text2) return null
+
+    const lines1 = text1.split('\n')
+    const lines2 = text2.split('\n')
+
+    const maxLines = Math.max(lines1.length, lines2.length)
+    const result: Array<{
+      type: 'same' | 'added' | 'removed' | 'modified'
+      line1: string | null
+      line2: string | null
+      lineNum1: number | null
+      lineNum2: number | null
+    }> = []
+
+    for (let i = 0; i < maxLines; i++) {
+      const line1 = i < lines1.length ? lines1[i] : null
+      const line2 = i < lines2.length ? lines2[i] : null
+
+      if (line1 === null && line2 !== null) {
+        result.push({
+          type: 'added',
+          line1: null,
+          line2,
+          lineNum1: null,
+          lineNum2: i + 1,
+        })
+      } else if (line1 !== null && line2 === null) {
+        result.push({
+          type: 'removed',
+          line1,
+          line2: null,
+          lineNum1: i + 1,
+          lineNum2: null,
+        })
+      } else if (line1 !== line2) {
+        result.push({
+          type: 'modified',
+          line1: line1!,
+          line2: line2!,
+          lineNum1: i + 1,
+          lineNum2: i + 1,
+        })
+      } else {
+        result.push({
+          type: 'same',
+          line1: line1!,
+          line2: line2!,
+          lineNum1: i + 1,
+          lineNum2: i + 1,
+        })
+      }
     }
-    return calculateDiff(originalText, modifiedText)
-  }, [originalText, modifiedText])
+
+    return result
+  }, [text1, text2])
+
+  const stats = useMemo(() => {
+    if (!diff) return null
+    const added = diff.filter((d) => d.type === 'added').length
+    const removed = diff.filter((d) => d.type === 'removed').length
+    const modified = diff.filter((d) => d.type === 'modified').length
+    const same = diff.filter((d) => d.type === 'same').length
+    return { added, removed, modified, same, total: diff.length }
+  }, [diff])
+
+  const handleSwap = () => {
+    const temp = text1
+    setText1(text2)
+    setText2(temp)
+  }
 
   const handleClear = () => {
-    setOriginalText('')
-    setModifiedText('')
+    setText1('')
+    setText2('')
   }
 
   return (
     <>
       <SEO path="/text/diff" />
-      <div className="max-w-[1200px] mx-auto py-8 px-4">
-      <h2 className="text-2xl font-semibold mb-8 text-center">テキスト差分表示</h2>
+      <div className="max-w-[800px] mx-auto py-8 px-4">
+        <h2 className="text-2xl font-semibold mb-6 text-center">テキスト比較</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div className="flex flex-col">
-          <Label className="text-base">オリジナルテキスト</Label>
-          <Textarea
-            value={originalText}
-            onChange={(e) => setOriginalText(e.target.value)}
-            placeholder="元のテキストを入力..."
-            className="w-full min-h-[200px] md:min-h-[200px] p-4 text-sm md:text-sm font-mono leading-relaxed border border-gray-200 rounded-lg resize-y transition-colors focus:outline-none focus:border-black placeholder:text-gray-500"
-          />
+        {/* 入力エリア */}
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              テキストA（元のテキスト）
+            </label>
+            <textarea
+              value={text1}
+              onChange={(e) => setText1(e.target.value)}
+              placeholder="元のテキストを入力..."
+              className="w-full h-[200px] p-3 border border-gray-200 rounded-md font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] resize-y"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              テキストB（比較対象）
+            </label>
+            <textarea
+              value={text2}
+              onChange={(e) => setText2(e.target.value)}
+              placeholder="比較対象のテキストを入力..."
+              className="w-full h-[200px] p-3 border border-gray-200 rounded-md font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#d97706] resize-y"
+            />
+          </div>
         </div>
 
-        <div className="flex flex-col">
-          <Label className="text-base">比較テキスト</Label>
-          <Textarea
-            value={modifiedText}
-            onChange={(e) => setModifiedText(e.target.value)}
-            placeholder="比較するテキストを入力..."
-            className="w-full min-h-[200px] md:min-h-[200px] p-4 text-sm md:text-sm font-mono leading-relaxed border border-gray-200 rounded-lg resize-y transition-colors focus:outline-none focus:border-black placeholder:text-gray-500"
-          />
+        {/* ボタン */}
+        <div className="flex gap-2 mb-6">
+          <Button onClick={handleSwap} variant="outline" className="flex-1">
+            入れ替え
+          </Button>
+          <Button onClick={handleClear} variant="destructive" className="flex-1">
+            クリア
+          </Button>
         </div>
-      </div>
 
-      <div className="flex justify-end mb-6">
-        <Button onClick={handleClear} variant="secondary">
-          クリア
-        </Button>
-      </div>
-
-      <div className="mt-6">
-        <h3 className="text-lg font-semibold mb-4">差分結果</h3>
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 font-mono text-sm md:text-sm leading-relaxed max-h-[600px] md:max-h-[600px] overflow-y-auto">
-          {diffResult.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              テキストを入力すると差分が表示されます
+        {/* 統計 */}
+        {stats && (
+          <div className="grid grid-cols-4 gap-2 mb-6">
+            <div className="bg-green-50 border border-green-200 rounded-md p-2 text-center">
+              <p className="text-xs text-green-600">追加</p>
+              <p className="text-lg font-bold text-green-700">{stats.added}</p>
             </div>
-          ) : (
-            diffResult.map((line, index) => (
-              <div
-                key={index}
-                className={`py-1 px-3 my-0.5 rounded-sm whitespace-pre-wrap break-all ${
-                  line.type === 'added'
-                    ? 'bg-[#d4f4dd] text-[#1a7f37]'
-                    : line.type === 'removed'
-                    ? 'bg-[#ffd7d5] text-[#d1242f]'
-                    : 'bg-transparent'
-                }`}
-              >
-                {line.type === 'added' && '+ '}
-                {line.type === 'removed' && '- '}
-                {line.type === 'unchanged' && '  '}
-                {line.content}
-              </div>
-            ))
-          )}
+            <div className="bg-red-50 border border-red-200 rounded-md p-2 text-center">
+              <p className="text-xs text-red-600">削除</p>
+              <p className="text-lg font-bold text-red-700">{stats.removed}</p>
+            </div>
+            <div className="bg-yellow-50 border border-yellow-200 rounded-md p-2 text-center">
+              <p className="text-xs text-yellow-600">変更</p>
+              <p className="text-lg font-bold text-yellow-700">{stats.modified}</p>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-md p-2 text-center">
+              <p className="text-xs text-gray-600">一致</p>
+              <p className="text-lg font-bold text-gray-700">{stats.same}</p>
+            </div>
+          </div>
+        )}
+
+        {/* 差分表示 */}
+        {diff && diff.length > 0 && (
+          <div className="border border-gray-200 rounded-md overflow-hidden">
+            <div className="bg-gray-100 p-2 text-sm font-medium text-gray-700">
+              差分結果
+            </div>
+            <div className="max-h-[400px] overflow-y-auto">
+              {diff.map((item, index) => {
+                let bgColor = 'bg-white'
+                let borderColor = 'border-l-transparent'
+                let prefix = ' '
+
+                if (item.type === 'added') {
+                  bgColor = 'bg-green-50'
+                  borderColor = 'border-l-green-500'
+                  prefix = '+'
+                } else if (item.type === 'removed') {
+                  bgColor = 'bg-red-50'
+                  borderColor = 'border-l-red-500'
+                  prefix = '-'
+                } else if (item.type === 'modified') {
+                  bgColor = 'bg-yellow-50'
+                  borderColor = 'border-l-yellow-500'
+                  prefix = '~'
+                }
+
+                return (
+                  <div
+                    key={index}
+                    className={`${bgColor} border-l-4 ${borderColor} px-3 py-1 font-mono text-xs border-b border-gray-100`}
+                  >
+                    <span className="text-gray-400 mr-2">
+                      {item.lineNum1 ?? '-'}
+                    </span>
+                    <span className={item.type === 'added' ? 'text-green-600' : item.type === 'removed' ? 'text-red-600' : ''}>
+                      {prefix} {item.line2 ?? item.line1}
+                    </span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* 使い方 */}
+        <div className="mt-8 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">使い方</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 2つのテキストの違いを表示</li>
+            <li>• 追加・削除・変更された行を色分け</li>
+            <li>• コード比較、ドキュメント校正に便利</li>
+          </ul>
         </div>
-      </div>
       </div>
     </>
   )

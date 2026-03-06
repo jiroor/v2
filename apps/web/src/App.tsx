@@ -99,6 +99,7 @@ function App() {
               <Route path="/other/date-calc" element={<DateCalculator />} />
               <Route path="/text/word-count" element={<WordCounter />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
+              <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />
               <Route path="/other/bmi" element={<BMICalculator />} />
               <Route path="/other/progress" element={<ProgressConverter />} />
