@@ -131,6 +131,11 @@ export function JsonToCsvIcon({ className }: IconProps) {
   return <Braces className={className} />
 }
 
+// GPA計算
+export function GPACalculatorIcon({ className }: IconProps) {
+  return <BarChart3 className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />

@@ -41,6 +41,7 @@ const MortgageCalculator = lazy(() => import("./pages/OtherTools/MortgageCalcula
 const ImageConverter = lazy(() => import("./pages/OtherTools/ImageConverter"))
 const RobotsTxtGenerator = lazy(() => import("./pages/OtherTools/RobotsTxtGenerator"))
 const JsonToCsv = lazy(() => import("./pages/TextTools/JsonToCsv"))
+const GPACalculator = lazy(() => import("./pages/OtherTools/GPACalculator"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -120,6 +121,7 @@ function App() {
               <Route path="/other/image-convert" element={<ImageConverter />} />
               <Route path="/other/robots-txt" element={<RobotsTxtGenerator />} />
               <Route path="/text/json-to-csv" element={<JsonToCsv />} />
+              <Route path="/other/gpa" element={<GPACalculator />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />

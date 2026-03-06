@@ -403,6 +403,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'JSON,CSV,変換,データ変換,Excel',
     path: '/text/json-to-csv',
   },
+  '/other/gpa': {
+    title: 'GPA計算 | Rakit',
+    description:
+      '大学のGPAを計算。科目ごとの単位と成績を入力。留学、進学の目安に。',
+    keywords: 'GPA,計算,大学,成績,単位',
+    path: '/other/gpa',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
