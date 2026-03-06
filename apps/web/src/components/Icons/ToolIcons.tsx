@@ -171,6 +171,11 @@ export function HabitTrackerIcon({ className }: IconProps) {
   return <CalendarDays className={className} />
 }
 
+// ポモドーロタイマー
+export function PomodoroTimerIcon({ className }: IconProps) {
+  return <Timer className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />

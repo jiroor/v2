@@ -32,6 +32,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ツール,タイマー,文字数カウンター,QRコード,パスワード生成',
     path: '/',
   },
+  '/contact': {
+    title: 'お問い合わせ | Rakit',
+    description:
+      'Rakitへのお問い合わせ。ご意見・ご要望、バグ報告、ビジネスのご相談、広告掲載について。',
+    keywords: 'お問い合わせ,連絡先,サポート',
+    path: '/contact',
+  },
   '/timer/countdown': {
     title: 'カウントダウンタイマー | Rakit',
     description:
