@@ -291,6 +291,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '割引,計算,セール,値引き,ショッピング',
     path: '/other/discount',
   },
+  '/timer/digital': {
+    title: 'デジタルタイマー | Rakit',
+    description:
+      'シンプルなカウントダウンタイマー。料理、勉強、運動などに便利。終了時にお知らせ音。',
+    keywords: 'タイマー,カウントダウン,時間管理,料理,勉強',
+    path: '/timer/digital',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

@@ -43,6 +43,7 @@ import {
   BMICalculatorIcon,
   CalorieCalculatorIcon,
   DiscountCalculatorIcon,
+  DigitalTimerIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -87,12 +88,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/bmi': BMICalculatorIcon,
   '/other/calorie': CalorieCalculatorIcon,
   '/other/discount': DiscountCalculatorIcon,
-  DiscountCalculatorIcon,
-  CalorieCalculatorIcon,
-  DiscountCalculatorIcon,
-  BMICalculatorIcon,
-  CalorieCalculatorIcon,
-  DiscountCalculatorIcon,
+  '/other/timer': DigitalTimerIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

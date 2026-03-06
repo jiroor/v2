@@ -253,3 +253,8 @@ export function CalorieCalculatorIcon({ className }: IconProps) {
 export function DiscountCalculatorIcon({ className }: IconProps) {
   return <Tags className={className} />
 }
+
+// デジタルタイマー
+export function DigitalTimerIcon({ className }: IconProps) {
+  return <Timer className={className} />
+}
