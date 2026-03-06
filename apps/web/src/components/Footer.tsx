@@ -39,6 +39,7 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">その他</h4>
             <ul className="text-sm space-y-2">
+              <li><Link to="/stats" className="hover:text-white transition-colors">利用統計</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">お問い合わせ</Link></li>
               <li><Link to="/privacy" className="hover:text-white transition-colors">プライバシーポリシー</Link></li>
               <li><Link to="/terms" className="hover:text-white transition-colors">利用規約</Link></li>
