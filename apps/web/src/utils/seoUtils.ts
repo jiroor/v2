@@ -354,6 +354,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'カード番号,チェック,Luhn,クレジットカード,検証',
     path: '/other/card-check',
   },
+  '/other/currency': {
+    title: '為替計算 | Rakit',
+    description:
+      '主要通貨の為替計算。ドル円、ユーロ円など。海外旅行、ネットショッピングに便利。',
+    keywords: '為替,計算,ドル円,ユーロ円,外貨両替',
+    path: '/other/currency',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

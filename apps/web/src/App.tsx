@@ -34,6 +34,7 @@ const ImageCompressor = lazy(() => import("./pages/OtherTools/ImageCompressor"))
 const ImageResizer = lazy(() => import("./pages/OtherTools/ImageResizer"))
 const MetaTagGenerator = lazy(() => import("./pages/OtherTools/MetaTagGenerator"))
 const CreditCardChecker = lazy(() => import("./pages/OtherTools/CreditCardChecker"))
+const CurrencyConverter = lazy(() => import("./pages/OtherTools/CurrencyConverter"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -106,6 +107,7 @@ function App() {
               <Route path="/other/image-resize" element={<ImageResizer />} />
               <Route path="/other/meta-tag" element={<MetaTagGenerator />} />
               <Route path="/other/card-check" element={<CreditCardChecker />} />
+              <Route path="/other/currency" element={<CurrencyConverter />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />

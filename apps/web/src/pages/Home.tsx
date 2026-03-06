@@ -52,6 +52,7 @@ import {
   ImageResizerIcon,
   MetaTagGeneratorIcon,
   CreditCardCheckerIcon,
+  CurrencyConverterIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -105,6 +106,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/image-resize': ImageResizerIcon,
   '/other/meta-tag': MetaTagGeneratorIcon,
   '/other/card-check': CreditCardCheckerIcon,
+  '/other/currency': CurrencyConverterIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

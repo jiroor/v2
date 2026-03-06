@@ -95,6 +95,11 @@ export function CreditCardCheckerIcon({ className }: IconProps) {
   return <Receipt className={className} />
 }
 
+// 為替計算
+export function CurrencyConverterIcon({ className }: IconProps) {
+  return <Globe className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />
