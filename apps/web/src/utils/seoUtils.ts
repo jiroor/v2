@@ -298,6 +298,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'タイマー,カウントダウン,時間管理,料理,勉強',
     path: '/timer/digital',
   },
+  '/timer/stopwatch-tool': {
+    title: 'ストップウォッチ | Rakit',
+    description:
+      '高精度ストップウォッチ。ラップタイム記録機能付き。スポーツ、勉強、調理などに便利。',
+    keywords: 'ストップウォッチ,タイマー,ラップタイム,スポーツ,勉強',
+    path: '/timer/stopwatch-tool',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

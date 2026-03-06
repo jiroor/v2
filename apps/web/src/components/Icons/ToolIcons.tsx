@@ -24,6 +24,7 @@ import {
   Activity,
   Flame,
   Tags,
+  Watch,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -257,4 +258,9 @@ export function DiscountCalculatorIcon({ className }: IconProps) {
 // デジタルタイマー
 export function DigitalTimerIcon({ className }: IconProps) {
   return <Timer className={className} />
+}
+
+// ストップウォッチ
+export function StopwatchToolIcon({ className }: IconProps) {
+  return <Watch className={className} />
 }
