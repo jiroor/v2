@@ -136,6 +136,11 @@ export function GPACalculatorIcon({ className }: IconProps) {
   return <BarChart3 className={className} />
 }
 
+// パスワード強度チェック
+export function PasswordStrengthCheckerIcon({ className }: IconProps) {
+  return <Lock className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />

@@ -60,6 +60,7 @@ import {
   RobotsTxtGeneratorIcon,
   JsonToCsvIcon,
   GPACalculatorIcon,
+  PasswordStrengthCheckerIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -121,6 +122,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/robots-txt': RobotsTxtGeneratorIcon,
   '/text/json-to-csv': JsonToCsvIcon,
   '/other/gpa': GPACalculatorIcon,
+  '/other/password-check': PasswordStrengthCheckerIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

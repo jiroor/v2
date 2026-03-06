@@ -410,6 +410,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'GPA,計算,大学,成績,単位',
     path: '/other/gpa',
   },
+  '/other/password-check': {
+    title: 'パスワード強度チェック | Rakit',
+    description:
+      'パスワードの強度をリアルタイムで分析。文字種、長さ、パターンをチェック。安全なパスワード作成の参考に。',
+    keywords: 'パスワード,強度,チェック,セキュリティ,パスワード強度',
+    path: '/other/password-check',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
