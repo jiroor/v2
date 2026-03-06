@@ -7,7 +7,6 @@ import {
   CurrentTimeIcon,
   CharCounterIcon,
   TextDiffIcon,
-  ImageCompressorIcon,
   RandomStringIcon,
   QRCodeIcon,
   PasswordIcon,
@@ -49,6 +48,7 @@ import {
   DateCalculatorIcon,
   WordCounterIcon,
   IPAddressToolIcon,
+  ImageCompressorIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
