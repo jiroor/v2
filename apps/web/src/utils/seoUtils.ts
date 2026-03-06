@@ -277,6 +277,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'BMI,計算,肥満度,健康,体重',
     path: '/other/bmi',
   },
+  '/other/calorie': {
+    title: 'カロリー計算 | Rakit',
+    description:
+      '基礎代謝と1日の推定消費カロリー（TDEE）を計算。ダイエットや健康管理に便利。',
+    keywords: 'カロリー,計算,基礎代謝,TDEE,ダイエット',
+    path: '/other/calorie',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
