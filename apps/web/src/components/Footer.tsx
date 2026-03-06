@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ShareButton } from '@/components/Share/ShareButton'
 
 function Footer() {
   return (
@@ -8,9 +9,10 @@ function Footer() {
           {/* ブランド */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Rakit</h3>
-            <p className="text-sm">
+            <p className="text-sm mb-4">
               便利なオンラインツールを無料で提供。開発者、デザイナー、学生に役立つ55以上のツール。
             </p>
+            <ShareButton title="Rakit - 楽に使えるツール集" variant="compact" />
           </div>
 
           {/* テキストツール */}

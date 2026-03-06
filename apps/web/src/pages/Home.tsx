@@ -1,4 +1,5 @@
 import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
+import { ShareButton } from '@/components/Share/ShareButton'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
@@ -193,9 +194,12 @@ function Home() {
 
       {/* 全ツール一覧 */}
       <h2 className="text-[30px] font-bold mb-2">ツール一覧</h2>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-600 mb-4">
         軽量でミニマルなユーティリティツール集
       </p>
+      <div className="mb-6">
+        <ShareButton title="Rakit - 楽に使えるツール集" />
+      </div>
 
       <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1">
         <Link
