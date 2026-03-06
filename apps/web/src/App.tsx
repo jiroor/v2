@@ -52,6 +52,7 @@ const GoalTracker = lazy(() => import("./pages/OtherTools/GoalTracker"))
 const HabitTracker = lazy(() => import("./pages/OtherTools/HabitTracker"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const ContactForm = lazy(() => import("./pages/ContactForm"))
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
 const ProgressConverter = lazy(() => import("./pages/OtherTools/ProgressConverter"))
@@ -95,6 +96,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/contact" element={<ContactForm />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/timer/countdown" element={<CountdownTimer />} />
               <Route path="/timer/stopwatch" element={<Stopwatch />} />
               <Route path="/timer/pomodoro" element={<PomodoroTimer />} />
