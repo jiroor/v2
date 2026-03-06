@@ -1,127 +1,132 @@
-# Rakit - Utility Tools Collection
+# Rakit - 無料オンラインユーティリティツール集
 
-軽量でミニマルなデザインのReactベース/iOSネイティブユーティリティツール集
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🏗️ モノレポ構成
+**Rakit**は、開発者、デザイナー、学生向けの55以上の無料オンラインツールを提供するWebアプリケーションです。
 
-このリポジトリは、Web版とiOS版の両方を含むモノレポです。
+## 🚀 特徴
 
-```
-/
-├── apps/
-│   ├── web/              # Webアプリ（React + Vite）
-│   └── ios/              # iOSアプリ（Swift + SwiftUI）
-├── docs/                 # 共通ドキュメント
-├── memories/             # 開発ログ・記録
-├── Plans.md              # Web版タスク管理
-├── Plans-iOS.md          # iOS版タスク管理
-├── CLAUDE.md             # プロジェクト設定
-└── AGENTS.md             # 開発ワークフロー
-```
+- **完全無料** - すべてのツールが無料で利用可能
+- **PWA対応** - オフラインでも動作
+- **高速** - クライアントサイド処理で即座に結果表示
+- **プライバシー重視** - データはサーバーに送信されません
+- **日本語対応** - すべて日本語で利用可能
+
+## 🛠️ ツール一覧
+
+### テキストツール（23個）
+| ツール | 説明 |
+|--------|------|
+| [Base64エンコード/デコード](/text/base64) | Base64形式のエンコード・デコード |
+| [URLエンコード/デコード](/text/url) | URLエンコード・デコード |
+| [JSON整形](/text/json) | JSONの整形・バリデーション |
+| [ハッシュ生成](/text/hash) | MD5, SHA-1, SHA-256等のハッシュ生成 |
+| [正規表現テスト](/text/regex) | 正規表現のリアルタイムテスト |
+| [UUID生成](/text/uuid) | UUID/GUID生成 |
+| [文字数カウンター](/text/word-count) | 文字数・単語数カウント |
+| [テキスト比較](/text/diff) | 2つのテキストの差分表示 |
+| [Markdownプレビュー](/text/markdown) | Markdownのリアルタイムプレビュー |
+| [ケース変換](/text/case) | 大文字・小文字・キャメルケース変換 |
+| [JSON to CSV](/text/json-to-csv) | JSONをCSVに変換 |
+| [HTML to Markdown](/text/html-to-markdown) | HTMLをMarkdownに変換 |
+
+### 計算ツール（18個）
+| ツール | 説明 |
+|--------|------|
+| [BMI計算](/other/bmi) | BMIと肥満度判定 |
+| [カロリー計算](/other/calorie) | 基礎代謝・TDEE計算 |
+| [複利計算](/other/compound-interest) | 複利シミュレーション |
+| [住宅ローン計算](/other/mortgage) | 月次返済額計算 |
+| [為替計算](/other/currency) | 主要通貨の為替計算 |
+| [割引計算](/other/discount) | 割引額・割引後価格計算 |
+| [GPA計算](/other/gpa) | 大学のGPA計算 |
+| [年収・月収・時給変換](/other/salary) | 給与の相互変換 |
+
+### 画像ツール（6個）
+| ツール | 説明 |
+|--------|------|
+| [画像圧縮](/other/image-compress) | 画像のファイルサイズ削減 |
+| [画像リサイズ](/other/image-resize) | 画像サイズ変更 |
+| [画像形式変換](/other/image-convert) | PNG/JPEG/WebP変換 |
+| [画像トリミング](/other/image-crop) | 画像の切り抜き |
+
+### 時間管理ツール（3個）
+| ツール | 説明 |
+|--------|------|
+| [デジタルタイマー](/timer/digital) | カウントダウンタイマー |
+| [ストップウォッチ](/timer/stopwatch-tool) | 高精度ストップウォッチ |
+| [ポモドーロタイマー](/timer/pomodoro) | 25分作業+5分休憩 |
+
+### 習慣・目標管理（2個）
+| ツール | 説明 |
+|--------|------|
+| [目標達成トラッカー](/other/goal-tracker) | 目標の進捗管理 |
+| [習慣トラッカー](/other/habit-tracker) | 毎日の習慣記録 |
+
+### SEO/開発ツール（5個）
+| ツール | 説明 |
+|--------|------|
+| [メタタグ生成](/other/meta-tag) | SEO用メタタグ生成 |
+| [Robots.txt生成](/other/robots-txt) | クローラー制御ファイル生成 |
+| [IPアドレス確認](/other/ip-address) | 自分のIPアドレス確認 |
+| [パスワード強度チェック](/other/password-check) | パスワードの強度分析 |
+
+## 📦 技術スタック
+
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **Build**: Vite
+- **PWA**: Workbox
+- **Analytics**: Vercel Analytics
 
 ## 🚀 クイックスタート
 
-### Web版
-
 ```bash
-# 依存関係のインストール
+# リポジトリをクローン
+git clone https://github.com/jiroor/v2.git
+cd v2
+
+# 依存関係をインストール
 npm install
 
-# 開発サーバー起動
+# 開発サーバーを起動
 npm run dev
-# または
-npm run web:dev
 
 # ビルド
 npm run build
-# または
-npm run web:build
-
-# 型チェック
-npm run type-check
 ```
 
-### iOS版
+## 📈 SEO機能
 
-```bash
-cd apps/ios
-open CameraSharing.xcodeproj
-```
+- 自動sitemap.xml生成
+- robots.txt生成
+- 各ツール専用のメタデータ
+- OGP/Twitter Card対応
 
-Xcode でビルド・実行してください。
+## 📱 PWA機能
 
-## 📦 提供するツール
+- オフライン対応
+- ホーム画面に追加可能
+- キャッシュによる高速化
 
-### タイマー系
-- カウントダウンタイマー
-- ストップウォッチ
-- ポモドーロタイマー
+## 🤝 コントリビュート
 
-### テキストツール
-- 文字数カウンター
-- テキスト差分表示
-- ランダム文字列生成
+バグ報告、機能要望、プルリクエストを歓迎します！
 
-### その他ツール
-- QRコード生成
-- パスワード生成
-- カラーピッカー
-- 現在日時表示（世界時計）
-- ルーレット
-- **カメラ映像共有**（Web版・iOS版）
+1. このリポジトリをフォーク
+2. 機能ブランチを作成 (`git checkout -b feature/AmazingFeature`)
+3. 変更をコミット (`git commit -m 'Add some AmazingFeature'`)
+4. ブランチにプッシュ (`git push origin feature/AmazingFeature`)
+5. プルリクエストを作成
 
-## 🎯 カメラ映像共有機能
+## 📄 ライセンス
 
-### Web版
-- PeerJS経由でリアルタイム映像・音声共有
-- QRコードによる簡単接続
-- ブラウザで完結
+このプロジェクトはMITライセンスの下で公開されています。
 
-### iOS版（開発中）
-- **ローカルデバイス検索**（Bonjour/mDNS）
-- **完全オフライン動作**（インターネット不要）
-- Web版との互換性
+## 📧 お問い合わせ
 
-詳細は [Plans-iOS.md](./Plans-iOS.md) を参照
+ビジネスのご相談、広告掲載、ご意見・ご要望は[お問い合わせフォーム](/contact)まで。
 
-## 🛠️ 技術スタック
+---
 
-### Web版
-- **フレームワーク**: Vite + React 18
-- **言語**: TypeScript
-- **ルーティング**: React Router v6
-- **スタイリング**: Tailwind CSS v4 + shadcn/ui
-- **WebRTC**: PeerJS
-- **デプロイ**: Vercel
-
-### iOS版
-- **言語**: Swift 5.9+
-- **UI**: SwiftUI
-- **カメラ**: AVFoundation
-- **デバイス検索**: Network.framework (Bonjour)
-- **WebRTC**: GoogleWebRTC.framework
-
-## 📝 開発ガイド
-
-開発フローの詳細は以下を参照：
-- [CLAUDE.md](./CLAUDE.md) - プロジェクト概要と設計原則
-- [AGENTS.md](./AGENTS.md) - 開発ワークフロー
-- [Plans.md](./Plans.md) - Web版タスク管理
-- [Plans-iOS.md](./Plans-iOS.md) - iOS版タスク管理
-
-## 📊 バンドルサイズ
-
-Web版の最適化により、**98.57 KB (gzip)** を達成しています。
-
-- React.lazy() による遅延ローディング
-- 外部ライブラリの遅延ローディング（qrcode, html5-qrcode, PeerJS）
-
-詳細は [Plans.md](./Plans.md) の「バンドルサイズの推移」を参照
-
-## 🤖 開発環境
-
-このプロジェクトは [Claude Code](https://claude.com/claude-code) で開発されています。
-
-## ライセンス
-
-MIT
+**Rakit** - 便利なツールを無料で。Made with ❤️ in Japan
