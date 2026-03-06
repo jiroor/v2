@@ -326,6 +326,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'IPアドレス,確認,自分のIP,グローバルIP,ネットワーク',
     path: '/other/ip-address',
   },
+  '/other/image-compress': {
+    title: '画像圧縮 | Rakit',
+    description:
+      '画像ファイルを圧縮してファイルサイズを削減。Web公開用の画像軽量化に便利。品質調整可能。',
+    keywords: '画像圧縮,ファイルサイズ,軽量化,画像最適化,Web',
+    path: '/other/image-compress',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

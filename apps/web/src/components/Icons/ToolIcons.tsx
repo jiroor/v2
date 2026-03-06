@@ -75,6 +75,11 @@ export function TextDiffIcon({ className }: IconProps) {
   return <Columns2 className={className} />
 }
 
+// 画像圧縮
+export function ImageCompressorIcon({ className }: IconProps) {
+  return <Image className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />
