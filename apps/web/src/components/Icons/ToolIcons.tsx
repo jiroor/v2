@@ -264,3 +264,8 @@ export function DigitalTimerIcon({ className }: IconProps) {
 export function StopwatchToolIcon({ className }: IconProps) {
   return <Watch className={className} />
 }
+
+// 日付計算
+export function DateCalculatorIcon({ className }: IconProps) {
+  return <CalendarDays className={className} />
+}

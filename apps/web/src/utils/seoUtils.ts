@@ -305,6 +305,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'ストップウォッチ,タイマー,ラップタイム,スポーツ,勉強',
     path: '/timer/stopwatch-tool',
   },
+  '/other/date-calc': {
+    title: '日付計算 | Rakit',
+    description:
+      '2つの日付から日数を計算。基準日からN日後を計算。期間計算に便利。',
+    keywords: '日付,計算,日数,期間,カレンダー',
+    path: '/other/date-calc',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
