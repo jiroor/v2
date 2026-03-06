@@ -368,6 +368,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'カラーパレット,配色,色,デザイン,Webデザイン',
     path: '/other/color-palette',
   },
+  '/other/compound-interest': {
+    title: '複利計算 | Rakit',
+    description:
+      '複利の効果を計算。毎月の積立投資にも対応。投資・貯金計画のシミュレーションに便利。',
+    keywords: '複利,計算,投資,貯金,シミュレーション,積立',
+    path: '/other/compound-interest',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

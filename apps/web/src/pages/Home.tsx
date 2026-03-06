@@ -54,6 +54,7 @@ import {
   CreditCardCheckerIcon,
   CurrencyConverterIcon,
   ColorPaletteIcon,
+  CompoundInterestCalculatorIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -109,6 +110,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/card-check': CreditCardCheckerIcon,
   '/other/currency': CurrencyConverterIcon,
   '/other/color-palette': ColorPaletteIcon,
+  '/other/compound-interest': CompoundInterestCalculatorIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

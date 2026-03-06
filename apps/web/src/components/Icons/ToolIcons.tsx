@@ -105,6 +105,11 @@ export function ColorPaletteIcon({ className }: IconProps) {
   return <Palette className={className} />
 }
 
+// 複利計算
+export function CompoundInterestCalculatorIcon({ className }: IconProps) {
+  return <TrendingUp className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />
