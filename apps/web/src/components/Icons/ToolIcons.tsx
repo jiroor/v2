@@ -116,6 +116,11 @@ export function MortgageCalculatorIcon({ className }: IconProps) {
   return <Home className={className} />
 }
 
+// 画像形式変換
+export function ImageConverterIcon({ className }: IconProps) {
+  return <Image className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />

@@ -382,6 +382,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '住宅ローン,計算,月次返済,シミュレーション,家購入',
     path: '/other/mortgage',
   },
+  '/other/image-convert': {
+    title: '画像形式変換 | Rakit',
+    description:
+      'PNG, JPEG, WebP間の変換。品質調整可能。Web公開用画像の形式変換に便利。',
+    keywords: '画像変換,PNG,JPEG,WebP,形式変換',
+    path: '/other/image-convert',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

@@ -56,6 +56,7 @@ import {
   ColorPaletteIcon,
   CompoundInterestCalculatorIcon,
   MortgageCalculatorIcon,
+  ImageConverterIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -113,6 +114,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/color-palette': ColorPaletteIcon,
   '/other/compound-interest': CompoundInterestCalculatorIcon,
   '/other/mortgage': MortgageCalculatorIcon,
+  '/other/image-convert': ImageConverterIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,
