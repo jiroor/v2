@@ -375,6 +375,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '複利,計算,投資,貯金,シミュレーション,積立',
     path: '/other/compound-interest',
   },
+  '/other/mortgage': {
+    title: '住宅ローン計算 | Rakit',
+    description:
+      '住宅ローンの月次返済額を計算。総返済額、利息総額も表示。家購入の計画立案に便利。',
+    keywords: '住宅ローン,計算,月次返済,シミュレーション,家購入',
+    path: '/other/mortgage',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

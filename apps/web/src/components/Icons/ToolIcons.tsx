@@ -25,6 +25,7 @@ import {
   Flame,
   Tags,
   Watch,
+  Home,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -108,6 +109,11 @@ export function ColorPaletteIcon({ className }: IconProps) {
 // 複利計算
 export function CompoundInterestCalculatorIcon({ className }: IconProps) {
   return <TrendingUp className={className} />
+}
+
+// 住宅ローン計算
+export function MortgageCalculatorIcon({ className }: IconProps) {
+  return <Home className={className} />
 }
 
 // ランダム文字列

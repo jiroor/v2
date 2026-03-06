@@ -37,6 +37,7 @@ const CreditCardChecker = lazy(() => import("./pages/OtherTools/CreditCardChecke
 const CurrencyConverter = lazy(() => import("./pages/OtherTools/CurrencyConverter"))
 const ColorPalette = lazy(() => import("./pages/OtherTools/ColorPalette"))
 const CompoundInterestCalculator = lazy(() => import("./pages/OtherTools/CompoundInterestCalculator"))
+const MortgageCalculator = lazy(() => import("./pages/OtherTools/MortgageCalculator"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -112,6 +113,7 @@ function App() {
               <Route path="/other/currency" element={<CurrencyConverter />} />
               <Route path="/other/color-palette" element={<ColorPalette />} />
               <Route path="/other/compound-interest" element={<CompoundInterestCalculator />} />
+              <Route path="/other/mortgage" element={<MortgageCalculator />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />
