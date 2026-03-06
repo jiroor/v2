@@ -333,6 +333,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '画像圧縮,ファイルサイズ,軽量化,画像最適化,Web',
     path: '/other/image-compress',
   },
+  '/other/image-resize': {
+    title: '画像リサイズ | Rakit',
+    description:
+      '画像のサイズを変更。縦横比維持、プリセットサイズ対応。SNS投稿、アイコン、サムネイル作成に便利。',
+    keywords: '画像リサイズ,画像縮小,画像拡大,サイズ変更,アイコン作成',
+    path: '/other/image-resize',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

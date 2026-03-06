@@ -80,6 +80,11 @@ export function ImageCompressorIcon({ className }: IconProps) {
   return <Image className={className} />
 }
 
+// 画像リサイズ
+export function ImageResizerIcon({ className }: IconProps) {
+  return <Ruler className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />
