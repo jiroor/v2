@@ -284,6 +284,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'カロリー,計算,基礎代謝,TDEE,ダイエット',
     path: '/other/calorie',
   },
+  '/other/discount': {
+    title: '割引計算 | Rakit',
+    description:
+      '割引額と割引後価格を計算。セール時の買い物に便利。よく使う割引率のクイック選択付き。',
+    keywords: '割引,計算,セール,値引き,ショッピング',
+    path: '/other/discount',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

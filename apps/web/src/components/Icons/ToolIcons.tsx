@@ -23,6 +23,7 @@ import {
   TrendingUp,
   Activity,
   Flame,
+  Tags,
   RegexIcon as Regex,
   Fingerprint,
   Type,
@@ -246,4 +247,9 @@ export function BMICalculatorIcon({ className }: IconProps) {
 // カロリー計算
 export function CalorieCalculatorIcon({ className }: IconProps) {
   return <Flame className={className} />
+}
+
+// 割引計算
+export function DiscountCalculatorIcon({ className }: IconProps) {
+  return <Tags className={className} />
 }
