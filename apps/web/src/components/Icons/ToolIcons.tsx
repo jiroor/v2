@@ -121,6 +121,11 @@ export function ImageConverterIcon({ className }: IconProps) {
   return <Image className={className} />
 }
 
+// Robots.txt生成
+export function RobotsTxtGeneratorIcon({ className }: IconProps) {
+  return <FileText className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />

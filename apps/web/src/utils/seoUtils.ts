@@ -389,12 +389,12 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '画像変換,PNG,JPEG,WebP,形式変換',
     path: '/other/image-convert',
   },
-  '/other/gif-maker': {
-    title: 'GIFアニメーション作成 | Rakit',
+  '/other/robots-txt': {
+    title: 'Robots.txt生成 | Rakit',
     description:
-      '複数の画像からGIFアニメーションを作成。フレーム間隔の調整が可能。SNS投稿、プレゼン資料に便利。',
-    keywords: 'GIF,アニメーション,作成,画像,Webアニメーション',
-    path: '/other/gif-maker',
+      'SEO対策用のrobots.txtを自動生成。Allow/Disallow設定、Sitemap URL指定に対応。',
+    keywords: 'robots.txt,SEO,クローラー,検索エンジン,アクセス制御',
+    path: '/other/robots-txt',
   },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
