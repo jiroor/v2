@@ -1,3 +1,4 @@
+import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
@@ -184,6 +185,11 @@ function Home() {
           </div>
         </div>
       )}
+
+      {/* ニュースレター登録 */}
+      <div className="mb-8">
+        <NewsletterSignup />
+      </div>
 
       {/* 全ツール一覧 */}
       <h2 className="text-[30px] font-bold mb-2">ツール一覧</h2>
