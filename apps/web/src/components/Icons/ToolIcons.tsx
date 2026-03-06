@@ -121,6 +121,11 @@ export function ImageConverterIcon({ className }: IconProps) {
   return <Image className={className} />
 }
 
+// GIF作成
+export function GifMakerIcon({ className }: IconProps) {
+  return <Video className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />

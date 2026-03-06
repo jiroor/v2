@@ -39,6 +39,7 @@ const ColorPalette = lazy(() => import("./pages/OtherTools/ColorPalette"))
 const CompoundInterestCalculator = lazy(() => import("./pages/OtherTools/CompoundInterestCalculator"))
 const MortgageCalculator = lazy(() => import("./pages/OtherTools/MortgageCalculator"))
 const ImageConverter = lazy(() => import("./pages/OtherTools/ImageConverter"))
+const GifMaker = lazy(() => import("./pages/OtherTools/GifMaker"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -116,6 +117,7 @@ function App() {
               <Route path="/other/compound-interest" element={<CompoundInterestCalculator />} />
               <Route path="/other/mortgage" element={<MortgageCalculator />} />
               <Route path="/other/image-convert" element={<ImageConverter />} />
+              <Route path="/other/gif-maker" element={<GifMaker />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />

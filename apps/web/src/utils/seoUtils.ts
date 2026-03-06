@@ -389,6 +389,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '画像変換,PNG,JPEG,WebP,形式変換',
     path: '/other/image-convert',
   },
+  '/other/gif-maker': {
+    title: 'GIFアニメーション作成 | Rakit',
+    description:
+      '複数の画像からGIFアニメーションを作成。フレーム間隔の調整が可能。SNS投稿、プレゼン資料に便利。',
+    keywords: 'GIF,アニメーション,作成,画像,Webアニメーション',
+    path: '/other/gif-maker',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
