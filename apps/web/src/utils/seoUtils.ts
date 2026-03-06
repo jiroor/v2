@@ -319,6 +319,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '文字数,カウント,単語数,文字カウント,SEO',
     path: '/text/word-count',
   },
+  '/other/ip-address': {
+    title: 'IPアドレス確認 | Rakit',
+    description:
+      '自分のパブリックIPアドレスを確認。位置情報やISP情報も表示。ネットワーク設定・トラブル解決に便利。',
+    keywords: 'IPアドレス,確認,自分のIP,グローバルIP,ネットワーク',
+    path: '/other/ip-address',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

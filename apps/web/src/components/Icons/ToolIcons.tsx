@@ -274,3 +274,8 @@ export function DateCalculatorIcon({ className }: IconProps) {
 export function WordCounterIcon({ className }: IconProps) {
   return <FileText className={className} />
 }
+
+// IPアドレス確認
+export function IPAddressToolIcon({ className }: IconProps) {
+  return <Globe className={className} />
+}
