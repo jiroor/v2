@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ShareButton } from '@/components/Share/ShareButton'
 
 type IndentSize = 2 | 4
 
@@ -103,7 +104,10 @@ function JSONFormatter() {
     <>
       <SEO path="/text/json" />
       <div className="max-w-[1000px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">JSON整形・フォーマット</h2>
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold">JSON整形・フォーマット</h2>
+          <ShareButton title="JSON整形・フォーマット | Rakit" variant="compact" />
+        </div>
 
         {/* オプション */}
         <div className="flex gap-4 mb-6 justify-center flex-wrap">

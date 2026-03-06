@@ -6,6 +6,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ShareButton } from '@/components/Share/ShareButton'
 
 function CharCounter() {
   useToolUsageTracking('/text/counter', '文字数カウンター')
@@ -34,7 +35,10 @@ function CharCounter() {
     <>
       <SEO path="/text/counter" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-      <h2 className="text-2xl font-semibold mb-8 text-center">文字数カウンター</h2>
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-2xl font-semibold">文字数カウンター</h2>
+        <ShareButton title="文字数カウンター | Rakit" variant="compact" />
+      </div>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4 mb-6 md:grid-cols-2">
         <div className="bg-gray-50 border border-gray-200 rounded-md p-4 text-center">

@@ -4,6 +4,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ShareButton } from '@/components/Share/ShareButton'
 
 type QRSize = 128 | 256 | 512
 
@@ -72,7 +73,10 @@ function QRCodeGenerator() {
     <>
       <SEO path="/other/qrcode" />
       <div className="max-w-[600px] mx-auto px-4 py-8">
-      <h2 className="text-2xl font-semibold mb-8 text-center">QRコード生成</h2>
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-2xl font-semibold">QRコード生成</h2>
+        <ShareButton title="QRコード生成 | Rakit" variant="compact" />
+      </div>
 
       <div className="mb-6">
         <Label className="text-base mb-3">テキスト / URL</Label>
