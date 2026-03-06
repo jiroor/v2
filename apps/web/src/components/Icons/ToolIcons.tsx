@@ -90,6 +90,11 @@ export function MetaTagGeneratorIcon({ className }: IconProps) {
   return <FileCode className={className} />
 }
 
+// カード番号チェック
+export function CreditCardCheckerIcon({ className }: IconProps) {
+  return <Receipt className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />

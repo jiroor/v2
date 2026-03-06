@@ -347,6 +347,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'メタタグ,SEO,OGP,Twitter Card,メタデータ生成',
     path: '/other/meta-tag',
   },
+  '/other/card-check': {
+    title: 'カード番号チェック | Rakit',
+    description:
+      'クレジットカード番号の形式チェック。Luhnアルゴリズムによる検証。カード種類の自動判別。',
+    keywords: 'カード番号,チェック,Luhn,クレジットカード,検証',
+    path: '/other/card-check',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
