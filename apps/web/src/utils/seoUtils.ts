@@ -438,6 +438,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '画像,トリミング,切り抜き,アスペクト比,クロップ',
     path: '/other/image-crop',
   },
+  '/text/acronym': {
+    title: '略語ジェネレーター | Rakit',
+    description:
+      'スペース区切りのフレーズから略語・頭字語を生成。プロジェクト名、チーム名、製品名などに便利。',
+    keywords: '略語,頭字語,アクロニウム,ジェネレーター,名前生成',
+    path: '/text/acronym',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

@@ -46,6 +46,7 @@ const PasswordStrengthChecker = lazy(() => import("./pages/OtherTools/PasswordSt
 const SalaryConverter = lazy(() => import("./pages/OtherTools/SalaryConverter"))
 const HtmlToMarkdown = lazy(() => import("./pages/TextTools/HtmlToMarkdown"))
 const ImageCropper = lazy(() => import("./pages/OtherTools/ImageCropper"))
+const AcronymGenerator = lazy(() => import("./pages/TextTools/AcronymGenerator"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -130,6 +131,7 @@ function App() {
               <Route path="/other/salary" element={<SalaryConverter />} />
               <Route path="/text/html-to-markdown" element={<HtmlToMarkdown />} />
               <Route path="/other/image-crop" element={<ImageCropper />} />
+              <Route path="/text/acronym" element={<AcronymGenerator />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />

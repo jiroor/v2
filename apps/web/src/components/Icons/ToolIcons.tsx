@@ -156,6 +156,11 @@ export function ImageCropperIcon({ className }: IconProps) {
   return <Ruler className={className} />
 }
 
+// 略語ジェネレーター
+export function AcronymGeneratorIcon({ className }: IconProps) {
+  return <Type className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />
