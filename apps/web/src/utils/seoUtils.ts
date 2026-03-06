@@ -417,6 +417,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'パスワード,強度,チェック,セキュリティ,パスワード強度',
     path: '/other/password-check',
   },
+  '/other/salary': {
+    title: '年収・月収・時給変換 | Rakit',
+    description:
+      '年収、月収、時給を相互変換。労働条件を調整可能。転職・求人検索の参考に。',
+    keywords: '年収,月収,時給,変換,給与',
+    path: '/other/salary',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

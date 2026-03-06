@@ -61,6 +61,7 @@ import {
   JsonToCsvIcon,
   GPACalculatorIcon,
   PasswordStrengthCheckerIcon,
+  SalaryConverterIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -123,6 +124,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/text/json-to-csv': JsonToCsvIcon,
   '/other/gpa': GPACalculatorIcon,
   '/other/password-check': PasswordStrengthCheckerIcon,
+  '/other/salary': SalaryConverterIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

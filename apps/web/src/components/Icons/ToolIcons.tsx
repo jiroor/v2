@@ -141,6 +141,11 @@ export function PasswordStrengthCheckerIcon({ className }: IconProps) {
   return <Lock className={className} />
 }
 
+// 年収・月収・時給変換
+export function SalaryConverterIcon({ className }: IconProps) {
+  return <Receipt className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />
