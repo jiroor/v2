@@ -85,6 +85,11 @@ export function ImageResizerIcon({ className }: IconProps) {
   return <Ruler className={className} />
 }
 
+// メタタグ生成
+export function MetaTagGeneratorIcon({ className }: IconProps) {
+  return <FileCode className={className} />
+}
+
 // ランダム文字列
 export function RandomStringIcon({ className }: IconProps) {
   return <Shuffle className={className} />

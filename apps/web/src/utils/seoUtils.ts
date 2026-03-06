@@ -340,6 +340,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '画像リサイズ,画像縮小,画像拡大,サイズ変更,アイコン作成',
     path: '/other/image-resize',
   },
+  '/other/meta-tag': {
+    title: 'メタタグ生成 | Rakit',
+    description:
+      'SEO対策用メタタグを自動生成。OGP、Twitter Card対応。タイトル、説明文、キーワードを入力するだけで簡単生成。',
+    keywords: 'メタタグ,SEO,OGP,Twitter Card,メタデータ生成',
+    path: '/other/meta-tag',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

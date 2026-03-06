@@ -32,6 +32,7 @@ const DateCalculator = lazy(() => import("./pages/OtherTools/DateCalculator"))
 const WordCounter = lazy(() => import("./pages/TextTools/WordCounter"))
 const ImageCompressor = lazy(() => import("./pages/OtherTools/ImageCompressor"))
 const ImageResizer = lazy(() => import("./pages/OtherTools/ImageResizer"))
+const MetaTagGenerator = lazy(() => import("./pages/OtherTools/MetaTagGenerator"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -102,6 +103,7 @@ function App() {
               <Route path="/text/word-count" element={<WordCounter />} />
               <Route path="/other/image-compress" element={<ImageCompressor />} />
               <Route path="/other/image-resize" element={<ImageResizer />} />
+              <Route path="/other/meta-tag" element={<MetaTagGenerator />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />
