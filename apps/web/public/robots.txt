@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rakit.vercel.app/sitemap.xml
+Sitemap: https://rakit-five.vercel.app/sitemap.xml
