@@ -48,6 +48,7 @@ const HtmlToMarkdown = lazy(() => import("./pages/TextTools/HtmlToMarkdown"))
 const ImageCropper = lazy(() => import("./pages/OtherTools/ImageCropper"))
 const AcronymGenerator = lazy(() => import("./pages/TextTools/AcronymGenerator"))
 const GoalTracker = lazy(() => import("./pages/OtherTools/GoalTracker"))
+const HabitTracker = lazy(() => import("./pages/OtherTools/HabitTracker"))
 const IPAddressTool = lazy(() => import("./pages/OtherTools/IPAddressTool"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
@@ -134,6 +135,7 @@ function App() {
               <Route path="/other/image-crop" element={<ImageCropper />} />
               <Route path="/text/acronym" element={<AcronymGenerator />} />
               <Route path="/other/goal-tracker" element={<GoalTracker />} />
+              <Route path="/other/habit-tracker" element={<HabitTracker />} />
               <Route path="/other/ip-address" element={<IPAddressTool />} />
               <Route path="/text/diff" element={<TextDiff />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />

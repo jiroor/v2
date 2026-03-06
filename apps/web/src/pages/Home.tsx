@@ -66,6 +66,7 @@ import {
   ImageCropperIcon,
   AcronymGeneratorIcon,
   GoalTrackerIcon,
+  HabitTrackerIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -133,6 +134,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/image-crop': ImageCropperIcon,
   '/text/acronym': AcronymGeneratorIcon,
   '/other/goal-tracker': GoalTrackerIcon,
+  '/other/habit-tracker': HabitTrackerIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

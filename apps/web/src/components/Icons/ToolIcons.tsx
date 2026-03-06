@@ -166,6 +166,11 @@ export function GoalTrackerIcon({ className }: IconProps) {
   return <TrendingUp className={className} />
 }
 
+// 習慣トラッカー
+export function HabitTrackerIcon({ className }: IconProps) {
+  return <CalendarDays className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />

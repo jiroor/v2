@@ -452,6 +452,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '目標,トラッカー,進捗管理,習慣化,目標達成',
     path: '/other/goal-tracker',
   },
+  '/other/habit-tracker': {
+    title: '習慣トラッカー | Rakit',
+    description:
+      '毎日の習慣を記録・管理。連続達成日数（ストリーク）を追跡。習）を追跡。習慣化の継続に便利。',
+    keywords: '習慣,トラッカー,ストリーク,習慣化,毎日の習慣',
+    path: '/other/habit-tracker',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
