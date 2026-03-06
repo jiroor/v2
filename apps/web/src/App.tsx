@@ -6,6 +6,7 @@ import { UpdatePrompt } from './components/UpdatePrompt'
 
 // Lazy load page components
 const Home = lazy(() => import('./pages/Home'))
+const UsageStats = lazy(() => import('./pages/UsageStats'))
 const CountdownTimer = lazy(() => import('./pages/Timer/CountdownTimer'))
 const Stopwatch = lazy(() => import('./pages/Timer/Stopwatch'))
 const PomodoroTimer = lazy(() => import('./pages/Timer/PomodoroTimer'))
@@ -95,6 +96,7 @@ function App() {
           }>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/stats" element={<UsageStats />} />
               <Route path="/contact" element={<ContactForm />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/timer/countdown" element={<CountdownTimer />} />

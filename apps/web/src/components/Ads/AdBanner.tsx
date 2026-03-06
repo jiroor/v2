@@ -2,16 +2,12 @@
 // 実際の広告表示にはGoogle AdSenseのアカウント登録が必要
 
 interface AdBannerProps {
-  slot?: string
   format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle'
-  responsive?: boolean
   className?: string
 }
 
 function AdBanner({ 
-  slot = 'auto', 
   format = 'auto',
-  responsive = true,
   className = ''
 }: AdBannerProps) {
   // 本番環境では実際のAdSenseコードを使用
