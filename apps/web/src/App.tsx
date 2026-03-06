@@ -29,6 +29,7 @@ const DiscountCalculator = lazy(() => import("./pages/OtherTools/DiscountCalcula
 const DigitalTimer = lazy(() => import("./pages/OtherTools/DigitalTimer"))
 const StopwatchTool = lazy(() => import("./pages/OtherTools/StopwatchTool"))
 const DateCalculator = lazy(() => import("./pages/OtherTools/DateCalculator"))
+const WordCounter = lazy(() => import("./pages/TextTools/WordCounter"))
 const CalorieCalculator = lazy(() => import("./pages/OtherTools/CalorieCalculator"))
 const BMICalculator = lazy(() => import("./pages/OtherTools/BMICalculator"))
 const ProgressConverter = lazy(() => import("./pages/OtherTools/ProgressConverter"))
@@ -95,6 +96,7 @@ function App() {
               <Route path="/timer/digital" element={<DigitalTimer />} />
               <Route path="/timer/stopwatch-tool" element={<StopwatchTool />} />
               <Route path="/other/date-calc" element={<DateCalculator />} />
+              <Route path="/text/word-count" element={<WordCounter />} />
               <Route path="/other/calorie" element={<CalorieCalculator />} />
               <Route path="/other/bmi" element={<BMICalculator />} />
               <Route path="/other/progress" element={<ProgressConverter />} />

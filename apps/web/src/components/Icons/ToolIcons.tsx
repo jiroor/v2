@@ -269,3 +269,8 @@ export function StopwatchToolIcon({ className }: IconProps) {
 export function DateCalculatorIcon({ className }: IconProps) {
   return <CalendarDays className={className} />
 }
+
+// 文字数カウンター
+export function WordCounterIcon({ className }: IconProps) {
+  return <FileText className={className} />
+}

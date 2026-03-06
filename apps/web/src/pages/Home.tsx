@@ -46,6 +46,7 @@ import {
   DigitalTimerIcon,
   StopwatchToolIcon,
   DateCalculatorIcon,
+  WordCounterIcon,
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
@@ -93,6 +94,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   '/other/timer': DigitalTimerIcon,
   '/timer/stopwatch-tool': StopwatchToolIcon,
   '/other/date-calc': DateCalculatorIcon,
+  '/text/word-count': WordCounterIcon,
   '/other/qrcode': QRCodeIcon,
   '/other/password': PasswordIcon,
   '/other/colorpicker': ColorPickerIcon,

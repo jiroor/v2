@@ -312,6 +312,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '日付,計算,日数,期間,カレンダー',
     path: '/other/date-calc',
   },
+  '/text/word-count': {
+    title: '文字数カウンター | Rakit',
+    description:
+      'テキストの文字数、単語数、行数をカウント。論文、ブログ、SNS投稿の文字数管理に便利。',
+    keywords: '文字数,カウント,単語数,文字カウント,SEO',
+    path: '/text/word-count',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',
