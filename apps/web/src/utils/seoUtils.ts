@@ -445,6 +445,13 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '略語,頭字語,アクロニウム,ジェネレーター,名前生成',
     path: '/text/acronym',
   },
+  '/other/goal-tracker': {
+    title: '目標達成トラッカー | Rakit',
+    description:
+      '目標を設定して進捗を管理。視覚的なプログレスバーで達成状況を確認。習慣化、目標達成に便利。',
+    keywords: '目標,トラッカー,進捗管理,習慣化,目標達成',
+    path: '/other/goal-tracker',
+  },
   '/other/qrcode': {
     title: 'QRコード生成 | Rakit',
     description: 'URLやテキストを簡単にQRコードに変換。ダウンロードも可能。',

@@ -161,6 +161,11 @@ export function AcronymGeneratorIcon({ className }: IconProps) {
   return <Type className={className} />
 }
 
+// 目標達成トラッカー
+export function GoalTrackerIcon({ className }: IconProps) {
+  return <TrendingUp className={className} />
+}
+
 // GIF作成
 export function GifMakerIcon({ className }: IconProps) {
   return <Video className={className} />
