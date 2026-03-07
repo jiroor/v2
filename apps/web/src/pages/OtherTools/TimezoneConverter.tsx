@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 const timezones = [
   { id: 'Asia/Tokyo', name: '東京 (JST)', offset: 9 },
@@ -139,6 +140,11 @@ function TimezoneConverter() {
             <li>• 海外との会議や連絡に便利</li>
             <li>• 入れ替えボタンで逆変換</li>
           </ul>
+        </div>
+
+        {/* 広告 */}
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <AdBanner format="rectangle" />
         </div>
       </div>
     </>
