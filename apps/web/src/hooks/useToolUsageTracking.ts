@@ -5,9 +5,13 @@
 import { useEffect, useRef } from 'react'
 import { track } from '@vercel/analytics'
 import { saveToolUsage } from '../utils/analyticsUtils'
+import { useHistory } from './useHistory'
 
 /**
  * ツールページの訪問を記録するカスタムフック
+ * - LocalStorageに利用履歴を保存
+ * - Vercel Analyticsにイベント送信
+ * - 履歴機能に追加
  *
  * @param toolPath ツールのパス（例: "/timer/countdown"）
  * @param toolName ツール名（日本語）
@@ -23,6 +27,7 @@ import { saveToolUsage } from '../utils/analyticsUtils'
 export function useToolUsageTracking(toolPath: string, toolName: string): void {
   // 同一セッション内での重複記録を防ぐ
   const hasTracked = useRef(false)
+  const { addToHistory } = useHistory()
 
   useEffect(() => {
     // 既に記録済みの場合はスキップ
@@ -37,7 +42,10 @@ export function useToolUsageTracking(toolPath: string, toolName: string): void {
       toolName: toolName,
     })
 
+    // 履歴に追加
+    addToHistory(toolPath, toolName)
+
     // 記録済みフラグを立てる
     hasTracked.current = true
-  }, [toolPath, toolName])
+  }, [toolPath, toolName, addToHistory])
 }
