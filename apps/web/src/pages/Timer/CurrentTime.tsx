@@ -19,6 +19,7 @@ import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import AdBanner from '@/components/Ads/AdBanner'
 
 type DateFormat = 'kanji' | 'slash'
 
@@ -207,6 +208,11 @@ export default function CurrentTime() {
           </div>
         </div>
       </div>
+
+        {/* 広告 */}
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <AdBanner format="rectangle" />
+        </div>
       </div>
     </>
   )

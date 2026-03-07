@@ -7,6 +7,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function CountdownTimer() {
   useToolUsageTracking('/timer/countdown', 'カウントダウンタイマー')
@@ -175,6 +176,11 @@ function CountdownTimer() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
+      </div>
       </div>
     </>
   )
