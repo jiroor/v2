@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 interface Habit {
   id: string
@@ -100,7 +101,7 @@ function HabitTracker() {
     <>
       <SEO path="/other/habit-tracker" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-2 text-center">習慣トラッカー</h2>
+        <ToolHeader title="習慣トラッカー" toolPath="/other/habit-tracker" shareTitle="習慣トラッカー | Rakit" />
         <p className="text-center text-gray-500 text-sm mb-6">{getTodayString()}</p>
 
         {/* 新しい習慣追加 */}

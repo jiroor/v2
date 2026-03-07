@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function CreditCardChecker() {
   useToolUsageTracking('/other/card-check', 'カード番号チェック')
@@ -88,7 +89,7 @@ function CreditCardChecker() {
     <>
       <SEO path="/other/card-check" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">カード番号チェック</h2>
+        <ToolHeader title="カード番号チェック" toolPath="/other/card-check" shareTitle="カード番号チェック | Rakit" />
 
         {/* 入力 */}
         <div className="mb-6">

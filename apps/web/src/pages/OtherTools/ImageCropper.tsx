@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ImageCropper() {
   useToolUsageTracking('/other/image-crop', '画像トリミング')
@@ -110,7 +111,7 @@ function ImageCropper() {
     <>
       <SEO path="/other/image-crop" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">画像トリミング</h2>
+        <ToolHeader title="画像トリミング" toolPath="/other/image-crop" shareTitle="画像トリミング | Rakit" />
 
         <canvas ref={canvasRef} className="hidden" />
 

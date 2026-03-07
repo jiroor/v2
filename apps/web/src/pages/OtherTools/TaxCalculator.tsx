@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function TaxCalculator() {
   useToolUsageTracking('/other/tax', '消費税計算')
@@ -57,7 +58,7 @@ function TaxCalculator() {
     <>
       <SEO path="/other/tax" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">消費税計算</h2>
+        <ToolHeader title="消費税計算" toolPath="/other/tax" shareTitle="消費税計算 | Rakit" />
 
         {/* 金額 */}
         <div className="mb-4">

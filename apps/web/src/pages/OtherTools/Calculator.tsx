@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function Calculator() {
   useToolUsageTracking('/other/calculator', '計算機')
@@ -91,7 +92,7 @@ function Calculator() {
     <>
       <SEO path="/other/calculator" />
       <div className="max-w-[320px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">計算機</h2>
+        <ToolHeader title="計算機" toolPath="/other/calculator" shareTitle="計算機 | Rakit" />
 
         <div className="bg-gray-100 border border-gray-200 rounded-md p-4 mb-4 text-right">
           <p className="text-3xl font-mono font-bold overflow-x-auto">

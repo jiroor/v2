@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type Gender = 'male' | 'female'
 type ActivityLevel = 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active'
@@ -64,7 +65,7 @@ function CalorieCalculator() {
     <>
       <SEO path="/other/calorie" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">カロリー計算</h2>
+        <ToolHeader title="カロリー計算" toolPath="/other/calorie" shareTitle="カロリー計算 | Rakit" />
 
         {/* 性別 */}
         <div className="mb-4">

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function RobotsTxtGenerator() {
   useToolUsageTracking('/other/robots-txt', 'Robots.txt生成')
@@ -59,7 +60,7 @@ function RobotsTxtGenerator() {
     <>
       <SEO path="/other/robots-txt" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Robots.txt生成</h2>
+        <ToolHeader title="Robots.txt生成" toolPath="/other/robots-txt" shareTitle="Robots.txt生成 | Rakit" />
 
         {/* User-agent */}
         <div className="mb-4">

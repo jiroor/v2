@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function AgeCalculator() {
   useToolUsageTracking('/other/age', '年齢計算')
@@ -61,7 +62,7 @@ function AgeCalculator() {
     <>
       <SEO path="/other/age" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">年齢計算</h2>
+        <ToolHeader title="年齢計算" toolPath="/other/age" shareTitle="年齢計算 | Rakit" />
 
         {/* 生年月日 */}
         <div className="mb-4">

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function DigitalTimer() {
   useToolUsageTracking('/other/timer', 'デジタルタイマー')
@@ -99,7 +100,7 @@ function DigitalTimer() {
     <>
       <SEO path="/other/timer" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">デジタルタイマー</h2>
+        <ToolHeader title="デジタルタイマー" toolPath="/other/timer" shareTitle="デジタルタイマー | Rakit" />
 
         {!isRunning ? (
           <>

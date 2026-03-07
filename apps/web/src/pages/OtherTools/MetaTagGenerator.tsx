@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function MetaTagGenerator() {
   useToolUsageTracking('/other/meta-tag', 'メタタグ生成')
@@ -55,7 +56,7 @@ ${ogImage ? `<meta property="twitter:image" content="${ogImage}">` : ''}`
     <>
       <SEO path="/other/meta-tag" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">メタタグ生成</h2>
+        <ToolHeader title="メタタグ生成" toolPath="/other/meta-tag" shareTitle="メタタグ生成 | Rakit" />
 
         {/* 入力フォーム */}
         <div className="space-y-4 mb-6">

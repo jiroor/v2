@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 interface IPInfo {
   ip: string
@@ -56,7 +57,7 @@ function IPAddressTool() {
     <>
       <SEO path="/other/ip-address" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">IPアドレス確認</h2>
+        <ToolHeader title="IPアドレス確認" toolPath="/other/ip-address" shareTitle="IPアドレス確認 | Rakit" />
 
         {loading ? (
           <div className="text-center py-8">

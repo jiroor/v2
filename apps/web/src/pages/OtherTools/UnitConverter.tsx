@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type UnitType = 'length' | 'weight' | 'temperature' | 'area' | 'volume'
 
@@ -119,7 +120,7 @@ function UnitConverter() {
     <>
       <SEO path="/other/unit" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">単位変換</h2>
+        <ToolHeader title="単位変換" toolPath="/other/unit" shareTitle="単位変換 | Rakit" />
 
         {/* タイプ選択 */}
         <div className="flex flex-wrap gap-2 mb-6 justify-center">

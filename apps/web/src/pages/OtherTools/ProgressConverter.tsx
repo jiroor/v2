@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ProgressConverter() {
   useToolUsageTracking('/other/progress', '進捗変換')
@@ -85,7 +86,7 @@ function ProgressConverter() {
     <>
       <SEO path="/other/progress" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">進捗変換</h2>
+        <ToolHeader title="進捗変換" toolPath="/other/progress" shareTitle="進捗変換 | Rakit" />
 
         {/* タイプ選択 */}
         <div className="flex gap-2 mb-6 justify-center">

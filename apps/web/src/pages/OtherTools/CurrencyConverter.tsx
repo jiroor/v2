@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 // 固定レート（実際のAPIを使用する場合は更新が必要）
 const RATES: Record<string, number> = {
@@ -96,7 +97,7 @@ function CurrencyConverter() {
     <>
       <SEO path="/other/currency" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">為替計算</h2>
+        <ToolHeader title="為替計算" toolPath="/other/currency" shareTitle="為替計算 | Rakit" />
 
         {/* 金額入力 */}
         <div className="mb-4">

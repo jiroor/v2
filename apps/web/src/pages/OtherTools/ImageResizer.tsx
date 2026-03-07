@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ImageResizer() {
   useToolUsageTracking('/other/image-resize', '画像リサイズ')
@@ -108,7 +109,7 @@ function ImageResizer() {
     <>
       <SEO path="/other/image-resize" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">画像リサイズ</h2>
+        <ToolHeader title="画像リサイズ" toolPath="/other/image-resize" shareTitle="画像リサイズ | Rakit" />
 
         {/* ファイル選択 */}
         <div className="mb-6">

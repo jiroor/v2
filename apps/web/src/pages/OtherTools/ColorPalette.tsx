@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function generateRandomColor(): string {
   const letters = '0123456789ABCDEF'
@@ -77,7 +78,7 @@ function ColorPalette() {
     <>
       <SEO path="/other/color-palette" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">カラーパレット生成</h2>
+        <ToolHeader title="カラーパレット生成" toolPath="/other/color-palette" shareTitle="カラーパレット生成 | Rakit" />
 
         {/* パレット */}
         <div className="flex flex-wrap gap-2 mb-6">

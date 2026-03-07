@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function PasswordStrengthChecker() {
   useToolUsageTracking('/other/password-check', 'パスワード強度チェック')
@@ -65,7 +66,7 @@ function PasswordStrengthChecker() {
     <>
       <SEO path="/other/password-check" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">パスワード強度チェック</h2>
+        <ToolHeader title="パスワード強度チェック" toolPath="/other/password-check" shareTitle="パスワード強度チェック | Rakit" />
 
         {/* パスワード入力 */}
         <div className="mb-6">

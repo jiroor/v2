@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 interface Course {
   name: string
@@ -69,7 +70,7 @@ function GPACalculator() {
     <>
       <SEO path="/other/gpa" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">GPA計算</h2>
+        <ToolHeader title="GPA計算" toolPath="/other/gpa" shareTitle="GPA計算 | Rakit" />
 
         {/* 科目リスト */}
         <div className="space-y-3 mb-6">

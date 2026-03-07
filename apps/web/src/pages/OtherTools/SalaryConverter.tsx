@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type InputType = 'annual' | 'monthly' | 'hourly'
 
@@ -44,7 +45,7 @@ function SalaryConverter() {
     <>
       <SEO path="/other/salary" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">年収・月収・時給変換</h2>
+        <ToolHeader title="年収・月収・時給変換" toolPath="/other/salary" shareTitle="年収・月収・時給変換 | Rakit" />
 
         {/* 入力タイプ選択 */}
         <div className="flex gap-2 mb-6">

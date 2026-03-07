@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function DiscountCalculator() {
   useToolUsageTracking('/other/discount', '割引計算')
@@ -36,7 +37,7 @@ function DiscountCalculator() {
     <>
       <SEO path="/other/discount" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">割引計算</h2>
+        <ToolHeader title="割引計算" toolPath="/other/discount" shareTitle="割引計算 | Rakit" />
 
         {/* 元の価格 */}
         <div className="mb-4">

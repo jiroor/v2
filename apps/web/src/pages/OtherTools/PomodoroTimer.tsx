@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type Phase = 'work' | 'shortBreak' | 'longBreak'
 
@@ -99,7 +100,7 @@ function PomodoroTimer() {
     <>
       <SEO path="/other/pomodoro" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">ポモドーロタイマー</h2>
+        <ToolHeader title="ポモドーロタイマー" toolPath="/timer/pomodoro" shareTitle="ポモドーロタイマー | Rakit" />
 
         {/* フェーズ選択 */}
         <div className="flex gap-2 mb-6">

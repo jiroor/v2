@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ImageToBase64() {
   useToolUsageTracking('/other/image-base64', '画像Base64変換')
@@ -77,7 +78,7 @@ function ImageToBase64() {
     <>
       <SEO path="/other/image-base64" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">画像→Base64変換</h2>
+        <ToolHeader title="画像→Base64変換" toolPath="/other/image-base64" shareTitle="画像→Base64変換 | Rakit" />
 
         {/* ドロップエリア */}
         <div

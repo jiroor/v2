@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ImageConverter() {
   useToolUsageTracking('/other/image-convert', '画像形式変換')
@@ -97,7 +98,7 @@ function ImageConverter() {
     <>
       <SEO path="/other/image-convert" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">画像形式変換</h2>
+        <ToolHeader title="画像形式変換" toolPath="/other/image-convert" shareTitle="画像形式変換 | Rakit" />
 
         {/* ファイル選択 */}
         <div className="mb-6">

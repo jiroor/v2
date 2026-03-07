@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type CalculationType = 'percentage' | 'percentOf' | 'increase' | 'decrease' | 'ratio'
 
@@ -112,7 +113,7 @@ function PercentageCalculator() {
     <>
       <SEO path="/other/percentage" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">パーセント計算</h2>
+        <ToolHeader title="パーセント計算" toolPath="/other/percentage" shareTitle="パーセント計算 | Rakit" />
 
         {/* タイプ選択 */}
         <div className="flex flex-wrap gap-2 mb-6 justify-center">

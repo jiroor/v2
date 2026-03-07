@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function CronGenerator() {
   useToolUsageTracking('/other/cron', 'Cron式生成')
@@ -75,7 +76,7 @@ function CronGenerator() {
     <>
       <SEO path="/other/cron" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Cron式生成</h2>
+        <ToolHeader title="Cron式生成" toolPath="/other/cron" shareTitle="Cron式生成 | Rakit" />
 
         {/* プリセット */}
         <div className="mb-6">

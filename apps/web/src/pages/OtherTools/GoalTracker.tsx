@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 interface Goal {
   id: string
@@ -70,7 +71,7 @@ function GoalTracker() {
     <>
       <SEO path="/other/goal-tracker" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">目標達成トラッカー</h2>
+        <ToolHeader title="目標達成トラッカー" toolPath="/other/goal-tracker" shareTitle="目標達成トラッカー | Rakit" />
 
         {/* 新しい目標追加 */}
         <div className="mb-8 p-4 bg-gray-50 border border-gray-200 rounded-md">

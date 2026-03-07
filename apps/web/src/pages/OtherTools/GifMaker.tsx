@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function GifMaker() {
   useToolUsageTracking('/other/gif-maker', 'GIF作成')
@@ -103,7 +104,7 @@ function GifMaker() {
     <>
       <SEO path="/other/gif-maker" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">GIFアニメーション作成</h2>
+        <ToolHeader title="GIFアニメーション作成" toolPath="/other/gif-maker" shareTitle="GIFアニメーション作成 | Rakit" />
 
         {/* 画像選択 */}
         <div className="mb-4">

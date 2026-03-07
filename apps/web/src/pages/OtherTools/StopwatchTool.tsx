@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function StopwatchTool() {
   useToolUsageTracking('/timer/stopwatch-tool', 'ストップウォッチ')
@@ -55,7 +56,7 @@ function StopwatchTool() {
     <>
       <SEO path="/timer/stopwatch-tool" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">ストップウォッチ</h2>
+        <ToolHeader title="ストップウォッチ" toolPath="/timer/stopwatch-tool" shareTitle="ストップウォッチ | Rakit" />
 
         {/* 時間表示 */}
         <div className="text-center mb-8">

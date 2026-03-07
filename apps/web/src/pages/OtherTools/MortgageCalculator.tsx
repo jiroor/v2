@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function MortgageCalculator() {
   useToolUsageTracking('/other/mortgage', '住宅ローン計算')
@@ -52,7 +53,7 @@ function MortgageCalculator() {
     <>
       <SEO path="/other/mortgage" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">住宅ローン計算</h2>
+        <ToolHeader title="住宅ローン計算" toolPath="/other/mortgage" shareTitle="住宅ローン計算 | Rakit" />
 
         {/* 借入金額 */}
         <div className="mb-4">

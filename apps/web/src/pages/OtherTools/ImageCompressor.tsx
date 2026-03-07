@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ImageCompressor() {
   useToolUsageTracking('/other/image-compress', '画像圧縮')
@@ -98,7 +99,7 @@ function ImageCompressor() {
     <>
       <SEO path="/other/image-compress" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">画像圧縮</h2>
+        <ToolHeader title="画像圧縮" toolPath="/other/image-compress" shareTitle="画像圧縮 | Rakit" />
 
         {/* ファイル選択 */}
         <div className="mb-6">

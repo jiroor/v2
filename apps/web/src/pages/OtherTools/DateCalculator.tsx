@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function DateCalculator() {
   useToolUsageTracking('/other/date-calc', '日付計算')
@@ -63,7 +64,7 @@ function DateCalculator() {
     <>
       <SEO path="/other/date-calc" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">日付計算</h2>
+        <ToolHeader title="日付計算" toolPath="/other/date-calc" shareTitle="日付計算 | Rakit" />
 
         {/* 日数計算 */}
         <div className="mb-8 p-4 bg-gray-50 rounded-md">

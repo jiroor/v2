@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function BMICalculator() {
   useToolUsageTracking('/other/bmi', 'BMI計算')
@@ -54,7 +55,7 @@ function BMICalculator() {
     <>
       <SEO path="/other/bmi" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">BMI計算</h2>
+        <ToolHeader title="BMI計算" toolPath="/other/bmi" shareTitle="BMI計算 | Rakit" />
 
         {/* 身長 */}
         <div className="mb-4">

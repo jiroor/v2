@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function RandomNumberGenerator() {
   useToolUsageTracking('/other/random', '乱数生成')
@@ -40,7 +41,7 @@ function RandomNumberGenerator() {
     <>
       <SEO path="/other/random" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">乱数生成</h2>
+        <ToolHeader title="乱数生成" toolPath="/other/random-num" shareTitle="乱数生成 | Rakit" />
 
         {/* 設定 */}
         <div className="space-y-4 mb-6">

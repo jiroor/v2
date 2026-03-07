@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function CompoundInterestCalculator() {
   useToolUsageTracking('/other/compound-interest', '複利計算')
@@ -59,7 +60,7 @@ function CompoundInterestCalculator() {
     <>
       <SEO path="/other/compound-interest" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">複利計算</h2>
+        <ToolHeader title="複利計算" toolPath="/other/compound-interest" shareTitle="複利計算 | Rakit" />
 
         {/* 元本 */}
         <div className="mb-4">
