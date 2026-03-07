@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function JsonToCsv() {
   useToolUsageTracking('/text/json-to-csv', 'JSON to CSV')
@@ -166,6 +167,10 @@ function JsonToCsv() {
             <li>• Excel対応のUTF-8 BOM付きでダウンロード</li>
           </ul>
         </div>
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )

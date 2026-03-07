@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function HtmlToMarkdown() {
   useToolUsageTracking('/text/html-to-markdown', 'HTML to Markdown')
@@ -145,6 +146,10 @@ function HtmlToMarkdown() {
             <li>• 引用・段落・水平線</li>
           </ul>
         </div>
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )

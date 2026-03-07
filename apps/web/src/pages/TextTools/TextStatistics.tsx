@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function TextStatistics() {
   useToolUsageTracking('/text/statistics', 'テキスト統計')
@@ -104,6 +105,10 @@ function TextStatistics() {
             <li>• バイト数はデータベースやファイルサイズの確認に</li>
           </ul>
         </div>
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )

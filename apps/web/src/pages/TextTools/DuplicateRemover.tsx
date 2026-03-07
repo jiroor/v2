@@ -5,6 +5,7 @@ import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortc
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 type Mode = 'lines' | 'words' | 'characters'
 
@@ -198,6 +199,10 @@ function DuplicateRemover() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )
