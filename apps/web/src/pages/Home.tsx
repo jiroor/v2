@@ -1,5 +1,7 @@
 import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
 import { ShareButton } from '@/components/Share/ShareButton'
+import { FavoritesList, HistoryList } from '@/components/UserEngagement'
+import { useFavorites, useHistory } from '@/hooks'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
@@ -146,6 +148,8 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 function Home() {
   const [topTools, setTopTools] = useState<ToolUsageSummary[]>([])
+  const { favorites, removeFavorite } = useFavorites()
+  const { history, clearHistory } = useHistory()
 
   useEffect(() => {
     // よく使うツールを取得（上位3件）
@@ -191,6 +195,12 @@ function Home() {
       <div className="mb-8">
         <NewsletterSignup />
       </div>
+
+      {/* お気に入り */}
+      <FavoritesList favorites={favorites} onRemove={removeFavorite} />
+
+      {/* 履歴 */}
+      <HistoryList history={history} onClear={clearHistory} />
 
       {/* 全ツール一覧 */}
       <h2 className="text-[30px] font-bold mb-2">ツール一覧</h2>
