@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function HtmlToMarkdown() {
   useToolUsageTracking('/text/html-to-markdown', 'HTML to Markdown')
@@ -92,7 +93,7 @@ function HtmlToMarkdown() {
     <>
       <SEO path="/text/html-to-markdown" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">HTML to Markdown</h2>
+        <ToolHeader title="HTML to Markdown" toolPath="/text/html-to-markdown" shareTitle="HTML to Markdown | Rakit" />
 
         {/* HTML入力 */}
         <div className="mb-4">

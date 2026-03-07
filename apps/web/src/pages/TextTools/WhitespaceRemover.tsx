@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type RemoveMode = 'leading' | 'trailing' | 'both' | 'multiple' | 'all'
 
@@ -90,7 +91,7 @@ function WhitespaceRemover() {
     <>
       <SEO path="/text/whitespace" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">空白削除</h2>
+        <ToolHeader title="空白削除" toolPath="/text/whitespace" shareTitle="空白削除 | Rakit" />
 
         {/* モード選択 */}
         <div className="flex flex-wrap gap-2 mb-6 justify-center">

@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function RandomString() {
   useToolUsageTracking('/text/random', 'ランダム文字列生成')
@@ -49,7 +50,7 @@ function RandomString() {
     <>
       <SEO path="/text/random" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-      <h2 className="text-2xl font-semibold mb-8 text-center">ランダム文字列生成</h2>
+      <ToolHeader title="ランダム文字列生成" toolPath="/text/random" shareTitle="ランダム文字列生成 | Rakit" />
 
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
         <div className="mb-6 last:mb-0">

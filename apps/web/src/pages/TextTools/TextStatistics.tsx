@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function TextStatistics() {
   useToolUsageTracking('/text/statistics', 'テキスト統計')
@@ -64,7 +65,7 @@ function TextStatistics() {
     <>
       <SEO path="/text/statistics" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">テキスト統計</h2>
+        <ToolHeader title="テキスト統計" toolPath="/text/statistics" shareTitle="テキスト統計 | Rakit" />
 
         {/* 入力 */}
         <div className="mb-6">

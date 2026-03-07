@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type Base = 'decimal' | 'binary' | 'octal' | 'hex'
 
@@ -103,7 +104,7 @@ function NumberConverter() {
     <>
       <SEO path="/text/number" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">数字変換（基数変換）</h2>
+        <ToolHeader title="数字変換（基数変換）" toolPath="/text/number" shareTitle="数字変換 | Rakit" />
 
         {/* エラー表示 */}
         {error && (

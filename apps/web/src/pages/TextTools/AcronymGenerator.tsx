@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function AcronymGenerator() {
   useToolUsageTracking('/text/acronym', '略語ジェネレーター')
@@ -45,7 +46,7 @@ function AcronymGenerator() {
     <>
       <SEO path="/text/acronym" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">略語ジェネレーター</h2>
+        <ToolHeader title="略語ジェネレーター" toolPath="/text/acronym" shareTitle="略語ジェネレーター | Rakit" />
 
         {/* 入力 */}
         <div className="mb-4">

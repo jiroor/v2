@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function JsonToCsv() {
   useToolUsageTracking('/text/json-to-csv', 'JSON to CSV')
@@ -99,7 +100,7 @@ function JsonToCsv() {
     <>
       <SEO path="/text/json-to-csv" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">JSON to CSV変換</h2>
+        <ToolHeader title="JSON to CSV変換" toolPath="/text/json-to-csv" shareTitle="JSON to CSV変換 | Rakit" />
 
         {/* JSON入力 */}
         <div className="mb-4">

@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function TextSplitter() {
   useToolUsageTracking('/text/split', 'テキスト分割')
@@ -83,7 +84,7 @@ function TextSplitter() {
     <>
       <SEO path="/text/split" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">テキスト分割</h2>
+        <ToolHeader title="テキスト分割" toolPath="/text/split" shareTitle="テキスト分割 | Rakit" />
 
         {/* 区切り文字選択 */}
         <div className="mb-4">

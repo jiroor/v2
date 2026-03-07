@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function TextDiff() {
   useToolUsageTracking('/text/diff', 'テキスト比較')
@@ -89,7 +90,7 @@ function TextDiff() {
     <>
       <SEO path="/text/diff" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">テキスト比較</h2>
+        <ToolHeader title="テキスト比較" toolPath="/text/diff" shareTitle="テキスト比較 | Rakit" />
 
         {/* 入力エリア */}
         <div className="grid md:grid-cols-2 gap-4 mb-4">

@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function TextJoiner() {
   useToolUsageTracking('/text/join', 'テキスト結合')
@@ -84,7 +85,7 @@ function TextJoiner() {
     <>
       <SEO path="/text/join" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">テキスト結合</h2>
+        <ToolHeader title="テキスト結合" toolPath="/text/join" shareTitle="テキスト結合 | Rakit" />
 
         {/* 区切り文字選択 */}
         <div className="mb-4">

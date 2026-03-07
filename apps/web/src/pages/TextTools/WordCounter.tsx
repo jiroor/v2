@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function WordCounter() {
   useToolUsageTracking('/text/word-count', '文字数カウンター')
@@ -52,7 +53,7 @@ function WordCounter() {
     <>
       <SEO path="/text/word-count" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center">文字数カウンター</h2>
+        <ToolHeader title="文字数カウンター" toolPath="/text/word-count" shareTitle="文字数カウンター | Rakit" />
 
         {/* テキスト入力 */}
         <div className="mb-4">

@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type SortOrder = 'asc' | 'desc' | 'random' | 'reverse' | 'length-asc' | 'length-desc'
 
@@ -98,7 +99,7 @@ function TextSorter() {
     <>
       <SEO path="/text/sort" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">テキストソート</h2>
+        <ToolHeader title="テキストソート" toolPath="/text/sort" shareTitle="テキストソート | Rakit" />
 
         {/* ソート順選択 */}
         <div className="flex flex-wrap gap-2 mb-6 justify-center">

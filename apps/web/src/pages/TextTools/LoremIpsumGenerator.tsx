@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type Unit = 'paragraphs' | 'sentences' | 'words'
 
@@ -124,7 +125,7 @@ function LoremIpsumGenerator() {
     <>
       <SEO path="/text/lorem" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Lorem Ipsum生成</h2>
+        <ToolHeader title="Lorem Ipsum生成" toolPath="/text/lorem" shareTitle="Lorem Ipsum生成 | Rakit" />
 
         {/* オプション */}
         <div className="flex flex-wrap gap-4 mb-6 justify-center">

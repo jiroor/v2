@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function MarkdownPreview() {
   useToolUsageTracking('/text/markdown', 'Markdownプレビュー')
@@ -107,7 +108,7 @@ console.log(greeting);
     <>
       <SEO path="/text/markdown" />
       <div className="max-w-[1000px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Markdownプレビュー</h2>
+        <ToolHeader title="Markdownプレビュー" toolPath="/text/markdown" shareTitle="Markdownプレビュー | Rakit" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* 入力 */}
