@@ -16,6 +16,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function Roulette() {
   useToolUsageTracking('/other/roulette', 'ルーレット')
@@ -130,10 +131,10 @@ function Roulette() {
     <>
       <SEO path="/other/roulette" />
       <div className="p-6 max-w-[800px] mx-auto md:p-4">
-      <div className="relative mb-6">
-        <h2 className="text-[28px] font-bold text-center">ルーレット</h2>
-        {winner && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-6 py-4 rounded-md border-2 border-gray-200 shadow-[0_4px_12px_rgba(0,0,0,0.15)] z-10 text-center min-w-[200px]">
+      <ToolHeader title="ルーレット" toolPath="/other/roulette" shareTitle="ルーレット | Rakit" />
+      {winner && (
+        <div className="relative mb-6">
+          <div className="bg-white px-6 py-4 rounded-md border-2 border-gray-200 shadow-[0_4px_12px_rgba(0,0,0,0.15)] z-10 text-center min-w-[200px] mx-auto">
             <div className="text-sm font-bold mb-1 text-gray-600">当選</div>
             <div
               className="text-2xl font-bold"
@@ -146,8 +147,8 @@ function Roulette() {
               {winner.label}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* ルーレット表示エリア */}
       <div className="relative w-full max-w-[400px] mx-auto mb-6 md:max-w-[300px]">
