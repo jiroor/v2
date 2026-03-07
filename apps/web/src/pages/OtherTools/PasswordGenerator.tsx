@@ -8,7 +8,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
-import { ShareButton } from '@/components/Share/ShareButton'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type PasswordStrength = 'weak' | 'medium' | 'strong'
 
@@ -131,10 +131,7 @@ function PasswordGenerator() {
     <>
       <SEO path="/other/password" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-semibold">パスワード生成</h2>
-        <ShareButton title="パスワード生成 | Rakit" variant="compact" />
-      </div>
+      <ToolHeader title="パスワード生成" toolPath="/other/password" shareTitle="パスワード生成 | Rakit" />
 
       <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-6">
         <div className="mb-6">
