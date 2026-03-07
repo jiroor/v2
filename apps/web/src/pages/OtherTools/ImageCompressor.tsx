@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function ImageCompressor() {
   useToolUsageTracking('/other/image-compress', '画像圧縮')
@@ -197,6 +198,10 @@ function ImageCompressor() {
             <li>• JPEG形式で出力</li>
           </ul>
         </div>
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )

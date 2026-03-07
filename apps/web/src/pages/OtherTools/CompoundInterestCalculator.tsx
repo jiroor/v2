@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function CompoundInterestCalculator() {
   useToolUsageTracking('/other/compound-interest', '複利計算')
@@ -174,6 +175,10 @@ function CompoundInterestCalculator() {
             <li>• 投資・貯金計画の参考に</li>
           </ul>
         </div>
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )

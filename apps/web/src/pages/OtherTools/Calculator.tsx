@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function Calculator() {
   useToolUsageTracking('/other/calculator', '計算機')
@@ -125,6 +126,10 @@ function Calculator() {
           <Button variant="secondary" className={buttonClass} onClick={inputDecimal}>.</Button>
           <Button variant="default" className={buttonClass} onClick={handleEquals}>=</Button>
         </div>
+      </div>
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
     </>
   )
