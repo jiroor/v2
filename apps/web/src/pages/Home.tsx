@@ -2,6 +2,7 @@ import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
 import { ShareButton } from '@/components/Share/ShareButton'
 import { FavoritesList, HistoryList } from '@/components/UserEngagement'
 import { useFavorites, useHistory } from '@/hooks'
+import AdBanner from '@/components/Ads/AdBanner'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
@@ -194,6 +195,11 @@ function Home() {
       {/* ニュースレター登録 */}
       <div className="mb-8">
         <NewsletterSignup />
+      </div>
+
+      {/* 広告（ツール一覧の上） */}
+      <div className="mb-8">
+        <AdBanner format="horizontal" />
       </div>
 
       {/* お気に入り */}
@@ -562,6 +568,11 @@ function Home() {
           <h3 className="text-xl font-semibold mb-2 text-center">カメラ映像共有</h3>
           <p className="text-gray-600 text-sm text-center">ローカルで映像をリアルタイム共有</p>
         </Link>
+      </div>
+
+      {/* 広告（ツール一覧の下） */}
+      <div className="mt-8">
+        <AdBanner format="horizontal" />
       </div>
       </div>
     </>
