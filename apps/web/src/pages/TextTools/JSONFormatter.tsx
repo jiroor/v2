@@ -5,6 +5,7 @@ import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortc
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 type IndentSize = 2 | 4
 
@@ -184,6 +185,11 @@ function JSONFormatter() {
 
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* 広告 */}
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <AdBanner format="rectangle" />
+        </div>
       </div>
     </>
   )

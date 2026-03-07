@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import AdBanner from '@/components/Ads/AdBanner'
 
 type QRSize = 128 | 256 | 512
 
@@ -144,6 +145,11 @@ function QRCodeGenerator() {
         >
           クリア
         </Button>
+      </div>
+
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner format="rectangle" />
       </div>
       </div>
     </>
