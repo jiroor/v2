@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 const timezones = [
   { id: 'Asia/Tokyo', name: '東京 (JST)', offset: 9 },
@@ -58,7 +59,7 @@ function TimezoneConverter() {
     <>
       <SEO path="/other/timezone" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">時差計算</h2>
+        <ToolHeader title="時差計算" toolPath="/other/timezone" shareTitle="時差計算 | Rakit" />
 
         {/* 入力時間 */}
         <div className="mb-6">
