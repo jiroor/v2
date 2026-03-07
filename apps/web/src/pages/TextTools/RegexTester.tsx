@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function RegexTester() {
   useToolUsageTracking('/text/regex', '正規表現テスト')
@@ -83,7 +84,7 @@ function RegexTester() {
     <>
       <SEO path="/text/regex" />
       <div className="max-w-[900px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">正規表現テスト</h2>
+        <ToolHeader title="正規表現テスト" toolPath="/text/regex" shareTitle="正規表現テスト | Rakit" />
 
         {/* パターン入力 */}
         <div className="mb-4">

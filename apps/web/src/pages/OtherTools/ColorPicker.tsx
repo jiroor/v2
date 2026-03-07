@@ -17,6 +17,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function ColorPicker() {
   useToolUsageTracking('/other/colorpicker', 'カラーピッカー')
@@ -132,7 +133,7 @@ function ColorPicker() {
     <>
       <SEO path="/other/colorpicker" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
-      <h2 className="text-2xl font-semibold mb-8 text-center">カラーピッカー</h2>
+      <ToolHeader title="カラーピッカー" toolPath="/other/colorpicker" shareTitle="カラーピッカー | Rakit" />
 
       <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-6">
         <Label className="text-base mb-4">色を選択</Label>

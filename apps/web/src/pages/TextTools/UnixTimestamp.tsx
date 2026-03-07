@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 function UnixTimestamp() {
   useToolUsageTracking('/text/unix', 'Unix時間変換')
@@ -93,7 +94,7 @@ function UnixTimestamp() {
     <>
       <SEO path="/text/unix" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Unix時間変換</h2>
+        <ToolHeader title="Unix時間変換" toolPath="/text/unix" shareTitle="Unix時間変換 | Rakit" />
 
         {/* 現在のUnix時間 */}
         <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-8 text-center">
