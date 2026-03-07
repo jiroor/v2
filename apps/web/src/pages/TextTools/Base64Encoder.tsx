@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type Mode = 'encode' | 'decode'
 
@@ -91,7 +92,7 @@ function Base64Encoder() {
     <>
       <SEO path="/text/base64" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Base64エンコード/デコード</h2>
+        <ToolHeader title="Base64エンコード/デコード" toolPath="/text/base64" shareTitle="Base64エンコード/デコード | Rakit" />
 
         {/* モード切替 */}
         <div className="flex gap-2 mb-6 justify-center">

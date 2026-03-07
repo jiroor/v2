@@ -4,6 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 
 type HashAlgorithm = 'md5' | 'sha-1' | 'sha-256' | 'sha-512'
 
@@ -135,7 +136,7 @@ function HashGenerator() {
     <>
       <SEO path="/text/hash" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-        <h2 className="text-2xl font-semibold mb-8 text-center">ハッシュ生成</h2>
+        <ToolHeader title="ハッシュ生成" toolPath="/text/hash" shareTitle="ハッシュ生成 | Rakit" />
 
         {/* 入力 */}
         <div className="mb-6">
