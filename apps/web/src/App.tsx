@@ -6,6 +6,7 @@ import { UpdatePrompt } from './components/UpdatePrompt'
 
 // Lazy load page components
 const Home = lazy(() => import('./pages/Home'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 const UsageStats = lazy(() => import('./pages/UsageStats'))
 const CountdownTimer = lazy(() => import('./pages/Timer/CountdownTimer'))
 const Stopwatch = lazy(() => import('./pages/Timer/Stopwatch'))
@@ -168,6 +169,7 @@ function App() {
               <Route path="/camera" element={<CameraSharing />} />
               <Route path="/camera/mode" element={<CameraMode />} />
               <Route path="/camera/viewer" element={<ViewerMode />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>
