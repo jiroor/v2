@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import { Search, FileJson, QrCode, Lock, Binary } from 'lucide-react'
 
 function NotFound() {
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
-      <div className="text-8xl mb-6">🔍</div>
+      <Search className="w-24 h-24 text-gray-400 mb-6" />
       <h1 className="text-4xl font-bold mb-4">ページが見つかりません</h1>
       <p className="text-gray-600 mb-8 max-w-md">
         お探しのページは移動または削除された可能性があります。
@@ -32,28 +33,28 @@ function NotFound() {
             to="/text/json"
             className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
           >
-            <div className="text-2xl mb-2">📋</div>
+            <FileJson className="w-8 h-8 mx-auto mb-2 text-[#d97706]" />
             <div className="text-sm font-medium">JSON整形</div>
           </Link>
           <Link
             to="/other/qrcode"
             className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
           >
-            <div className="text-2xl mb-2">📱</div>
+            <QrCode className="w-8 h-8 mx-auto mb-2 text-[#d97706]" />
             <div className="text-sm font-medium">QRコード生成</div>
           </Link>
           <Link
             to="/other/password"
             className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
           >
-            <div className="text-2xl mb-2">🔐</div>
+            <Lock className="w-8 h-8 mx-auto mb-2 text-[#d97706]" />
             <div className="text-sm font-medium">パスワード生成</div>
           </Link>
           <Link
             to="/text/base64"
             className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
           >
-            <div className="text-2xl mb-2">🔄</div>
+            <Binary className="w-8 h-8 mx-auto mb-2 text-[#d97706]" />
             <div className="text-sm font-medium">Base64変換</div>
           </Link>
         </div>

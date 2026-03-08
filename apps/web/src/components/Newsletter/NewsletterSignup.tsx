@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 function NewsletterSignup() {
@@ -39,7 +40,10 @@ function NewsletterSignup() {
 
   return (
     <div className="bg-[#fef3c7] border border-[#d97706] rounded-lg p-6">
-      <h3 className="font-bold text-lg mb-2">📬 ニュースレター登録</h3>
+      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+        <Mail className="w-5 h-5 text-[#d97706]" />
+        ニュースレター登録
+      </h3>
       <p className="text-sm text-gray-700 mb-4">
         新しいツールの追加や機能アップデートをいち早くお届けします。
       </p>
