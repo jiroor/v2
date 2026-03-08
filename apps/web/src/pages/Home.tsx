@@ -255,7 +255,11 @@ function Home() {
           <h3 className="text-xl font-semibold mb-2 text-center">現在日時</h3>
           <p className="text-gray-600 text-sm text-center">タイムゾーン選択可能な世界時計</p>
         </Link>
+      </div>
 
+      {/* テキストツールカテゴリ */}
+      <h3 className="text-xl font-semibold mb-4 text-gray-800 border-b border-gray-200 pb-2">📝 テキストツール</h3>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1 mb-8">
         <Link
           to="/text/counter"
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
@@ -399,7 +403,11 @@ function Home() {
           <h3 className="text-xl font-semibold mb-2 text-center">テキスト統計</h3>
           <p className="text-gray-600 text-sm text-center">詳細な文字数・統計</p>
         </Link>
+      </div>
 
+      {/* その他ツールカテゴリ */}
+      <h3 className="text-xl font-semibold mb-4 text-gray-800 border-b border-gray-200 pb-2">🔧 その他</h3>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1 mb-8">
         <Link
           to="/other/image-base64"
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
