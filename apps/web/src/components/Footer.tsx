@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ShareButton } from '@/components/Share/ShareButton'
+import { DonateButton } from '@/components/Donate'
 
 function Footer() {
   return (
@@ -13,6 +14,9 @@ function Footer() {
               便利なオンラインツールを無料で提供。開発者、デザイナー、学生に役立つ55以上のツール。
             </p>
             <ShareButton title="Rakit - 楽に使えるツール集" variant="compact" />
+            <div className="mt-4">
+              <DonateButton platform="kofi" username="rakit" className="text-sm" />
+            </div>
           </div>
 
           {/* テキストツール */}
