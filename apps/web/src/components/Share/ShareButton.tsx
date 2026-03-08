@@ -83,7 +83,7 @@ export function ShareButton({
           className="p-2 text-gray-500 hover:text-[#00B900] transition-colors"
           title="LINEでシェア"
         >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="#00B900">
             <path d="M19.365 9.863c.326 0 .59.265.59.59v3.39c0 .326-.264.59-.59.59H4.635c-.326 0-.59-.264-.59-.59v-3.39c0-.325.264-.59.59-.59h14.73zM12 2C6.477 2 2 5.813 2 10.5c0 2.714 1.45 5.14 3.72 6.763V22l4.193-2.293c.71.131 1.446.203 2.087.203 5.523 0 10-3.813 10-8.5S17.523 2 12 2z"/>
           </svg>
         </button>
