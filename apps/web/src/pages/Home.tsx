@@ -574,6 +574,38 @@ function Home() {
       <div className="mt-8">
         <AdBanner format="horizontal" />
       </div>
+
+      {/* おすすめサービス（アフィリエイト） */}
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold mb-6">おすすめサービス</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="p-4 rounded-lg bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200">
+            <h3 className="font-semibold mb-2">📚 プログラミング学習</h3>
+            <p className="text-sm text-gray-600 mb-3">実践的なスキルを身につける</p>
+            <a 
+              href="https://www.amazon.co.jp/dp/B0BXJ8J5K8?tag=rakit-22" 
+              target="_blank" 
+              rel="noopener noreferrer sponsored"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm hover:bg-orange-600 transition-colors"
+            >
+              🛒 Amazonで見る
+            </a>
+          </div>
+          <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200">
+            <h3 className="font-semibold mb-2">💻 レンタルサーバー</h3>
+            <p className="text-sm text-gray-600 mb-3">高速・安定のWebサーバー</p>
+            <a 
+              href="https://px.a8.net/svt/ejp?a8mat=3N4Y4Q+8J5JU+3L4M+BWGDT" 
+              target="_blank" 
+              rel="noopener noreferrer sponsored"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition-colors"
+            >
+              🔗 公式サイトへ
+            </a>
+          </div>
+        </div>
+        <p className="text-xs text-gray-400 mt-4">※このセクションにはアフィリエイトリンクが含まれています</p>
+      </div>
       </div>
     </>
   )
