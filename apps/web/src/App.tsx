@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Footer from './components/Footer'
 import { UpdatePrompt } from './components/UpdatePrompt'
+import ScrollToTop from './components/ScrollToTop'
 
 // Lazy load page components
 const Home = lazy(() => import('./pages/Home'))
@@ -82,6 +83,7 @@ const ViewerMode = lazy(() => import('./pages/Camera/ViewerMode'))
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 px-6 py-6 md:px-4 md:py-4 max-w-screen-xl mx-auto w-full">

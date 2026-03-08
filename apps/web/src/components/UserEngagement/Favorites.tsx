@@ -40,10 +40,12 @@ export function FavoritesList({ favorites, onRemove }: FavoritesListProps) {
 
   return (
     <div className="mb-8">
-      <h3 className="text-lg font-semibold flex items-center gap-2 mb-4">
-        <Heart className="w-5 h-5 text-red-500" />
-        お気に入り
-      </h3>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-2 mb-4">
+        <h3 className="text-lg font-semibold flex items-center gap-2">
+          <Heart className="w-5 h-5 text-red-500" />
+          お気に入り
+        </h3>
+      </div>
       <div className="flex flex-wrap gap-2">
         {favorites.map((item) => (
           <a
