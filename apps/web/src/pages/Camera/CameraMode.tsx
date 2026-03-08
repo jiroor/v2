@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { usePeer } from '@/hooks/usePeer'
 import { useCamera } from '@/hooks/useCamera'
@@ -284,6 +285,7 @@ function CameraMode() {
 
   return (
     <>
+      <ToolHeader toolPath="/camera/mode" toolName="カメラモード" />
       <SEO path="/camera/mode" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <h2 className="text-2xl font-semibold mb-8 text-center">カメラモード</h2>

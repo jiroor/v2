@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { usePeer } from '@/hooks/usePeer'
 import { useCameraStorage } from '@/hooks/useCameraStorage'
@@ -565,6 +566,7 @@ function ViewerMode() {
 
   return (
     <>
+      <ToolHeader toolPath="/camera/viewer" toolName="ビューモード" />
       <SEO path="/camera/viewer" />
 
       {/* QRスキャナーモーダル */}

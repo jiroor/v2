@@ -19,6 +19,7 @@ import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
 
 type DateFormat = 'kanji' | 'slash'
@@ -61,6 +62,7 @@ export default function CurrentTime() {
 
   return (
     <>
+      <ToolHeader toolPath="/timer/current" toolName="現在日時" />
       <SEO path="/timer/current" />
       <div className="max-w-[800px] mx-auto py-6 px-6 md:px-4">
       <h1 className="text-2xl font-bold mb-8 text-center">現在日時</h1>

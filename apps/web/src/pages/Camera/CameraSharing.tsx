@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SEO } from '@/components/SEO/SEO'
+import { ToolHeader } from '@/components/ToolHeader'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { Video, Eye } from 'lucide-react'
 
@@ -8,6 +9,7 @@ function CameraSharing() {
 
   return (
     <>
+      <ToolHeader toolPath="/camera" toolName="カメラ映像共有" />
       <SEO path="/camera" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <h2 className="text-2xl font-semibold mb-4 text-center">カメラ映像共有</h2>
