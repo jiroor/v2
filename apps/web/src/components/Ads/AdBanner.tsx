@@ -1,34 +1,41 @@
 // Google AdSense 広告コンポーネント
-// 実際の広告表示にはGoogle AdSenseのアカウント登録が必要
+// 審査通過後に広告スロットIDを設定してください
 
 interface AdBannerProps {
+  slot: string
   format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle'
   className?: string
 }
 
+// 環境変数からPublisher IDを取得
+const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-8707902976876530'
+
 function AdBanner({ 
+  slot,
   format = 'auto',
   className = ''
 }: AdBannerProps) {
-  // 本番環境では実際のAdSenseコードを使用
-  // 現在はプレースホルダーを表示
-  
+  // 広告フォーマットに応じたスタイル
+  const formatStyles: Record<string, React.CSSProperties> = {
+    horizontal: { minHeight: '90px', width: '100%' },
+    vertical: { minHeight: '300px', width: '160px' },
+    rectangle: { minHeight: '250px', width: '300px' },
+    auto: { minHeight: '100px', width: '100%' },
+  }
+
   return (
     <div className={`ad-container ${className}`}>
-      <div 
-        className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm"
-        style={{
-          minHeight: format === 'horizontal' ? '90px' : 
-                    format === 'vertical' ? '300px' : 
-                    format === 'rectangle' ? '250px' : '100px',
-          width: '100%',
-        }}
-      >
-        <div className="text-center p-4">
-          <p className="font-medium">広告スペース</p>
-          <p className="text-xs mt-1">Google AdSense</p>
-        </div>
-      </div>
+      <ins
+        className="adsbygoogle"
+        style={formatStyles[format]}
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={slot}
+        data-ad-format={format === 'auto' ? 'auto' : undefined}
+        data-full-width-responsive="true"
+      />
+      <script>
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </script>
     </div>
   )
 }
@@ -36,6 +43,9 @@ function AdBanner({
 export default AdBanner
 
 // 使用例:
-// <AdBanner slot="home-top" format="horizontal" />
-// <AdBanner slot="tool-sidebar" format="vertical" />
-// <AdBanner slot="tool-bottom" format="rectangle" />
+// <AdBanner slot="1234567890" format="horizontal" />
+// 
+// 環境変数設定 (.env):
+// VITE_ADSENSE_CLIENT=ca-pub-8707902976876530
+// VITE_ADSENSE_SLOT_HOME=1234567890
+// VITE_ADSENSE_SLOT_TOOLS=0987654321

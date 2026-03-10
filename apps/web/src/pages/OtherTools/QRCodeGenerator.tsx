@@ -4,7 +4,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
-import { ToolHeader } from '@/components/ToolHeader'
+import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
 
 type QRSize = 128 | 256 | 512
@@ -74,7 +74,10 @@ function QRCodeGenerator() {
     <>
       <SEO path="/other/qrcode" />
       <div className="max-w-[600px] mx-auto px-4 py-8">
-      <ToolHeader title="QRコード生成" toolPath="/other/qrcode" shareTitle="QRコード生成 | Rakit" />
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-2xl font-semibold">QRコード生成</h2>
+        <ShareButton title="QRコード生成 | Rakit" variant="compact" />
+      </div>
 
       <div className="mb-6">
         <Label className="text-base mb-3">テキスト / URL</Label>
@@ -145,11 +148,6 @@ function QRCodeGenerator() {
         >
           クリア
         </Button>
-      </div>
-
-      {/* 広告 */}
-      <div className="mt-8 pt-6 border-t border-gray-200">
-        <AdBanner format="rectangle" />
       </div>
       </div>
     </>

@@ -4,7 +4,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
-import { ToolHeader } from '@/components/ToolHeader'
+import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
 
 type IndentSize = 2 | 4
@@ -105,7 +105,10 @@ function JSONFormatter() {
     <>
       <SEO path="/text/json" />
       <div className="max-w-[1000px] mx-auto py-8 px-4">
-        <ToolHeader title="JSON整形・フォーマット" toolPath="/text/json" shareTitle="JSON整形・フォーマット | Rakit" />
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold">JSON整形・フォーマット</h2>
+          <ShareButton title="JSON整形・フォーマット | Rakit" variant="compact" />
+        </div>
 
         {/* オプション */}
         <div className="flex gap-4 mb-6 justify-center flex-wrap">
@@ -183,13 +186,13 @@ function JSONFormatter() {
           </ul>
         </div>
 
+        {/* 広告 */}
+        <div className="mt-6">
+          <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
+        </div>
+
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-
-        {/* 広告 */}
-        <div className="mt-8 pt-6 border-t border-gray-200">
-          <AdBanner format="rectangle" />
-        </div>
       </div>
     </>
   )

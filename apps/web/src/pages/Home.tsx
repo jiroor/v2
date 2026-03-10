@@ -1,7 +1,5 @@
 import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
 import { ShareButton } from '@/components/Share/ShareButton'
-import { FavoritesList, HistoryList } from '@/components/UserEngagement'
-import { useFavorites, useHistory } from '@/hooks'
 import AdBanner from '@/components/Ads/AdBanner'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -149,8 +147,6 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 function Home() {
   const [topTools, setTopTools] = useState<ToolUsageSummary[]>([])
-  const { favorites, removeFavorite } = useFavorites()
-  const { history, clearHistory } = useHistory()
 
   useEffect(() => {
     // よく使うツールを取得（上位3件）
@@ -197,17 +193,6 @@ function Home() {
         <NewsletterSignup />
       </div>
 
-      {/* 広告（ツール一覧の上） */}
-      <div className="mb-8">
-        <AdBanner format="horizontal" />
-      </div>
-
-      {/* お気に入り */}
-      <FavoritesList favorites={favorites} onRemove={removeFavorite} />
-
-      {/* 履歴 */}
-      <HistoryList history={history} onClear={clearHistory} />
-
       {/* 全ツール一覧 */}
       <h2 className="text-[30px] font-bold mb-2">ツール一覧</h2>
       <p className="text-gray-600 mb-4">
@@ -217,9 +202,12 @@ function Home() {
         <ShareButton title="Rakit - 楽に使えるツール集" />
       </div>
 
-      {/* タイマーカテゴリ */}
-      <h3 className="text-xl font-semibold mb-4 text-gray-800 border-b border-gray-200 pb-2">⏱️ タイマー</h3>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1 mb-8">
+      {/* 広告 - ツール一覧上部 */}
+      <div className="mb-6">
+        <AdBanner slot="HOME_TOP" format="horizontal" />
+      </div>
+
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1">
         <Link
           to="/timer/countdown"
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
@@ -255,11 +243,7 @@ function Home() {
           <h3 className="text-xl font-semibold mb-2 text-center">現在日時</h3>
           <p className="text-gray-600 text-sm text-center">タイムゾーン選択可能な世界時計</p>
         </Link>
-      </div>
 
-      {/* テキストツールカテゴリ */}
-      <h3 className="text-xl font-semibold mb-4 text-gray-800 border-b border-gray-200 pb-2">📝 テキストツール</h3>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1 mb-8">
         <Link
           to="/text/counter"
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
@@ -403,11 +387,7 @@ function Home() {
           <h3 className="text-xl font-semibold mb-2 text-center">テキスト統計</h3>
           <p className="text-gray-600 text-sm text-center">詳細な文字数・統計</p>
         </Link>
-      </div>
 
-      {/* その他ツールカテゴリ */}
-      <h3 className="text-xl font-semibold mb-4 text-gray-800 border-b border-gray-200 pb-2">🔧 その他</h3>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1 mb-8">
         <Link
           to="/other/image-base64"
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg p-6 transition-all duration-200 cursor-pointer no-underline text-inherit hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:bg-[#fef3c7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d97706] focus-visible:outline-offset-2 focus-visible:-translate-y-0.5 focus-visible:shadow-[0_4px_12px_rgba(0,0,0,0.08)] group"
@@ -580,41 +560,9 @@ function Home() {
         </Link>
       </div>
 
-      {/* 広告（ツール一覧の下） */}
-      <div className="mt-8">
-        <AdBanner format="horizontal" />
-      </div>
-
-      {/* おすすめサービス（アフィリエイト） */}
-      <div className="mt-12">
-        <h2 className="text-2xl font-bold mb-6">おすすめサービス</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-4 rounded-lg bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200">
-            <h3 className="font-semibold mb-2">📚 プログラミング学習</h3>
-            <p className="text-sm text-gray-600 mb-3">実践的なスキルを身につける</p>
-            <a 
-              href="https://www.amazon.co.jp/dp/B0BXJ8J5K8?tag=rakit-22" 
-              target="_blank" 
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm hover:bg-orange-600 transition-colors"
-            >
-              🛒 Amazonで見る
-            </a>
-          </div>
-          <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200">
-            <h3 className="font-semibold mb-2">💻 レンタルサーバー</h3>
-            <p className="text-sm text-gray-600 mb-3">高速・安定のWebサーバー</p>
-            <a 
-              href="https://px.a8.net/svt/ejp?a8mat=3N4Y4Q+8J5JU+3L4M+BWGDT" 
-              target="_blank" 
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition-colors"
-            >
-              🔗 公式サイトへ
-            </a>
-          </div>
-        </div>
-        <p className="text-xs text-gray-400 mt-4">※このセクションにはアフィリエイトリンクが含まれています</p>
+      {/* 広告 - ツール一覧下部 */}
+      <div className="mt-6">
+        <AdBanner slot="HOME_BOTTOM" format="horizontal" />
       </div>
       </div>
     </>

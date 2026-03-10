@@ -6,7 +6,7 @@ import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut'
 import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortcuts'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
-import { ToolHeader } from '@/components/ToolHeader'
+import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
 
 function CharCounter() {
@@ -36,7 +36,10 @@ function CharCounter() {
     <>
       <SEO path="/text/counter" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
-      <ToolHeader title="文字数カウンター" toolPath="/text/counter" shareTitle="文字数カウンター | Rakit" />
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-2xl font-semibold">文字数カウンター</h2>
+        <ShareButton title="文字数カウンター | Rakit" variant="compact" />
+      </div>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4 mb-6 md:grid-cols-2">
         <div className="bg-gray-50 border border-gray-200 rounded-md p-4 text-center">
@@ -70,13 +73,13 @@ function CharCounter() {
         </Button>
       </div>
 
+      {/* 広告 */}
+      <div className="mt-6">
+        <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
+      </div>
+
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
-
-      {/* 広告 */}
-      <div className="mt-8 pt-6 border-t border-gray-200">
-        <AdBanner format="rectangle" />
-      </div>
       </div>
     </>
   )
