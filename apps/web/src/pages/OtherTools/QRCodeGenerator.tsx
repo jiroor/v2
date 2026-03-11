@@ -5,7 +5,6 @@ import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ShareButton } from '@/components/Share/ShareButton'
-import AdBanner from '@/components/Ads/AdBanner'
 
 type QRSize = 128 | 256 | 512
 

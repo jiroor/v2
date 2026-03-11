@@ -20,7 +20,7 @@ export function ToolLayout({ children, maxWidth = '800px' }: ToolLayoutProps) {
       
       {/* 広告（ツール下部） */}
       <div className="mt-8 pt-6 border-t border-gray-200">
-        <AdBanner format="rectangle" />
+        <AdBanner slot="tools-rectangle" format="rectangle" />
       </div>
     </div>
   )

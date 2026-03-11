@@ -196,7 +196,7 @@ function GoalTracker() {
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
-        <AdBanner format="rectangle" />
+        <AdBanner slot="tools-rectangle" format="rectangle" />
       </div>
     </>
   )
