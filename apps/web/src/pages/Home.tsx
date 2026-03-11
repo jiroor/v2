@@ -215,6 +215,50 @@ function Home() {
         <AdBanner slot="HOME_TOP" format="horizontal" />
       </div>
 
+      {/* カテゴリリンク */}
+      <div className="mb-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+        <Link
+          to="/text"
+          className="flex items-center gap-4 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
+        >
+          <span className="text-3xl">📝</span>
+          <div>
+            <h3 className="font-semibold text-blue-900">テキスト</h3>
+            <p className="text-sm text-blue-700">19ツール</p>
+          </div>
+        </Link>
+        <Link
+          to="/image"
+          className="flex items-center gap-4 p-4 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors"
+        >
+          <span className="text-3xl">🖼️</span>
+          <div>
+            <h3 className="font-semibold text-green-900">画像</h3>
+            <p className="text-sm text-green-700">8ツール</p>
+          </div>
+        </Link>
+        <Link
+          to="/timer"
+          className="flex items-center gap-4 p-4 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors"
+        >
+          <span className="text-3xl">⏱️</span>
+          <div>
+            <h3 className="font-semibold text-purple-900">タイマー</h3>
+            <p className="text-sm text-purple-700">5ツール</p>
+          </div>
+        </Link>
+        <Link
+          to="/other"
+          className="flex items-center gap-4 p-4 bg-orange-50 border border-orange-200 rounded-lg hover:bg-orange-100 transition-colors"
+        >
+          <span className="text-3xl">🛠️</span>
+          <div>
+            <h3 className="font-semibold text-orange-900">その他</h3>
+            <p className="text-sm text-orange-700">17ツール</p>
+          </div>
+        </Link>
+      </div>
+
       <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 max-md:grid-cols-1">
         <Link
           to="/timer/countdown"

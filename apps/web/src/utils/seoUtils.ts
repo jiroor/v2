@@ -597,9 +597,9 @@ export function getFullUrl(path: string): string {
 
 /**
  * OG画像のURLを取得
+ * 動的OGP画像生成を使用
  */
 export function getOgImageUrl(metadata: PageMetadata): string {
-  return metadata.ogImage
-    ? `${SITE_CONFIG.url}${metadata.ogImage}`
-    : `${SITE_CONFIG.url}${SITE_CONFIG.defaultOgImage}`
+  // 動的OGP画像生成APIを使用
+  return `${SITE_CONFIG.url}/api/og?tool=${encodeURIComponent(metadata.path)}`
 }

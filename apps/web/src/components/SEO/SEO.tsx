@@ -1,91 +1,63 @@
-import { Helmet } from 'react-helmet-async'
-import {
-  getPageMetadata,
-  getFullUrl,
-  getOgImageUrl,
-  SITE_CONFIG,
-} from '@/utils/seoUtils'
-import { getFAQForPath } from '@/utils/faqData'
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
-  path: string
-  includeJsonLd?: boolean
+  title: string;
+  description: string;
+  path: string;
+  category?: string;
 }
 
-/**
- * SEOコンポーネント
- * 各ページでメタタグを動的に設定する
- */
-export function SEO({ path, includeJsonLd = false }: SEOProps) {
-  const metadata = getPageMetadata(path)
-  const fullUrl = getFullUrl(path)
-  const ogImageUrl = getOgImageUrl(metadata)
+const SITE_URL = 'https://rakit-five.vercel.app';
+const SITE_NAME = 'Rakit';
 
-  // 構造化データ（JSON-LD）
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: SITE_CONFIG.name,
-    description: metadata.description,
-    url: fullUrl,
-    applicationCategory: 'UtilitiesApplication',
-    operatingSystem: 'Any',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'JPY',
-    },
-  }
-
-  // FAQ構造化データ
-  const faqItems = getFAQForPath(path)
-  const faqJsonLd = faqItems.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  } : null
+export function SEO({ title, description, path, category }: SEOProps) {
+  const ogImageUrl = `${SITE_URL}/api/og?tool=${encodeURIComponent(path)}`;
+  const pageUrl = `${SITE_URL}${path}`;
+  const fullTitle = `${title} | ${SITE_NAME}`;
 
   return (
     <Helmet>
-      {/* 基本メタタグ */}
-      <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
-      <meta name="keywords" content={metadata.keywords} />
+      {/* Basic Meta */}
+      <title>{fullTitle}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={pageUrl} />
 
-      {/* OGP (Open Graph Protocol) */}
+      {/* Open Graph */}
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:title" content={metadata.title} />
-      <meta property="og:description" content={metadata.description} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:image" content={ogImageUrl} />
-      <meta property="og:site_name" content={SITE_CONFIG.name} />
-      <meta property="og:locale" content={SITE_CONFIG.locale} />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="ja_JP" />
 
       {/* Twitter Card */}
-      <meta name="twitter:card" content={SITE_CONFIG.twitterCard} />
-      <meta name="twitter:title" content={metadata.title} />
-      <meta name="twitter:description" content={metadata.description} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImageUrl} />
 
-      {/* Canonical URL */}
-      <link rel="canonical" href={fullUrl} />
-
-      {/* 構造化データ（JSON-LD） - ホームページのみ */}
-      {includeJsonLd && (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      )}
-
-      {/* FAQ構造化データ - FAQがあるページのみ */}
-      {faqJsonLd && (
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
-      )}
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": title,
+          "description": description,
+          "url": pageUrl,
+          "applicationCategory": category || "UtilitiesApplication",
+          "operatingSystem": "Web Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": pageUrl
+          }
+        })}
+      </script>
     </Helmet>
-  )
+  );
 }
