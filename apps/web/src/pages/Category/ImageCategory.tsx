@@ -9,7 +9,8 @@ import {
   FileImage, 
   QrCode, 
   Palette, 
-  Sparkles 
+  Sparkles,
+  RotateCw
 } from 'lucide-react'
 
 const imageTools = [
@@ -54,6 +55,13 @@ const imageTools = [
     description: '画像にグリッチ効果を追加してアート加工',
     icon: Sparkles,
     color: 'bg-pink-500'
+  },
+  {
+    path: '/other/image-rotate',
+    title: '画像回転',
+    description: '画像を回転させる（90°, 180°, 270°）',
+    icon: RotateCw,
+    color: 'bg-yellow-500'
   },
   {
     path: '/other/qrcode',

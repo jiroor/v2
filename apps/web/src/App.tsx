@@ -77,6 +77,7 @@ const PasswordGenerator = lazy(() => import('./pages/OtherTools/PasswordGenerato
 const ColorPicker = lazy(() => import('./pages/OtherTools/ColorPicker'))
 const Roulette = lazy(() => import('./pages/OtherTools/Roulette'))
 const ImageGlitch = lazy(() => import('./pages/OtherTools/ImageGlitch'))
+const ImageRotate = lazy(() => import('./pages/OtherTools/ImageRotate'))
 const ImageCategory = lazy(() => import('./pages/Category/ImageCategory'))
 const TextCategory = lazy(() => import('./pages/Category/TextCategory'))
 const TimerCategory = lazy(() => import('./pages/Category/TimerCategory'))
@@ -178,6 +179,7 @@ function App() {
               <Route path="/other/colorpicker" element={<ColorPicker />} />
               <Route path="/other/roulette" element={<Roulette />} />
               <Route path="/other/image-glitch" element={<ImageGlitch />} />
+              <Route path="/other/image-rotate" element={<ImageRotate />} />
               <Route path="/camera" element={<CameraSharing />} />
               <Route path="/camera/mode" element={<CameraMode />} />
               <Route path="/camera/viewer" element={<ViewerMode />} />
