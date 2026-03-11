@@ -8,6 +8,8 @@ import ScrollToTop from './components/ScrollToTop'
 // Lazy load page components
 const Home = lazy(() => import('./pages/Home'))
 const TextToolsList = lazy(() => import('./pages/TextToolsList'))
+const TimerToolsList = lazy(() => import('./pages/TimerToolsList'))
+const OtherToolsList = lazy(() => import('./pages/OtherToolsList'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const UsageStats = lazy(() => import('./pages/UsageStats'))
 const CountdownTimer = lazy(() => import('./pages/Timer/CountdownTimer'))
@@ -110,6 +112,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/text" element={<TextToolsList />} />
+              <Route path="/timer" element={<TimerToolsList />} />
+              <Route path="/other" element={<OtherToolsList />} />
               <Route path="/stats" element={<UsageStats />} />
               <Route path="/contact" element={<ContactForm />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
