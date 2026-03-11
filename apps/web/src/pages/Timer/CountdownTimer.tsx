@@ -107,7 +107,7 @@ function CountdownTimer() {
 
   return (
     <>
-      <ToolHeader toolPath="/timer/countdown" toolName="カウントダウンタイマー" />
+      <ToolHeader toolPath="/timer/countdown" title="カウントダウンタイマー" />
       <SEO path="/timer/countdown" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">カウントダウンタイマー</h2>

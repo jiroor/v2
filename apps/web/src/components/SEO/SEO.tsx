@@ -5,6 +5,7 @@ import {
   getOgImageUrl,
   SITE_CONFIG,
 } from '@/utils/seoUtils'
+import { getFAQForPath } from '@/utils/faqData'
 
 interface SEOProps {
   path: string
@@ -36,6 +37,21 @@ export function SEO({ path, includeJsonLd = false }: SEOProps) {
     },
   }
 
+  // FAQ構造化データ
+  const faqItems = getFAQForPath(path)
+  const faqJsonLd = faqItems.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  } : null
+
   return (
     <Helmet>
       {/* 基本メタタグ */}
@@ -64,6 +80,11 @@ export function SEO({ path, includeJsonLd = false }: SEOProps) {
       {/* 構造化データ（JSON-LD） - ホームページのみ */}
       {includeJsonLd && (
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      )}
+
+      {/* FAQ構造化データ - FAQがあるページのみ */}
+      {faqJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       )}
     </Helmet>
   )

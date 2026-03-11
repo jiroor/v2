@@ -62,7 +62,7 @@ export default function CurrentTime() {
 
   return (
     <>
-      <ToolHeader toolPath="/timer/current" toolName="現在日時" />
+      <ToolHeader toolPath="/timer/current" title="現在日時" />
       <SEO path="/timer/current" />
       <div className="max-w-[800px] mx-auto py-6 px-6 md:px-4">
       <h1 className="text-2xl font-bold mb-8 text-center">現在日時</h1>

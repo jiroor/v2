@@ -285,7 +285,7 @@ function CameraMode() {
 
   return (
     <>
-      <ToolHeader toolPath="/camera/mode" toolName="カメラモード" />
+      <ToolHeader toolPath="/camera/mode" title="カメラモード" />
       <SEO path="/camera/mode" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <h2 className="text-2xl font-semibold mb-8 text-center">カメラモード</h2>

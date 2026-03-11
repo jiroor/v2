@@ -566,7 +566,7 @@ function ViewerMode() {
 
   return (
     <>
-      <ToolHeader toolPath="/camera/viewer" toolName="ビューモード" />
+      <ToolHeader toolPath="/camera/viewer" title="ビューモード" />
       <SEO path="/camera/viewer" />
 
       {/* QRスキャナーモーダル */}

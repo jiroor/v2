@@ -44,7 +44,7 @@ function PomodoroTimer() {
 
   return (
     <>
-      <ToolHeader toolPath="/timer/pomodoro" toolName="ポモドーロタイマー" />
+      <ToolHeader toolPath="/timer/pomodoro" title="ポモドーロタイマー" />
       <SEO path="/timer/pomodoro" />
       <div className="max-w-[600px] mx-auto py-8 px-4 text-center">
       <h2 className="text-2xl font-semibold mb-8">ポモドーロタイマー</h2>

@@ -56,7 +56,7 @@ function Stopwatch() {
 
   return (
     <>
-      <ToolHeader toolPath="/timer/stopwatch" toolName="ストップウォッチ" />
+      <ToolHeader toolPath="/timer/stopwatch" title="ストップウォッチ" />
       <SEO path="/timer/stopwatch" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">ストップウォッチ</h2>

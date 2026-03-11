@@ -22,7 +22,6 @@ const JSONFormatter = lazy(() => import('./pages/TextTools/JSONFormatter'))
 const HashGenerator = lazy(() => import('./pages/TextTools/HashGenerator'))
 const UnixTimestamp = lazy(() => import('./pages/TextTools/UnixTimestamp'))
 const RegexTester = lazy(() => import('./pages/TextTools/RegexTester'))
-const UUIDGenerator = lazy(() => import('./pages/TextTools/UUIDGenerator'))
 const LoremIpsumGenerator = lazy(() => import('./pages/TextTools/LoremIpsumGenerator'))
 const CaseConverter = lazy(() => import('./pages/TextTools/CaseConverter'))
 const NumberConverter = lazy(() => import('./pages/TextTools/NumberConverter'))
@@ -71,6 +70,16 @@ const TextSplitter = lazy(() => import("./pages/TextTools/TextSplitter"))
 const TextJoiner = lazy(() => import("./pages/TextTools/TextJoiner"))
 const WhitespaceRemover = lazy(() => import("./pages/TextTools/WhitespaceRemover"))
 const MarkdownPreview = lazy(() => import("./pages/TextTools/MarkdownPreview"))
+const NumberFormatter = lazy(() => import("./pages/TextTools/NumberFormatter"))
+const DateFormatter = lazy(() => import("./pages/TextTools/DateFormatter"))
+const TextEscaper = lazy(() => import("./pages/TextTools/TextEscaper"))
+const TextUnescaper = lazy(() => import("./pages/TextTools/TextUnescaper"))
+const PasswordGeneratorAdvanced = lazy(() => import("./pages/TextTools/PasswordGeneratorAdvanced"))
+const UUIDGenerator = lazy(() => import("./pages/TextTools/UUIDGenerator"))
+const FuriganaConverter = lazy(() => import("./pages/TextTools/FuriganaConverter"))
+const BarcodeGenerator = lazy(() => import("./pages/TextTools/BarcodeGenerator"))
+const TextSorterAdvanced = lazy(() => import("./pages/TextTools/TextSorterAdvanced"))
+const FlipText = lazy(() => import("./pages/TextTools/FlipText"))
 const ImageToBase64 = lazy(() => import('./pages/OtherTools/ImageToBase64'))
 const QRCodeGenerator = lazy(() => import('./pages/OtherTools/QRCodeGenerator'))
 const PasswordGenerator = lazy(() => import('./pages/OtherTools/PasswordGenerator'))
@@ -115,7 +124,6 @@ function App() {
               <Route path="/text/hash" element={<HashGenerator />} />
               <Route path="/text/unix" element={<UnixTimestamp />} />
               <Route path="/text/regex" element={<RegexTester />} />
-              <Route path="/text/uuid" element={<UUIDGenerator />} />
               <Route path="/text/case" element={<CaseConverter />} />
               <Route path="/text/number" element={<NumberConverter />} />
               <Route path="/text/lorem" element={<LoremIpsumGenerator />} />
@@ -163,6 +171,17 @@ function App() {
               <Route path="/text/join" element={<TextJoiner />} />
               <Route path="/text/whitespace" element={<WhitespaceRemover />} />
               <Route path="/text/markdown" element={<MarkdownPreview />} />
+              <Route path="/text/number-format" element={<NumberFormatter />} />
+              <Route path="/text/date-format" element={<DateFormatter />} />
+              <Route path="/text/escape" element={<TextEscaper />} />
+              <Route path="/text/unescape" element={<TextUnescaper />} />
+              <Route path="/text/password-adv" element={<PasswordGeneratorAdvanced />} />
+              <Route path="/text/uuid" element={<UUIDGenerator />} />
+              <Route path="/text/furigana" element={<FuriganaConverter />} />
+              <Route path="/text/sort-adv" element={<TextSorterAdvanced />} />
+              <Route path="/text/barcode" element={<BarcodeGenerator />} />
+              <Route path="/text/sort-adv" element={<TextSorterAdvanced />} />
+              <Route path="/text/flip" element={<FlipText />} />
               <Route path="/other/image-base64" element={<ImageToBase64 />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />

@@ -130,13 +130,6 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: '正規表現,Regex,テスト,パターンマッチ,JavaScript',
     path: '/text/regex',
   },
-  '/text/uuid': {
-    title: 'UUID/GUID生成 | Rakit',
-    description:
-      'UUID v4、v1を生成。一度に複数生成可能。データベースの主キーやセッションIDなどに。',
-    keywords: 'UUID,GUID,生成,一意ID,セッションID',
-    path: '/text/uuid',
-  },
   '/text/lorem': {
     title: 'Lorem Ipsum生成 | Rakit',
     description:
@@ -192,6 +185,76 @@ export const PAGE_METADATA: Record<string, PageMetadata> = {
       'Markdownをリアルタイムでプレビュー。HTMLへの変換も対応。ブログ記事やドキュメント作成に便利。',
     keywords: 'Markdown,プレビュー,HTML,変換,ドキュメント',
     path: '/text/markdown',
+  },
+  '/text/number-format': {
+    title: '数値フォーマット変換 | Rakit',
+    description:
+      '数値を通貨、パーセント、3桁区切り、科学記法などに変換。レポート作成に便利。',
+    keywords: '数値,フォーマット,通貨,パーセント,変換',
+    path: '/text/number-format',
+  },
+  '/text/date-format': {
+    title: '日付フォーマット変換 | Rakit',
+    description:
+      '日付を様々なフォーマットに変換。ISO形式、日本語形式、Unix時間などに対応。',
+    keywords: '日付,フォーマット,変換,Unix時間,ISO',
+    path: '/text/date-format',
+  },
+  '/text/escape': {
+    title: 'テキストエスケープ | Rakit',
+    description:
+      'テキストをエスケープ。HTML、URL、JSON、正規表現、SQL、Base64に対応。',
+    keywords: 'エスケープ,HTML,URL,JSON,正規表現,SQL,Base64',
+    path: '/text/escape',
+  },
+  '/text/unescape': {
+    title: 'テキストアンエスケープ | Rakit',
+    description:
+      'エスケープされたテキストを元に戻す。HTML、URL、JSON、Base64デコードに対応。',
+    keywords: 'アンエスケープ,デコード,HTML,URL,JSON,Base64',
+    path: '/text/unescape',
+  },
+  '/text/password-adv': {
+    title: 'パスワード生成（詳細） | Rakit',
+    description:
+      'カスタマイズ可能なパスワード生成。文字種、長さ、除外文字を設定。複数同時生成対応。',
+    keywords: 'パスワード,生成,ランダム,セキュリティ,パスワード作成',
+    path: '/text/password-adv',
+  },
+  '/text/uuid': {
+    title: 'UUID生成 | Rakit',
+    description:
+      'UUID（一意識別子）を生成。UUID v4（ランダム）、v1（タイムスタンプ）対応。複数同時生成。',
+    keywords: 'UUID,生成,一意識別子,ID,ランダム',
+    path: '/text/uuid',
+  },
+  '/text/furigana': {
+    title: 'ふりがな変換 | Rakit',
+    description:
+      '漢字にふりがなを追加。HTML rubyタグ、括弧形式、Markdownに対応。教育教材作成に便利。',
+    keywords: 'ふりがな,ルビ,漢字,読み方,HTML,ruby',
+    path: '/text/furigana',
+  },
+  '/text/sort-adv': {
+    title: 'テキストソート（詳細） | Rakit',
+    description:
+      'テキスト行をソート。昇順・降順・文字数順・自然順・ランダムに対応。日本語対応。',
+    keywords: 'ソート,並び替え,テキスト,行,ランダム',
+    path: '/text/sort-adv',
+  },
+  '/text/barcode': {
+    title: 'バーコード生成 | Rakit',
+    description:
+      'バーコードを生成。CODE 128、EAN-13、CODE 39対応。PNGでダウンロード可能。',
+    keywords: 'バーコード,生成,CODE128,EAN,CODE39,画像',
+    path: '/text/barcode',
+  },
+  '/text/flip': {
+    title: 'フリップテキスト | Rakit',
+    description:
+      'テキストを上下逆さまに変換。ユニークな表現でSNSやメッセージに。',
+    keywords: 'フリップ,逆さま,テキスト,変換,ユニーク',
+    path: '/text/flip',
   },
   '/text/whitespace': {
     title: '空白削除 | Rakit',

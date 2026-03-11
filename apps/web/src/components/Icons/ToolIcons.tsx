@@ -40,6 +40,7 @@ import {
   Split,
   Ruler,
   Percent,
+  ArrowLeftRight,
 } from 'lucide-react'
 
 interface IconProps {
@@ -384,4 +385,9 @@ export function WordCounterIcon({ className }: IconProps) {
 // IPアドレス確認
 export function IPAddressToolIcon({ className }: IconProps) {
   return <Globe className={className} />
+}
+
+// 全角半角変換
+export function WidthConverterIcon({ className }: IconProps) {
+  return <ArrowLeftRight className={className} />
 }
