@@ -164,6 +164,13 @@ const textTools = [
     icon: Code,
     color: 'bg-emerald-500'
   },
+  {
+    path: '/text/lorem-ipsum-advanced',
+    title: 'ダミーテキスト生成',
+    description: 'Lorem Ipsum形式のダミーテキスト',
+    icon: FileText,
+    color: 'bg-amber-500'
+  },
 ]
 
 function TextCategory() {

@@ -34,6 +34,7 @@ const toolInfo: Record<string, { title: string; description: string; category: s
   '/text/whitespace': { title: '空白削除', description: '余分な空白や改行を削除', category: 'テキスト' },
   '/text/markdown': { title: 'Markdownプレビュー', description: 'Markdownをリアルタイムでプレビュー', category: 'テキスト' },
   '/text/code-formatter': { title: 'コードフォーマッタ', description: 'JSON, HTML, CSS, JSを整形', category: 'テキスト' },
+  '/text/lorem-ipsum-advanced': { title: 'ダミーテキスト生成', description: 'Lorem Ipsum形式のダミーテキスト', category: 'テキスト' },
   '/timer/countdown': { title: 'カウントダウンタイマー', description: '指定時間のカウントダウン', category: 'タイマー' },
   '/timer/stopwatch': { title: 'ストップウォッチ', description: '経過時間を計測', category: 'タイマー' },
   '/timer/pomodoro': { title: 'ポモドーロタイマー', description: '25分作業+5分休憩のタイマー', category: 'タイマー' },
