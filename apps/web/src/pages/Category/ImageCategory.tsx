@@ -15,7 +15,8 @@ import {
   Droplet,
   Layers,
   Shield,
-  Circle
+  Circle,
+  EyeOff
 } from 'lucide-react'
 
 const imageTools = [
@@ -102,6 +103,13 @@ const imageTools = [
     description: '円形・正方形にトリミング（SNSプロフィール用）',
     icon: Circle,
     color: 'bg-rose-500'
+  },
+  {
+    path: '/other/image-blur',
+    title: '画像ぼかし',
+    description: '画像にぼかし効果を追加（プライバシー保護）',
+    icon: EyeOff,
+    color: 'bg-gray-500'
   },
   {
     path: '/other/qrcode',
