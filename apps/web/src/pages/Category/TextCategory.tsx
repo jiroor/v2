@@ -157,6 +157,13 @@ const textTools = [
     icon: Eye,
     color: 'bg-gray-500'
   },
+  {
+    path: '/text/code-formatter',
+    title: 'コードフォーマッタ',
+    description: 'JSON, HTML, CSS, JSを整形',
+    icon: Code,
+    color: 'bg-emerald-500'
+  },
 ]
 
 function TextCategory() {
