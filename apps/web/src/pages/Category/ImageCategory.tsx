@@ -12,7 +12,8 @@ import {
   Sparkles,
   RotateCw,
   FlipHorizontal,
-  Droplet
+  Droplet,
+  Layers
 } from 'lucide-react'
 
 const imageTools = [
@@ -78,6 +79,13 @@ const imageTools = [
     description: '画像にウォーターマークを追加',
     icon: Droplet,
     color: 'bg-sky-500'
+  },
+  {
+    path: '/other/image-merge',
+    title: '画像結合',
+    description: '複数の画像を1枚に結合',
+    icon: Layers,
+    color: 'bg-violet-500'
   },
   {
     path: '/other/qrcode',
