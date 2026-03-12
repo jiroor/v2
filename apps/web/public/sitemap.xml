@@ -226,10 +226,16 @@
     <loc>https://rakit-five.vercel.app/other/image-rotate</loc>
   <url>
     <loc>https://rakit-five.vercel.app/other/image-flip</loc>
+  <url>
+    <loc>https://rakit-five.vercel.app/other/watermark</loc>
+  </url>
   </url>
   </url>
   <url>
     <loc>https://rakit-five.vercel.app/other/image-flip</loc>
+  <url>
+    <loc>https://rakit-five.vercel.app/other/watermark</loc>
+  </url>
   </url>
   <url>
     <loc>https://rakit-five.vercel.app/camera</loc>

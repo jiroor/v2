@@ -79,7 +79,9 @@ const Roulette = lazy(() => import('./pages/OtherTools/Roulette'))
 const ImageGlitch = lazy(() => import('./pages/OtherTools/ImageGlitch'))
 const ImageRotate = lazy(() => import('./pages/OtherTools/ImageRotate'))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
+const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
+const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
 const ImageCategory = lazy(() => import('./pages/Category/ImageCategory'))
 const TextCategory = lazy(() => import('./pages/Category/TextCategory'))
 const TimerCategory = lazy(() => import('./pages/Category/TimerCategory'))
@@ -183,7 +185,9 @@ function App() {
               <Route path="/other/image-glitch" element={<ImageGlitch />} />
               <Route path="/other/image-rotate" element={<ImageRotate />} />
               <Route path="/other/image-flip" element={<ImageFlip />} />
+              <Route path="/other/watermark" element={<Watermark />} />
               <Route path="/other/image-flip" element={<ImageFlip />} />
+              <Route path="/other/watermark" element={<Watermark />} />
               <Route path="/camera" element={<CameraSharing />} />
               <Route path="/camera/mode" element={<CameraMode />} />
               <Route path="/camera/viewer" element={<ViewerMode />} />
