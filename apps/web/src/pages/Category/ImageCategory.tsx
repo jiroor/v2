@@ -14,7 +14,8 @@ import {
   FlipHorizontal,
   Droplet,
   Layers,
-  Shield
+  Shield,
+  Circle
 } from 'lucide-react'
 
 const imageTools = [
@@ -94,6 +95,13 @@ const imageTools = [
     description: '画像のEXIF情報を削除（プライバシー保護）',
     icon: Shield,
     color: 'bg-red-600'
+  },
+  {
+    path: '/other/image-crop-circle',
+    title: '画像トリミング',
+    description: '円形・正方形にトリミング（SNSプロフィール用）',
+    icon: Circle,
+    color: 'bg-rose-500'
   },
   {
     path: '/other/qrcode',

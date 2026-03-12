@@ -83,6 +83,7 @@ const toolInfo: Record<string, { title: string; description: string; category: s
   '/other/image-merge': { title: '画像結合', description: '複数の画像を1枚に結合', category: '画像' },
   '/other/exif-remover': { title: 'EXIF削除', description: '画像のEXIF情報を削除', category: '画像' },
   '/other/color-converter': { title: '色変換', description: 'HEX, RGB, HSL, CMYK相互変換', category: 'その他' },
+  '/other/image-crop-circle': { title: '画像トリミング', description: '円形・正方形にトリミング', category: '画像' },
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
