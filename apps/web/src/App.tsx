@@ -81,9 +81,11 @@ const ImageRotate = lazy(() => import('./pages/OtherTools/ImageRotate'))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
 const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
 const CodeFormatter = lazy(() => import("./pages/TextTools/CodeFormatter"))
+const ImageMerge = lazy(() => import("./pages/OtherTools/ImageMerge"))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
 const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
 const CodeFormatter = lazy(() => import("./pages/TextTools/CodeFormatter"))
+const ImageMerge = lazy(() => import("./pages/OtherTools/ImageMerge"))
 const ImageCategory = lazy(() => import('./pages/Category/ImageCategory'))
 const TextCategory = lazy(() => import('./pages/Category/TextCategory'))
 const TimerCategory = lazy(() => import('./pages/Category/TimerCategory'))
@@ -189,10 +191,14 @@ function App() {
               <Route path="/other/image-rotate" element={<ImageRotate />} />
               <Route path="/other/image-flip" element={<ImageFlip />} />
               <Route path="/other/watermark" element={<Watermark />} />
+              <Route path="/other/image-merge" element={<ImageMerge />} />
               <Route path="/other/watermark" element={<Watermark />} />
+              <Route path="/other/image-merge" element={<ImageMerge />} />
               <Route path="/other/image-flip" element={<ImageFlip />} />
               <Route path="/other/watermark" element={<Watermark />} />
+              <Route path="/other/image-merge" element={<ImageMerge />} />
               <Route path="/other/watermark" element={<Watermark />} />
+              <Route path="/other/image-merge" element={<ImageMerge />} />
               <Route path="/camera" element={<CameraSharing />} />
               <Route path="/camera/mode" element={<CameraMode />} />
               <Route path="/camera/viewer" element={<ViewerMode />} />
