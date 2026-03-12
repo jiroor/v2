@@ -171,6 +171,13 @@ const textTools = [
     icon: FileText,
     color: 'bg-amber-500'
   },
+  {
+    path: '/text/diff-checker',
+    title: 'テキスト差分チェッカー',
+    description: '2つのテキストの差分を確認',
+    icon: FileText,
+    color: 'bg-rose-500'
+  },
 ]
 
 function TextCategory() {
