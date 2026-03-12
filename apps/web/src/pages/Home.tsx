@@ -1,6 +1,7 @@
 import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
 import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
+import { ToolSearch } from '@/components/Search/ToolSearch'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
@@ -199,6 +200,11 @@ function Home() {
       {/* ニュースレター登録 */}
       <div className="mb-8">
         <NewsletterSignup />
+      </div>
+
+      {/* ツール検索 */}
+      <div className="mb-8">
+        <ToolSearch />
       </div>
 
       {/* 全ツール一覧 */}
