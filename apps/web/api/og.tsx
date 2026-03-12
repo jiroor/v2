@@ -79,6 +79,7 @@ const toolInfo: Record<string, { title: string; description: string; category: s
   '/other/image-rotate': { title: '画像回転', description: '画像を回転させる', category: '画像' },
   '/other/image-flip': { title: '画像反転', description: '画像を左右・上下に反転', category: '画像' },
   '/other/watermark': { title: '透かし追加', description: '画像にウォーターマークを追加', category: '画像' },
+  '/other/image-merge': { title: '画像結合', description: '複数の画像を1枚に結合', category: '画像' },
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
