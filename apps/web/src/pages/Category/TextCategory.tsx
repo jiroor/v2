@@ -10,7 +10,7 @@ import {
   Regex, 
   Fingerprint, 
   Calendar,
-  Random,
+  Shuffle,
   CaseSensitive,
   Binary,
   Copy,
@@ -91,7 +91,7 @@ const textTools = [
     path: '/text/random',
     title: 'ランダム文字列生成',
     description: 'ランダムな文字列を生成',
-    icon: Random,
+    icon: Shuffle,
     color: 'bg-teal-500'
   },
   {

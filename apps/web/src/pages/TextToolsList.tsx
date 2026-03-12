@@ -53,7 +53,7 @@ const textTools = [
 export default function TextToolsList() {
   return (
     <>
-      <SEO path="/text" includeJsonLd />
+      <SEO path="/text" />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
         <h1 className="text-3xl font-bold mb-2">📝 テキストツール</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">

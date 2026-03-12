@@ -164,7 +164,7 @@ function Home() {
 
   return (
     <>
-      <SEO path="/" includeJsonLd />
+      <SEO path="/" />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
       {/* よく使うツールセクション */}
       {topTools.length > 0 && (

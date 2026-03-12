@@ -17,7 +17,7 @@ const timerTools = [
 export default function TimerToolsList() {
   return (
     <>
-      <SEO path="/timer" includeJsonLd />
+      <SEO path="/timer" />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
         <h1 className="text-3xl font-bold mb-2">⏱️ タイマー</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
