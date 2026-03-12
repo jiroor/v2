@@ -80,8 +80,10 @@ const ImageGlitch = lazy(() => import('./pages/OtherTools/ImageGlitch'))
 const ImageRotate = lazy(() => import('./pages/OtherTools/ImageRotate'))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
 const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
+const CodeFormatter = lazy(() => import("./pages/TextTools/CodeFormatter"))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
 const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
+const CodeFormatter = lazy(() => import("./pages/TextTools/CodeFormatter"))
 const ImageCategory = lazy(() => import('./pages/Category/ImageCategory'))
 const TextCategory = lazy(() => import('./pages/Category/TextCategory'))
 const TimerCategory = lazy(() => import('./pages/Category/TimerCategory'))
@@ -177,6 +179,7 @@ function App() {
               <Route path="/text/join" element={<TextJoiner />} />
               <Route path="/text/whitespace" element={<WhitespaceRemover />} />
               <Route path="/text/markdown" element={<MarkdownPreview />} />
+              <Route path="/text/code-formatter" element={<CodeFormatter />} />
               <Route path="/other/image-base64" element={<ImageToBase64 />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />
