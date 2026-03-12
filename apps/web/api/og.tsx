@@ -75,6 +75,9 @@ const toolInfo: Record<string, { title: string; description: string; category: s
   '/other/colorpicker': { title: 'カラーピッカー', description: '色を選択・変換', category: 'その他' },
   '/other/roulette': { title: 'ルーレット', description: 'ランダムに選択', category: 'その他' },
   '/other/image-glitch': { title: '画像グリッチ', description: '画像にグリッチ効果を追加', category: '画像' },
+  '/other/image-rotate': { title: '画像回転', description: '画像を回転させる', category: '画像' },
+  '/other/image-flip': { title: '画像反転', description: '画像を左右・上下に反転', category: '画像' },
+  '/other/watermark': { title: '透かし追加', description: '画像にウォーターマークを追加', category: '画像' },
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
