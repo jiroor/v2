@@ -85,6 +85,7 @@ const LoremIpsumAdvanced = lazy(() => import("./pages/TextTools/LoremIpsumAdvanc
 const ExifRemover = lazy(() => import("./pages/OtherTools/ExifRemover"))
 const ColorConverter = lazy(() => import("./pages/OtherTools/ColorConverter"))
 const ImageCropCircle = lazy(() => import("./pages/OtherTools/ImageCropCircle"))
+const ImageBlur = lazy(() => import("./pages/OtherTools/ImageBlur"))
 const ImageMerge = lazy(() => import("./pages/OtherTools/ImageMerge"))
 const ImageFlip = lazy(() => import('./pages/OtherTools/ImageFlip'))
 const Watermark = lazy(() => import('./pages/OtherTools/Watermark'))
@@ -93,6 +94,7 @@ const LoremIpsumAdvanced = lazy(() => import("./pages/TextTools/LoremIpsumAdvanc
 const ExifRemover = lazy(() => import("./pages/OtherTools/ExifRemover"))
 const ColorConverter = lazy(() => import("./pages/OtherTools/ColorConverter"))
 const ImageCropCircle = lazy(() => import("./pages/OtherTools/ImageCropCircle"))
+const ImageBlur = lazy(() => import("./pages/OtherTools/ImageBlur"))
 const ImageMerge = lazy(() => import("./pages/OtherTools/ImageMerge"))
 const ImageCategory = lazy(() => import('./pages/Category/ImageCategory'))
 const TextCategory = lazy(() => import('./pages/Category/TextCategory'))
@@ -194,6 +196,7 @@ function App() {
               <Route path="/other/exif-remover" element={<ExifRemover />} />
               <Route path="/other/color-converter" element={<ColorConverter />} />
               <Route path="/other/image-crop-circle" element={<ImageCropCircle />} />
+              <Route path="/other/image-blur" element={<ImageBlur />} />
               <Route path="/other/image-base64" element={<ImageToBase64 />} />
               <Route path="/other/qrcode" element={<QRCodeGenerator />} />
               <Route path="/other/password" element={<PasswordGenerator />} />
