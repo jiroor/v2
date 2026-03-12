@@ -75,6 +75,7 @@ import {
 } from '../components/Icons/ToolIcons'
 import { getTopUsedTools } from '../utils/analyticsUtils'
 import type { ToolUsageSummary } from '../types/analytics'
+import { useHistory } from '@/hooks/useHistory'
 import { SEO } from '@/components/SEO/SEO'
 
 // ツールパスとアイコンのマッピング
@@ -156,6 +157,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 function Home() {
   const [topTools, setTopTools] = useState<ToolUsageSummary[]>([])
+  const { history } = useHistory()
 
   useEffect(() => {
     // よく使うツールを取得（上位3件）
@@ -190,6 +192,33 @@ function Home() {
                   </div>
                   <Icon className="w-12 h-12 mb-4 text-[#d97706] transition-all duration-200 group-hover:scale-110" />
                   <h3 className="text-xl font-semibold mb-2 text-center">{tool.toolName}</h3>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* 最近使ったツールセクション */}
+      {history.length > 0 && (
+        <div className="mb-12">
+          <h2 className="text-[26px] font-bold mb-2">最近使ったツール</h2>
+          <p className="text-gray-600 mb-6">
+            すぐに戻れるクイックアクセス
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {history.slice(0, 8).map((item) => {
+              const Icon = toolIcons[item.path]
+              if (!Icon) return null
+
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full hover:bg-gray-50 hover:border-gray-300 transition-all text-sm no-underline text-gray-700"
+                >
+                  <Icon className="w-4 h-4 text-gray-500" />
+                  <span>{item.name}</span>
                 </Link>
               )
             })}

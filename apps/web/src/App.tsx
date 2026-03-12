@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Footer from './components/Footer'
 import { UpdatePrompt } from './components/UpdatePrompt'
+import { InstallPrompt } from './components/InstallPrompt'
 import ScrollToTop from './components/ScrollToTop'
 
 // Lazy load page components
@@ -216,6 +217,7 @@ function App() {
         </main>
         <Footer />
         <UpdatePrompt />
+        <InstallPrompt />
       </div>
     </Router>
   )
