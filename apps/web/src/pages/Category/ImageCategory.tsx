@@ -10,7 +10,9 @@ import {
   QrCode, 
   Palette, 
   Sparkles,
-  RotateCw
+  RotateCw,
+  FlipHorizontal,
+  Droplet
 } from 'lucide-react'
 
 const imageTools = [
@@ -62,6 +64,20 @@ const imageTools = [
     description: '画像を回転させる（90°, 180°, 270°）',
     icon: RotateCw,
     color: 'bg-yellow-500'
+  },
+  {
+    path: '/other/image-flip',
+    title: '画像反転',
+    description: '画像を左右・上下に反転',
+    icon: FlipHorizontal,
+    color: 'bg-teal-500'
+  },
+  {
+    path: '/other/watermark',
+    title: '透かし追加',
+    description: '画像にウォーターマークを追加',
+    icon: Droplet,
+    color: 'bg-sky-500'
   },
   {
     path: '/other/qrcode',
