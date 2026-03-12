@@ -13,7 +13,8 @@ import {
   Scale,
   Target,
   Repeat,
-  Network
+  Network,
+  Palette
 } from 'lucide-react'
 
 const otherTools = [
@@ -135,6 +136,13 @@ const otherTools = [
     description: 'IPアドレスを解析',
     icon: Network,
     color: 'bg-sky-500'
+  },
+  {
+    path: '/other/color-converter',
+    title: '色変換',
+    description: 'HEX, RGB, HSL, CMYK相互変換',
+    icon: Palette,
+    color: 'bg-pink-500'
   },
 ]
 
