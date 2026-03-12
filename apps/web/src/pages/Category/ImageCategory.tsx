@@ -13,7 +13,8 @@ import {
   RotateCw,
   FlipHorizontal,
   Droplet,
-  Layers
+  Layers,
+  Shield
 } from 'lucide-react'
 
 const imageTools = [
@@ -86,6 +87,13 @@ const imageTools = [
     description: '複数の画像を1枚に結合',
     icon: Layers,
     color: 'bg-violet-500'
+  },
+  {
+    path: '/other/exif-remover',
+    title: 'EXIF削除',
+    description: '画像のEXIF情報を削除（プライバシー保護）',
+    icon: Shield,
+    color: 'bg-red-600'
   },
   {
     path: '/other/qrcode',
