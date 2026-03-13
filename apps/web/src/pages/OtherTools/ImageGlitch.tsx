@@ -115,14 +115,15 @@ function ImageGlitch() {
     <>
       <SEO
         title="画像グリッチ"
-        description="画像にグリッチ効果を追加。レトロでクールなノイズ加工が可能。"
+
         path="/other/image-glitch"
         category="DesignApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="画像グリッチ"
-          description="画像にグリッチ効果を追加。レトロでクールなノイズ加工。"
+          toolPath="/other/image-glitch"
+
         />
 
         <div className="space-y-6">

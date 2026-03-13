@@ -76,14 +76,15 @@ function ExifRemover() {
     <>
       <SEO
         title="EXIF削除"
-        description="画像のEXIF情報（位置情報、撮影日時など）を削除するツール。プライバシー保護に。ブラウザ完結で無料。"
+
         path="/other/exif-remover"
         category="UtilitiesApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="EXIF削除"
-          description="画像のEXIF情報（位置情報、撮影日時など）を削除。"
+          toolPath="/other/exif-remover"
+
         />
 
         <div className="space-y-6">

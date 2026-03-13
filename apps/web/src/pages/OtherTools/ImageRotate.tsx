@@ -96,14 +96,15 @@ function ImageRotate() {
     <>
       <SEO
         title="画像回転"
-        description="画像を回転させるツール。90度、180度、270度の回転に対応。ブラウザ完結で無料。"
+
         path="/other/image-rotate"
         category="DesignApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="画像回転"
-          description="画像を回転させるツール。90度、180度、270度に対応。"
+          toolPath="/other/image-rotate"
+
         />
 
         <div className="space-y-6">

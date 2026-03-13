@@ -67,14 +67,15 @@ function LoremIpsum() {
     <>
       <SEO
         title="ダミーテキスト生成"
-        description="Lorem Ipsum形式のダミーテキストを生成。Webデザインや出版物のモックアップに。ブラウザ完結で無料。"
+        
         path="/text/lorem-ipsum-advanced"
         category="UtilitiesApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="ダミーテキスト生成"
-          description="Lorem Ipsum形式のダミーテキストを生成。"
+          toolPath="/text/lorem-ipsum-advanced"
+          
         />
 
         <div className="space-y-4">

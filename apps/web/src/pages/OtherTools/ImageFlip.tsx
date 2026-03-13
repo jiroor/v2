@@ -80,14 +80,15 @@ function ImageFlip() {
     <>
       <SEO
         title="画像反転"
-        description="画像を左右・上下に反転させるツール。鏡像反転、上下反転に対応。ブラウザ完結で無料。"
+
         path="/other/image-flip"
         category="DesignApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="画像反転"
-          description="画像を左右・上下に反転させるツール。"
+          toolPath="/other/image-flip"
+
         />
 
         <div className="space-y-6">

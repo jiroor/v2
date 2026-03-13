@@ -90,14 +90,15 @@ function ImageCropCircle() {
     <>
       <SEO
         title="画像トリミング（円形・正方形）"
-        description="画像を円形または正方形にトリミングするツール。SNSのプロフィール画像作成に便利。ブラウザ完結で無料。"
+
         path="/other/image-crop-circle"
         category="DesignApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="画像トリミング（円形・正方形）"
-          description="画像を円形または正方形にトリミング。SNSプロフィール画像に。"
+          toolPath="/other/image-crop-circle"
+
         />
 
         <div className="space-y-6">

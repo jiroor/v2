@@ -122,14 +122,15 @@ function Watermark() {
     <>
       <SEO
         title="透かし追加"
-        description="画像に透かし（ウォーターマーク）を追加するツール。著作権保護に。ブラウザ完結で無料。"
+
         path="/other/watermark"
         category="DesignApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="透かし追加"
-          description="画像に透かし（ウォーターマーク）を追加。著作権保護に。"
+          toolPath="/other/watermark"
+
         />
 
         <div className="space-y-6">

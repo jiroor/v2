@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SEO } from '@/components/SEO/SEO'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RandomStringIcon } from '@/components/Icons/ToolIcons'
 import { 
   Type, 
   Hash, 
@@ -10,7 +11,7 @@ import {
   Regex, 
   Fingerprint, 
   Calendar,
-  Shuffle,
+  
   CaseSensitive,
   Binary,
   Copy,
@@ -91,7 +92,7 @@ const textTools = [
     path: '/text/random',
     title: 'ランダム文字列生成',
     description: 'ランダムな文字列を生成',
-    icon: Shuffle,
+    icon: RandomStringIcon,
     color: 'bg-teal-500'
   },
   {

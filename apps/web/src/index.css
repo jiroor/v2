@@ -45,30 +45,4 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
-
-  /* Dark mode */
-  .dark {
-    --color-background: oklch(15% 0 0);
-    --color-foreground: oklch(95% 0 0);
-    --color-card: oklch(20% 0 0);
-    --color-card-foreground: oklch(95% 0 0);
-    --color-popover: oklch(20% 0 0);
-    --color-popover-foreground: oklch(95% 0 0);
-    --color-primary: oklch(90% 0 0);
-    --color-primary-foreground: oklch(20% 0 0);
-    --color-secondary: oklch(25% 0 0);
-    --color-secondary-foreground: oklch(90% 0 0);
-    --color-muted: oklch(25% 0 0);
-    --color-muted-foreground: oklch(65% 0 0);
-    --color-accent: oklch(25% 0 0);
-    --color-accent-foreground: oklch(90% 0 0);
-    --color-border: oklch(30% 0 0);
-    --color-input: oklch(30% 0 0);
-    --color-bg-hover: #422006;
-  }
-
-  .dark body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
 }

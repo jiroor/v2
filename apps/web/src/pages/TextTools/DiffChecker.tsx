@@ -44,14 +44,15 @@ function DiffChecker() {
     <>
       <SEO
         title="テキスト差分チェッカー"
-        description="2つのテキストの差分を確認するツール。追加・削除行を色分け表示。ブラウザ完結で無料。"
+        
         path="/text/diff-checker"
         category="UtilitiesApplication"
       />
       <div className="max-w-[900px] mx-auto py-8 px-4">
         <ToolHeader
           title="テキスト差分チェッカー"
-          description="2つのテキストの差分を確認。"
+          toolPath="/text/diff-checker"
+          
         />
 
         <div className="space-y-4">

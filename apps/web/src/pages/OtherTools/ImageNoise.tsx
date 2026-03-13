@@ -99,14 +99,15 @@ function ImageNoise() {
     <>
       <SEO 
         title="画像ノイズ追加" 
-        description="画像にノイズエフェクトを追加。レトロな雰囲気や芸術的な効果を出したい画像に。" 
+
         path="/other/image-noise" 
         category="ImageApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader 
           title="画像ノイズ追加" 
-          description="画像にノイズエフェクトを追加して、レトロな雰囲気や芸術的な効果を演出します。" 
+          toolPath="/other/image-noise"
+
         />
 
         <div className="space-y-6">

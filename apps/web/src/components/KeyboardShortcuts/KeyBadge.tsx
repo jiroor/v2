@@ -41,10 +41,10 @@ export const KeyBadge = ({ keyName, ctrl, meta, shift, alt }: KeyBadgeProps) => 
     <span className="inline-flex items-center gap-1">
       {keys.map((key, index) => (
         <span key={index}>
-          <kbd className="inline-block px-2 py-0.5 text-xs font-semibold font-mono bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded shadow-sm text-gray-900 dark:text-gray-100 min-w-[24px] text-center">
+          <kbd className="inline-block px-2 py-0.5 text-xs font-semibold font-mono bg-white border border-gray-300  rounded shadow-sm text-gray-900 min-w-[24px] text-center">
             {key}
           </kbd>
-          {index < keys.length - 1 && <span className="text-xs text-gray-500 dark:text-gray-400 mx-0.5">+</span>}
+          {index < keys.length - 1 && <span className="text-xs text-gray-500 mx-0.5">+</span>}
         </span>
       ))}
     </span>

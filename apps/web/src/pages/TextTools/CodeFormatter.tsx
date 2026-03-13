@@ -100,14 +100,15 @@ function CodeFormatter() {
     <>
       <SEO
         title="コードフォーマッタ"
-        description="JSON, HTML, CSS, JavaScriptを整形・フォーマットするツール。ブラウザ完結で無料。"
+        
         path="/text/code-formatter"
         category="DeveloperApplication"
       />
       <div className="max-w-[900px] mx-auto py-8 px-4">
         <ToolHeader
           title="コードフォーマッタ"
-          description="JSON, HTML, CSS, JavaScriptを整形・フォーマット。"
+          toolPath="/text/code-formatter"
+          
         />
 
         <div className="space-y-4">

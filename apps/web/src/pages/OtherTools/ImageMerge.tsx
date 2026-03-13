@@ -110,14 +110,15 @@ function ImageMerge() {
     <>
       <SEO
         title="画像結合"
-        description="複数の画像を1枚に結合するツール。横並び・縦並びに対応。ブラウザ完結で無料。"
+
         path="/other/image-merge"
         category="DesignApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="画像結合"
-          description="複数の画像を1枚に結合。横並び・縦並び対応。"
+          toolPath="/other/image-merge"
+
         />
 
         <div className="space-y-6">

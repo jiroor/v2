@@ -74,14 +74,15 @@ function ImageBlur() {
     <>
       <SEO
         title="画像ぼかし"
-        description="画像にぼかし効果を追加するツール。顔ぼかし、プライバシー保護に便利。ブラウザ完結で無料。"
+
         path="/other/image-blur"
         category="UtilitiesApplication"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader
           title="画像ぼかし"
-          description="画像にぼかし効果を追加。プライバシー保護に。"
+          toolPath="/other/image-blur"
+
         />
 
         <div className="space-y-6">

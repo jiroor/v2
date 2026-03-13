@@ -4,7 +4,7 @@ import AdBanner from '@/components/Ads/AdBanner'
 import { 
   Image, 
   Crop, 
-  Minimize2, 
+  ImageDown, 
   Maximize, 
   FileImage, 
   QrCode, 
@@ -24,7 +24,7 @@ const imageTools = [
     path: '/other/image-compress',
     title: '画像圧縮',
     description: '画像ファイルのサイズを圧縮して軽量化',
-    icon: Minimize2,
+    icon: ImageDown,
     color: 'bg-blue-500'
   },
   {
