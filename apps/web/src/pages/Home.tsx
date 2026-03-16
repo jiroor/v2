@@ -1,4 +1,3 @@
-import NewsletterSignup from '@/components/Newsletter/NewsletterSignup'
 import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
 import { ToolSearch } from '@/components/Search/ToolSearch'
@@ -225,11 +224,6 @@ function Home() {
           </div>
         </div>
       )}
-
-      {/* ニュースレター登録 */}
-      <div className="mb-8">
-        <NewsletterSignup />
-      </div>
 
       {/* ツール検索 */}
       <div className="mb-8">
