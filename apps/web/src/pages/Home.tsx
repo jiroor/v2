@@ -168,6 +168,27 @@ function Home() {
     <>
       <SEO path="/" />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
+      {/* サイトについて */}
+      <div className="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-6 border border-amber-200">
+        <h1 className="text-2xl font-bold mb-3 text-gray-900">Rakit - 便利なオンラインツール集</h1>
+        <p className="text-gray-700 mb-4 leading-relaxed">
+          Rakitは、日常的な作業を効率化するための無料オンラインツールを提供するプラットフォームです。テキスト処理、タイマー、計算機、画像変換など、50以上の便利なツールをブラウザ上で即座にご利用いただけます。インストール不要で、すべてのツールが完全無料です。
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div className="flex items-start gap-2">
+            <span className="text-amber-600 font-bold">✓</span>
+            <span className="text-gray-600">ブラウザだけで完結、インストール不要</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-amber-600 font-bold">✓</span>
+            <span className="text-gray-600">日本語対応、日本語ツールも充実</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-amber-600 font-bold">✓</span>
+            <span className="text-gray-600">プライバシー保護、データはサーバーに送信されません</span>
+          </div>
+        </div>
+      </div>
       {/* よく使うツールセクション */}
       {topTools.length > 0 && (
         <div className="mb-12">
