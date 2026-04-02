@@ -7,14 +7,22 @@ interface AdBannerProps {
   className?: string
 }
 
-// 環境変数からPublisher IDを取得
-const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-8707902976876530'
+// 審査中は広告を非表示（ 審査通過後にtrueに変更）
+const SHOW_ADS = false
 
 function AdBanner({ 
   slot,
   format = 'auto',
   className = ''
 }: AdBannerProps) {
+  // 審査中は何も表示しない
+  if (!SHOW_ADS) {
+    return null
+  }
+
+  // 環境変数からPublisher IDを取得
+  const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-8707902976876530'
+
   // 広告フォーマットに応じたスタイル
   const formatStyles: Record<string, React.CSSProperties> = {
     horizontal: { minHeight: '90px', width: '100%' },
