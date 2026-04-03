@@ -145,6 +145,40 @@ function ReverseText() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            逆順変換ツールは、テキストを逆順に並び替える無料のオンラインツールです。文字単位、単語単位、行単位の3種類のモードに対応しています。パズルや暗号、テキスト処理などに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 3種類の逆順モード</li>
+            <li>• 日本語・英語に対応</li>
+            <li>• リアルタイムで結果を表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 日本語も逆順になりますか？</p>
+              <p>A. はい、日本語も1文字ずつ逆順になります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 単語単位の区切りは？</p>
+              <p>A. スペースで区切られた単語単位で逆順になります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
