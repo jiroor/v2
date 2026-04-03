@@ -229,6 +229,40 @@ function TextJoinerAdvanced() {
             <li>• SQLのIN句作成やCSV作成に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト結合（詳細版）は、複数行のテキストを柔軟に結合する無料のオンラインツールです。区切り文字、接頭辞、接尾辞を指定でき、SQLのIN句作成やCSV作成などに最適です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 先頭・末尾の文字を追加可能</li>
+            <li>• 空行の削除オプション</li>
+            <li>• カスタム区切り文字</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. SQLのIN句を作成できますか？</p>
+              <p>A. はい、先頭に「(」、末尾に「)」を追加して、区切り文字を「,」に設定してください。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 空行はどうなりますか？</p>
+              <p>A. デフォルトで空行は削除されます。オフにすることも可能です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

@@ -180,6 +180,40 @@ function TextSplitterAdvanced() {
             <li>• データ解析やテキスト処理に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト分割（詳細版）は、テキストを様々な単位で分割する無料のオンラインツールです。文字、単語、行、カスタム区切りに対応し、結果をJSON配列でもコピーできます。データ解析やテキスト処理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 4種類の分割モード</li>
+            <li>• JSON配列でコピー可能</li>
+            <li>• 分割件数を表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. JSON配列で何に使いますか？</p>
+              <p>A. プログラミングでデータとして使用する場合に便利です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 日本語も単語分割できますか？</p>
+              <p>A. 日本語は単語境界が明確でないため、文字単位またはカスタム区切りをご利用ください。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

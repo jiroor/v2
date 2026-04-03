@@ -147,6 +147,40 @@ function TextSorterAdvanced() {
             <li>• リストの並び替えに便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキストソート（詳細版）は、複数行のテキストを様々な条件で並び替える無料のオンラインツールです。辞書順、文字数順、自然順、ランダムなど5種類のソートに対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 5種類のソートモード</li>
+            <li>• 自然順ソート（file1, file2, file10）</li>
+            <li>• 日本語の辞書順に対応</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 自然順とは何ですか？</p>
+              <p>A. 数字を数値として扱う並び順です。「file10」が「file2」より後に来ます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大文字小文字は区別されますか？</p>
+              <p>A. デフォルトでは区別しません。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
