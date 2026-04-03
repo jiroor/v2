@@ -206,6 +206,40 @@ function HashGenerator() {
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            ハッシュ生成ツールは、テキストからMD5、SHA-1、SHA-256、SHA-512などのハッシュ値を生成する無料のオンラインツールです。パスワードのハッシュ化、ファイルの整合性確認、データのフィンガープリント生成などにご利用いただけます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 4種類のハッシュアルゴリズムに対応</li>
+            <li>• 一度に全アルゴリズムのハッシュを生成</li>
+            <li>• ブラウザ内で処理、データは外部送信なし</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのアルゴリズムを使うべき？</p>
+              <p>A. SHA-256以上を推奨。MD5とSHA-1は衝突耐性が低いため、セキュリティ用途には不向きです。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. ハッシュから元のテキストを復元できますか？</p>
+              <p>A. いいえ、ハッシュは一方通行の変換で、元に戻すことはできません。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

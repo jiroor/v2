@@ -179,6 +179,40 @@ function Base64Encoder() {
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Base64エンコード/デコードツールは、テキストをBase64形式に変換、またはBase64文字列を元のテキストに戻す無料のオンラインツールです。API認証、メール添付、データ転送など、様々な場面で活用できます。UTF-8（日本語）に完全対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• エンコード・デコードの双方向変換</li>
+            <li>• 日本語（UTF-8）完全対応</li>
+            <li>• リアルタイム変換</li>
+            <li>• 入力と出力をワンクリックで入れ替え</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. Base64とは何ですか？</p>
+              <p>A. バイナリデータをASCII文字列で表現するエンコード方式です。メールやHTTPで安全にデータを送信するために使われます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 日本語も変換できますか？</p>
+              <p>A. はい、UTF-8エンコーディングで日本語も正しく変換できます。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

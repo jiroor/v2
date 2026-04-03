@@ -186,6 +186,40 @@ function JSONFormatter() {
           </ul>
         </div>
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            JSON整形ツールは、JSONデータを読みやすくフォーマットする無料のオンラインツールです。圧縮されたJSONを展開したり、逆にJSONを圧縮（Minify）してデータサイズを削減したりできます。API開発やデータ分析に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• リアルタイムでJSONを整形・フォーマット</li>
+            <li>• インデントサイズを2/4スペースで切り替え</li>
+            <li>• JSON圧縮（Minify）機能</li>
+            <li>• 構文エラーを即座に検出</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. JSONの構文エラーが表示されます</p>
+              <p>A. 括弧の閉じ忘れやカンマの過不足がないか確認してください。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大きなJSONファイルも処理できますか？</p>
+              <p>A. はい、数MB程度のJSONまで問題なく処理できます。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-6">
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
@@ -193,6 +227,40 @@ function JSONFormatter() {
 
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            JSON整形ツールは、JSONデータを読みやすい形式に整形・フォーマットする無料のオンラインツールです。圧縮されたJSONの展開、インデント調整、構文チェックなど、開発者に便利な機能を提供します。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• JSONを自動で整形・インデント</li>
+            <li>• 圧縮（Minify）機能でデータサイズを削減</li>
+            <li>• 構文エラーをリアルタイムで検出</li>
+            <li>• 完全無料、サーバーにデータを送信しません</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. JSONとは何ですか？</p>
+              <p>A. JavaScript Object Notationの略で、データ交換形式の一つです。Web APIや設定ファイルで広く使われています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 入力したJSONデータは保存されますか？</p>
+              <p>A. いいえ、すべてブラウザ上で処理されるため、サーバーには送信・保存されません。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

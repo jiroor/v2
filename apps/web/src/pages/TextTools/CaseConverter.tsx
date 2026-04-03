@@ -157,6 +157,40 @@ function CaseConverter() {
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            ケース変換ツールは、テキストを様々な命名規則（ケース）に一括変換できる無料のオンラインツールです。大文字・小文字変換、キャメルケース、スネークケース、ケバブケースなど、プログラミングや文書作成に便利な変換をワンクリックで行えます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 10種類以上のケース変換に対応</li>
+            <li>• リアルタイムで全パターンを一括表示</li>
+            <li>• プログラミング言語ごとの命名規則に対応</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. キャメルケースとスネークケースの違いは？</p>
+              <p>A. キャメルケースは「camelCase」のように単語をつなげ、スネークケースは「snake_case」のようにアンダースコアで区切ります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どのケースを使うべき？</p>
+              <p>A. JavaScriptはキャメルケース、Pythonはスネークケース、URLはケバブケースが一般的です。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
