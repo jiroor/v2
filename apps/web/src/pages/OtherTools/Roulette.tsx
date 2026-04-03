@@ -129,7 +129,7 @@ function Roulette() {
 
   return (
     <>
-      <SEO path="/other/roulette" />
+      <SEO path="/other/roulette" title="ルーレット" description="無料のオンラインルーレットツール。リストからランダムに選択。抽選やゲームに最適。" />
       <div className="p-6 max-w-[800px] mx-auto md:p-4">
       <ToolHeader title="ルーレット" toolPath="/other/roulette" shareTitle="ルーレット | Rakit" />
       {winner && (

@@ -69,7 +69,7 @@ function GPACalculator() {
 
   return (
     <>
-      <SEO path="/other/gpa" />
+      <SEO path="/other/gpa" title="GPA計算" description="無料のオンラインGPA計算ツール。成績からGPAを計算。大学や学校の成績管理に最適。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="GPA計算" toolPath="/other/gpa" shareTitle="GPA計算 | Rakit" />
 

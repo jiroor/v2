@@ -109,10 +109,9 @@ function ImageMerge() {
   return (
     <>
       <SEO
-        title="画像結合"
-
         path="/other/image-merge"
-        category="DesignApplication"
+        title="画像結合"
+        description="無料のオンライン画像結合ツール。複数の画像を縦・横に結合。コラージュや比較画像の作成に便利。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

@@ -85,7 +85,7 @@ function ProgressConverter() {
 
   return (
     <>
-      <SEO path="/other/progress" />
+      <SEO path="/other/progress" title="進捗変換" description="無料のオンライン進捗変換ツール。分数や小数をパーセントに変換。作業進捗の可視化に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="進捗変換" toolPath="/other/progress" shareTitle="進捗変換 | Rakit" />
 

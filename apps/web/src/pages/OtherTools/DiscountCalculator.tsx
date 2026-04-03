@@ -36,7 +36,7 @@ function DiscountCalculator() {
 
   return (
     <>
-      <SEO path="/other/discount" />
+      <SEO path="/other/discount" title="割引計算" description="無料のオンライン割引計算ツール。セール価格や割引率を素早く計算。買い物や価格設定に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="割引計算" toolPath="/other/discount" shareTitle="割引計算 | Rakit" />
 

@@ -91,7 +91,7 @@ function Calculator() {
 
   return (
     <>
-      <SEO path="/other/calculator" />
+      <SEO path="/other/calculator" title="計算機" description="無料のオンライン電卓。四則演算からパーセント計算まで対応。シンプルで使いやすい計算機。" />
       <div className="max-w-[320px] mx-auto py-8 px-4">
         <ToolHeader title="計算機" toolPath="/other/calculator" shareTitle="計算機 | Rakit" />
 

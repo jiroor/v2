@@ -103,7 +103,7 @@ function GifMaker() {
 
   return (
     <>
-      <SEO path="/other/gif-maker" />
+      <SEO path="/other/gif-maker" title="GIFアニメーション作成" description="無料のオンラインGIFアニメーション作成ツール。複数の画像からGIFを生成。SNS投稿やプレゼンに便利。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="GIFアニメーション作成" toolPath="/other/gif-maker" shareTitle="GIFアニメーション作成 | Rakit" />
 

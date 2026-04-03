@@ -77,7 +77,7 @@ function ColorPalette() {
 
   return (
     <>
-      <SEO path="/other/color-palette" />
+      <SEO path="/other/color-palette" title="カラーパレット生成" description="無料のオンラインカラーパレット生成ツール。テーマ別に配色を自動生成。デザインやブランディングに最適。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="カラーパレット生成" toolPath="/other/color-palette" shareTitle="カラーパレット生成 | Rakit" />
 

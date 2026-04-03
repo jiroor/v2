@@ -40,7 +40,7 @@ function RandomNumberGenerator() {
 
   return (
     <>
-      <SEO path="/other/random" />
+      <SEO path="/other/random" title="乱数生成" description="無料のオンライン乱数生成ツール。指定範囲でランダムな数字を生成。抽選やゲームに便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="乱数生成" toolPath="/other/random-num" shareTitle="乱数生成 | Rakit" />
 

@@ -130,7 +130,7 @@ function PasswordGenerator() {
 
   return (
     <>
-      <SEO path="/other/password" />
+      <SEO path="/other/password" title="パスワード生成" description="無料のオンラインパスワード生成ツール。安全なランダムパスワードを作成。文字数や文字種をカスタマイズ可能。" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
       <ToolHeader title="パスワード生成" toolPath="/other/password" shareTitle="パスワード生成 | Rakit" />
 

@@ -110,7 +110,7 @@ function ImageCropper() {
 
   return (
     <>
-      <SEO path="/other/image-crop" />
+      <SEO path="/other/image-crop" title="画像トリミング" description="無料のオンライン画像トリミングツール。画像を好きなサイズに切り抜き。SNS投稿やサムネイル作成に便利。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="画像トリミング" toolPath="/other/image-crop" shareTitle="画像トリミング | Rakit" />
 

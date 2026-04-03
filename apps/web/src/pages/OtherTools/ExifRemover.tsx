@@ -75,10 +75,9 @@ function ExifRemover() {
   return (
     <>
       <SEO
-        title="EXIF削除"
-
         path="/other/exif-remover"
-        category="UtilitiesApplication"
+        title="EXIF削除"
+        description="無料のオンラインEXIF削除ツール。画像の位置情報やメタデータを削除。プライバシー保護に最適。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

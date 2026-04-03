@@ -61,7 +61,7 @@ function AgeCalculator() {
 
   return (
     <>
-      <SEO path="/other/age" />
+      <SEO path="/other/age" title="年齢計算" description="無料のオンライン年齢計算ツール。生年月日から正確な年齢を計算。次の誕生日までの日数も表示。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="年齢計算" toolPath="/other/age" shareTitle="年齢計算 | Rakit" />
 

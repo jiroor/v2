@@ -75,7 +75,7 @@ function CronGenerator() {
 
   return (
     <>
-      <SEO path="/other/cron" />
+      <SEO path="/other/cron" title="Cron式生成" description="無料のオンラインCron式生成ツール。スケジュール設定を視覚的に作成。サーバー運用や自動化に最適。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="Cron式生成" toolPath="/other/cron" shareTitle="Cron式生成 | Rakit" />
 

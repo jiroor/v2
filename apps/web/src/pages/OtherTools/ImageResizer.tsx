@@ -108,7 +108,7 @@ function ImageResizer() {
 
   return (
     <>
-      <SEO path="/other/image-resize" />
+      <SEO path="/other/image-resize" title="画像リサイズ" description="無料のオンライン画像リサイズツール。画像のサイズを変更・縮小。SNSやWebサイト用の画像加工に便利。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="画像リサイズ" toolPath="/other/image-resize" shareTitle="画像リサイズ | Rakit" />
 

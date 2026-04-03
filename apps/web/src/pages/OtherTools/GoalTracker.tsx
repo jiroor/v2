@@ -70,7 +70,7 @@ function GoalTracker() {
 
   return (
     <>
-      <SEO path="/other/goal-tracker" />
+      <SEO path="/other/goal-tracker" title="目標達成トラッカー" description="無料のオンライン目標達成トラッカー。目標の進捗を可視化。モチベーション維持に最適。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="目標達成トラッカー" toolPath="/other/goal-tracker" shareTitle="目標達成トラッカー | Rakit" />
 

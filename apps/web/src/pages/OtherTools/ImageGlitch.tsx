@@ -114,10 +114,9 @@ function ImageGlitch() {
   return (
     <>
       <SEO
-        title="画像グリッチ"
-
         path="/other/image-glitch"
-        category="DesignApplication"
+        title="画像グリッチ効果"
+        description="無料のオンライン画像グリッチツール。画像にノイズや歪み効果を追加。アート作品やエフェクト加工に最適。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

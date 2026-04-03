@@ -100,7 +100,7 @@ function HabitTracker() {
 
   return (
     <>
-      <SEO path="/other/habit-tracker" />
+      <SEO path="/other/habit-tracker" title="習慣トラッカー" description="無料のオンライン習慣トラッカー。日々の習慣を記録・管理。継続力向上に便利。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="習慣トラッカー" toolPath="/other/habit-tracker" shareTitle="習慣トラッカー | Rakit" />
         <p className="text-center text-gray-500 text-sm mb-6">{getTodayString()}</p>

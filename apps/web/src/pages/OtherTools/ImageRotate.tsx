@@ -95,10 +95,9 @@ function ImageRotate() {
   return (
     <>
       <SEO
-        title="画像回転"
-
         path="/other/image-rotate"
-        category="DesignApplication"
+        title="画像回転"
+        description="無料のオンライン画像回転ツール。画像を90度・180度・270度に回転。写真の向き修正に便利。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

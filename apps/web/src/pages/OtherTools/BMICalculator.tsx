@@ -54,7 +54,7 @@ function BMICalculator() {
 
   return (
     <>
-      <SEO path="/other/bmi" />
+      <SEO path="/other/bmi" title="BMI計算" description="無料のオンラインBMI計算ツール。身長と体重からBMIを計算し、健康状態をチェック。肥満度の判定も可能。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="BMI計算" toolPath="/other/bmi" shareTitle="BMI計算 | Rakit" />
 

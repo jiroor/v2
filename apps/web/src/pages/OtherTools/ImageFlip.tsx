@@ -79,10 +79,9 @@ function ImageFlip() {
   return (
     <>
       <SEO
-        title="画像反転"
-
         path="/other/image-flip"
-        category="DesignApplication"
+        title="画像反転"
+        description="無料のオンライン画像反転ツール。画像を左右・上下に反転。鏡像作成や修正に便利。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

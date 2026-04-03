@@ -132,7 +132,7 @@ function ColorPicker() {
 
   return (
     <>
-      <SEO path="/other/colorpicker" />
+      <SEO path="/other/colorpicker" title="カラーピッカー" description="無料のオンラインカラーピッカー。直感的な操作で色を選択。HEXやRGB値をコピー可能。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
       <ToolHeader title="カラーピッカー" toolPath="/other/colorpicker" shareTitle="カラーピッカー | Rakit" />
 

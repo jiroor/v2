@@ -59,7 +59,7 @@ function CompoundInterestCalculator() {
 
   return (
     <>
-      <SEO path="/other/compound-interest" />
+      <SEO path="/other/compound-interest" title="複利計算" description="無料のオンライン複利計算ツール。投資の将来価値をシミュレーション。資産運用の計画に最適。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="複利計算" toolPath="/other/compound-interest" shareTitle="複利計算 | Rakit" />
 

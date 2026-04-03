@@ -112,7 +112,7 @@ function PercentageCalculator() {
 
   return (
     <>
-      <SEO path="/other/percentage" />
+      <SEO path="/other/percentage" title="パーセント計算" description="無料のオンラインパーセント計算ツール。割合、増減、比率を素早く計算。ビジネスや日常計算に便利。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="パーセント計算" toolPath="/other/percentage" shareTitle="パーセント計算 | Rakit" />
 

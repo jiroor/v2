@@ -89,10 +89,9 @@ function ImageCropCircle() {
   return (
     <>
       <SEO
-        title="画像トリミング（円形・正方形）"
-
         path="/other/image-crop-circle"
-        category="DesignApplication"
+        title="画像円形切り抜き"
+        description="無料のオンライン画像円形切り抜きツール。画像を丸く切り抜き。プロフィールアイコン作成に最適。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

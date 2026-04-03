@@ -97,11 +97,10 @@ function ImageNoise() {
 
   return (
     <>
-      <SEO 
-        title="画像ノイズ追加" 
-
-        path="/other/image-noise" 
-        category="ImageApplication"
+      <SEO
+        path="/other/image-noise"
+        title="画像ノイズ付与"
+        description="無料のオンライン画像ノイズツール。画像にノイズ効果を追加。レトロ風やフィルム風エフェクトに最適。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader 

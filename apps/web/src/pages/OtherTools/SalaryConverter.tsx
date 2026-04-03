@@ -44,7 +44,7 @@ function SalaryConverter() {
 
   return (
     <>
-      <SEO path="/other/salary" />
+      <SEO path="/other/salary" title="年収・月収・時給変換" description="無料のオンライン給与変換ツール。年収、月収、時給を相互変換。転職や給与交渉の参考に。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="年収・月収・時給変換" toolPath="/other/salary" shareTitle="年収・月収・時給変換 | Rakit" />
 

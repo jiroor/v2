@@ -64,7 +64,7 @@ function CalorieCalculator() {
 
   return (
     <>
-      <SEO path="/other/calorie" />
+      <SEO path="/other/calorie" title="カロリー計算" description="無料のオンラインカロリー計算ツール。基礎代謝と1日の消費カロリーを計算。ダイエットや健康管理に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="カロリー計算" toolPath="/other/calorie" shareTitle="カロリー計算 | Rakit" />
 

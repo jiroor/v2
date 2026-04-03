@@ -88,7 +88,7 @@ function CreditCardChecker() {
 
   return (
     <>
-      <SEO path="/other/card-check" />
+      <SEO path="/other/card-check" title="カード番号チェック" description="無料のオンラインカード番号チェックツール。クレジットカード番号の検証。入力ミスの確認に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="カード番号チェック" toolPath="/other/card-check" shareTitle="カード番号チェック | Rakit" />
 

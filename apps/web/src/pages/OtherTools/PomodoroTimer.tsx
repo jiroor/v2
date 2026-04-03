@@ -99,7 +99,7 @@ function PomodoroTimer() {
 
   return (
     <>
-      <SEO path="/other/pomodoro" />
+      <SEO path="/other/pomodoro" title="ポモドーロタイマー" description="無料のオンラインポモドーロタイマー。25分作業+5分休憩で集中力向上。作業効率化に最適。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="ポモドーロタイマー" toolPath="/timer/pomodoro" shareTitle="ポモドーロタイマー | Rakit" />
 

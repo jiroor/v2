@@ -59,7 +59,7 @@ function RobotsTxtGenerator() {
 
   return (
     <>
-      <SEO path="/other/robots-txt" />
+      <SEO path="/other/robots-txt" title="Robots.txt生成" description="無料のオンラインRobots.txt生成ツール。クローラーのアクセス制御を設定。SEO対策に最適。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="Robots.txt生成" toolPath="/other/robots-txt" shareTitle="Robots.txt生成 | Rakit" />
 

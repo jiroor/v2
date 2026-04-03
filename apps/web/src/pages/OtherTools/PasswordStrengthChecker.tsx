@@ -65,7 +65,7 @@ function PasswordStrengthChecker() {
 
   return (
     <>
-      <SEO path="/other/password-check" />
+      <SEO path="/other/password-check" title="パスワード強度チェック" description="無料のオンラインパスワード強度チェックツール。パスワードの安全性を診断。セキュリティ向上に最適。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="パスワード強度チェック" toolPath="/other/password-check" shareTitle="パスワード強度チェック | Rakit" />
 

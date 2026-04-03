@@ -73,10 +73,9 @@ function ImageBlur() {
   return (
     <>
       <SEO
-        title="画像ぼかし"
-
         path="/other/image-blur"
-        category="UtilitiesApplication"
+        title="画像ぼかし"
+        description="無料のオンライン画像ぼかしツール。画像の一部や全体をぼかし加工。プライバシー保護や演出に便利。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

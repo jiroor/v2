@@ -99,7 +99,7 @@ function DigitalTimer() {
 
   return (
     <>
-      <SEO path="/other/timer" />
+      <SEO path="/other/timer" title="デジタルタイマー" description="無料のオンラインデジタルタイマー。カウントダウン・ストップウォッチ機能。料理や運動の時間管理に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="デジタルタイマー" toolPath="/other/timer" shareTitle="デジタルタイマー | Rakit" />
 

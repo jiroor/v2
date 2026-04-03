@@ -58,7 +58,7 @@ function TimezoneConverter() {
 
   return (
     <>
-      <SEO path="/other/timezone" />
+      <SEO path="/other/timezone" title="時差計算" description="無料のオンライン時差計算ツール。世界の都市間の時差を即座に計算。国際会議や旅行の計画に便利。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="時差計算" toolPath="/other/timezone" shareTitle="時差計算 | Rakit" />
 

@@ -80,10 +80,9 @@ function ColorConverter() {
   return (
     <>
       <SEO
-        title="色変換"
-        description="HEX, RGB, HSL, CMYKの色コードを相互変換"
         path="/other/color-converter"
-        category="DesignApplication"
+        title="色変換"
+        description="無料のオンライン色変換ツール。HEX、RGB、HSLなど色形式を相互変換。Webデザインやグラフィック制作に便利。"
       />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader

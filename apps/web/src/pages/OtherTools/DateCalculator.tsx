@@ -63,7 +63,7 @@ function DateCalculator() {
 
   return (
     <>
-      <SEO path="/other/date-calc" />
+      <SEO path="/other/date-calc" title="日付計算" description="無料のオンライン日付計算ツール。日数の加減や期間の計算が可能。スケジュール管理に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="日付計算" toolPath="/other/date-calc" shareTitle="日付計算 | Rakit" />
 

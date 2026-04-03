@@ -77,7 +77,7 @@ function ImageToBase64() {
 
   return (
     <>
-      <SEO path="/other/image-base64" />
+      <SEO path="/other/image-base64" title="画像→Base64変換" description="無料のオンライン画像Base64変換ツール。画像をBase64エンコード。Web埋め込みやデータ転送に最適。" />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="画像→Base64変換" toolPath="/other/image-base64" shareTitle="画像→Base64変換 | Rakit" />
 

@@ -57,7 +57,7 @@ function TaxCalculator() {
 
   return (
     <>
-      <SEO path="/other/tax" />
+      <SEO path="/other/tax" title="消費税計算" description="無料のオンライン消費税計算ツール。税込・税抜価格を素早く計算。日本の消費税率に対応。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="消費税計算" toolPath="/other/tax" shareTitle="消費税計算 | Rakit" />
 

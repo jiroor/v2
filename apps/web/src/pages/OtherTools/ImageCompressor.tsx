@@ -98,7 +98,7 @@ function ImageCompressor() {
 
   return (
     <>
-      <SEO path="/other/image-compress" />
+      <SEO path="/other/image-compress" title="画像圧縮" description="無料のオンライン画像圧縮ツール。画質を保ちながらファイルサイズを縮小。Webサイトの高速化に最適。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="画像圧縮" toolPath="/other/image-compress" shareTitle="画像圧縮 | Rakit" />
 

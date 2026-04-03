@@ -96,7 +96,7 @@ function CurrencyConverter() {
 
   return (
     <>
-      <SEO path="/other/currency" />
+      <SEO path="/other/currency" title="為替計算" description="無料のオンライン為替計算ツール。主要通貨のリアルタイム換算。海外旅行やECサイトで便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="為替計算" toolPath="/other/currency" shareTitle="為替計算 | Rakit" />
 

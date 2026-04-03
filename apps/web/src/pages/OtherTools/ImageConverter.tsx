@@ -97,7 +97,7 @@ function ImageConverter() {
 
   return (
     <>
-      <SEO path="/other/image-convert" />
+      <SEO path="/other/image-convert" title="画像形式変換" description="無料のオンライン画像形式変換ツール。PNG、JPEG、WebPなど形式を相互変換。ブログやSNS投稿に便利。" />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <ToolHeader title="画像形式変換" toolPath="/other/image-convert" shareTitle="画像形式変換 | Rakit" />
 

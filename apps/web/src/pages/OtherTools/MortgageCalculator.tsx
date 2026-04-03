@@ -52,7 +52,7 @@ function MortgageCalculator() {
 
   return (
     <>
-      <SEO path="/other/mortgage" />
+      <SEO path="/other/mortgage" title="住宅ローン計算" description="無料のオンライン住宅ローン計算ツール。月々の返済額と総支払額をシミュレーション。住宅購入の計画に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="住宅ローン計算" toolPath="/other/mortgage" shareTitle="住宅ローン計算 | Rakit" />
 

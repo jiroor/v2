@@ -121,10 +121,9 @@ function Watermark() {
   return (
     <>
       <SEO
-        title="透かし追加"
-
         path="/other/watermark"
-        category="DesignApplication"
+        title="透かし入れ"
+        description="無料のオンライン透かし入れツール。画像にテキストやロゴの透かしを追加。著作権保護やブランディングに最適。"
       />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader

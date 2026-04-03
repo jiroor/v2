@@ -56,7 +56,7 @@ function IPAddressTool() {
 
   return (
     <>
-      <SEO path="/other/ip-address" />
+      <SEO path="/other/ip-address" title="IPアドレス確認" description="無料のオンラインIPアドレス確認ツール。自分のグローバルIPを即座に表示。ネットワーク設定に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="IPアドレス確認" toolPath="/other/ip-address" shareTitle="IPアドレス確認 | Rakit" />
 

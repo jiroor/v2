@@ -71,7 +71,7 @@ function QRCodeGenerator() {
 
   return (
     <>
-      <SEO path="/other/qrcode" />
+      <SEO path="/other/qrcode" title="QRコード生成" description="無料のオンラインQRコード生成ツール。URLやテキストをQRコードに変換。サイズや色をカスタマイズ可能。" />
       <div className="max-w-[600px] mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl font-semibold">QRコード生成</h2>

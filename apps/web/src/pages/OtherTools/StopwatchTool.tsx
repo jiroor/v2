@@ -55,7 +55,7 @@ function StopwatchTool() {
 
   return (
     <>
-      <SEO path="/timer/stopwatch-tool" />
+      <SEO path="/timer/stopwatch-tool" title="ストップウォッチ" description="無料のオンラインストップウォッチ。高精度の時間計測が可能。スポーツや実験の計測に便利。" />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="ストップウォッチ" toolPath="/timer/stopwatch-tool" shareTitle="ストップウォッチ | Rakit" />
 

@@ -119,7 +119,7 @@ function UnitConverter() {
 
   return (
     <>
-      <SEO path="/other/unit" />
+      <SEO path="/other/unit" title="単位変換" description="無料のオンライン単位変換ツール。長さ、重さ、温度など各種単位を相互変換。国際単位の換算に便利。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="単位変換" toolPath="/other/unit" shareTitle="単位変換 | Rakit" />
 

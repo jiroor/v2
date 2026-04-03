@@ -55,7 +55,7 @@ ${ogImage ? `<meta property="twitter:image" content="${ogImage}">` : ''}`
 
   return (
     <>
-      <SEO path="/other/meta-tag" />
+      <SEO path="/other/meta-tag" title="メタタグ生成" description="無料のオンラインメタタグ生成ツール。SEO用のメタタグを簡単作成。Webサイトの最適化に便利。" />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="メタタグ生成" toolPath="/other/meta-tag" shareTitle="メタタグ生成 | Rakit" />
 
