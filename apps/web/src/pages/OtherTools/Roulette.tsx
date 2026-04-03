@@ -17,6 +17,7 @@ import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortc
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 function Roulette() {
   useToolUsageTracking('/other/roulette', 'ルーレット')
@@ -341,6 +342,9 @@ function Roulette() {
           </div>
         </div>
       </div>
+
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/other/roulette" />
       </div>
     </>
   )

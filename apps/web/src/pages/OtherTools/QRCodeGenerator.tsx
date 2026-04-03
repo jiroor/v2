@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ShareButton } from '@/components/Share/ShareButton'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type QRSize = 128 | 256 | 512
 
@@ -182,6 +183,9 @@ function QRCodeGenerator() {
           </div>
         </div>
       </div>
+
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/other/qrcode" />
       </div>
     </>
   )
