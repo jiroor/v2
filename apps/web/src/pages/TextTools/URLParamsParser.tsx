@@ -159,6 +159,40 @@ function URLParamsParser() {
             <li>• マーケティングURLの解析やデバッグに便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            URLパラメータ解析ツールは、URLのクエリパラメータを抽出・解析する無料のオンラインツールです。マーケティングURLの確認やAPI開発のデバッグなどに役立ちます。URLエンコードされた値も自動でデコード表示します。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• クエリパラメータを自動抽出</li>
+            <li>• URLデコード済みの値を表示</li>
+            <li>• 表形式で見やすく表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのようなURLに対応していますか？</p>
+              <p>A. http/httpsで始まるURLのクエリパラメータ（?以降）を解析します。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 日本語のパラメータも解析できますか？</p>
+              <p>A. はい、URLエンコードされた日本語もデコードして表示します。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
