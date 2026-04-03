@@ -160,6 +160,40 @@ function ColorPalette() {
             <li>• Webデザイン、グラフィック制作に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            カラーパレット生成ツールは、ランダムに配色を生成する無料のオンラインツールです。Webデザインやグラフィック制作のインスピレーションに役立ちます。色を固定して部分的に再生成することも可能です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• ランダム配色を生成</li>
+            <li>• 色を固定して部分再生成</li>
+            <li>• 最大10色まで追加</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 配色の法則はありますか？</p>
+              <p>A. ランダムに生成されます。配色理論に基づいた調和は保証されません。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 色を固定するとどうなりますか？</p>
+              <p>A. 固定した色は「新しいパレット」を押しても変更されません。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

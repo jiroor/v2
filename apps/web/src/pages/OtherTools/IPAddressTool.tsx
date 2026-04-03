@@ -144,6 +144,40 @@ function IPAddressTool() {
             <li>• VPNの接続確認にも便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            IPアドレス確認ツールは、あなたのパブリックIPアドレスとその詳細情報を表示する無料のオンラインツールです。VPNの接続確認や、ネットワークトラブルの解決に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• IPアドレスを自動取得</li>
+            <li>• 位置情報・ISP情報を表示</li>
+            <li>• IPv4とIPv6に対応</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 位置情報は正確ですか？</p>
+              <p>A. おおよその位置です。IPアドレスから推定されるため、正確な住所ではありません。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. VPNを使用している場合は？</p>
+              <p>A. VPNサーバーのIPアドレスが表示されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

@@ -156,6 +156,40 @@ function ColorConverter() {
           </div>
 
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
+
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              色変換ツールは、HEX、RGB、HSL、CMYKの色コードを相互変換する無料のオンラインツールです。Webデザイン、印刷、グラフィック制作で色コードの変換に役立ちます。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• HEX、RGB、HSL、CMYKに対応</li>
+              <li>• リアルタイムで変換</li>
+              <li>• 各形式をクリックでコピー</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. CMYKは何に使いますか？</p>
+                <p>A. 印刷用途の色指定に使われます。WebではRGBやHEXを使用します。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. HSLのメリットは？</p>
+                <p>A. 色相・彩度・明度を個別に調整できるため、色の微調整に便利です。</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
