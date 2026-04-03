@@ -205,6 +205,40 @@ function UnixTimestamp() {
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Unix時間変換ツールは、Unixタイムスタンプと日時を相互変換できる無料のオンラインツールです。現在のUnix時間の表示、タイムスタンプから日時への変換、日時からタイムスタンプへの変換をワンクリックで行えます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 秒・ミリ秒を自動判定</li>
+            <li>• 複数タイムゾーンに対応</li>
+            <li>• 現在のUnix時間をリアルタイム表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. Unix時間とは何ですか？</p>
+              <p>A. 1970年1月1日00:00:00 UTCからの経過秒数です。システムやAPIで広く使われています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 秒とミリ秒の違いは？</p>
+              <p>A. ツールが自動判定します。10桁なら秒、13桁ならミリ秒として処理されます。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
