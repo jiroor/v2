@@ -49,7 +49,11 @@ const otherTools = [
 export default function OtherToolsList() {
   return (
     <>
-      <SEO path="/other" />
+      <SEO
+        path="/other"
+        title="その他ツール一覧"
+        description="無料のオンラインユーティリティツール集。QRコード生成、パスワード生成、画像変換、計算機など、様々な便利ツールを提供。"
+      />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
         <h1 className="text-3xl font-bold mb-2">🔧 その他ツール</h1>
         <p className="text-gray-600 mb-8">

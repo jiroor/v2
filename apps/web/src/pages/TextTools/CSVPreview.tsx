@@ -73,7 +73,11 @@ function CSVPreview() {
 
   return (
     <>
-      <SEO path="/text/csv-preview" />
+      <SEO
+        path="/text/csv-preview"
+        title="CSVプレビュー"
+        description="無料のオンラインCSVプレビューツール。CSVデータを表形式で表示。カンマ区切り、タブ区切り、セミコロン区切りに対応。"
+      />
       <div className="max-w-[1000px] mx-auto py-8 px-4">
         <ToolHeader title="CSVプレビュー" toolPath="/text/csv-preview" shareTitle="CSVプレビュー | Rakit" />
 

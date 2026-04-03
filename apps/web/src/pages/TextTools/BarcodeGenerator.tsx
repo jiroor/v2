@@ -85,7 +85,11 @@ function BarcodeGenerator() {
 
   return (
     <>
-      <SEO path="/text/barcode" />
+      <SEO
+        path="/text/barcode"
+        title="バーコード生成"
+        description="無料のオンラインバーコード生成ツール。CODE 128、EAN-13、CODE 39形式に対応。商品管理や在庫管理、ラベル作成に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="バーコード生成" toolPath="/text/barcode" shareTitle="バーコード生成 | Rakit" />
 

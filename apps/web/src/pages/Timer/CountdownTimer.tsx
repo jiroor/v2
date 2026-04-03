@@ -108,7 +108,11 @@ function CountdownTimer() {
   return (
     <>
       <ToolHeader toolPath="/timer/countdown" title="カウントダウンタイマー" />
-      <SEO path="/timer/countdown" />
+      <SEO
+        path="/timer/countdown"
+        title="カウントダウンタイマー"
+        description="無料のオンラインカウントダウンタイマー。時間・分・秒を自由に設定でき、料理、運動、勉強など様々な場面で活用できます。キーボードショートカット対応。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">カウントダウンタイマー</h2>
 

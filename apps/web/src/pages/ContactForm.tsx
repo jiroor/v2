@@ -23,7 +23,11 @@ function ContactForm() {
   if (submitted) {
     return (
       <>
-        <SEO path="/contact" />
+        <SEO
+          path="/contact"
+          title="お問い合わせ"
+          description="Rakitへのお問い合わせ・ご要望・不具合報告はこちらから。"
+        />
         <div className="max-w-[500px] mx-auto py-8 px-4 text-center">
           <h2 className="text-2xl font-semibold mb-6">お問い合わせ</h2>
           <div className="bg-green-50 border border-green-200 rounded-md p-6">
@@ -44,7 +48,11 @@ function ContactForm() {
 
   return (
     <>
-      <SEO path="/contact" />
+      <SEO
+        path="/contact"
+        title="お問い合わせ"
+        description="Rakitへのお問い合わせ・ご要望・不具合報告はこちらから。"
+      />
       <div className="max-w-[500px] mx-auto py-8 px-4">
         <h2 className="text-2xl font-semibold mb-6 text-center">お問い合わせ</h2>
 

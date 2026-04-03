@@ -121,7 +121,11 @@ function EmptyLineRemover() {
 
   return (
     <>
-      <SEO path="/text/empty-lines" />
+      <SEO
+        path="/text/empty-lines"
+        title="空行削除"
+        description="無料のオンライン空行削除ツール。テキスト内の余分な空行を削除。コードやテキストの整形、ログファイルの処理に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="空行削除" toolPath="/text/empty-lines" shareTitle="空行削除 | Rakit" />
 

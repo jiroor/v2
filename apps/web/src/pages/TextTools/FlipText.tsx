@@ -50,7 +50,11 @@ function FlipText() {
 
   return (
     <>
-      <SEO path="/text/flip" />
+      <SEO
+        path="/text/flip"
+        title="フリップテキスト"
+        description="無料のオンラインフリップテキストツール。テキストを上下逆さまに変換。SNSやメッセージでユニークな表現に。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="フリップテキスト" toolPath="/text/flip" shareTitle="フリップテキスト | Rakit" />
 

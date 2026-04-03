@@ -92,7 +92,11 @@ function HtmlToMarkdown() {
 
   return (
     <>
-      <SEO path="/text/html-to-markdown" />
+      <SEO
+        path="/text/html-to-markdown"
+        title="HTML to Markdown変換"
+        description="無料のオンラインHTML to Markdown変換ツール。HTMLコードをMarkdown形式に変換。ブログ移行やドキュメント変換に便利。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="HTML to Markdown" toolPath="/text/html-to-markdown" shareTitle="HTML to Markdown | Rakit" />
 

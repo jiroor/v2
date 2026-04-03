@@ -96,7 +96,11 @@ function LineNumberAdder() {
 
   return (
     <>
-      <SEO path="/text/line-number" />
+      <SEO
+        path="/text/line-number"
+        title="行番号追加"
+        description="無料のオンライン行番号追加ツール。テキストの各行に行番号を付与。4種類のフォーマットに対応。コードやドキュメントの管理に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="行番号追加" toolPath="/text/line-number" shareTitle="行番号追加 | Rakit" />
 

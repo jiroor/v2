@@ -75,7 +75,11 @@ function DuplicateCounter() {
 
   return (
     <>
-      <SEO path="/text/duplicate-count" />
+      <SEO
+        path="/text/duplicate-count"
+        title="重複行カウンター"
+        description="無料のオンライン重複行カウンター。テキスト内の重複する行を検出し、出現回数をカウント。データ分析やログ解析に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="重複行カウンター" toolPath="/text/duplicate-count" shareTitle="重複行カウンター | Rakit" />
 

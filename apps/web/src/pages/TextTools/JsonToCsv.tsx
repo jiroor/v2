@@ -99,7 +99,11 @@ function JsonToCsv() {
 
   return (
     <>
-      <SEO path="/text/json-to-csv" />
+      <SEO
+        path="/text/json-to-csv"
+        title="JSON to CSV変換"
+        description="無料のオンラインJSON to CSV変換ツール。JSONデータをCSV形式に変換。APIレスポンスやデータベースのエクスポートデータに対応。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="JSON to CSV変換" toolPath="/text/json-to-csv" shareTitle="JSON to CSV変換 | Rakit" />
 

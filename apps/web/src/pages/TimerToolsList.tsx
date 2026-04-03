@@ -17,7 +17,11 @@ const timerTools = [
 export default function TimerToolsList() {
   return (
     <>
-      <SEO path="/timer" />
+      <SEO
+        path="/timer"
+        title="タイマーツール一覧"
+        description="無料のオンラインタイマーツール集。カウントダウン、ストップウォッチ、ポモドーロタイマー、現在日時表示など、時間管理に便利なツールを提供。"
+      />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
         <h1 className="text-3xl font-bold mb-2">⏱️ タイマー</h1>
         <p className="text-gray-600 mb-8">

@@ -53,7 +53,11 @@ const textTools = [
 export default function TextToolsList() {
   return (
     <>
-      <SEO path="/text" />
+      <SEO
+        path="/text"
+        title="テキストツール一覧"
+        description="無料のオンラインテキスト処理ツール集。文字数カウント、Base64変換、JSON整形、ハッシュ生成など、テキスト処理に便利な50以上のツールを提供。"
+      />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
         <h1 className="text-3xl font-bold mb-2">📝 テキストツール</h1>
         <p className="text-gray-600 mb-8">

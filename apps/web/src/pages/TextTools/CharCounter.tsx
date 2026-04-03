@@ -34,7 +34,11 @@ function CharCounter() {
 
   return (
     <>
-      <SEO path="/text/counter" />
+      <SEO
+        path="/text/counter"
+        title="文字数カウンター"
+        description="無料のオンライン文字カウンター。文字数、単語数、行数をリアルタイムでカウント。原稿作成やSNS投稿の文字数確認に。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl font-semibold">文字数カウンター</h2>

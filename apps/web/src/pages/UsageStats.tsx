@@ -26,7 +26,11 @@ function UsageStats() {
 
   return (
     <>
-      <SEO path="/stats" />
+      <SEO
+        path="/stats"
+        title="利用統計"
+        description="Rakitのツール利用統計を確認できます。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <h2 className="text-2xl font-semibold mb-6 text-center">利用統計</h2>
 

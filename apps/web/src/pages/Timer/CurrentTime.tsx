@@ -63,7 +63,11 @@ export default function CurrentTime() {
   return (
     <>
       <ToolHeader toolPath="/timer/current" title="現在日時" />
-      <SEO path="/timer/current" />
+      <SEO
+        path="/timer/current"
+        title="現在日時・世界時計"
+        description="現在の日時をリアルタイムで表示する無料オンラインツール。タイムゾーン切り替え、秒数表示、日付形式のカスタマイズに対応。世界各国の現地時間を確認できます。"
+      />
       <div className="max-w-[800px] mx-auto py-6 px-6 md:px-4">
       <h1 className="text-2xl font-bold mb-8 text-center">現在日時</h1>
 

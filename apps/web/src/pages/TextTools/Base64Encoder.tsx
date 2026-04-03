@@ -91,7 +91,11 @@ function Base64Encoder() {
 
   return (
     <>
-      <SEO path="/text/base64" />
+      <SEO
+        path="/text/base64"
+        title="Base64エンコード/デコード"
+        description="無料のオンラインBase64エンコーダー・デコーダー。テキストをBase64形式に変換・復元できます。API開発やデータ処理に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="Base64エンコード/デコード" toolPath="/text/base64" shareTitle="Base64エンコード/デコード | Rakit" />
 

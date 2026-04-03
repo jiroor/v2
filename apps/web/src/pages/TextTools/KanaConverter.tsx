@@ -135,7 +135,11 @@ function KanaConverter() {
 
   return (
     <>
-      <SEO path="/text/kana" />
+      <SEO
+        path="/text/kana"
+        title="ひらがなカタカナ変換"
+        description="無料のオンラインひらがなカタカナ変換ツール。ひらがなをカタカナに、カタカナをひらがなに変換。日本語テキストの処理に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="ひらがなカタカナ変換" toolPath="/text/kana" shareTitle="ひらがなカタカナ変換 | Rakit" />
 

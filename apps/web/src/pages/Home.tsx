@@ -166,7 +166,11 @@ function Home() {
 
   return (
     <>
-      <SEO path="/" />
+      <SEO
+        path="/"
+        title="Rakit - 便利なオンラインツール集"
+        description="Rakitは、日常的な作業を効率化する無料オンラインツール集。テキスト処理、タイマー、計算機、画像変換など100以上の便利なツールをブラウザ上で即座にご利用いただけます。"
+      />
       <div className="py-8 px-6 max-w-[1400px] mx-auto">
       {/* サイトについて */}
       <div className="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-6 border border-amber-200">

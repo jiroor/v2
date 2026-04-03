@@ -91,7 +91,11 @@ function CharTypeCounter() {
 
   return (
     <>
-      <SEO path="/text/char-type" />
+      <SEO
+        path="/text/char-type"
+        title="文字種カウンター"
+        description="無料のオンライン文字種カウンター。ひらがな、カタカナ、漢字、英字、数字を自動分類してカウント。視覚的なグラフで表示。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="文字種カウンター" toolPath="/text/char-type" shareTitle="文字種カウンター | Rakit" />
 

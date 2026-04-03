@@ -135,7 +135,11 @@ function HashGenerator() {
 
   return (
     <>
-      <SEO path="/text/hash" />
+      <SEO
+        path="/text/hash"
+        title="ハッシュ生成"
+        description="無料のオンラインハッシュ生成ツール。MD5、SHA-1、SHA-256、SHA-512のハッシュ値を生成。パスワードのハッシュ化や整合性確認に。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="ハッシュ生成" toolPath="/text/hash" shareTitle="ハッシュ生成 | Rakit" />
 

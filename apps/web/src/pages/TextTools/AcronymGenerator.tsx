@@ -45,7 +45,11 @@ function AcronymGenerator() {
 
   return (
     <>
-      <SEO path="/text/acronym" />
+      <SEO
+        path="/text/acronym"
+        title="略語ジェネレーター"
+        description="無料のオンライン略語生成ツール。フレーズから頭文字を抽出して略語を作成。プロジェクト名やチーム名のネーミングに便利。"
+      />
       <div className="max-w-[400px] mx-auto py-8 px-4">
         <ToolHeader title="略語ジェネレーター" toolPath="/text/acronym" shareTitle="略語ジェネレーター | Rakit" />
 

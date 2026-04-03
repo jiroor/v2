@@ -4,7 +4,11 @@ import { SEO } from '@/components/SEO/SEO'
 function PrivacyPolicy() {
   return (
     <>
-      <SEO path="/privacy" />
+      <SEO
+        path="/privacy"
+        title="プライバシーポリシー"
+        description="Rakitのプライバシーポリシー。個人情報の取り扱いについて説明しています。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold mb-6">プライバシーポリシー</h1>
         

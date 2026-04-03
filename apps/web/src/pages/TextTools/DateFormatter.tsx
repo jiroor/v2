@@ -118,7 +118,11 @@ function DateFormatter() {
 
   return (
     <>
-      <SEO path="/text/date-format" />
+      <SEO
+        path="/text/date-format"
+        title="日付フォーマット変換"
+        description="無料のオンライン日付フォーマット変換ツール。様々な形式の日付を一括で複数のフォーマットに変換。日付入力やISO形式に対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="日付フォーマット変換" toolPath="/text/date-format" shareTitle="日付フォーマット変換 | Rakit" />
 

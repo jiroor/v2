@@ -103,7 +103,11 @@ function JSONFormatter() {
 
   return (
     <>
-      <SEO path="/text/json" />
+      <SEO
+        path="/text/json"
+        title="JSON整形・フォーマット"
+        description="無料のオンラインJSON整形ツール。JSONデータを読みやすくフォーマット、または圧縮（Minify）。API開発やデータ分析に便利。"
+      />
       <div className="max-w-[1000px] mx-auto py-8 px-4">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-semibold">JSON整形・フォーマット</h2>

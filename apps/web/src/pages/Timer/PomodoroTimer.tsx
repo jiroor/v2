@@ -45,7 +45,11 @@ function PomodoroTimer() {
   return (
     <>
       <ToolHeader toolPath="/timer/pomodoro" title="ポモドーロタイマー" />
-      <SEO path="/timer/pomodoro" />
+      <SEO
+        path="/timer/pomodoro"
+        title="ポモドーロタイマー"
+        description="無料のオンラインポモドーロタイマー。25分の作業と5分の休憩を繰り返すポモドーロ・テクニックで集中力を向上。作業時間と休憩時間をカスタマイズ可能。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4 text-center">
       <h2 className="text-2xl font-semibold mb-8">ポモドーロタイマー</h2>
 

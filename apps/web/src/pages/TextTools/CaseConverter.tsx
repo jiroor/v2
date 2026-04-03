@@ -92,7 +92,11 @@ function CaseConverter() {
 
   return (
     <>
-      <SEO path="/text/case" />
+      <SEO
+        path="/text/case"
+        title="ケース変換"
+        description="無料のオンラインケース変換ツール。大文字・小文字、キャメルケース、スネークケース、ケバブケースなど一括変換。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="ケース変換" toolPath="/text/case" shareTitle="ケース変換 | Rakit" />
 

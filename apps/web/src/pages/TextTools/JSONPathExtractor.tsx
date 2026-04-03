@@ -94,7 +94,11 @@ function JSONPathExtractor() {
 
   return (
     <>
-      <SEO path="/text/json-path" />
+      <SEO
+        path="/text/json-path"
+        title="JSONパス抽出"
+        description="無料のオンラインJSONパス抽出ツール。JSONデータから特定のパスを指定して値を抽出。APIレスポンスの解析やデータ分析に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="JSONパス抽出" toolPath="/text/json-path" shareTitle="JSONパス抽出 | Rakit" />
 

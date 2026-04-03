@@ -57,7 +57,11 @@ function Stopwatch() {
   return (
     <>
       <ToolHeader toolPath="/timer/stopwatch" title="ストップウォッチ" />
-      <SEO path="/timer/stopwatch" />
+      <SEO
+        path="/timer/stopwatch"
+        title="ストップウォッチ"
+        description="無料のオンラインストップウォッチ。ラップ機能付きで時間を正確に計測。キーボードショートカット対応、広告なしで快適にご利用いただけます。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
       <h2 className="text-2xl font-semibold mb-8 text-center">ストップウォッチ</h2>
 

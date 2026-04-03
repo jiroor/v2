@@ -106,7 +106,11 @@ function DuplicateRemover() {
 
   return (
     <>
-      <SEO path="/text/duplicate" />
+      <SEO
+        path="/text/duplicate"
+        title="重複削除"
+        description="無料のオンライン重複削除ツール。テキスト内の重複する行・単語・文字を削除。データクリーニングやリスト整理に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="重複削除" toolPath="/text/duplicate" shareTitle="重複削除 | Rakit" />
 

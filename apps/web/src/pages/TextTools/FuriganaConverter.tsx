@@ -105,7 +105,11 @@ function FuriganaConverter() {
 
   return (
     <>
-      <SEO path="/text/furigana" />
+      <SEO
+        path="/text/furigana"
+        title="ふりがな変換"
+        description="無料のオンラインふりがな変換ツール。漢字にふりがなを自動追加。HTMLのrubyタグ、括弧形式、Markdown形式で出力。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="ふりがな変換" toolPath="/text/furigana" shareTitle="ふりがな変換 | Rakit" />
 
