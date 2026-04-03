@@ -103,7 +103,11 @@ function NumberConverter() {
 
   return (
     <>
-      <SEO path="/text/number" />
+      <SEO
+        path="/text/number"
+        title="数字変換（基数変換）"
+        description="無料のオンライン数字変換ツール。10進数、2進数、8進数、16進数を相互変換。プログラミングやデジタル回路の学習に便利。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="数字変換（基数変換）" toolPath="/text/number" shareTitle="数字変換 | Rakit" />
 

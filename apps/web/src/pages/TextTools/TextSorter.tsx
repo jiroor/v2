@@ -98,7 +98,11 @@ function TextSorter() {
 
   return (
     <>
-      <SEO path="/text/sort" />
+      <SEO
+        path="/text/sort"
+        title="テキストソート"
+        description="無料のオンラインテキストソートツール。テキストの行を様々な条件で並び替え。昇順・降順・長さ順・ランダムなど6種類に対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストソート" toolPath="/text/sort" shareTitle="テキストソート | Rakit" />
 

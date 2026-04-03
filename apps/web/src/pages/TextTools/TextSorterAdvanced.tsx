@@ -85,7 +85,11 @@ function TextSorterAdvanced() {
 
   return (
     <>
-      <SEO path="/text/sort-adv" />
+      <SEO
+        path="/text/sort-adv"
+        title="テキストソート（詳細）"
+        description="無料のオンラインテキストソートツール。複数行のテキストを様々な条件で並び替え。辞書順、文字数順、自然順、ランダムに対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストソート（詳細）" toolPath="/text/sort-adv" shareTitle="テキストソート（詳細） | Rakit" />
 

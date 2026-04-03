@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 type DateFormat = 'kanji' | 'slash'
@@ -248,6 +249,9 @@ export default function CurrentTime() {
           </div>
         </div>
       </div>
+
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/timer/current" />
 
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">

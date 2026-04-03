@@ -74,7 +74,11 @@ function PasswordGeneratorAdvanced() {
 
   return (
     <>
-      <SEO path="/text/password-adv" />
+      <SEO
+        path="/text/password-adv"
+        title="パスワード生成（詳細）"
+        description="無料のオンラインパスワード生成ツール。安全で強力なパスワードを生成。文字数や文字種を詳細にカスタマイズ可能。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="パスワード生成（詳細）" toolPath="/text/password-adv" shareTitle="パスワード生成（詳細） | Rakit" />
 

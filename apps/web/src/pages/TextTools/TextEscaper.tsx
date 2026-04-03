@@ -86,7 +86,11 @@ function TextEscaper() {
 
   return (
     <>
-      <SEO path="/text/escape" />
+      <SEO
+        path="/text/escape"
+        title="テキストエスケープ"
+        description="無料のオンラインテキストエスケープツール。テキストをHTML、URL、JSON、正規表現、SQL、Base64の6種類にエスケープ。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストエスケープ" toolPath="/text/escape" shareTitle="テキストエスケープ | Rakit" />
 

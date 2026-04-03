@@ -83,7 +83,11 @@ function RegexTester() {
 
   return (
     <>
-      <SEO path="/text/regex" />
+      <SEO
+        path="/text/regex"
+        title="正規表現テスト"
+        description="無料のオンライン正規表現テスター。正規表現パターンをリアルタイムでテスト。マッチ結果のハイライト表示やフラグの切り替えに対応。"
+      />
       <div className="max-w-[900px] mx-auto py-8 px-4">
         <ToolHeader title="正規表現テスト" toolPath="/text/regex" shareTitle="正規表現テスト | Rakit" />
 

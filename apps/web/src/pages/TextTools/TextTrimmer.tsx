@@ -86,7 +86,11 @@ function TextTrimmer() {
 
   return (
     <>
-      <SEO path="/text/trim" />
+      <SEO
+        path="/text/trim"
+        title="テキストトリム"
+        description="無料のオンラインテキストトリムツール。テキストの前後にある余分な空白や改行を削除。4種類のトリムモードを搭載。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストトリム" toolPath="/text/trim" shareTitle="テキストトリム | Rakit" />
 

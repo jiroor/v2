@@ -73,7 +73,11 @@ function URLParamsParser() {
 
   return (
     <>
-      <SEO path="/text/url-params" />
+      <SEO
+        path="/text/url-params"
+        title="URLパラメータ解析"
+        description="無料のオンラインURLパラメータ解析ツール。URLのクエリパラメータを抽出・解析。マーケティングURLの確認やAPI開発に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="URLパラメータ解析" toolPath="/text/url-params" shareTitle="URLパラメータ解析 | Rakit" />
 

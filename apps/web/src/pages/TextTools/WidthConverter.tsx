@@ -164,7 +164,11 @@ function WidthConverter() {
 
   return (
     <>
-      <SEO path="/text/width" />
+      <SEO
+        path="/text/width"
+        title="全角半角変換"
+        description="無料のオンライン全角半角変換ツール。全角文字と半角文字を相互変換。英数字とカタカナの変換に対応。フォーム入力やシステム連携に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="全角半角変換" toolPath="/text/width" shareTitle="全角半角変換 | Rakit" />
 

@@ -100,7 +100,7 @@ function CodeFormatter() {
     <>
       <SEO
         title="コードフォーマッタ"
-        
+        description="無料のオンラインコードフォーマッタ。JSON、HTML、CSS、JavaScriptのコードを整形。圧縮されたコードを見やすい形式に変換。"
         path="/text/code-formatter"
         category="DeveloperApplication"
       />

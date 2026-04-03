@@ -93,7 +93,11 @@ function UnixTimestamp() {
 
   return (
     <>
-      <SEO path="/text/unix" />
+      <SEO
+        path="/text/unix"
+        title="Unix時間変換"
+        description="無料のオンラインUnix時間変換ツール。Unixタイムスタンプと日時を相互変換。現在のUnix時間の表示やタイムスタンプ変換に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="Unix時間変換" toolPath="/text/unix" shareTitle="Unix時間変換 | Rakit" />
 

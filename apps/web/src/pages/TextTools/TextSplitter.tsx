@@ -83,7 +83,11 @@ function TextSplitter() {
 
   return (
     <>
-      <SEO path="/text/split" />
+      <SEO
+        path="/text/split"
+        title="テキスト分割"
+        description="無料のオンラインテキスト分割ツール。テキストを指定した区切り文字で分割し、1行1項目の形式に変換。CSVデータの展開に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト分割" toolPath="/text/split" shareTitle="テキスト分割 | Rakit" />
 

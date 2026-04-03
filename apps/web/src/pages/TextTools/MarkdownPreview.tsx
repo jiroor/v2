@@ -107,7 +107,11 @@ console.log(greeting);
 
   return (
     <>
-      <SEO path="/text/markdown" />
+      <SEO
+        path="/text/markdown"
+        title="Markdownプレビュー"
+        description="無料のオンラインMarkdownプレビューツール。MarkdownテキストをリアルタイムでHTMLに変換してプレビュー。ブログ記事やドキュメント作成に便利。"
+      />
       <div className="max-w-[1000px] mx-auto py-8 px-4">
         <ToolHeader title="Markdownプレビュー" toolPath="/text/markdown" shareTitle="Markdownプレビュー | Rakit" />
 

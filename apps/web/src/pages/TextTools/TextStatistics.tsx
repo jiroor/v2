@@ -64,7 +64,11 @@ function TextStatistics() {
 
   return (
     <>
-      <SEO path="/text/statistics" />
+      <SEO
+        path="/text/statistics"
+        title="テキスト統計"
+        description="無料のオンラインテキスト統計ツール。文字数、単語数、行数、読書時間、バイト数などを一括で計算。ブログ記事やドキュメントの管理に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト統計" toolPath="/text/statistics" shareTitle="テキスト統計 | Rakit" />
 

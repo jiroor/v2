@@ -93,7 +93,11 @@ function TextIndentFormatter() {
 
   return (
     <>
-      <SEO path="/text/indent" />
+      <SEO
+        path="/text/indent"
+        title="テキストインデント整形"
+        description="無料のオンラインテキストインデント整形ツール。テキストのインデントを調整。スペースの追加・削除、タブとスペースの相互変換に対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストインデント整形" toolPath="/text/indent" shareTitle="テキストインデント整形 | Rakit" />
 

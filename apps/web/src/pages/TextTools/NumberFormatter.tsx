@@ -76,7 +76,11 @@ function NumberFormatter() {
 
   return (
     <>
-      <SEO path="/text/number-format" />
+      <SEO
+        path="/text/number-format"
+        title="数値フォーマット変換"
+        description="無料のオンライン数値フォーマット変換ツール。通貨表示、3桁区切り、パーセント、科学記法など複数のフォーマットに一括変換。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="数値フォーマット変換" toolPath="/text/number-format" shareTitle="数値フォーマット変換 | Rakit" />
 

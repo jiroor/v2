@@ -75,7 +75,11 @@ function TextUnescaper() {
 
   return (
     <>
-      <SEO path="/text/unescape" />
+      <SEO
+        path="/text/unescape"
+        title="テキストアンエスケープ"
+        description="無料のオンラインテキストアンエスケープツール。エスケープされたテキストを元の形式に復元。HTML、URL、JSON、Base64に対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストアンエスケープ" toolPath="/text/unescape" shareTitle="テキストアンエスケープ | Rakit" />
 

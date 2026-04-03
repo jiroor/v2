@@ -89,7 +89,11 @@ function TextDiff() {
 
   return (
     <>
-      <SEO path="/text/diff" />
+      <SEO
+        path="/text/diff"
+        title="テキスト比較"
+        description="無料のオンラインテキスト比較ツール。2つのテキストを行単位で比較し、追加・削除・変更された行を視覚的に表示。コードレビューに便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト比較" toolPath="/text/diff" shareTitle="テキスト比較 | Rakit" />
 

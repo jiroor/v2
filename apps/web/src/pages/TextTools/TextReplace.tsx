@@ -105,7 +105,11 @@ function TextReplace() {
 
   return (
     <>
-      <SEO path="/text/replace" />
+      <SEO
+        path="/text/replace"
+        title="テキスト置換"
+        description="無料のオンラインテキスト置換ツール。テキスト内の特定の文字列を別の文字列に置き換え。正規表現にも対応。一括変換に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト置換" toolPath="/text/replace" shareTitle="テキスト置換 | Rakit" />
 

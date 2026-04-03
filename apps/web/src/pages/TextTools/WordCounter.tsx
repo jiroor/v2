@@ -52,7 +52,11 @@ function WordCounter() {
 
   return (
     <>
-      <SEO path="/text/word-count" />
+      <SEO
+        path="/text/word-count"
+        title="文字数カウンター"
+        description="無料のオンライン文字数カウンター。テキストの文字数や単語数をリアルタイムで計算。論文、ブログ、SNS投稿の文字数管理に最適。"
+      />
       <div className="max-w-[600px] mx-auto py-8 px-4">
         <ToolHeader title="文字数カウンター" toolPath="/text/word-count" shareTitle="文字数カウンター | Rakit" />
 

@@ -67,7 +67,7 @@ function LoremIpsum() {
     <>
       <SEO
         title="ダミーテキスト生成"
-        
+        description="無料のオンラインLorem Ipsum生成ツール。段落・文・単語単位でダミーテキストを生成。Webデザインや印刷物のモックアップ作成に最適。"
         path="/text/lorem-ipsum-advanced"
         category="UtilitiesApplication"
       />

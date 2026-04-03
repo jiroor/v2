@@ -90,7 +90,11 @@ function UUIDGenerator() {
 
   return (
     <>
-      <SEO path="/text/uuid" />
+      <SEO
+        path="/text/uuid"
+        title="UUID/GUID生成"
+        description="無料のオンラインUUID/GUID生成ツール。ユニークな識別子を生成。UUID v4とv1に対応し、一度に最大50個まで生成可能。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="UUID/GUID生成" toolPath="/text/uuid" shareTitle="UUID/GUID生成 | Rakit" />
 

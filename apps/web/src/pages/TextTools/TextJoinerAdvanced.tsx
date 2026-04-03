@@ -116,7 +116,11 @@ function TextJoinerAdvanced() {
 
   return (
     <>
-      <SEO path="/text/join-adv" />
+      <SEO
+        path="/text/join-adv"
+        title="テキスト結合（詳細）"
+        description="無料のオンラインテキスト結合ツール。区切り文字、接頭辞、接尾辞を指定可能。SQLのIN句作成やCSV作成など柔軟な結合に対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト結合（詳細）" toolPath="/text/join-adv" shareTitle="テキスト結合（詳細） | Rakit" />
 

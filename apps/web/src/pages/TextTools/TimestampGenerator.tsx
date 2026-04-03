@@ -85,7 +85,11 @@ function TimestampGenerator() {
 
   return (
     <>
-      <SEO path="/text/timestamp" />
+      <SEO
+        path="/text/timestamp"
+        title="タイムスタンプ生成"
+        description="無料のオンラインタイムスタンプ生成ツール。現在の日時を様々な形式のタイムスタンプとして生成。ファイル名作成やログ記録に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="タイムスタンプ生成" toolPath="/text/timestamp" shareTitle="タイムスタンプ生成 | Rakit" />
 

@@ -69,7 +69,11 @@ function TextStatisticsAdvanced() {
 
   return (
     <>
-      <SEO path="/text/stats" />
+      <SEO
+        path="/text/stats"
+        title="テキスト統計（詳細）"
+        description="無料のオンラインテキスト統計ツール。文字数、単語数、行数、段落、文数、読書時間、スピーチ時間など詳細な統計を表示。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト統計（詳細）" toolPath="/text/stats" shareTitle="テキスト統計（詳細） | Rakit" />
 

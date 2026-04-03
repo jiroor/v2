@@ -69,7 +69,11 @@ function TextExtractor() {
 
   return (
     <>
-      <SEO path="/text/extract" />
+      <SEO
+        path="/text/extract"
+        title="テキスト抽出"
+        description="無料のオンラインテキスト抽出ツール。正規表現を使って特定のパターンにマッチする文字列を抽出。メールアドレスやURLの抽出に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト抽出" toolPath="/text/extract" shareTitle="テキスト抽出 | Rakit" />
 

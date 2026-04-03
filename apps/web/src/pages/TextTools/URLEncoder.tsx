@@ -91,7 +91,11 @@ function URLEncoder() {
 
   return (
     <>
-      <SEO path="/text/url" />
+      <SEO
+        path="/text/url"
+        title="URLエンコード/デコード"
+        description="無料のオンラインURLエンコード・デコードツール。テキストをURL安全な形式に変換・復元。Web開発やAPI連携に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="URLエンコード/デコード" toolPath="/text/url" shareTitle="URLエンコード/デコード | Rakit" />
 

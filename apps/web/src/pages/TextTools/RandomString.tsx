@@ -49,7 +49,11 @@ function RandomString() {
 
   return (
     <>
-      <SEO path="/text/random" />
+      <SEO
+        path="/text/random"
+        title="ランダム文字列生成"
+        description="無料のオンラインランダム文字列生成ツール。指定した条件でランダムな文字列を生成。パスワードやテストデータ作成に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
       <ToolHeader title="ランダム文字列生成" toolPath="/text/random" shareTitle="ランダム文字列生成 | Rakit" />
 

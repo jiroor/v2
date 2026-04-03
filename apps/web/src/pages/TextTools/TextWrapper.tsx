@@ -98,7 +98,11 @@ function TextWrapper() {
 
   return (
     <>
-      <SEO path="/text/wrap" />
+      <SEO
+        path="/text/wrap"
+        title="テキストラップ"
+        description="無料のオンラインテキストラップツール。テキストを指定した幅で折り返し。メールやドキュメントの整形、コードのフォーマットに便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキストラップ" toolPath="/text/wrap" shareTitle="テキストラップ | Rakit" />
 

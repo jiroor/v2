@@ -84,7 +84,11 @@ function TextJoiner() {
 
   return (
     <>
-      <SEO path="/text/join" />
+      <SEO
+        path="/text/join"
+        title="テキスト結合"
+        description="無料のオンラインテキスト結合ツール。複数行のテキストを指定した区切り文字で1行に結合。CSV作成やSQLのIN句作成に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト結合" toolPath="/text/join" shareTitle="テキスト結合 | Rakit" />
 

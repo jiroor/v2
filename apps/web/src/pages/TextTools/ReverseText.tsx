@@ -82,7 +82,11 @@ function ReverseText() {
 
   return (
     <>
-      <SEO path="/text/reverse" />
+      <SEO
+        path="/text/reverse"
+        title="逆順変換"
+        description="無料のオンライン逆順変換ツール。テキストを逆順に並び替え。文字単位、単語単位、行単位の3種類のモードに対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="逆順変換" toolPath="/text/reverse" shareTitle="逆順変換 | Rakit" />
 

@@ -6,6 +6,8 @@ import { KeyboardShortcuts } from '@/components/KeyboardShortcuts/KeyboardShortc
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
+import AdBanner from '@/components/Ads/AdBanner'
 
 function PomodoroTimer() {
   useToolUsageTracking('/timer/pomodoro', 'ポモドーロタイマー')
@@ -120,6 +122,14 @@ function PomodoroTimer() {
             <p>A. 25分の集中作業と5分の休憩を繰り返す時間管理法です。 Francesco Cirillo氏が考案しました。</p>
           </div>
         </div>
+      </div>
+
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/timer/pomodoro" />
+
+      {/* 広告 */}
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
       </div>
       </div>
     </>

@@ -210,7 +210,11 @@ function RomajiConverter() {
 
   return (
     <>
-      <SEO path="/text/romaji" />
+      <SEO
+        path="/text/romaji"
+        title="ローマ字変換"
+        description="無料のオンラインローマ字変換ツール。ローマ字をひらがなに、ひらがなをローマ字に変換。ヘボン式ローマ字に対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="ローマ字変換" toolPath="/text/romaji" shareTitle="ローマ字変換 | Rakit" />
 

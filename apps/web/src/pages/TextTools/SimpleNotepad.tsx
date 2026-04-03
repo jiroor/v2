@@ -73,7 +73,11 @@ function SimpleNotepad() {
 
   return (
     <>
-      <SEO path="/text/notepad" />
+      <SEO
+        path="/text/notepad"
+        title="簡易メモ帳"
+        description="無料のオンライン簡易メモ帳。ブラウザ上でテキストを保存。入力内容は自動的にローカルストレージに保存され復元可能。"
+      />
       <div className="max-w-[900px] mx-auto py-8 px-4">
         <ToolHeader title="簡易メモ帳" toolPath="/text/notepad" shareTitle="簡易メモ帳 | Rakit" />
 

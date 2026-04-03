@@ -44,7 +44,7 @@ function DiffChecker() {
     <>
       <SEO
         title="テキスト差分チェッカー"
-        
+        description="無料のオンラインテキスト差分チェッカー。2つのテキストを比較して追加・削除された行を表示。コードレビューやドキュメントの変更確認に便利。"
         path="/text/diff-checker"
         category="UtilitiesApplication"
       />

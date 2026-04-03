@@ -124,7 +124,11 @@ function LoremIpsumGenerator() {
 
   return (
     <>
-      <SEO path="/text/lorem" />
+      <SEO
+        path="/text/lorem"
+        title="Lorem Ipsum生成"
+        description="無料のオンラインLorem Ipsum生成ツール。デザインやレイアウト確認用のダミーテキストを生成。段落・文・単語単位で作成可能。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="Lorem Ipsum生成" toolPath="/text/lorem" shareTitle="Lorem Ipsum生成 | Rakit" />
 

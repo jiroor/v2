@@ -90,7 +90,11 @@ function TextSplitterAdvanced() {
 
   return (
     <>
-      <SEO path="/text/split-adv" />
+      <SEO
+        path="/text/split-adv"
+        title="テキスト分割（詳細）"
+        description="無料のオンラインテキスト分割ツール。文字、単語、行、カスタム区切りで分割。結果をJSON配列でもコピー可能。データ解析に便利。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="テキスト分割（詳細）" toolPath="/text/split-adv" shareTitle="テキスト分割（詳細） | Rakit" />
 

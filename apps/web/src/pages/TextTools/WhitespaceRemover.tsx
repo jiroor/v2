@@ -90,7 +90,11 @@ function WhitespaceRemover() {
 
   return (
     <>
-      <SEO path="/text/whitespace" />
+      <SEO
+        path="/text/whitespace"
+        title="空白削除"
+        description="無料のオンライン空白削除ツール。テキスト内の余分な空白や改行を削除。先頭・末尾の空白、連続する空白など様々なパターンに対応。"
+      />
       <div className="max-w-[800px] mx-auto py-8 px-4">
         <ToolHeader title="空白削除" toolPath="/text/whitespace" shareTitle="空白削除 | Rakit" />
 
