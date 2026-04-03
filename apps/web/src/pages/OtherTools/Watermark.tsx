@@ -245,6 +245,40 @@ function Watermark() {
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              透かし追加ツールは、画像にテキストの透かし（ウォーターマーク）を追加する無料のオンラインツールです。写真の著作権表示やブランディングに役立ちます。位置、フォントサイズ、不透明度をカスタマイズ可能です。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• 5種類の位置選択</li>
+              <li>• フォントサイズと不透明度を調整</li>
+              <li>• PNG形式でダウンロード</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. 不透明度はどの程度がおすすめ？</p>
+                <p>A. 著作権表示には30-50%程度が一般的です。目立たせたい場合は100%でも構いません。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 透かしは削除できますか？</p>
+                <p>A. 一度追加した透かしは元に戻せません。元画像を別途保存してください。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>

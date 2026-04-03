@@ -173,6 +173,40 @@ function ProgressConverter() {
             <li>• 例: 3/4 → 75%</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            進捗変換ツールは、分数とパーセントを相互変換する無料のオンラインツールです。タスクの進捗状況を別の形式で表現したい場合に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 双方向の変換</li>
+            <li>• 分数は自動で約分</li>
+            <li>• 小数点以下2桁まで表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. パーセントから分数への変換は正確？</p>
+              <p>A. 分母100以内で近似した分数を表示します。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どのような場面で使いますか？</p>
+              <p>A. タスク管理、進捗報告、データの可視化などに使えます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

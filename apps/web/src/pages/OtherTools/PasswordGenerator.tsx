@@ -226,6 +226,40 @@ function PasswordGenerator() {
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+      {/* このツールについて */}
+      <div className="mt-6 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          パスワード生成ツールは、安全なパスワードを自動生成する無料のオンラインツールです。文字数や文字種をカスタマイズでき、パスワードの強度もリアルタイムで表示します。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• 8〜64文字でカスタマイズ</li>
+          <li>• 大文字・小文字・数字・記号を選択可能</li>
+          <li>• パスワード強度をリアルタイム表示</li>
+          <li>• 完全無料、ブラウザ上で動作</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. 推奨されるパスワード長は？</p>
+            <p>A. 12文字以上を推奨します。重要なアカウントは16文字以上を推奨。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. 生成したパスワードは保存されますか？</p>
+            <p>A. いいえ、保存されません。コピーしてパスワードマネージャーに保存してください。</p>
+          </div>
+        </div>
+      </div>
+
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
