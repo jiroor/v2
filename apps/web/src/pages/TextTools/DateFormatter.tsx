@@ -177,6 +177,40 @@ function DateFormatter() {
             <li>• 日付データの変換や確認に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            日付フォーマット変換ツールは、様々な形式の日付を一括で複数のフォーマットに変換する無料のオンラインツールです。日付入力、Unix時間、ISO形式など、多様な形式に対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 6種類以上のフォーマットに一括変換</li>
+            <li>• Unix時間（秒/ミリ秒）に対応</li>
+            <li>• ISO 8601形式出力</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのような形式が入力できますか？</p>
+              <p>A. YYYY-MM-DD、YYYY/MM/DD、Unix時間など、一般的な日付形式に対応しています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. タイムゾーンはどうなりますか？</p>
+              <p>A. ブラウザのローカルタイムゾーンで処理されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

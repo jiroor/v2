@@ -192,6 +192,40 @@ function EmptyLineRemover() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            空行削除ツールは、テキスト内の余分な空行を削除する無料のオンラインツールです。コードやテキストの整形、ログファイルの処理などに役立ちます。4種類の削除モードを搭載しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 4種類の削除モード</li>
+            <li>• 削除行数をリアルタイム表示</li>
+            <li>• 連続空行の処理に対応</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 空白行と空行の違いは？</p>
+              <p>A. 空行は改行のみの行、空白行はスペースやタブのみの行です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. コードの整形に使えますか？</p>
+              <p>A. はい、プログラミングコードの空行調整にもご利用いただけます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

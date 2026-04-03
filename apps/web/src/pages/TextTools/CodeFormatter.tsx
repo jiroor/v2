@@ -174,6 +174,40 @@ function CodeFormatter() {
           {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            コードフォーマッタは、JSON、HTML、CSS、JavaScriptのコードを整形する無料のオンラインツールです。圧縮されたコードや読みづらいコードを見やすい形式に整形できます。開発やデバッグに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• JSON、HTML、CSS、JavaScriptに対応</li>
+            <li>• 自動インデント整形</li>
+            <li>• 構文エラーを検出</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どの言語に対応していますか？</p>
+              <p>A. JSON、HTML、CSS、JavaScriptの4言語に対応しています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大きなファイルも処理できますか？</p>
+              <p>A. 数千行程度まで問題なく処理できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
