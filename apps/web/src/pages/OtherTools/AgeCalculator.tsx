@@ -134,6 +134,40 @@ function AgeCalculator() {
             <li>• 次の誕生日も表示</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            年齢計算ツールは、生年月日から満年齢を計算する無料のオンラインツールです。年齢、月齢、日齢だけでなく、生まれてからの総日数や次の誕生日も表示します。保険の手続きや記念日の確認などに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 満年齢を正確に計算</li>
+            <li>• 基準日を変更可能</li>
+            <li>• 生まれてからの総日数を表示</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 数え年は計算できますか？</p>
+              <p>A. 満年齢を基準に計算しています。数え年は満年齢+1歳です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 未来の日付も計算できますか？</p>
+              <p>A. はい、基準日を未来に設定すると、その時点での年齢が計算できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

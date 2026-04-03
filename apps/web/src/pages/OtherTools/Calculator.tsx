@@ -126,6 +126,40 @@ function Calculator() {
           <Button variant="secondary" className={buttonClass} onClick={inputDecimal}>.</Button>
           <Button variant="default" className={buttonClass} onClick={handleEquals}>=</Button>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            電卓は、基本的な四則演算を行う無料のオンラインツールです。加減乗除、パーセント計算、符号反転に対応しています。日常的な計算や簡単な算数に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 四則演算に対応</li>
+            <li>• パーセント計算</li>
+            <li>• 小数点の計算</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 0で割るとどうなりますか？</p>
+              <p>A. エラーにならず、0として表示されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 履歴は保存されますか？</p>
+              <p>A. いいえ、ページを閉じるとリセットされます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

@@ -116,6 +116,40 @@ function BMICalculator() {
             <li>• 40以上: 肥満（4度）</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            BMI計算ツールは、身長と体重からBMI（体格指数）を計算する無料のオンラインツールです。健康診断の結果確認や、ダイエットの目標設定などに役立ちます。日本肥胖学会の基準で判定します。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 日本肥胖学会の基準で判定</li>
+            <li>• 肥満度を6段階で表示</li>
+            <li>• 身長・体重から即座に計算</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. BMIとは何ですか？</p>
+              <p>A. 体重を身長の二乗で割った値で、肥満度を判定する指標です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 筋肉量は考慮されますか？</p>
+              <p>A. いいえ、BMIは身長と体重のみで計算します。筋肉量が多い方は実際より高く出る場合があります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
