@@ -151,6 +151,40 @@ function TimestampGenerator() {
             <li>• <strong>カスタム</strong>: 自由にフォーマット指定</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            タイムスタンプ生成ツールは、現在の日時を様々な形式のタイムスタンプとして生成する無料のオンラインツールです。ファイル名の作成、ログ記録、システム連携などに役立ちます。リアルタイムで自動更新されます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 6種類のフォーマット</li>
+            <li>• カスタムフォーマット対応</li>
+            <li>• リアルタイム自動更新</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのフォーマットがおすすめ？</p>
+              <p>A. ファイル名にはYYYYMMDDHHmmss形式、システム連携にはUnix時間が一般的です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. タイムゾーンは？</p>
+              <p>A. ブラウザのローカルタイムゾーンで生成されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

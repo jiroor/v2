@@ -114,6 +114,40 @@ function AcronymGenerator() {
             <li>• 覚えやすい略語を作成</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            略語生成ツールは、フレーズから頭文字を抽出して略語を作成する無料のオンラインツールです。プロジェクト名、チーム名、製品名などのネーミングに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 各単語の頭文字を抽出</li>
+            <li>• 英語・日本語対応</li>
+            <li>• クリックで例を選択可能</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 日本語も使えますか？</p>
+              <p>A. はい、日本語のフレーズからも略語を生成できます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大文字・小文字はどうなりますか？</p>
+              <p>A. 生成される略語は大文字になります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
