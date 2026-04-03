@@ -121,6 +121,40 @@ function SimpleNotepad() {
             <li>• 異なるデバイス・ブラウザでは同期されません</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            簡易メモ帳は、ブラウザ上でテキストを保存できる無料のオンラインツールです。入力内容は自動的にローカルストレージに保存されるため、ページを閉じても再度アクセスすれば復元されます。一時的なメモやアイデアの記録に最適です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 自動保存機能</li>
+            <li>• テキストファイルでダウンロード</li>
+            <li>• 文字数カウント表示</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 他のデバイスでも見られますか？</p>
+              <p>A. いいえ、同じブラウザ内でのみ保存されます。異なるデバイスでは同期されません。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 保存容量に制限は？</p>
+              <p>A. 数KB程度のテキストであれば問題なく保存できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

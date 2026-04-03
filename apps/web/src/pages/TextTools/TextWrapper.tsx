@@ -171,6 +171,40 @@ function TextWrapper() {
             <li>• プリセットからよく使う幅を選択可能</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキストラップツールは、テキストを指定した幅で折り返す無料のオンラインツールです。メールやドキュメントの整形、コードのフォーマットなどに役立ちます。40、72、80、100文字のプリセットを搭載しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 10〜200文字で幅を指定可能</li>
+            <li>• 4つのプリセット</li>
+            <li>• 単語単位で分割</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 日本語はどうなりますか？</p>
+              <p>A. 日本語は文字単位で折り返されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 72文字がおすすめな理由は？</p>
+              <p>A. メールやコードの標準的な折り返し幅として使われます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
