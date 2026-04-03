@@ -165,6 +165,40 @@ function ExifRemover() {
             </p>
           </div>
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              EXIF削除ツールは、画像に含まれるメタデータ（EXIF情報）を削除する無料のオンラインツールです。撮影日時、カメラ情報、GPS座標などのプライベート情報を削除して、SNS投稿時のプライバシーを保護します。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• EXIF情報を完全削除</li>
+              <li>• PNG形式で出力（メタデータなし）</li>
+              <li>• 画質はそのまま維持</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. どの画像形式に対応していますか？</p>
+                <p>A. JPEG、PNG、WebPなど、一般的な画像形式に対応しています。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 削除したEXIFは復元できますか？</p>
+                <p>A. いいえ、一度削除した情報は復元できません。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 

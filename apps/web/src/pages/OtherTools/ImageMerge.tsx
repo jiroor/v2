@@ -219,6 +219,40 @@ function ImageMerge() {
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              画像結合ツールは、複数の画像を縦または横に結合する無料のオンラインツールです。比較画像の作成やコラージュなどに役立ちます。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• 横並び・縦並びを選択可能</li>
+              <li>• 間隔を調整可能</li>
+              <li>• PNG形式でダウンロード</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. 異なるサイズの画像も結合できますか？</p>
+                <p>A. はい、可能です。大きい方のサイズに合わせて結合されます。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 何枚まで結合できますか？</p>
+                <p>A. 制限はありませんが、多いほど処理に時間がかかります。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>

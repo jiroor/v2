@@ -202,6 +202,40 @@ function ImageNoise() {
               リセット
             </Button>
           </div>
+
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              画像ノイズ追加ツールは、画像にランダムなノイズを追加する無料のオンラインツールです。レトロ風の演出や、アート作品の加工などに役立ちます。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• ノイズレベルを1〜100%で調整</li>
+              <li>• リアルタイムでプレビュー</li>
+              <li>• PNG形式でダウンロード</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. ノイズは元に戻せますか？</p>
+                <p>A. いいえ、一度追加したノイズは解除できません。元画像を別途保存してください。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 推奨レベルは？</p>
+                <p>A. 微細な演出には20-30%、強い効果を出したい場合は50%以上を推奨。</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-8">

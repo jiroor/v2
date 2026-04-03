@@ -194,6 +194,40 @@ function ImageGlitch() {
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              画像グリッチツールは、画像にグリッチ効果を追加する無料のオンラインツールです。RGBシフト、ノイズ、スキャンラインなどのエフェクトで、レトロフューチャーな演出ができます。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• RGBシフトで色ずれ効果</li>
+              <li>• ランダムノイズ追加</li>
+              <li>• スキャンライン効果</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. どのような場面で使いますか？</p>
+                <p>A. アート作品、SNS投稿、レトロ風デザインなどに使われます。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 強度はどの程度がおすすめ？</p>
+                <p>A. 50%程度が一般的です。強い効果を出したい場合は70%以上を推奨。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>

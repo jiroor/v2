@@ -216,6 +216,40 @@ function GifMaker() {
             <li>• 同じサイズの画像を使用してください</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            GIF作成ツールは、複数の画像を組み合わせてアニメーションGIFを作成する無料のオンラインツールです。フレーム間隔を調整でき、簡単なアニメーションを作成できます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 複数画像をGIFに変換</li>
+            <li>• フレーム間隔を調整可能</li>
+            <li>• 画像の順序をドラッグで変更</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 何枚まで画像を追加できますか？</p>
+              <p>A. 制限はありませんが、多いほど処理に時間がかかります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 異なるサイズの画像も使えますか？</p>
+              <p>A. 最初の画像のサイズに合わせて出力されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
