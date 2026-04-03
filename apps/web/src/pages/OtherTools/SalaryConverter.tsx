@@ -158,6 +158,40 @@ function SalaryConverter() {
             <li>• 転職・求人検索の参考に</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            給与変換ツールは、年収・月収・時給を相互変換する無料のオンラインツールです。転職活動や求人検索の際に、条件を比較するのに役立ちます。労働時間や労働日数もカスタマイズ可能です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 年収・月収・時給を相互変換</li>
+            <li>• 労働条件をカスタマイズ</li>
+            <li>• リアルタイムで計算</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. ボーナスは考慮されますか？</p>
+              <p>A. いいえ、基本給のみの計算です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 月の労働日数のデフォルトは？</p>
+              <p>A. 20日（土日休み）をデフォルトとしています。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

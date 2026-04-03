@@ -137,6 +137,40 @@ function MortgageCalculator() {
             <li>• 実際の条件は金融機関にご確認ください</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            住宅ローン計算ツールは、住宅ローンの月次返済額を計算する無料のオンラインツールです。借り入れ額、金利、返済期間から、月々の返済額や利息総額をシミュレーションできます。家購入の計画立案に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 元利均等返済方式</li>
+            <li>• 利息総額を表示</li>
+            <li>• 金利・期間をカスタマイズ</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 元利均等返済とは？</p>
+              <p>A. 毎月の返済額が一定の返済方式です。最初は利息の割合が高く、徐々に元本の割合が増えます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. ボーナス払いは考慮されますか？</p>
+              <p>A. いいえ、月次返済のみの計算です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

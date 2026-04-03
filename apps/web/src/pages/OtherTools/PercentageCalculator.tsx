@@ -185,6 +185,40 @@ function PercentageCalculator() {
             <li>• 100から20%減らすと？ → 80</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            パーセント計算ツールは、様々なパーセント計算を行う無料のオンラインツールです。割合の計算、増減の計算、比率の計算など、5種類の計算モードに対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 5種類の計算モード</li>
+            <li>• 計算式を表示</li>
+            <li>• リアルタイムで計算</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 小数点以下はどうなりますか？</p>
+              <p>A. 必要に応じて小数点以下も表示されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. マイナスの値も使えますか？</p>
+              <p>A. はい、マイナスの値も入力可能です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
