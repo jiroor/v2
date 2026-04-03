@@ -207,6 +207,40 @@ function UnitConverter() {
             </Button>
           </div>
         )}
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            単位変換ツールは、長さ、重さ、温度、面積、体積などの単位を変換する無料のオンラインツールです。メートル、フィート、キログラム、ポンド、摂氏、華氏など、様々な単位に対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 5種類の単位カテゴリ</li>
+            <li>• 双方向の変換に対応</li>
+            <li>• 一括で入れ替え</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どの単位に対応していますか？</p>
+              <p>A. 長さ（m, km, ft, mile等）、重さ（g, kg, lb等）、温度（℃、℉）、面積、体積に対応しています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 精度はどのくらいですか？</p>
+              <p>A. 一般的な計算に十分な精度ですが、科学的な用途には専門ツールをご利用ください。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

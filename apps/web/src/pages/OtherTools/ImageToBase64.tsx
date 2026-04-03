@@ -170,6 +170,40 @@ function ImageToBase64() {
             <li>• 小さな画像のインライン化に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            画像→Base64変換ツールは、画像ファイルをBase64形式のデータURIに変換する無料のオンラインツールです。HTMLやCSSに画像を直接埋め込む際に役立ちます。PNG、JPG、GIF、SVGなどに対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• ドラッグ＆ドロップ対応</li>
+            <li>• プレビュー表示</li>
+            <li>• 文字数カウント</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. Base64とは何ですか？</p>
+              <p>A. 画像データをテキスト形式で表現するエンコード方式です。HTMLやCSSに直接埋め込めます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大きな画像も変換できますか？</p>
+              <p>A. 可能ですが、ファイルサイズが大きくなると扱いづらくなります。小さなアイコンなどに最適です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
