@@ -115,6 +115,40 @@ function StopwatchTool() {
             <li>• スポーツ、勉強、調理などに</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            ストップウォッチは、経過時間を計測する無料のオンラインツールです。ラップタイム機能付きで、スポーツ、勉強、料理など様々な場面で役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• ミリ秒単位で計測</li>
+            <li>• ラップタイム機能</li>
+            <li>• 一時停止・再開可能</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. タブを閉じても計測は続きますか？</p>
+              <p>A. いいえ、ページを閉じるとリセットされます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. ラップタイムは何件まで保存できますか？</p>
+              <p>A. 制限なく保存できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

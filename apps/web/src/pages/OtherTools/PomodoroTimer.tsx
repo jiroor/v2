@@ -189,6 +189,40 @@ function PomodoroTimer() {
             <li>• 終了時にお知らせ音</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            ポモドーロタイマーは、25分の作業と5分の休憩を繰り返す時間管理テクニックを実践するための無料のオンラインツールです。集中力を高め、効率的に作業を進めることができます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 作業・短休憩・長休憩を自動切替</li>
+            <li>• 完了セッション数をカウント</li>
+            <li>• プログレスリングで視覚化</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. ポモドーロテクニックとは？</p>
+              <p>A. 25分作業＋5分休憩を繰り返す時間管理法です。Francesco Cirillo氏が考案しました。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 時間は変更できますか？</p>
+              <p>A. 現在は固定ですが、将来的にカスタマイズ機能を追加予定です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
