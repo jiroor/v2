@@ -146,6 +146,40 @@ function GPACalculator() {
             ))}
           </div>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            GPA計算ツールは、科目の成績と単位数からGPA（成績評価平均値）を計算する無料のオンラインツールです。履修科目の成績管理や、奨学金・進学先の目標設定に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 科目を追加して計算</li>
+            <li>• 単位数で加重平均</li>
+            <li>• 4.0スケール</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. GPAとは何ですか？</p>
+              <p>A. Grade Point Averageの略で、成績を数値化して平均したものです。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 日本の大学で使われますか？</p>
+              <p>A. 留学や大学院進学で使用されます。大学ごとに計算方法が異なる場合があります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

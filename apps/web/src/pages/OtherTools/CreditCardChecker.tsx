@@ -159,6 +159,40 @@ function CreditCardChecker() {
             Visa, Mastercard, American Express, Discover, JCB, Diners Club, Maestro
           </p>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            カード番号チェックツールは、クレジットカード番号の形式を検証する無料のオンラインツールです。Luhnアルゴリズムによる番号の検証と、カード種類の判定を行います。開発やテストに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• Luhnアルゴリズムで検証</li>
+            <li>• カード種類を自動判定</li>
+            <li>• 番号をフォーマット表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 実際のカード番号を使ってもいいですか？</p>
+              <p>A. セキュリティ上、実際のカード番号は入力しないでください。テスト用番号をご利用ください。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. カードが有効かどうかわかりますか？</p>
+              <p>A. いいえ、番号の形式が正しいかのみチェックします。実際の有効性は確認できません。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

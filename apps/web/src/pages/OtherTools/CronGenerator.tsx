@@ -175,6 +175,40 @@ function CronGenerator() {
             </ul>
           </div>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Cron式生成ツールは、スケジュール設定に使用するCron式を簡単に作成できる無料のオンラインツールです。プリセットから選ぶか、各フィールドを個別に設定できます。サーバーの定期実行タスク設定に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• よく使うパターンのプリセット</li>
+            <li>• 人が読める形式で説明</li>
+            <li>• 各フィールドを個別設定</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. Cron式とは何ですか？</p>
+              <p>A. Unix系システムで定期的なタスクを実行するためのスケジュール指定形式です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 0と7の曜日は？</p>
+              <p>A. どちらも日曜日を表します。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
