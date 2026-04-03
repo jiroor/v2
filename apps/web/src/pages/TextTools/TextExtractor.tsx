@@ -154,6 +154,40 @@ function TextExtractor() {
             <li>• <code className="bg-gray-200 px-1 rounded">[a-z]+</code>: アルファベット小文字</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト抽出ツールは、正規表現を使ってテキストから特定のパターンにマッチする文字列を抽出する無料のオンラインツールです。メールアドレス、URL、電話番号などを一括で抽出できます。データ分析やテキスト処理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 正規表現で抽出</li>
+            <li>• 4つのプリセット</li>
+            <li>• マッチ件数を表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 正規表現がわからない場合は？</p>
+              <p>A. プリセットボタンをクリックすると、よく使うパターンが入力されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大文字小文字を区別しますか？</p>
+              <p>A. デフォルトでは区別します。パターンにフラグを追加で変更可能です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
