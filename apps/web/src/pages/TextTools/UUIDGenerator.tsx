@@ -190,6 +190,40 @@ function UUIDGenerator() {
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            UUID/GUID生成ツールは、ユニークな識別子を生成する無料のオンラインツールです。UUID v4（ランダム）とUUID v1（タイムスタンプベース）の両方に対応し、一度に最大50個まで生成できます。データベースの主キーやセッションIDなど、ユニークなIDが必要な場面でご利用ください。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• UUID v4（ランダム）とUUID v1（タイムスタンプ）に対応</li>
+            <li>• 一度に最大50個まで生成可能</li>
+            <li>• クリックでコピー</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. UUIDとGUIDの違いは？</p>
+              <p>A. 実質的に同じものです。UUIDは標準規格、GUIDはMicrosoftの用語です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. UUIDの衝突確率は？</p>
+              <p>A. UUID v4の場合、2^122分の1の確率で、実用上は衝突しません。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
