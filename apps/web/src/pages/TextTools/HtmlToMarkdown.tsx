@@ -146,6 +146,40 @@ function HtmlToMarkdown() {
             <li>• 引用・段落・水平線</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            HTML to Markdown変換ツールは、HTMLコードをMarkdown形式に変換する無料のオンラインツールです。ブログ移行やドキュメント変換などに役立ちます。主要なHTML要素に対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 主要なHTML要素に対応</li>
+            <li>• リンク・画像を適切に変換</li>
+            <li>• コードブロックに対応</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのような場面で使いますか？</p>
+              <p>A. ブログの移行、ドキュメントの形式変換、HTMLコンテンツのMarkdown化などに使われます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 複雑なHTMLも変換できますか？</p>
+              <p>A. 基本的なHTML要素に対応しています。複雑な構造は手動での調整が必要な場合があります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
