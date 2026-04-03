@@ -161,6 +161,40 @@ function DateCalculator() {
             <li>• 期間の計算に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            日付計算ツールは、2つの日付間の日数を計算したり、特定日からN日後を計算したりする無料のオンラインツールです。期間の計算や締切日の確認などに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 日数・週数・月数・年数を表示</li>
+            <li>• 日付加算機能</li>
+            <li>• 過去・未来の計算に対応</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 祝日は考慮されますか？</p>
+              <p>A. いいえ、日付のみの計算です。祝日は含まれません。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 負の数で過去の日付を計算できますか？</p>
+              <p>A. はい、マイナスの数値で過去の日付を計算できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

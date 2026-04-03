@@ -183,6 +183,40 @@ function CurrencyConverter() {
             <li>• 正確なレートは金融機関でご確認ください</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            為替計算ツールは、主要通貨の為替レートを計算する無料のオンラインツールです。日本円、米ドル、ユーロなど複数の通貨に対応しています。旅行やショッピングの目安としてご利用ください。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 主要通貨に対応</li>
+            <li>• 双方向の変換</li>
+            <li>• 参考レートを表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. レートはリアルタイムですか？</p>
+              <p>A. いいえ、参考値です。実際の取引レートとは異なります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 何種類の通貨に対応していますか？</p>
+              <p>A. 主要な通貨（USD、EUR、GBPなど）に対応しています。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
