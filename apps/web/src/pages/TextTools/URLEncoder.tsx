@@ -179,6 +179,40 @@ function URLEncoder() {
         {/* ショートカットキー一覧 */}
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            URLエンコード/デコードツールは、テキストをURL安全な形式に変換、またはURLエンコードされた文字列を元のテキストに戻す無料のオンラインツールです。Web開発やAPI連携で頻繁に使用される変換処理をワンクリックで行えます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• エンコード・デコードの双方向変換</li>
+            <li>• 日本語や特殊文字に完全対応</li>
+            <li>• リアルタイム変換</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. URLエンコードとは何ですか？</p>
+              <p>A. URLで使用できない文字（日本語や特殊文字）を%xx形式に変換するエンコード方式です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どのような場面で使いますか？</p>
+              <p>A. URLに日本語を含める場合や、APIパラメータをエンコードする場合などに使用します。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
