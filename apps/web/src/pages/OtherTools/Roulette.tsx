@@ -307,6 +307,40 @@ function Roulette() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+      {/* このツールについて */}
+      <div className="mt-6 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          ルーレットツールは、項目を登録してランダムに選択する無料のオンラインツールです。くじ引き、順番決め、プレゼント抽選などに役立ちます。最大20項目まで登録可能です。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• 最大20項目まで登録</li>
+          <li>• 色をカスタマイズ可能</li>
+          <li>• アニメーション付きルーレット</li>
+          <li>• 完全無料、ブラウザ上で動作</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. 結果は本当にランダムですか？</p>
+            <p>A. はい、各項目が等しい確率で選ばれます。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. 項目の色は変更できますか？</p>
+            <p>A. はい、各項目の色を自由に設定できます。</p>
+          </div>
+        </div>
+      </div>
       </div>
     </>
   )

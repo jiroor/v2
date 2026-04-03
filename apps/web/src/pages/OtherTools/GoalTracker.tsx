@@ -193,6 +193,40 @@ function GoalTracker() {
             <li>• 習慣化、目標達成に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            目標トラッカーは、目標を設定して進捗を管理する無料のオンラインツールです。目標の現在値と目標値を設定し、達成率をリアルタイムで表示します。習慣化や目標達成に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• プログレスバーで進捗を可視化</li>
+            <li>• ブラウザに保存</li>
+            <li>• 達成時にお祝い表示</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. データは保存されますか？</p>
+              <p>A. はい、ブラウザに自動保存されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 複数の目標を設定できますか？</p>
+              <p>A. はい、複数の目標を同時に管理できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
