@@ -222,6 +222,40 @@ function ImageCropper() {
             <li>• SNS投稿、サムネイル作成に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            画像トリミングツールは、画像の一部を切り抜く無料のオンラインツールです。自由にトリミング範囲を指定でき、アスペクト比を固定することも可能です。SNS投稿やサムネイル作成に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 自由な範囲を指定</li>
+            <li>• アスペクト比固定オプション</li>
+            <li>• ドラッグで直感的に操作</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. アスペクト比とは？</p>
+              <p>A. 横と縦の比率です。16:9なら横長、1:1なら正方形になります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 選択範囲は変更できますか？</p>
+              <p>A. はい、ドラッグで自由に移動できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

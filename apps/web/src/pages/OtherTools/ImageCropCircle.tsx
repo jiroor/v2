@@ -204,6 +204,40 @@ function ImageCropCircle() {
             </ul>
           </div>
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              円形トリミングツールは、画像を円形または正方形にトリミングする無料のオンラインツールです。プロフィール画像やアイコンの作成に最適です。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• 円形・正方形を選択可能</li>
+              <li>• 4種類のサイズ（64〜512px）</li>
+              <li>• 中央から自動トリミング</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. どの部分がトリミングされますか？</p>
+                <p>A. 画像の中央部分がトリミングされます。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 背景は透過されますか？</p>
+                <p>A. はい、円形の場合は透過背景のPNGで出力されます。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
