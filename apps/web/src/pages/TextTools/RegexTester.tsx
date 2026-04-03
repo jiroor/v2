@@ -226,6 +226,40 @@ function RegexTester() {
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            正規表現テスターは、正規表現パターンをリアルタイムでテストできる無料のオンラインツールです。マッチ結果のハイライト表示、フラグの切り替え、よく使うパターンのサンプルなど、正規表現の開発と学習に役立つ機能を提供します。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• リアルタイムでマッチ結果を表示</li>
+            <li>• マッチ部分をハイライト表示</li>
+            <li>• よく使うパターンをクリックで挿入</li>
+            <li>• JavaScript正規表現に完全対応</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 正規表現とは何ですか？</p>
+              <p>A. 文字列のパターンを記述するための表現方法です。検索や置換で広く使われています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どの言語の正規表現に対応していますか？</p>
+              <p>A. JavaScriptの正規表現構文に対応しています。多くの言語で類似の構文が使えます。</p>
+            </div>
+          </div>
+        </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
