@@ -192,6 +192,40 @@ function ImageRotate() {
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              画像回転ツールは、画像を任意の角度で回転する無料のオンラインツールです。90度単位の回転や、0〜360度の自由な回転に対応しています。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• 90度、180度、270度のプリセット</li>
+              <li>• 0〜360度の自由な角度指定</li>
+              <li>• PNG形式でダウンロード</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. 回転時に余白ができますか？</p>
+                <p>A. はい、斜めに回転すると余白ができます。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 元のサイズを維持できますか？</p>
+                <p>A. 回転に合わせてキャンバスサイズが自動調整されます。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>

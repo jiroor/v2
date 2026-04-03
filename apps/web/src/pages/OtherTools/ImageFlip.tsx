@@ -164,6 +164,40 @@ function ImageFlip() {
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              画像反転ツールは、画像を左右または上下に反転する無料のオンラインツールです。鏡像の作成や、写真の向き調整などに役立ちます。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• 左右反転・上下反転</li>
+              <li>• PNG形式でダウンロード</li>
+              <li>• リアルタイムプレビュー</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. 反転は何に使いますか？</p>
+                <p>A. 鏡像の作成、自撮り写真の向き調整、デザイン効果などに使われます。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 画質は変わりますか？</p>
+                <p>A. PNG形式で出力するため、元の画質を維持します。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
