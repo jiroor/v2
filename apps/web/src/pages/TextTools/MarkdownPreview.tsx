@@ -154,6 +154,40 @@ console.log(greeting);
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Markdownプレビューツールは、MarkdownテキストをリアルタイムでHTMLに変換してプレビューできる無料のオンラインツールです。ブログ記事やドキュメントの作成に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• リアルタイムプレビュー</li>
+            <li>• 見出し、リスト、リンク、コードなど対応</li>
+            <li>• HTMLとしてコピー可能</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. Markdownとは何ですか？</p>
+              <p>A. 簡易的なマークアップ言語で、プレーンテキストで文書を書ける形式です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どの構文に対応していますか？</p>
+              <p>A. 見出し、太字、斜体、リスト、リンク、コード、引用など基本的な構文に対応しています。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

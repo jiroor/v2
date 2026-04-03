@@ -222,6 +222,40 @@ function LoremIpsumGenerator() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Lorem Ipsum生成ツールは、デザインやレイアウトの確認に使うダミーテキストを生成する無料のオンラインツールです。段落・文・単語単位で生成でき、ウェブデザインや印刷物のモックアップに最適です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 段落・文・単語単位で生成可能</li>
+            <li>• 「Lorem ipsum...」で始めるオプション</li>
+            <li>• 最大100段落まで生成</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. Lorem Ipsumとは何ですか？</p>
+              <p>A. 古代ラテン語のテキストから派生したダミーテキストです。内容に意味を持たせずにレイアウトを確認できます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. なぜダミーテキストを使うのですか？</p>
+              <p>A. 実際のコンテンツが決まっていない段階で、デザインやレイアウトを確認するためです。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
