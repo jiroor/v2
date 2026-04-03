@@ -199,6 +199,40 @@ function DuplicateRemover() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            重複削除ツールは、テキスト内の重複する行・単語・文字を削除する無料のオンラインツールです。データクリーニングやリスト整理、テキスト処理など、様々な場面で活用できます。元の順序を維持したまま重複を除去します。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 行・単語・文字単位で削除可能</li>
+            <li>• 元の順序を維持</li>
+            <li>• 削除数をリアルタイム表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 大文字と小文字は区別されますか？</p>
+              <p>A. はい、区別されます。「ABC」と「abc」は別のものとして扱われます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 順序は変わりますか？</p>
+              <p>A. いいえ、最初に出現した順序を維持します。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

@@ -163,6 +163,40 @@ function TextSorter() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキストソートツールは、テキストの行を様々な条件で並び替える無料のオンラインツールです。昇順・降順・長さ順・ランダムなど、6種類のソート方法に対応しています。リストの整理やデータの並び替えに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 6種類のソート方法</li>
+            <li>• 日本語のソートに対応</li>
+            <li>• リアルタイムで結果を表示</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 日本語も正しくソートされますか？</p>
+              <p>A. はい、日本語の辞書順でソートされます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 大文字と小文字は区別されますか？</p>
+              <p>A. いいえ、区別せずにソートされます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
