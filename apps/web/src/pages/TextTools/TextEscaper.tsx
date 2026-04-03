@@ -150,6 +150,40 @@ function TextEscaper() {
             <li>• <strong>Base64</strong>: Base64エンコード</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキストエスケープツールは、テキストを様々な形式にエスケープする無料のオンラインツールです。HTML、URL、JSON、正規表現、SQL、Base64の6種類に対応しています。プログラミングやデータ処理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 6種類のエスケープ形式に対応</li>
+            <li>• リアルタイムで結果を表示</li>
+            <li>• 開発やデータ処理に便利</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. エスケープとは何ですか？</p>
+              <p>A. 特殊な意味を持つ文字を、別の形式に変換して安全に扱えるようにすることです。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. アンエスケープ（復元）はできますか？</p>
+              <p>A. 別途「テキストアンエスケープ」ツールをご利用ください。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

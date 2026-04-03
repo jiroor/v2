@@ -218,6 +218,40 @@ function TextReplace() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト置換ツールは、テキスト内の特定の文字列を別の文字列に置き換える無料のオンラインツールです。正規表現にも対応しており、高度な置換処理も可能です。一括変換やテキスト処理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 大文字小文字の区別を切り替え可能</li>
+            <li>• 正規表現に対応</li>
+            <li>• 置換件数をリアルタイム表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 正規表現とは何ですか？</p>
+              <p>A. 文字列のパターンを記述する表現方法です。「\d+」で数字を検索するなど、柔軟な検索が可能です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. すべての一致を置換できますか？</p>
+              <p>A. はい、入力テキスト内の全ての一致箇所を一括で置換します。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
