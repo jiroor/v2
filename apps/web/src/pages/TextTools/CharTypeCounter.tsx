@@ -178,6 +178,40 @@ function CharTypeCounter() {
             <li>• 日本語文章の分析や原稿の確認に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            文字種カウンターは、テキスト内の文字を種類別に分類してカウントする無料のオンラインツールです。ひらがな、カタカナ、漢字、英字、数字などを自動判定し、視覚的なグラフで表示します。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 10種類の文字種を自動判定</li>
+            <li>• 割合をグラフで視覚化</li>
+            <li>• リアルタイムで更新</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 絵文字はどうなりますか？</p>
+              <p>A. 絵文字は「その他」に分類されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 全角英数字はどう判定されますか？</p>
+              <p>A. 全角英数字は英字として判定されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
