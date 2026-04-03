@@ -198,6 +198,40 @@ function ImageCompressor() {
             <li>• JPEG形式で出力</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            画像圧縮ツールは、画像のファイルサイズを縮小する無料のオンラインツールです。品質を調整しながら圧縮でき、Web公開用の画像最適化に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 品質を調整して圧縮</li>
+            <li>• ファイルサイズの削減率を表示</li>
+            <li>• プレビューで画質確認</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 推奨品質は？</p>
+              <p>A. Web用には80%程度が推奨です。画質とファイルサイズのバランスが良いです。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 圧縮後の形式は？</p>
+              <p>A. JPEG形式で出力されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

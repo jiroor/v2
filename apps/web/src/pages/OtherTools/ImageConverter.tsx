@@ -215,6 +215,40 @@ function ImageConverter() {
             <li>• Web公開用画像の形式変換に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            画像形式変換ツールは、PNG、JPEG、WebP間で画像を変換する無料のオンラインツールです。Web公開用の画像最適化や、透過画像の変換などに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• PNG、JPEG、WebPに対応</li>
+            <li>• 品質の調整が可能</li>
+            <li>• プレビュー表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. WebPとは何ですか？</p>
+              <p>A. Googleが開発した新しい画像形式です。高品質でファイルサイズが小さいのが特徴です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 透過PNGをJPEGに変換すると？</p>
+              <p>A. 透過部分は白背景になります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

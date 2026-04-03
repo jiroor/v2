@@ -232,6 +232,40 @@ function ImageResizer() {
             <li>• PNG形式で出力</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            画像リサイズツールは、画像のサイズを変更する無料のオンラインツールです。アイコン、サムネイル、SNS投稿など、用途に合わせてリサイズできます。縦横比を維持したリサイズも可能です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 縦横比維持オプション</li>
+            <li>• 5種類のプリセットサイズ</li>
+            <li>• PNG形式でダウンロード</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 画質は劣化しますか？</p>
+              <p>A. リサイズに伴う画質の変化はありますが、一般的な用途には十分な品質です。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どの画像形式に対応していますか？</p>
+              <p>A. PNG、JPG、GIF、WebPなど、一般的な画像形式に対応しています。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
