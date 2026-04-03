@@ -189,6 +189,40 @@ function FuriganaConverter() {
             <li>※ 登録されている単語のみ変換されます</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            ふりがな変換ツールは、漢字にふりがな（読み方）を自動的に追加する無料のオンラインツールです。HTMLのrubyタグ、括弧形式、Markdown形式で出力でき、教育教材や読みやすい文章の作成に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• よく使われる漢字に対応</li>
+            <li>• 3種類の出力形式</li>
+            <li>• HTMLプレビュー機能</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 全ての漢字にふりがなが付きますか？</p>
+              <p>A. 登録されている一般的な単語のみ対応しています。固有名詞や専門用語は変換されない場合があります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 読み方は正確ですか？</p>
+              <p>A. 文脈による読み方の変化には対応していません。必要に応じて手動で修正してください。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
