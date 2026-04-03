@@ -173,6 +173,40 @@ function LineNumberAdder() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            行番号追加ツールは、テキストの各行に行番号を付与する無料のオンラインツールです。4種類のフォーマットに対応しており、開始番号も指定可能です。コードやドキュメントの行番号管理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 4種類のフォーマット</li>
+            <li>• 開始番号を指定可能</li>
+            <li>• リアルタイムで結果を表示</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのフォーマットが一般的？</p>
+              <p>A. 標準形式が最も一般的です。コード解説にはパイプやドットも使われます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 開始番号を0にできますか？</p>
+              <p>A. はい、0から開始できます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

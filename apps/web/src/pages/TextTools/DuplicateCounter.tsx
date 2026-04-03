@@ -154,6 +154,40 @@ function DuplicateCounter() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            重複行カウンターは、テキスト内の重複する行を検出し、出現回数をカウントする無料のオンラインツールです。データ分析やログ解析、リストの確認などに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 重複行を自動検出</li>
+            <li>• 出現回数順にソート</li>
+            <li>• 統計情報をリアルタイム表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 大文字と小文字は区別されますか？</p>
+              <p>A. はい、区別されます。「ABC」と「abc」は別の行として扱われます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 空行はどうなりますか？</p>
+              <p>A. 空行は自動的に除外されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

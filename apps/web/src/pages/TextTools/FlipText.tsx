@@ -105,6 +105,40 @@ function FlipText() {
             <li>• 日本語はそのまま反転表示</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            フリップテキストツールは、テキストを上下逆さまに変換する無料のオンラインツールです。SNSやメッセージでユニークな表現をしたい場合に便利です。英数字と一部の記号に対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 英数字を上下逆に変換</li>
+            <li>• プレビュー機能付き</li>
+            <li>• SNSでの使用に最適</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 日本語は変換されますか？</p>
+              <p>A. 日本語は対応する逆文字がないため、そのまま反転表示されます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. すべての記号に対応していますか？</p>
+              <p>A. 一般的な記号には対応していますが、一部の特殊記号は正しく表示されない場合があります。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
