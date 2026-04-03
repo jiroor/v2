@@ -275,6 +275,40 @@ function RomajiConverter() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            ローマ字変換ツールは、ローマ字をひらがなに、またはひらがなをローマ字に変換する無料のオンラインツールです。ヘボン式ローマ字に対応しており、日本語学習やテキスト処理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• ローマ字⇔ひらがなの双方向変換</li>
+            <li>• ヘボン式ローマ字に対応</li>
+            <li>• 拗音・促音・濁点に対応</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. ヘボン式とは何ですか？</p>
+              <p>A. 日本語をローマ字表記する際の一般的な方式です。「し」を「shi」と表記するなど特徴があります。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. カタカナも変換できますか？</p>
+              <p>A. 現在はひらがなのみ対応しています。カタカナは一度ひらがなに変換してからご利用ください。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
