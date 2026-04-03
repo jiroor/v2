@@ -159,6 +159,40 @@ function PasswordStrengthChecker() {
             <li>• 入力内容は送信されません</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            パスワード強度チェッカーは、パスワードの安全性を分析する無料のオンラインツールです。長さ、文字種、パターンをチェックして、安全なパスワード作成の参考になります。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 8項目のチェックリスト</li>
+            <li>• リアルタイムで分析</li>
+            <li>• 改善のヒントを表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 入力したパスワードは保存されますか？</p>
+              <p>A. いいえ、ブラウザ内で処理され、サーバーには送信されません。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 強いパスワードの条件は？</p>
+              <p>A. 12文字以上で、大文字・小文字・数字・記号を含むことが推奨されます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

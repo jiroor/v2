@@ -167,6 +167,40 @@ function TaxCalculator() {
             <li>• 金額は整数に丸められます</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            消費税計算ツールは、税抜価格と税込価格を相互に計算する無料のオンラインツールです。標準税率10%と軽減税率8%に対応しています。請求書作成や買い物の計算に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 10%、8%のプリセット</li>
+            <li>• 双方向の計算に対応</li>
+            <li>• 消費税額も表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 軽減税率は何に適用されますか？</p>
+              <p>A. 飲食料品、新聞などに適用されます。詳細は国税庁のサイトをご確認ください。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 端数処理はどうなりますか？</p>
+              <p>A. 結果は整数に丸められます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
