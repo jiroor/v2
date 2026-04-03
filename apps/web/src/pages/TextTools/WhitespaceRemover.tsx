@@ -153,6 +153,40 @@ function WhitespaceRemover() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            空白削除ツールは、テキスト内の余分な空白や改行を削除する無料のオンラインツールです。先頭・末尾の空白、連続する空白、全ての空白など、様々なパターンで空白を除去できます。コードの整形やテキスト処理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 5種類の削除モード</li>
+            <li>• タブ・スペース・改行に対応</li>
+            <li>• リアルタイムで結果を表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. タブも削除されますか？</p>
+              <p>A. はい、タブも空白として扱われます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 全角スペースは対象ですか？</p>
+              <p>A. いいえ、半角スペースのみが対象です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

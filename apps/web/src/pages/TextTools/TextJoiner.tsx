@@ -162,6 +162,40 @@ function TextJoiner() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト結合ツールは、複数行のテキストを指定した区切り文字で1行に結合する無料のオンラインツールです。CSV作成やSQLのIN句作成など、様々なテキスト処理に役立ちます。カンマ、タブ、スペースなど、7種類以上の区切り文字に対応しています。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 7種類以上の区切り文字</li>
+            <li>• カスタム区切り文字を指定可能</li>
+            <li>• リアルタイムで結合結果を表示</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. どのような用途で使えますか？</p>
+              <p>A. CSV作成、SQLのIN句作成、タグの結合など、様々な用途で活用できます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 空行はどうなりますか？</p>
+              <p>A. 空行も結合されます。事前に削除したい場合は「空行削除」ツールをご利用ください。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
