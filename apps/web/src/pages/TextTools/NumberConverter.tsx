@@ -161,6 +161,40 @@ function NumberConverter() {
         </div>
 
         <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            数字変換（基数変換）ツールは、10進数、2進数、8進数、16進数を相互変換する無料のオンラインツールです。プログラミングやデジタル回路の学習、データ解析などで役立ちます。いずれかの基数を入力すると、他の基数にリアルタイムで変換されます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 4種類の基数を相互変換</li>
+            <li>• リアルタイムで結果を表示</li>
+            <li>• プレフィックス表示（0b, 0o, 0x）</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 負の数は変換できますか？</p>
+              <p>A. 現在は正の整数のみ対応しています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 小数は変換できますか？</p>
+              <p>A. 現在は整数のみ対応しています。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

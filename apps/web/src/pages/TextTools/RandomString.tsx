@@ -127,6 +127,40 @@ function RandomString() {
           {copySuccess ? 'コピーしました！' : 'コピー'}
         </Button>
       </div>
+
+      {/* このツールについて */}
+      <div className="mt-6 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          ランダム文字列生成ツールは、指定した条件でランダムな文字列を生成する無料のオンラインツールです。パスワード生成、テストデータ作成、認証コード生成などに活用できます。長さと文字種を自由にカスタマイズ可能です。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• 4〜64文字まで長さをカスタマイズ</li>
+          <li>• 大文字・小文字・数字・記号を選択可能</li>
+          <li>• 暗号学的に安全な乱数を使用</li>
+          <li>• 完全無料、ブラウザ上で動作</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. パスワードとして使えますか？</p>
+            <p>A. はい、パスワード生成ツールとしてもご利用いただけます。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. 生成される文字列はユニークですか？</p>
+            <p>A. 暗号学的に安全な乱数を使用しているため、衝突確率は極めて低いです。</p>
+          </div>
+        </div>
+      </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
