@@ -80,6 +80,40 @@ function CharCounter() {
 
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
+
+      {/* このツールについて */}
+      <div className="mt-6 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          文字数カウンターは、テキストの文字数、単語数、行数をリアルタイムでカウントする無料のオンラインツールです。論文、ブログ、SNS投稿などの文字数管理に最適です。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• リアルタイムで文字数をカウント</li>
+          <li>• スペースを除いた文字数も表示</li>
+          <li>• 日本語・英語の両方に対応</li>
+          <li>• 完全無料、インストール不要</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. 日本語の文字数はどうカウントされますか？</p>
+            <p>A. ひらがな、カタカナ、漢字を1文字としてカウントします。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. 入力したテキストは保存されますか？</p>
+            <p>A. いいえ、ブラウザ内で処理され、サーバーには送信されません。</p>
+          </div>
+        </div>
+      </div>
       </div>
     </>
   )
