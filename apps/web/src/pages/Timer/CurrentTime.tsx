@@ -211,6 +211,40 @@ export default function CurrentTime() {
         </div>
       </div>
 
+      {/* このツールについて */}
+      <div className="mt-8 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          現在時刻表示ツールは、世界中のタイムゾーンで現在の日時を確認できる無料のオンラインツールです。表示形式のカスタマイズや、横組み・縦組みの切り替えなど、お好みに合わせて設定できます。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• 世界の主要タイムゾーンに対応</li>
+          <li>• 日付形式・表示項目をカスタマイズ可能</li>
+          <li>• 横組み・縦組みのレイアウト切り替え</li>
+          <li>• 完全無料、インストール不要</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. 時刻は正確ですか？</p>
+            <p>A. お使いのデバイスの時刻を表示しています。デバイスの時刻が正しければ正確です。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. 設定は保存されますか？</p>
+            <p>A. はい、ブラウザに設定が保存されます。</p>
+          </div>
+        </div>
+      </div>
+
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
           <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

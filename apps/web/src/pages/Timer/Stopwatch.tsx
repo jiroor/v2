@@ -108,6 +108,40 @@ function Stopwatch() {
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+      {/* このツールについて */}
+      <div className="mt-8 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          ストップウォッチは、経過時間を計測する無料のオンラインツールです。スポーツ、料理、勉強時間の記録など、様々な場面でご利用いただけます。ラップタイム機能で途中経過も記録でき、キーボードショートカットにも対応しています。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• ミリ秒単位まで正確に計測</li>
+          <li>• ラップタイム記録機能</li>
+          <li>• キーボードショートカット対応</li>
+          <li>• 完全無料、ブラウザだけで利用可能</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. 何件までラップタイムを記録できますか？</p>
+            <p>A. 制限なく記録可能です。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. ブラウザを閉じても計測は続きますか？</p>
+            <p>A. いいえ、ページを閉じるとリセットされます。</p>
+          </div>
+        </div>
+      </div>
+
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

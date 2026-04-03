@@ -179,6 +179,40 @@ function CountdownTimer() {
       {/* ショートカットキー一覧 */}
       <KeyboardShortcuts shortcuts={shortcuts} collapsible={true} defaultExpanded={false} />
 
+      {/* このツールについて */}
+      <div className="mt-8 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">このツールについて</h3>
+        <p className="text-sm text-gray-600 mb-4">
+          カウントダウンタイマーは、指定した時間を逆算してカウントダウンする無料のオンラインツールです。料理、運動、勉強、プレゼンテーションなど、様々な場面で時間管理にお役立てください。時間・分・秒を自由に設定でき、キーボードショートカットにも対応しています。
+        </p>
+      </div>
+
+      {/* 特徴 */}
+      <div className="mt-4 p-4 bg-blue-50 rounded-md">
+        <h3 className="font-semibold mb-2">特徴</h3>
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• 時間・分・秒を自由に設定可能</li>
+          <li>• キーボードショートカット対応（スペースで開始/停止）</li>
+          <li>• 大きな数字で見やすい表示</li>
+          <li>• 完全無料、インストール不要</li>
+        </ul>
+      </div>
+
+      {/* よくある質問 */}
+      <div className="mt-4 p-4 bg-gray-50 rounded-md">
+        <h3 className="font-semibold mb-2">よくある質問</h3>
+        <div className="text-sm text-gray-600 space-y-3">
+          <div>
+            <p className="font-medium">Q. 最大どのくらいの時間を設定できますか？</p>
+            <p>A. 23時間59分59秒まで設定可能です。</p>
+          </div>
+          <div>
+            <p className="font-medium">Q. タイマー完了時に通知は来ますか？</p>
+            <p>A. 現在は画面上での表示のみですが、将来的に通知機能を追加予定です。</p>
+          </div>
+        </div>
+      </div>
+
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
