@@ -6,6 +6,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type IndentSize = 2 | 4
 
@@ -226,7 +227,9 @@ function JSONFormatter() {
 
         {/* 広告 */}
         <div className="mt-6">
-          <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/json" />
+        <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
 
         {/* ショートカットキー一覧 */}

@@ -6,6 +6,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type HashAlgorithm = 'md5' | 'sha-1' | 'sha-256' | 'sha-512'
 
@@ -246,7 +247,9 @@ function HashGenerator() {
 
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
-          <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/hash" />
+        <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
         </div>
       </div>
     </>

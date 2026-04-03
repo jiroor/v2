@@ -6,6 +6,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type NumberMode = 'standard' | 'zero' | 'dot' | 'paren'
 
@@ -214,6 +215,8 @@ function LineNumberAdder() {
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
+        {/* 関連ツール */}
+        <RelatedTools currentPath="/text/line-number" />
         <AdBanner slot="tools-rectangle" format="rectangle" />
       </div>
     </>

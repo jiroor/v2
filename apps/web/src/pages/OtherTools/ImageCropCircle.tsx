@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 function ImageCropCircle() {
@@ -240,7 +241,9 @@ function ImageCropCircle() {
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
-          {/* 広告 */}
+          {/* 関連ツール */}
+      <RelatedTools currentPath="/other/image-crop-circle" />
+      {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
       </div>

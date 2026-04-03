@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 interface Habit {
@@ -208,6 +209,8 @@ function HabitTracker() {
           </ul>
         </div>
       </div>
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/other/habit-tracker" />
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

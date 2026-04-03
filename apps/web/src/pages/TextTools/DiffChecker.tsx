@@ -5,6 +5,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 function DiffChecker() {
   useToolUsageTracking('/text/diff-checker', 'テキスト差分チェッカー')
@@ -127,7 +128,9 @@ function DiffChecker() {
             </div>
           )}
 
-          <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/diff-checker" />
+        <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
 
         {/* このツールについて */}

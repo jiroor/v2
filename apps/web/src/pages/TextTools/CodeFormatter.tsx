@@ -5,6 +5,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 function CodeFormatter() {
   useToolUsageTracking('/text/code-formatter', 'コードフォーマッタ')
@@ -172,7 +173,9 @@ function CodeFormatter() {
           )}
 
           {/* 広告 */}
-          <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/code-formatter" />
+        <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
 
         {/* このツールについて */}

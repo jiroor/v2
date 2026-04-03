@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 function DiscountCalculator() {
@@ -154,6 +155,8 @@ function DiscountCalculator() {
           </div>
         </div>
       </div>
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/other/discount" />
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

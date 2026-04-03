@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 function ImageFlip() {
@@ -197,7 +198,9 @@ function ImageFlip() {
             </div>
           </div>
 
-          {/* 広告 */}
+          {/* 関連ツール */}
+      <RelatedTools currentPath="/other/image-flip" />
+      {/* 広告 */}
           <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
       </div>

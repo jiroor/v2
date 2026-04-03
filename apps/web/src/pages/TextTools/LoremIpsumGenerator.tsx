@@ -6,6 +6,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type Unit = 'paragraphs' | 'sentences' | 'words'
 
@@ -263,6 +264,8 @@ function LoremIpsumGenerator() {
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
+        {/* 関連ツール */}
+        <RelatedTools currentPath="/text/lorem" />
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
       </div>
     </>

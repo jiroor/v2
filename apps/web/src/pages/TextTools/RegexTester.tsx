@@ -6,6 +6,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 function RegexTester() {
   useToolUsageTracking('/text/regex', '正規表現テスト')
@@ -266,7 +267,9 @@ function RegexTester() {
 
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
-          <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/regex" />
+        <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
         </div>
       </div>
     </>

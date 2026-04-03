@@ -5,6 +5,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 function LoremIpsum() {
   useToolUsageTracking('/text/lorem-ipsum-advanced', 'ダミーテキスト生成')
@@ -155,7 +156,9 @@ function LoremIpsum() {
           )}
 
           {/* 広告 */}
-          <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/lorem-ipsum-advanced" />
+        <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
         </div>
 
         {/* このツールについて */}

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 type Phase = 'work' | 'shortBreak' | 'longBreak'
@@ -224,6 +225,8 @@ function PomodoroTimer() {
           </div>
         </div>
       </div>
+      {/* 関連ツール */}
+      <RelatedTools currentPath="/other/pomodoro" />
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <AdBanner slot="TOOL_BOTTOM" format="rectangle" />

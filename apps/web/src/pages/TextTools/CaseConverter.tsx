@@ -6,6 +6,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type CaseType = 'upper' | 'lower' | 'title' | 'sentence' | 'camel' | 'pascal' | 'snake' | 'kebab' | 'constant'
 
@@ -197,7 +198,9 @@ function CaseConverter() {
 
         {/* 広告 */}
         <div className="mt-8 pt-6 border-t border-gray-200">
-          <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
+          {/* 関連ツール */}
+        <RelatedTools currentPath="/text/case" />
+        <AdBanner slot="TOOL_BOTTOM" format="rectangle" />
         </div>
       </div>
     </>

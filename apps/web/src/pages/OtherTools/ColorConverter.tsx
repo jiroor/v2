@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 import AdBanner from '@/components/Ads/AdBanner'
 
 // Color conversion utilities
@@ -189,6 +190,9 @@ function ColorConverter() {
               </div>
             </div>
           </div>
+
+          {/* 関連ツール */}
+          <RelatedTools currentPath="/other/color-converter" />
         </div>
       </div>
     </>

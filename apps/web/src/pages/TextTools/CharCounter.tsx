@@ -8,6 +8,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ShareButton } from '@/components/Share/ShareButton'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 function CharCounter() {
   useToolUsageTracking('/text/counter', '文字数カウンター')
@@ -79,6 +80,8 @@ function CharCounter() {
 
       {/* 広告 */}
       <div className="mt-6">
+        {/* 関連ツール */}
+        <RelatedTools currentPath="/text/counter" />
         <AdBanner slot="TOOL_BOTTOM" format="horizontal" />
       </div>
 

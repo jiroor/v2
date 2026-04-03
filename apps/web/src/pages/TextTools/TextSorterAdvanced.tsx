@@ -4,6 +4,7 @@ import { useToolUsageTracking } from '@/hooks/useToolUsageTracking'
 import { SEO } from '@/components/SEO/SEO'
 import { ToolHeader } from '@/components/ToolHeader'
 import AdBanner from '@/components/Ads/AdBanner'
+import { RelatedTools } from '@/components/RelatedTools/RelatedTools'
 
 type SortMode = 'asc' | 'desc' | 'length' | 'random' | 'natural'
 
@@ -188,6 +189,8 @@ function TextSorterAdvanced() {
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
+        {/* 関連ツール */}
+        <RelatedTools currentPath="/text/sort-adv" />
         <AdBanner slot="tools-rectangle" format="rectangle" />
       </div>
     </>
