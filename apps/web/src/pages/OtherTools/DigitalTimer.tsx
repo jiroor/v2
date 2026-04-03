@@ -197,6 +197,40 @@ function DigitalTimer() {
             <li>• 料理、勉強、運動などに</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            デジタルタイマーは、指定した時間をカウントダウンする無料のオンラインツールです。分と秒を自由に設定でき、一時停止・再開も可能です。料理、勉強、運動など、時間管理にお役立てください。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 分・秒を自由に設定</li>
+            <li>• クイック選択（1分〜30分）</li>
+            <li>• 一時停止・再開機能</li>
+            <li>• 完全無料、インストール不要</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 最大どのくらい設定できますか？</p>
+              <p>A. 分・秒ともに自由に設定できます。実用的には99分59秒程度までを推奨します。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. タブを閉じても動き続けますか？</p>
+              <p>A. はい、バックグラウンドでも動作します。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

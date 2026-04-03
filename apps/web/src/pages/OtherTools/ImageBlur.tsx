@@ -165,6 +165,40 @@ function ImageBlur() {
             </ul>
           </div>
 
+          {/* このツールについて */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">このツールについて</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              画像ぼかしツールは、画像にぼかし効果を追加する無料のオンラインツールです。SNS投稿時の顔ぼかしや、個人情報の秘匿など、プライバシー保護に役立ちます。
+            </p>
+          </div>
+
+          {/* 特徴 */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-md">
+            <h3 className="font-semibold mb-2">特徴</h3>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• ぼかし強度を1〜50pxで調整</li>
+              <li>• 3段階のプリセット</li>
+              <li>• PNG形式でダウンロード</li>
+              <li>• 完全無料、ブラウザ上で動作</li>
+            </ul>
+          </div>
+
+          {/* よくある質問 */}
+          <div className="mt-4 p-4 bg-gray-50 rounded-md">
+            <h3 className="font-semibold mb-2">よくある質問</h3>
+            <div className="text-sm text-gray-600 space-y-3">
+              <div>
+                <p className="font-medium">Q. ぼかしは元に戻せますか？</p>
+                <p>A. いいえ、一度適用したぼかしは解除できません。元画像を別途保存してください。</p>
+              </div>
+              <div>
+                <p className="font-medium">Q. 一部だけぼかせますか？</p>
+                <p>A. 現在は画像全体へのぼかしのみ対応しています。</p>
+              </div>
+            </div>
+          </div>
+
           {/* 非表示キャンバス */}
           <canvas ref={canvasRef} className="hidden" />
 
