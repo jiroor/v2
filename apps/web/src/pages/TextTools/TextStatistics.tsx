@@ -105,6 +105,40 @@ function TextStatistics() {
             <li>• バイト数はデータベースやファイルサイズの確認に</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト統計ツールは、テキストの文字数、単語数、行数、読書時間、バイト数などを一括で計算する無料のオンラインツールです。ブログ記事やドキュメントの文字数管理に役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 9種類の統計情報を一括表示</li>
+            <li>• リアルタイムで更新</li>
+            <li>• 読書時間の目安を計算</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 読書時間はどう計算されていますか？</p>
+              <p>A. 日本語は400文字/分、英語は200単語/分として計算しています。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. バイト数と文字数の違いは？</p>
+              <p>A. バイト数はUTF-8でのデータサイズ、文字数は表示上の文字数です。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

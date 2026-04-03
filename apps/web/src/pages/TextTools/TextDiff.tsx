@@ -204,6 +204,40 @@ function TextDiff() {
             <li>• コード比較、ドキュメント校正に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            テキスト比較ツールは、2つのテキストを行単位で比較し、追加・削除・変更された行を視覚的に表示する無料のオンラインツールです。コードレビューやドキュメントの校正などに役立ちます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 行単位での差分表示</li>
+            <li>• 追加・削除・変更を色分け</li>
+            <li>• 統計情報をリアルタイム表示</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 大きなテキストも比較できますか？</p>
+              <p>A. はい、数千行程度まで問題なく比較できます。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 文字単位での比較はできますか？</p>
+              <p>A. 現在は行単位での比較のみです。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
