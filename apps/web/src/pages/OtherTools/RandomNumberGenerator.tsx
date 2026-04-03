@@ -124,6 +124,40 @@ function RandomNumberGenerator() {
             <li>• くじ引き、ゲーム、抽選に便利</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            乱数生成ツールは、指定した範囲内でランダムな数値を生成する無料のオンラインツールです。くじ引き、ゲーム、抽選などに役立ちます。複数個をまとめて生成することも可能です。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 範囲を自由に指定</li>
+            <li>• 最大100個まで同時生成</li>
+            <li>• 重複なしオプション</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. 乱数は本当にランダムですか？</p>
+              <p>A. 擬似乱数を使用しています。暗号学的な用途には適していません。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. 重複なしで生成できますか？</p>
+              <p>A. 「重複なし」オプションで重複を防げます。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">

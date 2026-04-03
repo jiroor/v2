@@ -152,6 +152,40 @@ function RobotsTxtGenerator() {
             <li>• Google Search Consoleでテスト可能</li>
           </ul>
         </div>
+
+        {/* このツールについて */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">このツールについて</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            robots.txt生成ツールは、検索エンジンのクローラーに対するアクセス制御を設定する無料のオンラインツールです。特定のページのインデックスを防止したり、サイトマップの場所を指定したりできます。
+          </p>
+        </div>
+
+        {/* 特徴 */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-md">
+          <h3 className="font-semibold mb-2">特徴</h3>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• Allow/Disallowを設定</li>
+            <li>• 複数のパスに対応</li>
+            <li>• Sitemap URLを設定</li>
+            <li>• 完全無料、ブラウザ上で動作</li>
+          </ul>
+        </div>
+
+        {/* よくある質問 */}
+        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+          <h3 className="font-semibold mb-2">よくある質問</h3>
+          <div className="text-sm text-gray-600 space-y-3">
+            <div>
+              <p className="font-medium">Q. robots.txtとは何ですか？</p>
+              <p>A. クローラーにサイト内のアクセス可否を伝えるためのファイルです。</p>
+            </div>
+            <div>
+              <p className="font-medium">Q. どこに配置すればいい？</p>
+              <p>A. サイトのルートディレクトリ（https://example.com/robots.txt）に配置します。</p>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 広告 */}
       <div className="mt-8 pt-6 border-t border-gray-200">
